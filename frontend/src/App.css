@@ -1,4 +1,4 @@
-ody {
+body {
   margin: 0;
   font-family: Arial, sans-serif;
 }
@@ -10,4 +10,9 @@ ody {
 /* Ensure the header stays on top of other content */
 header {
   z-index: 50; /* or higher */
+}
+
+.underlineHover:hover{
+text-decoration: underline;
+text-underline-offset: 4px;
 }
