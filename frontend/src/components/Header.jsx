@@ -5,8 +5,8 @@ import '../App.css'
 
 const Header = () => {
   return (
-    <nav className="hover:bg-blue-800 shadow-md fixed w-full top-11 left-0 z-50 h-28 bg-transparent transition-all duration-300 ">
-      <div className="container mx-auto px-4 flex justify-around items-center">
+    <nav className="hover:bg-blue-800 shadow-md fixed w-full top-10 left-0 z-50 h-16 bg-transparent transition-all duration-300 ">
+      <div className="container mx-auto flex justify-around items-center h-full">
         {/* Logo */}
         <div className="flex items-center">
           <img src={logo} alt="Company Logo" className="h-[112px] w-[96px]" />
