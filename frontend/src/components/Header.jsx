@@ -2,6 +2,8 @@
 import React from 'react';
 import logo from '../assets/Lunaredge.png'; // Update the path to your logo
 import '../App.css'
+import { IoIosArrowDown } from "react-icons/io";
+
 
 const Header = () => {
   return (
@@ -13,46 +15,108 @@ const Header = () => {
         </div>
 
         {/* Nav Links */}
-        <ul className="hidden md:flex space-x-4 items-center">
-          <li className='relative group'>
-           <a  className=" text-xl cursor-pointer hover:underline underline-offset-4 pl-6 text-[#082847]">About Us</a>
-           {/* lists of about  */}
-           <ul className=' absolute right-0 left-0 mt-2 top-1 rounded-lg shadow-lg transition-opacity duration-500 invisible group-hover:visible group-hover:opacity-100 bg-white w-60 pt-10 pb-3'>
-             <li><a href="/digital-innovators" className='block px-4 py-2 hover:underline underline-offset-4 text-[#082847]'>Digital innovators</a></li>
-             <li><a href="/clients" className='block px-4 py-2 hover:underline underline-offset-4 text-[#082847]'>Our clients</a></li>
-             <li><a href="/careers" className='block px-4 py-2 hover:underline underline-offset-4 text-[#082847]'>careers</a></li>
-           </ul>
+        <ul className="hidden md:flex space-x-4 items-center justify-center h-full">
+
+          {/* about us  */}
+          <li className=' h-full'>
+
+            <div className='relative h-full hover:bg-[#082847] group flex items-center p-3 cursor-pointer transition-all duration-300'>
+              <div className='flex gap-1 items-center justify-center'>
+                <a href='/aboutus' className=" text-xl cursor-pointer  text-[#082847] group-hover:text-white">About Us</a>
+                <span className='text-lg group-hover:text-white mt-1'><IoIosArrowDown /></span>
+              </div>
+
+              {/* lists of about  */}
+              <ul className=' absolute  mt-2 top-[70px] -left-14 rounded-lg shadow-lg transition-opacity duration-500 invisible group-hover:visible group-hover:opacity-100 bg-white w-60 pt-10 pb-3'>
+                <li>
+                  <a href="/digital-innovators" className='block state px-4 py-2  text-[#082847] hover:underline underline-offset-2'>Digital innovators</a>
+                </li>
+                <li><a href="/clients" className='block px-4 py-2  text-[#082847] hover:underline underline-offset-2'>Our clients</a></li>
+                <li><a href="/careers" className='block px-4 py-2  text-[#082847] hover:underline underline-offset-2'>careers</a></li>
+              </ul>
+            </div>
+
+
           </li>
+
           {/* Services  */}
-          <li className='relative group'>
-          <a  className=" text-xl cursor-pointer hover:underline underline-offset-4 pl-6 text-[#082847]"> Our Services</a>
-          {/* lists inside services  */}
-          <div>
-            
-          </div>
+          <li className='h-full'>
+            <div className='relative h-full hover:bg-[#082847] group flex items-center p-3 cursor-pointer transition-all duration-300' >
+
+              <div className='flex gap-1 items-center justify-center'>
+                <a href='/services' className=" text-xl cursor-pointer  text-[#082847] group-hover:text-white">Services</a>
+                <span className='text-lg group-hover:text-white mt-1'><IoIosArrowDown /></span>
+              </div>
+
+              <ul class='absolute mt-2 top-[70px] -left-56 rounded-lg shadow-lg transition-opacity duration-500 invisible group-hover:visible group-hover:opacity-100 bg-white  w-[1000px] pt-10 p-6  flex justify-between items-center gap-2'>
+
+
+                <li>
+                  <ul>
+                    <li><a href="/digital-innovators" class='block px-4 py-2 hover:underline underline-offset-2 text-[#082847] '>Web Development</a></li>
+                    <li><a href="/clients" class='block px-4 py-2 hover:underline underline-offset-2 text-[#082847]'>Mobile App Development</a></li>
+                    <li><a href="/careers" class='block px-4 py-2 hover:underline underline-offset-2 text-[#082847]'>IT Consulting</a></li>
+                  </ul>
+                </li>
+
+
+                <li>
+                  <ul>
+                    <li><a href="/digital-innovators" class='block px-4 py-2 hover:underline underline-offset-2 text-[#082847]'>Cloud Solutions</a></li>
+                    <li><a href="/clients" class='block px-4 py-2 hover:underline underline-offset-2 text-[#082847]'>Cybersecurity Services</a></li>
+                    <li><a href="/careers" class='block px-4 py-2 hover:underline underline-offset-2 text-[#082847]'>Agriculture Technology Solutions</a></li>
+                  </ul>
+                </li>
+
+
+                <li>
+                  <ul>
+                    <li><a href="/digital-innovators" class='block px-4 py-2 hover:underline underline-offset-2 text-[#082847]'>Banking and Financial Services</a></li>
+                    <li><a href="/clients" class='block px-4 py-2 hover:underline underline-offset-2 text-[#082847]'>Education Solutions</a></li>
+                    <li><a href="/careers" class='block px-4 py-2 hover:underline underline-offset-2 text-[#082847]'>Ai and Machine learning</a></li>
+                  </ul>
+                </li>
+
+
+              </ul>
+
+            </div>
+
+            {/* lists inside services  */}
+
+
+
           </li>
-          <li>
-            <a href="/about" className="  text-xl  hover:underline underline-offset-4 pl-8 text-[#082847]">Industries</a>
+
+          {/* Industries  */}  
+
+
+          <li className='h-full'>
+            <div className='relative h-full hover:bg-[#082847] group flex items-center p-3 cursor-pointer transition-all duration-300'>
+              <div className='flex gap-1 items-center justify-center'>
+                <a href='/aboutus' className=" text-xl cursor-pointer  text-[#082847] group-hover:text-white">Industries</a>
+                <span className='text-lg group-hover:text-white mt-1'><IoIosArrowDown /></span>
+              </div>
+
+              {/* lists of about  */}
+              <ul className=' absolute  mt-2 top-[70px] -left-14 rounded-lg shadow-lg transition-opacity duration-500 invisible group-hover:visible group-hover:opacity-100 bg-white w-60 pt-10 pb-3'>
+                <li><a href="/digital-innovators" className='block state px-4 py-2  text-[#082847] hover:underline underline-offset-2'>Education</a></li>
+                <li><a href="/clients" className='block px-4 py-2  text-[#082847] hover:underline underline-offset-2'>Healthcare</a></li>
+                <li><a href="/careers" className='block px-4 py-2  text-[#082847] hover:underline underline-offset-2'>Ecommerce</a></li>
+                <li><a href="/careers" className='block px-4 py-2  text-[#082847] hover:underline underline-offset-2'>Banking</a></li>
+                
+              </ul>
+            </div>
+
+
           </li>
-          <li>
-            <a href="/about" className="  text-xl  hover:underline underline-offset-4 pl-8 text-[#082847]">Our Processes</a>
-          </li>
+         
+
+         {/* contact us  */}
           <li>
             <a href="/contact" className=" text-xl  hover:underline underline-offset-4 pl-8 text-[#082847]">Contact Us</a>
           </li>
-          {/* <li className="relative group">
-            <a href="#" className="text-white text-xl hover:text-gray-300 focus:outline-none">
-              More
-            </a>
-            <ul className="absolute right-0 top-4 mt-2 bg-white text-black shadow-lg rounded-lg w-48 opacity-0 transition-opacity duration-500  invisible group-hover:opacity-100 group-hover:visible pt-5 cursor-pointer">
-              <li>
-                <a href="/careers" className="block px-4 py-2 hover:bg-gray-200">Careers</a>
-              </li>
-              <li>
-                <a href="/events" className="block px-4 py-2 hover:bg-gray-200">Events</a>
-              </li>
-            </ul>
-          </li> */}
+
         </ul>
 
       </div>
@@ -64,18 +128,3 @@ export default Header;
 
 
 
-
-<ul className='absolute right-0 left-0 mt-2 top-4  pt-5 bg-white text-black shadow-lg rounded-lg opacity-0 transition-opacity duration-500 invisible group-hover:opacity-100 group-hover:visible cursor-pointer w-48 pl-3 '>
-            <li>
-              <a href="" className='block px-4 py-2 hover:bg-gray-200 hover:underline underline-offset-4'>first</a>
-            </li>
-            <li>
-              <a href="" className='block px-4 py-2 hover:bg-gray-200 hover:underline underline-offset-4'>second</a>
-            </li>
-            <li>
-              <a href="" className='block px-4 py-2 hover:bg-gray-200 hover:underline underline-offset-4'>third</a>
-            </li>
-            <li>
-              <a href="" className='block px-4 py-2 hover:bg-gray-200 hover:underline underline-offset-4'>fourth</a>
-            </li>
-          </ul>

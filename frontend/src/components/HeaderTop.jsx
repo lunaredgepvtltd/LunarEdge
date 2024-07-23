@@ -30,7 +30,7 @@ const HeaderTop = () => {
           <div className='w-8 h-8 rounded-full bg-white p-1'><a href=""><img src={phone} alt="" /></a></div>
            {/* phone no  */}
           <div className='flex flex-col group cursor-pointer'>
-          <span className='text-white text-sm hover:text-red-600'>+91-7760701155</span>
+          <span className='text-white text-sm hover:text-red-600'>7760701155</span>
           <div className='w-0 group-hover:w-full h-[1px] bg-red-600 transition-all duration-500'></div>
           </div>
           </div>
@@ -40,11 +40,11 @@ const HeaderTop = () => {
           {/* HR phone number  */}
 
           <div className='flex flex-col group cursor-pointer text-center items-center'>
-          <span className='text-white text-sm hover:text-red-600'>+91-99999999 (HR)</span>
+          <span className='text-white text-sm hover:text-red-600'>99999999 (HR)</span>
           <div className='w-0 group-hover:w-full h-[1px] bg-red-600 transition-all duration-500'></div>
           </div>
 
-          <span className='text-sm text-[#0092ff]'>We answer our phones!</span>
+          <span className=' hidden md:block text-sm text-[#0092ff]'>We answer our phones!</span>
         </div>
     </div>
   )
