@@ -1,17 +1,38 @@
 // src/components/Navbar.js
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import logo from '../assets/Lunaredge.png'; // Update the path to your logo
 import '../App.css'
 import { IoIosArrowDown } from "react-icons/io";
 
 
 const Header = () => {
+
+  const [scrollNav, setScrollNav] = useState(false);
+
+  const changeNav = () => {
+    if (window.scrollY >= 50) {
+      setScrollNav(true);
+    } else {
+      setScrollNav(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', changeNav);
+    return () => {
+      window.removeEventListener('scroll', changeNav);
+    };
+  }, []);
+
+
   return (
-    <nav className="shadow-md fixed w-full top-10 left-0 z-50 h-20 bg-white transition-all duration-300  ">
+    <div className={`fixed w-full top-0 left-0 z-50 h-32 bg-[#0e353b]  transition-all duration-300  ${
+      scrollNav ? 'bg-[#0e353b] bg-opacity-60 shadow-2xl ' : 'bg-transparent shadow-none'
+    } `}>
       <div className="container mx-auto flex justify-around items-center h-full">
         {/* Logo */}
         <div className='mt-4'>
-          <img src={logo} alt="Company Logo" className="h-[136px] w-[117px]" />
+          <img src={logo} alt="Company Logo" className="h-[192px] w-[178px]" />
         </div>
 
         {/* Nav Links */}
@@ -22,7 +43,7 @@ const Header = () => {
 
             <div className='relative h-full hover:bg-[#082847] group flex items-center p-3 cursor-pointer transition-all duration-300'>
               <div className='flex gap-1 items-center justify-center'>
-                <a href='/aboutus' className=" text-xl cursor-pointer  text-[#082847] group-hover:text-white">About Us</a>
+                <a href='/aboutus' className=" text-xl cursor-pointer  text-white group-hover:text-white">About Us</a>
                 <span className='text-lg group-hover:text-white mt-1'><IoIosArrowDown /></span>
               </div>
 
@@ -44,7 +65,7 @@ const Header = () => {
             <div className='relative h-full hover:bg-[#082847] group flex items-center p-3 cursor-pointer transition-all duration-300' >
 
               <div className='flex gap-1 items-center justify-center'>
-                <a href='/services' className=" text-xl cursor-pointer  text-[#082847] group-hover:text-white">Services</a>
+                <a href='/services' className=" text-xl cursor-pointer  text-white group-hover:text-white">Services</a>
                 <span className='text-lg group-hover:text-white mt-1'><IoIosArrowDown /></span>
               </div>
 
@@ -94,7 +115,7 @@ const Header = () => {
           <li className='h-full'>
             <div className='relative h-full hover:bg-[#082847] group flex items-center p-3 cursor-pointer transition-all duration-300'>
               <div className='flex gap-1 items-center justify-center'>
-                <a href='/aboutus' className=" text-xl cursor-pointer  text-[#082847] group-hover:text-white">Industries</a>
+                <a href='/aboutus' className=" text-xl cursor-pointer  text-white group-hover:text-white">Industries</a>
                 <span className='text-lg group-hover:text-white mt-1'><IoIosArrowDown /></span>
               </div>
 
@@ -114,13 +135,17 @@ const Header = () => {
 
          {/* contact us  */}
           <li>
-            <a href="/contact" className=" text-xl  hover:underline underline-offset-4 pl-8 text-[#082847]">Contact Us</a>
+            <a href="/contact" className=" text-xl  hover:underline underline-offset-4 pl-8 text-white">Contact Us</a>
           </li>
 
         </ul>
 
+        <div className=''>
+            <button className='bg-black rounded-md p-3 text-white text-md'>Get Started</button>
+          </div>
+
       </div>
-    </nav>
+    </div>
   );
 };
 
