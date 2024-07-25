@@ -1,10 +1,8 @@
 import React from 'react';
 import Lottie from 'lottie-react';
 import computer from '../assets/computer.json';
-import Link from 'react-router-dom'
-import hero from '../assets/herlo.gif'
-import dottedblue from '../assets/dottedBlue.png'
-import Offer from '../helper/Offer';
+import Offer from '../components/Offer';
+
 const Hero = () => {
   return (
     <div className="w-full h-full">
