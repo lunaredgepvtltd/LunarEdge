@@ -1,3 +1,4 @@
+
 body {
   margin: 0;
   font-family: "Poppins", sans-serif;
@@ -17,4 +18,8 @@ header {
 .underlineHover:hover{
 text-decoration: underline;
 text-underline-offset: 4px;
+}
+
+.input-group{
+  @apply w-full rounded-lg py-3 px-4 text-gray-800 text-sm outline-[#06425f]
 }

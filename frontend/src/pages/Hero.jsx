@@ -1,22 +1,63 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Lottie from 'lottie-react';
 import computer from '../assets/computer.json';
 import Offer from '../components/Offer';
+import ContactForm from './ContactForm';
+import lunargif from '../assets/lunarGif.gif'
 
 const Hero = () => {
+
+  const [showForm, setShowForm] = useState(false);
+
+  const openForm = () => {
+    setShowForm(true);
+   };
+
+   const closeForm = () => {
+   setShowForm(false);
+   };
+
+
+  //  handleGetConnect 
+
+   const handleButton = ()=>{
+    setShowForm(true)
+  }
+
+
+  // ANNIMATION 
+
+  const [text, setText] = useState('');
+  const phrase = "LunarEdge";
+
+  useEffect(() => {
+    let currentIndex = 0;
+    const interval = setInterval(() => {
+      if (currentIndex <= phrase.length) {
+        setText(phrase.substring(0, currentIndex));
+        currentIndex++;
+      } else {
+        clearInterval(interval);
+      }
+    }, 100); // Adjust typing speed here (200ms per character)
+    
+    return () => clearInterval(interval);
+  }, []); // Empty dependency array ensures effect runs only once
+
+
   return (
-    <div className="w-full h-full">
+    <div className="  w-full h-full">
 
       {/* first-part  */}
  
-        <div className='w-full h-[1000px] bg-cover flex justify-around items-center bg-[#9ad7e2]'>
+        <div className='w-full h-[1000px] bg-cover bg-[#9ad7e2] flex justify-around items-center '>
      
         {/* left content   */}
          <div className='flex flex-col gap-6 w-96 ml-72'>
-          <p className='text-7xl'>LunarEdge</p>
-          <p className='text-md text-[#424141] '>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam quis harum non eos facilis architecto, iste aperiam eius, necessitatibus est, soluta officia neque sint inventore hic in voluptatum accusantium. Voluptatibus!</p>
+          <p className='text-7xl h-20'>{text}</p>
+          <p className='text-md text-[#424141] w-96 h-20'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam quis harum non eos facilis architecto, iste aperiam eius, necessitatibus est, soluta officia neque sint inventore hic in voluptatum accusantium. Voluptatibus!</p>
           <div className='mt-24'>
-            <button className='bg-black rounded-full p-3 text-white text-md'>Get connect with us</button>
+            <button className='bg-black rounded-full p-3 text-white text-md hover:bg-gray-600 transition-all duration-300' onClick={handleButton}>Get connect with us</button>
           </div>
          </div>
 
@@ -59,9 +100,12 @@ const Hero = () => {
           <Offer service={'Ai and Machine learning Solutions'} content={'Harness the power of artificial intelligence and machine learning with Lunaredge Pvt. Ltd. Our advanced AI solutions are designed to revolutionize.'}/>
 
           <Offer service={'Agriculture Technology Solutions'} content={'Innovating agriculture processes with smart technology solutions such as precision farming, crop monitoring systems, and agricultural data analytics.'}/>
-</div>
+      </div>
        </div>
       </div>
+
+       {/* Render ContactForm if showForm is true */}
+       {showForm && <ContactForm onClose={closeForm} />}
       
     </div>
   );
