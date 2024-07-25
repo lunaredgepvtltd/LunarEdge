@@ -14,7 +14,22 @@ header {
   z-index: 50; /* or higher */
 }
 
-.underlineHover:hover{
-text-decoration: underline;
-text-underline-offset: 4px;
+.underlineHover:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.animated-text {
+  animation: fadeIn infinite 3s;
 }
