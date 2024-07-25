@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Lottie from 'lottie-react';
 import computer from '../assets/computer.json';
 import Offer from '../components/Offer';
+import robot from '../assets/robot.mp4'
+import robotreverse from '../assets/robotReverse.mp4'
 
 const Hero = () => {
 
