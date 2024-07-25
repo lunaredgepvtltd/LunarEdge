@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import './App.css';
-
-
+import { Footer } from './pages/Footer';
 import Header from './pages/Header'; 
 import Hero from './pages/Hero';
+import { Form } from './pages/Form';
 
 function App() {
 
@@ -15,7 +15,9 @@ function App() {
       {/* Hero Section */}
       <Hero/>
 
-       
+      {/* footer */}
+   
+       <Footer/>
     </div>
   );
 }

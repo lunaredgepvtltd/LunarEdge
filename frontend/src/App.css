@@ -15,11 +15,7 @@ header {
   z-index: 50; /* or higher */
 }
 
-.underlineHover:hover{
-text-decoration: underline;
-text-underline-offset: 4px;
-}
-
-.input-group{
-  @apply w-full rounded-lg py-3 px-4 text-gray-800 text-sm outline-[#06425f]
+.underlineHover:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
 }
