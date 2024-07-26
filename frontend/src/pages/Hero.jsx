@@ -37,8 +37,8 @@ const Hero = () => {
 
   // fetching user
 
-  const { user } = useSelector((state) => state.user);
-  console.log(user);
+  const {user} = useSelector((state) => state.user);
+  console.log(typeof(user))
 
   const [text, setText] = useState("");
   const phrase = "LunarEdge";
@@ -52,13 +52,15 @@ const Hero = () => {
       } else {
         clearInterval(interval);
       }
-    }, 100); // Adjust typing speed here (200ms per character)
+    }, 200); // Adjust typing speed here (200ms per character)
 
     return () => clearInterval(interval);
   }, []); // Empty dependency array ensures effect runs only once
 
   return (
     <div className="w-full h-full">
+
+      {showForm && <ContactForm onClose={closeForm}/>}
       {/* first-part */}
       <div className="w-full h-[1000px] bg-cover flex justify-around items-center bg-blue-100">
         {/* left content */}
@@ -78,7 +80,7 @@ const Hero = () => {
            
             <div className="mt-24">
               <button
-                className="bg-black rounded-full p-3 text-white text-md"
+                className="bg-black rounded-full md:p-3 text-white md:text-md text-sm"
                 onClick={handleButton}
               >
                 Get connect with us
@@ -88,7 +90,7 @@ const Hero = () => {
         </div>
 
         {/* right gif */}
-        <div className="flex justify-end items-end ml-40 mt-20">
+        <div className="hidden md:flex justify-end items-end ml-40 mt-20">
           <Lottie animationData={computer} />
         </div>
       </div>

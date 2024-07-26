@@ -1,22 +1,13 @@
-// src/components/Navbar.js
 import React, { useEffect, useState } from "react";
-import logo from "../assets/Lunaredge.png"; // Update the path to your logo
+import logo from "../assets/Lunaredge.png";
 import "../App.css";
-import { IoIosArrowDown } from "react-icons/io";
+import { IoIosArrowDown, IoIosMenu, IoIosClose } from "react-icons/io";
 import ContactForm from "./ContactForm";
-import { useSelector } from "react-redux";
 
 const Header = () => {
   const [scrollNav, setScrollNav] = useState(false);
-
   const [showForm, setShowForm] = useState(false);
-
-  // fetching user from redux-store
-
-  // handle show button
-
-const {user} = useSelector((state) => state.user);
-console.log(typeof(user))
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const handleButton = () => {
     setShowForm(true);
@@ -24,6 +15,10 @@ console.log(typeof(user))
 
   const closeForm = () => {
     setShowForm(false);
+  };
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
   };
 
   const changeNav = () => {
@@ -43,28 +38,35 @@ console.log(typeof(user))
 
   return (
     <div
-      className={`fixed w-full top-0 left-0 z-50 h-32 bg-[#0e353b] hover:bg-opacity-80 shadow-2xl transition-all duration-300 
-         ${
+      className={`fixed w-full top-0 left-0 z-50 h-32 bg-[#0e353b]  transition-all duration-300  ${
         scrollNav
-          ? "bg-opacity-100 bg-[#0e353b]"
-          : "bg-[#0e353b] shadow-2xl "
+          ? "bg-[#0e353b] bg-opacity-60 shadow-2xl "
+          : "bg-transparent shadow-none"
       } `}
     >
-      <div className="container mx-auto flex justify-around items-center h-full">
+      <div className="container mx-auto flex justify-around items-center h-full px-4 md:px-0">
         {/* Logo */}
         <div className="mt-4">
-          <img src={logo} alt="Company Logo" className="h-[192px] w-[178px]" />
+          <img src={logo} alt="Company Logo" className=" w-[109px] h-[123px] md:h-[192px] md:w-[178px]" />
         </div>
 
-        {/* Nav Links */}
-        <ul className="hidden md:flex space-x-4 items-center justify-center h-full">
-          {/* about us  */}
-          <li className=" h-full">
+        {/* Mobile Menu Toggle */}
+        <button
+          className="md:hidden text-white text-2xl"
+          onClick={toggleMenu}
+        >
+          {menuOpen ? <IoIosClose /> : <IoIosMenu />}
+        </button>
+
+        {/* Nav Links for Desktop */}
+        <ul className={`hidden md:flex space-x-4 items-center justify-center h-auto`}>
+          {/* About Us */}
+          <li className="h-full">
             <div className="relative h-full hover:bg-[#082847] group flex items-center p-3 cursor-pointer transition-all duration-300">
               <div className="flex gap-1 items-center justify-center">
                 <a
                   href="/aboutus"
-                  className=" text-xl cursor-pointer  text-white group-hover:text-white"
+                  className="text-xl cursor-pointer text-white group-hover:text-white"
                 >
                   About Us
                 </a>
@@ -72,13 +74,11 @@ console.log(typeof(user))
                   <IoIosArrowDown />
                 </span>
               </div>
-
-              {/* lists of about  */}
-              <ul className=" absolute  mt-2 top-[70px] -left-14 rounded-lg shadow-lg transition-opacity duration-500 invisible group-hover:visible group-hover:opacity-100 bg-white w-60 pt-10 pb-3">
+              <ul className="absolute mt-2 top-[70px] -left-14 rounded-lg shadow-lg transition-opacity duration-500 invisible group-hover:visible group-hover:opacity-100 bg-white w-60 pt-10 pb-3">
                 <li>
                   <a
                     href="/digital-innovators"
-                    className="block state px-4 py-2  text-[#082847] hover:underline underline-offset-2"
+                    className="block state px-4 py-2 text-[#082847] hover:underline underline-offset-2"
                   >
                     Digital innovators
                   </a>
@@ -86,7 +86,7 @@ console.log(typeof(user))
                 <li>
                   <a
                     href="/clients"
-                    className="block px-4 py-2  text-[#082847] hover:underline underline-offset-2"
+                    className="block px-4 py-2 text-[#082847] hover:underline underline-offset-2"
                   >
                     Our clients
                   </a>
@@ -94,22 +94,22 @@ console.log(typeof(user))
                 <li>
                   <a
                     href="/careers"
-                    className="block px-4 py-2  text-[#082847] hover:underline underline-offset-2"
+                    className="block px-4 py-2 text-[#082847] hover:underline underline-offset-2"
                   >
-                    careers
+                    Careers
                   </a>
                 </li>
               </ul>
             </div>
           </li>
 
-          {/* Services  */}
+          {/* Services */}
           <li className="h-full">
             <div className="relative h-full hover:bg-[#082847] group flex items-center p-3 cursor-pointer transition-all duration-300">
               <div className="flex gap-1 items-center justify-center">
                 <a
                   href="/services"
-                  className=" text-xl cursor-pointer  text-white group-hover:text-white"
+                  className="text-xl cursor-pointer text-white group-hover:text-white"
                 >
                   Services
                 </a>
@@ -117,14 +117,13 @@ console.log(typeof(user))
                   <IoIosArrowDown />
                 </span>
               </div>
-
-              <ul className="absolute mt-2 top-[70px] -left-56 rounded-lg shadow-lg transition-opacity duration-500 invisible group-hover:visible group-hover:opacity-100 bg-white  w-[1000px] pt-10 p-6  flex justify-between items-center gap-2">
+              <ul className="absolute mt-2 top-[70px] -left-56 rounded-lg shadow-lg transition-opacity duration-500 invisible group-hover:visible group-hover:opacity-100 bg-white w-[1000px] pt-10 p-6 flex justify-between items-center gap-2">
                 <li>
                   <ul>
                     <li>
                       <a
                         href="/digital-innovators"
-                        className="block px-4 py-2 hover:underline underline-offset-2 text-[#082847] "
+                        className="block px-4 py-2 hover:underline underline-offset-2 text-[#082847]"
                       >
                         Web Development
                       </a>
@@ -147,7 +146,6 @@ console.log(typeof(user))
                     </li>
                   </ul>
                 </li>
-
                 <li>
                   <ul>
                     <li>
@@ -176,7 +174,6 @@ console.log(typeof(user))
                     </li>
                   </ul>
                 </li>
-
                 <li>
                   <ul>
                     <li>
@@ -200,25 +197,22 @@ console.log(typeof(user))
                         href="/careers"
                         className="block px-4 py-2 hover:underline underline-offset-2 text-[#082847]"
                       >
-                        Ai and Machine learning
+                        AI and Machine Learning
                       </a>
                     </li>
                   </ul>
                 </li>
               </ul>
             </div>
-
-            {/* lists inside services  */}
           </li>
 
-          {/* Industries  */}
-
+          {/* Industries */}
           <li className="h-full">
             <div className="relative h-full hover:bg-[#082847] group flex items-center p-3 cursor-pointer transition-all duration-300">
               <div className="flex gap-1 items-center justify-center">
                 <a
-                  href="/aboutus"
-                  className=" text-xl cursor-pointer  text-white group-hover:text-white"
+                  href="/industries"
+                  className="text-xl cursor-pointer text-white group-hover:text-white"
                 >
                   Industries
                 </a>
@@ -226,37 +220,35 @@ console.log(typeof(user))
                   <IoIosArrowDown />
                 </span>
               </div>
-
-              {/* lists of about  */}
-              <ul className=" absolute  mt-2 top-[70px] -left-14 rounded-lg shadow-lg transition-opacity duration-500 invisible group-hover:visible group-hover:opacity-100 bg-white w-60 pt-10 pb-3">
+              <ul className="absolute mt-2 top-[70px] -left-14 rounded-lg shadow-lg transition-opacity duration-500 invisible group-hover:visible group-hover:opacity-100 bg-white w-60 pt-10 pb-3">
                 <li>
                   <a
-                    href="/digital-innovators"
-                    className="block state px-4 py-2  text-[#082847] hover:underline underline-offset-2"
+                    href="/education"
+                    className="block px-4 py-2 text-[#082847] hover:underline underline-offset-2"
                   >
                     Education
                   </a>
                 </li>
                 <li>
                   <a
-                    href="/clients"
-                    className="block px-4 py-2  text-[#082847] hover:underline underline-offset-2"
+                    href="/healthcare"
+                    className="block px-4 py-2 text-[#082847] hover:underline underline-offset-2"
                   >
                     Healthcare
                   </a>
                 </li>
                 <li>
                   <a
-                    href="/careers"
-                    className="block px-4 py-2  text-[#082847] hover:underline underline-offset-2"
+                    href="/ecommerce"
+                    className="block px-4 py-2 text-[#082847] hover:underline underline-offset-2"
                   >
                     Ecommerce
                   </a>
                 </li>
                 <li>
                   <a
-                    href="/careers"
-                    className="block px-4 py-2  text-[#082847] hover:underline underline-offset-2"
+                    href="/banking"
+                    className="block px-4 py-2 text-[#082847] hover:underline underline-offset-2"
                   >
                     Banking
                   </a>
@@ -266,7 +258,7 @@ console.log(typeof(user))
           </li>
 
           {/* contact us  */}
-          { (
+          {user ? '' : (
             <li>
               <div>
                 <button
@@ -279,6 +271,58 @@ console.log(typeof(user))
             </li>
           )}
         </ul>
+
+        {/* Mobile Menu */}
+        {menuOpen && (
+          <div className="fixed top-0 left-0 w-full h-auto md:h-full bg-white z-40 md:hidden flex flex-col">
+            <button
+              className="self-end p-4 text-2xl"
+              onClick={toggleMenu}
+            >
+              <IoIosClose />
+            </button>
+            <ul className="flex flex-col items-center mt-10">
+              <li className="py-2">
+                <a
+                  href="/aboutus"
+                  className="text-xl text-[#082847] hover:underline"
+                  onClick={toggleMenu}
+                >
+                  About Us
+                </a>
+              </li>
+              <li className="py-2">
+                <a
+                  href="/services"
+                  className="text-xl text-[#082847] hover:underline"
+                  onClick={toggleMenu}
+                >
+                  Services
+                </a>
+              </li>
+              <li className="py-2">
+                <a
+                  href="/industries"
+                  className="text-xl text-[#082847] hover:underline"
+                  onClick={toggleMenu}
+                >
+                  Industries
+                </a>
+              </li>
+              <li className="py-2">
+                <button
+                  className="bg-black text-white p-3 rounded-md"
+                  onClick={() => {
+                    handleButton();
+                    toggleMenu();
+                  }}
+                >
+                  Contact Us
+                </button>
+              </li>
+            </ul>
+          </div>
+        )}
       </div>
 
       {showForm && <ContactForm onClose={closeForm} />}
