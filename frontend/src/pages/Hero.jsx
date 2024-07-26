@@ -5,6 +5,7 @@ import Offer from "../components/Offer";
 import robot from "../assets/robot.mp4";
 import robotreverse from "../assets/robotReverse.mp4";
 import { useSelector } from "react-redux";
+import ContactForm from "./ContactForm";
 
 const Hero = () => {
   const [showForm, setShowForm] = useState(false);
@@ -24,7 +25,7 @@ const Hero = () => {
   // fetching user
 
   const {user} = useSelector((state) => state.user);
-  console.log(user)
+  console.log(typeof(user))
 
   const [text, setText] = useState("");
   const phrase = "LunarEdge";
@@ -38,19 +39,23 @@ const Hero = () => {
       } else {
         clearInterval(interval);
       }
-    }, 100); // Adjust typing speed here (200ms per character)
+    }, 200); // Adjust typing speed here (200ms per character)
 
     return () => clearInterval(interval);
   }, []); // Empty dependency array ensures effect runs only once
 
   return (
     <div className="w-full h-full">
+
+      {showForm && <ContactForm onClose={closeForm}/>}
       {/* first-part */}
-      <div className="w-full h-[1000px] bg-cover flex justify-around items-center bg-[#9ad7e2]">
+      <div className="w-full h-[1000px] bg-cover flex justify-around items-center bg-blue-100">
         {/* left content */}
         <div className="flex flex-col gap-6 w-96 ml-72">
-          <p className="text-7xl">LunarEdge</p>
-          <p className="text-md text-[#424141]">
+
+          <p className="text-7xl font-serif ">{text}</p>
+
+          <p className=" text-md text-[#424141]">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
             quis harum non eos facilis architecto, iste aperiam eius,
             necessitatibus est, soluta officia neque sint inventore hic in
@@ -59,9 +64,9 @@ const Hero = () => {
 
           {/* displaying button if user doesn't exist  */}
 
-          {user ? '' : (<div className="mt-24">
+          {(<div className=" mt-10 md:mt-24">
               <button
-                className="bg-black rounded-full p-3 text-white text-md"
+                className="bg-black rounded-full md:p-3 text-white md:text-md text-sm"
                 onClick={handleButton}
               >
                 Get connect with us
@@ -70,7 +75,7 @@ const Hero = () => {
         </div>
 
         {/* right gif */}
-        <div className="flex justify-end items-end ml-40 mt-20">
+        <div className="hidden md:flex justify-end items-end ml-40 mt-20">
           <Lottie animationData={computer} />
         </div>
       </div>

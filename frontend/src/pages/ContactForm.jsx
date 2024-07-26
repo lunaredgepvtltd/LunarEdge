@@ -6,8 +6,6 @@ import TextInput from "../components/TextInput";
 import { useForm } from "react-hook-form";
 import { RxCross1 } from "react-icons/rx";
 import { apiRequest } from "../utils";
-import { useDispatch } from "react-redux";
-import { userLogin } from "../redux/userSlice";
 
 const ContactForm = ({ onClose }) => {
   const {
@@ -20,20 +18,17 @@ const ContactForm = ({ onClose }) => {
 
   const [errMsg, setErrMsg] = useState("");
  
-  const dispatch = useDispatch();
-  
 
   // handle handle button
   const handleClick = async (data) => {
+    console.log("inside handle click")
     try {
-    // const res = await apiRequest({
-    //     url : '/register',
-    //     method : 'POST',
-    //     data : data,
-    // })
-    // console.log(res)
-    window.localStorage.setItem('user','true')
-    dispatch(userLogin('true'))
+    const res = await apiRequest({
+        url : '/register',
+        method : 'POST',
+        data : data,
+    })
+    onclose()
     } 
     catch (error){
         setErrMsg('Error occured while registering!')
@@ -41,7 +36,7 @@ const ContactForm = ({ onClose }) => {
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex justify-center items-center bg-gray-500 bg-opacity-50">
+    <div className="fixed inset-0 z-50 flex h-[600px] md:h-full justify-center items-center bg-gray-500 bg-opacity-50">
       <div className="mt-6 max-w-6xl max-lg:max-w-3xl mx-auto bg-[#236385] rounded-lg pr-7 pt-6">
         <div className="grid lg:grid-cols-2 items-center gap-14 sm:p-8 p-4 font-[sans-serif]">
           {/* left side of form  */}
@@ -116,10 +111,10 @@ const ContactForm = ({ onClose }) => {
                 {/* Mobile Number  */}
 
                 <TextInput
-                  name="mobileNumber"
+                  name="phoneNumber"
                   placeholder="Contact Number"
-                  type="tel"
-                  register={register("mobileNumber", {
+                  type="number"
+                  register={register("phoneNumber", {
                     required: "Mobile number is required",
                     pattern: {
                       value: /^\d{10}$/,
@@ -139,6 +134,10 @@ const ContactForm = ({ onClose }) => {
                   type="email"
                   register={register("email", {
                     required: "email is required",
+                    pattern: {
+                      value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                      message: "Invalid email address. Please enter a valid email.",
+                    }
                   })}
                   error={errors?.email ? errors?.email?.message : ""}
                 />
@@ -149,9 +148,7 @@ const ContactForm = ({ onClose }) => {
                   name="subject"
                   placeholder="Subject"
                   type="text"
-                  register={register("subject", {
-                    required: "Subject is required",
-                  })}
+                  register={register("subject")}
                   error={errors?.subject ? errors?.subject?.message : ""}
                 />
 
