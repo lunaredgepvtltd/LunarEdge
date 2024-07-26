@@ -43,10 +43,11 @@ console.log(typeof(user))
 
   return (
     <div
-      className={`fixed w-full top-0 left-0 z-50 h-32 bg-[#0e353b]  transition-all duration-300  ${
+      className={`fixed w-full top-0 left-0 z-50 h-32 bg-[#0e353b] hover:bg-opacity-80 shadow-2xl transition-all duration-300 
+         ${
         scrollNav
-          ? "bg-[#0e353b] bg-opacity-60 shadow-2xl "
-          : "bg-transparent shadow-none"
+          ? "bg-opacity-100 bg-[#0e353b]"
+          : "bg-[#0e353b] shadow-2xl "
       } `}
     >
       <div className="container mx-auto flex justify-around items-center h-full">
@@ -265,7 +266,7 @@ console.log(typeof(user))
           </li>
 
           {/* contact us  */}
-          {user ? '' : (
+          { (
             <li>
               <div>
                 <button
