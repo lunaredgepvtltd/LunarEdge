@@ -38,10 +38,10 @@ const Header = () => {
 
   return (
     <div
-      className={`fixed w-full top-0 left-0 z-50 h-32 bg-[#0e353b] transition-all duration-300 ${
+      className={`fixed w-full top-0 left-0 z-50 h-32 bg-[#0e353b] transition-all duration-300 hover:bg-[#0e353b] hover:bg-opacity-100 ${
         scrollNav
-          ? "bg-[#0e353b] bg-opacity-60 shadow-2xl"
-          : "bg-transparent shadow-none"
+          ? "bg-[#0e353b] bg-opacity-70 shadow-2xl"
+          : "bg-[#0e353b] bg-opacity-100 shadow-2xl"
       }`}
     >
       <div className="container mx-auto flex justify-around items-center h-full px-4 md:px-0">

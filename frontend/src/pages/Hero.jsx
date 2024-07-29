@@ -6,6 +6,20 @@ import robot from "../assets/robot.mp4";
 import robotreverse from "../assets/robotReverse.mp4";
 import { useSelector } from "react-redux";
 import ContactForm from "./ContactForm";
+import { IoLogoHtml5 } from "react-icons/io5";
+import TechBox from "../components/TechBox";
+import { FaCss3Alt } from "react-icons/fa";
+import { RiJavascriptFill } from "react-icons/ri";
+import { FaJava } from "react-icons/fa";
+import { FaReact } from "react-icons/fa";
+import { FaNodeJs } from "react-icons/fa";
+import { FaPython } from "react-icons/fa";
+import { IoLogoAndroid } from "react-icons/io";
+import { FaApple } from "react-icons/fa";
+import { SiExpress } from "react-icons/si";
+import { SiMongodb } from "react-icons/si";
+import { FaAws } from "react-icons/fa";
+
 
 const Hero = () => {
   const [showForm, setShowForm] = useState(false);
@@ -24,8 +38,8 @@ const Hero = () => {
 
   // fetching user
 
-  const {user} = useSelector((state) => state.user);
-  console.log(typeof(user))
+  const { user } = useSelector((state) => state.user);
+  console.log(typeof (user))
 
   const [text, setText] = useState("");
   const phrase = "LunarEdge";
@@ -47,7 +61,7 @@ const Hero = () => {
   return (
     <div className="w-full h-full">
 
-      {showForm && <ContactForm onClose={closeForm}/>}
+      {showForm && <ContactForm onClose={closeForm} />}
       {/* first-part */}
       <div className="w-full h-[1000px] bg-cover flex justify-around items-center bg-blue-100">
         {/* left content */}
@@ -56,22 +70,19 @@ const Hero = () => {
           <p className="text-7xl font-serif ">{text}</p>
 
           <p className=" text-md text-[#424141]">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
-            quis harum non eos facilis architecto, iste aperiam eius,
-            necessitatibus est, soluta officia neque sint inventore hic in
-            voluptatum accusantium. Voluptatibus!
+            Welcome to Lunaredge Private Limited, your partner in digital transformation. We specialize in delivering customized IT solutions that drive business growth and efficiency.we combine cutting-edge technology with deep industry expertise to meet your unique needs
           </p>
 
           {/* displaying button if user doesn't exist  */}
 
           {(<div className=" mt-10 md:mt-24">
-              <button
-                className="bg-black rounded-full md:p-3 text-white md:text-md text-sm"
-                onClick={handleButton}
-              >
-                Get connect with us
-              </button>
-            </div>)}
+            <button
+              className="bg-black rounded-full md:p-3 text-white md:text-md text-sm hover:bg-gray-600 transition-all duration-300"
+              onClick={handleButton}
+            >
+              Get connect with us
+            </button>
+          </div>)}
         </div>
 
         {/* right gif */}
@@ -176,6 +187,78 @@ const Hero = () => {
               }
             />
           </div>
+        </div>
+      </div>
+
+
+      <div className="flex-col">
+        <div>
+          <p className="text-center  text-5xl mt-[150px] text-">
+            Empowering Technologies We Use
+          </p>
+        </div>
+        <div>
+          <p className="text-xl text-center mt-11 text-[#424141]">
+            Explore the cutting-edge technologies driving our solutions. From AI
+            and cloud computing to cybersecurity,<br></br> we harness the latest tools to
+            deliver exceptional results.
+          </p>
+        </div>
+      </div>
+      <div className="flex justify-between items-center ">
+        <div className=" shadow-2xl rounded-xl border-black bg-[#195269] ml-[10%] mt-[8%] w-[30%] grid grid-rows-4 gap-5 grid-cols-3 p-6">
+          <TechBox
+            name={"HTML"}
+            logo={<IoLogoHtml5 className="w-[130px] h-[100px]" />}
+          />
+          <TechBox
+            name={"CSS"}
+            logo={<FaCss3Alt className="w-[130px] h-[100px]" />}
+          />
+          <TechBox
+            name={"JS"}
+            logo={<RiJavascriptFill className="w-[130px] h-[100px]" />}
+          />
+          <TechBox
+            name={"JAVA"}
+            logo={<FaJava className="w-[130px] h-[100px]" />}
+          />
+          <TechBox
+            name={"REACT"}
+            logo={<FaReact className="w-[130px] h-[100px]" />}
+          />
+          <TechBox
+            name={"NODE JS"}
+            logo={<FaNodeJs className="w-[130px] h-[100px]" />}
+          />
+          <TechBox
+            name={"PYTHON"}
+            logo={<FaPython className="w-[130px] h-[100px]" />}
+          />
+          <TechBox
+            name={"ANDROID"}
+            logo={<IoLogoAndroid className="w-[130px] h-[100px]" />}
+          />
+          <TechBox
+            name={"APPLE"}
+            logo={<FaApple className="w-[130px] h-[100px]" />}
+          />
+          <TechBox
+            name={"EXPRESS"}
+            logo={<SiExpress className="w-[130px] h-[100px]" />}
+          />
+          <TechBox
+            name={"MONGODB"}
+            logo={<SiMongodb className="w-[130px] h-[100px]" />}
+          />
+          <TechBox
+            name={"AWS"}
+            logo={<FaAws className="w-[130px] h-[100px]" />}
+          />
+        </div>
+
+        <div className="w-[32%] h-[32%] mr-[8%]">
+          <Lottie animationData={computer} />
         </div>
       </div>
     </div>
