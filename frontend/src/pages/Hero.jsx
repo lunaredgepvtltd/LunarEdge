@@ -19,9 +19,86 @@ import { FaApple } from "react-icons/fa";
 import { SiExpress } from "react-icons/si";
 import { SiMongodb } from "react-icons/si";
 import { FaAws } from "react-icons/fa";
-
+import Slider from 'react-slick';
+import { useMediaQuery } from 'react-responsive';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 const Hero = () => {
+
+  
+   const isSmallDevice = useMediaQuery({maxWidth : 767})
+
+   
+
+   const sliderSetting = {
+    dots : true,
+    infinite : true,
+    speen : 500,
+    slidesToShow : 1,
+    slidesToScroll : 1,
+    arrows : false
+   }
+
+  // offers Object 
+  const offers = [
+    {
+      service: "Mobile App Development",
+      content: "Creating intuitive mobile applications for iOS and Android platforms that deliver seamless user experiences."
+    },
+    {
+      service: "Web Development",
+      content: "Crafting engaging and user-friendly websites that enhance your online presence and drive customer engagement."
+    },
+    {
+      service: "Game Development",
+      content: "Immerse your audience in captivating virtual worlds with Lunaredge Pvt. Ltd. game development expertise."
+    },
+    {
+      service: "IT Consulting",
+      content: "Expert guidance and strategic advice to optimize your IT infrastructure and achieve operational excellence."
+    },
+    {
+      service: "Cloud Solutions",
+      content: "Harnessing the power of cloud technology to improve scalability, security, and efficiency in your business operations."
+    },
+    {
+      service: "Cybersecurity Services",
+      content: "Protecting your digital assets with robust cybersecurity measures and proactive threat detection."
+    },
+    {
+      service: "Banking and Financial Services",
+      content: "Providing tailored IT solutions for banking and financial institutions, including core banking systems, loan management system, mobile banking apps."
+    },
+    {
+      service: "AI and Machine Learning Solutions",
+      content: "Harness the power of artificial intelligence and machine learning with Lunaredge Pvt. Ltd. Our advanced AI solutions are designed to revolutionize."
+    },
+    {
+      service: "Agriculture Technology Solutions",
+      content: "Innovating agriculture processes with smart technology solutions such as precision farming, crop monitoring systems, and agricultural data analytics."
+    }
+  ];
+
+  // technical skill stack 
+
+
+const techStack = [
+  { name: "HTML", logo: <IoLogoHtml5 className="h-[70px] w-[70px] md:w-[130px] md:h-[100px]" /> },
+  { name: "CSS", logo: <FaCss3Alt className="h-[70px] w-[70px] md:w-[130px] md:h-[100px]" /> },
+  { name: "JS", logo: <RiJavascriptFill className="h-[70px] w-[70px] md:w-[130px] md:h-[100px]" /> },
+  { name: "JAVA", logo: <FaJava className="h-[70px] w-[70px] md:w-[130px] md:h-[100px]" /> },
+  { name: "REACT", logo: <FaReact className="h-[70px] w-[70px] md:w-[130px] md:h-[100px]" /> },
+  { name: "NODE JS", logo: <FaNodeJs className="h-[70px] w-[70px] md:w-[130px] md:h-[100px]" /> },
+  { name: "PYTHON", logo: <FaPython className="h-[70px] w-[70px] md:w-[130px] md:h-[100px]" /> },
+  { name: "ANDROID", logo: <IoLogoAndroid className="h-[70px] w-[70px] md:w-[130px] md:h-[100px]" /> },
+  { name: "APPLE", logo: <FaApple className="h-[70px] w-[70px] md:w-[130px] md:h-[100px]" /> },
+  { name: "EXPRESS", logo: <SiExpress className="h-[70px] w-[70px] md:w-[130px] md:h-[100px]" /> },
+  { name: "MONGODB", logo: <SiMongodb className="h-[70px] w-[70px] md:w-[130px] md:h-[100px]" /> },
+  { name: "AWS", logo: <FaAws className="h-[70px] w-[70px] md:w-[130px] md:h-[100px]" /> }
+];
+
+
   const [showForm, setShowForm] = useState(false);
 
   const openForm = () => {
@@ -39,7 +116,6 @@ const Hero = () => {
   // fetching user
 
   const { user } = useSelector((state) => state.user);
-  console.log(typeof (user))
 
   const [text, setText] = useState("");
   const phrase = "LunarEdge";
@@ -59,8 +135,9 @@ const Hero = () => {
   }, []); // Empty dependency array ensures effect runs only once
 
   return (
+   
     <div className="w-full h-auto">
-
+ 
       {showForm && <ContactForm onClose={closeForm} />}
       
       {/* first-part */}
@@ -109,7 +186,7 @@ const Hero = () => {
               muted={true}
               playsInline={true}
             ></video>
-            <div className="flex flex-col gap-5">
+            <div className="flex flex-col gap-5 p-8">
               <h1 className="text-5xl font-medium">Services We Offer</h1>
               <p className="text-lg text-slate-500 my-3 py-2">
                 LunarEdge is the perfect choice for any buisness looking to
@@ -133,68 +210,35 @@ const Hero = () => {
         </div>
 
         {/* what we offers boxes */}
-         <div className="  md:flex justify-center items-center">
+        <div >
+      {isSmallDevice ? (
+        // rendering slider for small devices 
+        <div className="w-[350px] pl-5 my-8">
+          <Slider {...sliderSetting}>
+          {offers.map((offer, index) => (
+            <div key={index}>
+              <Offer service={offer.service} content={offer.content} />
+            </div>
+          ))}
+        </Slider>
+        </div>
+      ) : (
+        // rendering grid-boxex for large-devices 
+        <div className="md:flex justify-center items-center">
           <div className="grid grid-cols-1 grid-col-9 md:grid-cols-3 md:grid-rows-3 gap-4 p-3 md:p-0">
-            <Offer
-              service={"Mobile App Development"}
-              content={
-                "Creating intuitive mobile applications for iOS and Android platforms that deliver seamless user experiences."
-              }
-            />
-            <Offer
-              service={"Web Development"}
-              content={
-                "Crafting engaging and user-friendly websites that enhance your online presence and drive customer engagement."
-              }
-            />
-            <Offer
-              service={"Game Development"}
-              content={
-                "Immerse your audience in captivating virtual worlds with Lunaredge Pvt. Ltd. game development expertise."
-              }
-            />
-            <Offer
-              service={"IT Consulting"}
-              content={
-                "Expert guidance and strategic advice to optimize your IT infrastructure and achieve operational excellence."
-              }
-            />
-            <Offer
-              service={"Cloud Solutions"}
-              content={
-                "Harnessing the power of cloud technology to improve scalability, security, and efficiency in your business operations."
-              }
-            />
-            <Offer
-              service={"Cybersecurity Services"}
-              content={
-                "Protecting your digital assets with robust cybersecurity measures and proactive threat detection."
-              }
-            />
-            <Offer
-              service={"Banking and Financial Services"}
-              content={
-                "Providing tailored IT solutions for banking and financial institutions, including core banking systems, loan management system, mobile banking apps."
-              }
-            />
-            <Offer
-              service={"Ai and Machine Learning Solutions"}
-              content={
-                "Harness the power of artificial intelligence and machine learning with Lunaredge Pvt. Ltd. Our advanced AI solutions are designed to revolutionize."
-              }
-            />
-            <Offer
-              service={"Agriculture Technology Solutions"}
-              content={
-                "Innovating agriculture processes with smart technology solutions such as precision farming, crop monitoring systems, and agricultural data analytics."
-              }
-            />
+            {offers.map((offer, index) => (
+              <Offer key={index} service={offer.service} content={offer.content} />
+            ))}
           </div>
         </div>
+      )}
+      </div>
       </div> 
 
        {/* third part   */}
 
+       
+      {/* technical-skill content  */}
       <div className="flex-col p-5 md:p-0">
       <p className=" font-medium text-center text-2xl md:text-5xl mt-14 md:mt-[150px]">
             Empowering Technologies We Use
@@ -208,62 +252,19 @@ const Hero = () => {
         </div>
       </div>
 
+      {/* rendering technical skill-box  */}
       <div className="md:flex justify-between items-center p-4">
         <div className=" shadow-2xl rounded-xl border-black bg-[#195269] md:ml-[10%] md:mt-[8%] md:w-[30%] grid grid-rows-4 gap-2 md:gap-5 grid-cols-3 p-3 md:p-6">
-          <TechBox
-            name={"HTML"}
-            logo={<IoLogoHtml5 className="h-[70px] w-[70px] md:w-[130px] md:h-[100px]" />}
-          />
-          <TechBox
-            name={"CSS"}
-            logo={<FaCss3Alt className=" h-[70px] w-[70px] md:w-[130px] md:h-[100px]" />}
-          />
-          <TechBox
-            name={"JS"}
-            logo={<RiJavascriptFill className="h-[70px] w-[70px] md:w-[130px] md:h-[100px]" />}
-          />
-          <TechBox
-            name={"JAVA"}
-            logo={<FaJava className="h-[70px] w-[70px] md:w-[130px] md:h-[100px]" />}
-          />
-          <TechBox
-            name={"REACT"}
-            logo={<FaReact className="h-[70px] w-[70px] md:w-[130px] md:h-[100px]" />}
-          />
-          <TechBox
-            name={"NODE JS"}
-            logo={<FaNodeJs className="h-[70px] w-[70px] md:w-[130px] md:h-[100px]" />}
-          />
-          <TechBox
-            name={"PYTHON"}
-            logo={<FaPython className="h-[70px] w-[70px] md:w-[130px] md:h-[100px]" />}
-          />
-          <TechBox
-            name={"ANDROID"}
-            logo={<IoLogoAndroid className="h-[70px] w-[70px] md:w-[130px] md:h-[100px]" />}
-          />
-          <TechBox
-            name={"APPLE"}
-            logo={<FaApple className="h-[70px] w-[70px] md:w-[130px] md:h-[100px]" />}
-          />
-          <TechBox
-            name={"EXPRESS"}
-            logo={<SiExpress className="h-[70px] w-[70px] md:w-[130px] md:h-[100px]" />}
-          />
-          <TechBox
-            name={"MONGODB"}
-            logo={<SiMongodb className="h-[70px] w-[70px] md:w-[130px] md:h-[100px]" />}
-          />
-          <TechBox
-            name={"AWS"}
-            logo={<FaAws className="h-[70px] w-[70px] md:w-[130px] md:h-[100px]" />}
-          />
-        </div>
-
+        
+        {techStack.map((tech, index) => (
+         <TechBox key={index} name={tech.name} logo={tech.logo} />
+         ))}
+         </div>
         <div className="w-[32%] h-[32%] mr-[8%] hidden md:block">
           <Lottie animationData={computer} />
         </div>
-      </div>
+      
+    </div>
     </div>
   );
 };
