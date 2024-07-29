@@ -4,11 +4,7 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
-.App {
-  font-size: 16px;
-  height: 100%;
-  width: 100%;
-}
+
 
 /* Ensure the header stays on top of other content */
 header {
@@ -19,3 +15,4 @@ header {
   text-decoration: underline;
   text-underline-offset: 4px;
 }
+

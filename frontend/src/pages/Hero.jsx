@@ -59,15 +59,17 @@ const Hero = () => {
   }, []); // Empty dependency array ensures effect runs only once
 
   return (
-    <div className="w-full h-full">
+    <div className="w-full h-auto">
 
       {showForm && <ContactForm onClose={closeForm} />}
+      
       {/* first-part */}
-      <div className="w-full h-[1000px] bg-cover flex justify-around items-center bg-blue-100">
+      {/* <div className="w-full h-[1000px]  md:flex justify-around items-center bg-blue-100">  */}
+      <div className="w-full h-[700px] md:h-[1000px] p-6 md:p-0 flex justify-center md:justify-around items-center bg-blue-100">
         {/* left content */}
-        <div className="flex flex-col gap-6 w-96 ml-72">
+        <div className="flex flex-col  gap-6 md:w-96 md:ml-72 text-center">
 
-          <p className="text-7xl font-serif ">{text}</p>
+          <p className=" text-5xl md:text-7xl font-serif ">{text}</p>
 
           <p className=" text-md text-[#424141]">
             Welcome to Lunaredge Private Limited, your partner in digital transformation. We specialize in delivering customized IT solutions that drive business growth and efficiency.we combine cutting-edge technology with deep industry expertise to meet your unique needs
@@ -77,12 +79,13 @@ const Hero = () => {
 
           {(<div className=" mt-10 md:mt-24">
             <button
-              className="bg-black rounded-full md:p-3 text-white md:text-md text-sm hover:bg-gray-600 transition-all duration-300"
+              className="bg-black rounded-full p-3 text-white md:text-md text-sm hover:bg-gray-600 transition-all duration-300"
               onClick={handleButton}
             >
               Get connect with us
             </button>
           </div>)}
+          
         </div>
 
         {/* right gif */}
@@ -92,11 +95,11 @@ const Hero = () => {
       </div>
 
       {/* second-part */}
-      <div className="w-full h-full">
+      <div className="w-full h-full">  
         <div className="w-full text-center pt-28">
           <div className="flex justify-between">
             <video
-              className="main-video resource-retina"
+              className="main-video resource-retina hidden md:block"
               src={robotreverse}
               type="video/mp4"
               width="408"
@@ -116,7 +119,7 @@ const Hero = () => {
               </p>
             </div>
             <video
-              className="main-video resource-retina"
+              className="main-video resource-retina hidden md:block"
               src={robot}
               type="video/mp4"
               width="408"
@@ -130,8 +133,8 @@ const Hero = () => {
         </div>
 
         {/* what we offers boxes */}
-        <div className="flex justify-center items-center">
-          <div className="grid grid-cols-1 grid-col-9 md:grid-cols-3 md:grid-rows-3 gap-4">
+         <div className="  md:flex justify-center items-center">
+          <div className="grid grid-cols-1 grid-col-9 md:grid-cols-3 md:grid-rows-3 gap-4 p-3 md:p-0">
             <Offer
               service={"Mobile App Development"}
               content={
@@ -188,76 +191,76 @@ const Hero = () => {
             />
           </div>
         </div>
-      </div>
+      </div> 
 
+       {/* third part   */}
 
-      <div className="flex-col">
-        <div>
-          <p className="text-center  text-5xl mt-[150px] text-">
+      <div className="flex-col p-5 md:p-0">
+      <p className=" font-medium text-center text-2xl md:text-5xl mt-14 md:mt-[150px]">
             Empowering Technologies We Use
           </p>
-        </div>
         <div>
-          <p className="text-xl text-center mt-11 text-[#424141]">
+          <p className=" text-sm md:text-xl text-center mt-7 mg:mt-11 text-[#424141]">
             Explore the cutting-edge technologies driving our solutions. From AI
             and cloud computing to cybersecurity,<br></br> we harness the latest tools to
             deliver exceptional results.
           </p>
         </div>
       </div>
-      <div className="flex justify-between items-center ">
-        <div className=" shadow-2xl rounded-xl border-black bg-[#195269] ml-[10%] mt-[8%] w-[30%] grid grid-rows-4 gap-5 grid-cols-3 p-6">
+
+      <div className="md:flex justify-between items-center p-4">
+        <div className=" shadow-2xl rounded-xl border-black bg-[#195269] md:ml-[10%] md:mt-[8%] md:w-[30%] grid grid-rows-4 gap-2 md:gap-5 grid-cols-3 p-3 md:p-6">
           <TechBox
             name={"HTML"}
-            logo={<IoLogoHtml5 className="w-[130px] h-[100px]" />}
+            logo={<IoLogoHtml5 className="h-[70px] w-[70px] md:w-[130px] md:h-[100px]" />}
           />
           <TechBox
             name={"CSS"}
-            logo={<FaCss3Alt className="w-[130px] h-[100px]" />}
+            logo={<FaCss3Alt className=" h-[70px] w-[70px] md:w-[130px] md:h-[100px]" />}
           />
           <TechBox
             name={"JS"}
-            logo={<RiJavascriptFill className="w-[130px] h-[100px]" />}
+            logo={<RiJavascriptFill className="h-[70px] w-[70px] md:w-[130px] md:h-[100px]" />}
           />
           <TechBox
             name={"JAVA"}
-            logo={<FaJava className="w-[130px] h-[100px]" />}
+            logo={<FaJava className="h-[70px] w-[70px] md:w-[130px] md:h-[100px]" />}
           />
           <TechBox
             name={"REACT"}
-            logo={<FaReact className="w-[130px] h-[100px]" />}
+            logo={<FaReact className="h-[70px] w-[70px] md:w-[130px] md:h-[100px]" />}
           />
           <TechBox
             name={"NODE JS"}
-            logo={<FaNodeJs className="w-[130px] h-[100px]" />}
+            logo={<FaNodeJs className="h-[70px] w-[70px] md:w-[130px] md:h-[100px]" />}
           />
           <TechBox
             name={"PYTHON"}
-            logo={<FaPython className="w-[130px] h-[100px]" />}
+            logo={<FaPython className="h-[70px] w-[70px] md:w-[130px] md:h-[100px]" />}
           />
           <TechBox
             name={"ANDROID"}
-            logo={<IoLogoAndroid className="w-[130px] h-[100px]" />}
+            logo={<IoLogoAndroid className="h-[70px] w-[70px] md:w-[130px] md:h-[100px]" />}
           />
           <TechBox
             name={"APPLE"}
-            logo={<FaApple className="w-[130px] h-[100px]" />}
+            logo={<FaApple className="h-[70px] w-[70px] md:w-[130px] md:h-[100px]" />}
           />
           <TechBox
             name={"EXPRESS"}
-            logo={<SiExpress className="w-[130px] h-[100px]" />}
+            logo={<SiExpress className="h-[70px] w-[70px] md:w-[130px] md:h-[100px]" />}
           />
           <TechBox
             name={"MONGODB"}
-            logo={<SiMongodb className="w-[130px] h-[100px]" />}
+            logo={<SiMongodb className="h-[70px] w-[70px] md:w-[130px] md:h-[100px]" />}
           />
           <TechBox
             name={"AWS"}
-            logo={<FaAws className="w-[130px] h-[100px]" />}
+            logo={<FaAws className="h-[70px] w-[70px] md:w-[130px] md:h-[100px]" />}
           />
         </div>
 
-        <div className="w-[32%] h-[32%] mr-[8%]">
+        <div className="w-[32%] h-[32%] mr-[8%] hidden md:block">
           <Lottie animationData={computer} />
         </div>
       </div>

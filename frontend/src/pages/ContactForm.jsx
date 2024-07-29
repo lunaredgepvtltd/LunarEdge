@@ -5,84 +5,98 @@ import { CiLocationOn } from "react-icons/ci";
 import TextInput from "../components/TextInput";
 import { useForm } from "react-hook-form";
 import { RxCross1 } from "react-icons/rx";
-import { apiRequest } from "../utils";
 
 const ContactForm = ({ onClose }) => {
   const {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm({ mode: "onChange" });
 
-  //   state for error message
-
-  const [errMsg, setErrMsg] = useState("");
+  // usestate for error message 
+  const [msg,setMsg] = useState("");
  
 
-  // handle handle button
+  // handle button click
   const handleClick = async (data) => {
-    console.log("inside handle click")
     try {
-    const res = await apiRequest({
-        url : '/register',
-        method : 'POST',
-        data : data,
-    })
-    onclose()
-    } 
-    catch (error){
-        setErrMsg('Error occured while registering!')
+      // making API request
+      const res = await fetch('http://localhost:3000/register', {
+        method: 'post',
+        headers: {
+          "content-type": "application/json"
+        },
+        body: JSON.stringify(data)
+      });
+
+      const resData = await res.json();
+   
+      if (resData.success) {
+       setMsg('Query Sent Successfully!')
+       reset()
+       setTimeout(() => {
+        // form getting auto-close 
+        onClose()
+       }, 2000);
+      } else {
+       setMsg('Error Occured.Sent Query again!')
+      }
+
+    } catch (error) {
+      setMsg('Error Occured.Sent Query again!')
     }
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex h-[600px] md:h-full justify-center items-center bg-gray-500 bg-opacity-50">
-      <div className="mt-6 max-w-6xl max-lg:max-w-3xl mx-auto bg-[#236385] rounded-lg pr-7 pt-6">
-        <div className="grid lg:grid-cols-2 items-center gap-14 sm:p-8 p-4 font-[sans-serif]">
-          {/* left side of form  */}
+    <div className="fixed top-10 md:top-0 m-2 inset-0 z-50 flex  h-auto md:h-full justify-center items-center bg-gray-500 bg-opacity-50 overflow-auto rounded-lg">
+      <div className=" mt-6 max-w-6xl max-lg:max-w-3xl mx-auto bg-[#236385] rounded-lg pr-7 pt-6">
+        <div className="grid lg:grid-cols-2 items-center gap-8 md:gap-14 p-3 md:p-4 font-[sans-serif]">
+          {/* left side of form */}
           <div>
+
+            <div className="hidden md:block">
             <h1 className="text-4xl font-bold text-white">Get in Touch</h1>
             <p className="text-sm text-gray-300 mt-4 leading-relaxed">
               Have some big idea or brand to develop and need help? Then reach
               out we'd love to hear about your project and provide help.
             </p>
+            </div>
 
-            <ul className="mt-12 space-y-8">
+            <ul className=" md:mt-12 space-y-3 md:space-y-8 mt-4">
               <li className="flex items-center">
                 <AiOutlineMail className="h-[16px] w-[16px] text-white" />
-                <a href="" className="text-white text-sm ml-4">
+                <a href="mailto:info@lunaredge.input" className="text-white text-sm ml-4">
                   info@lunaredge.input
                 </a>
               </li>
 
               <li className="flex items-center">
                 <FiPhoneCall className="h-[16px] w-[16px] text-white" />
-                <a href="" className="text-white text-sm ml-4">
+                <a href="tel:9829011076" className="text-white text-sm ml-4">
                   <p> 9829011076 (Sandeep Katariya)</p>
                 </a>
               </li>
 
               <li className="flex items-center">
                 <FiPhoneCall className="h-[16px] w-[16px] text-white" />
-                <a href="" className="text-white text-sm ml-4">
+                <a href="tel:7760701155" className="text-white text-sm ml-4">
                   <p> 7760701155 (Sanjeev Ola)</p>
                 </a>
               </li>
 
               <li className="flex items-center">
                 <CiLocationOn className="h-[20px] w-[20px] text-white" />
-                <a href="" className="text-white text-sm ml-4">
-                  address-203, Manglam, Signature Tower, Lal Kothi, Gandhi
-                  Nagar, jaipur, Rajasthan
+                <a href="#" className="text-white text-sm ml-4">
+                  address-203, Manglam, Signature Tower, Lal Kothi, Gandhi Nagar, jaipur, Rajasthan
                 </a>
               </li>
             </ul>
           </div>
 
-          {/* right side of form  */}
-
+          {/* right side of form */}
           <div className="relative">
-            {/* close icon  */}
+            {/* close icon */}
             <div
               className="absolute -right-9 -top-10 text-2xl font-black cursor-pointer"
               onClick={onClose}
@@ -91,13 +105,12 @@ const ContactForm = ({ onClose }) => {
             </div>
 
             {/* form container */}
-            <div className="bg-gray-100 p-6 rounded-lg">
+            <div className="bg-gray-100 p-3 md:p-6 rounded-lg">
               <form
-                className="mt-8 space-y-4"
+                className="mt-2 md:mt-8 space-y-4"
                 onSubmit={handleSubmit(handleClick)}
               >
-                {/* name  */}
-
+                {/* name */}
                 <TextInput
                   name="name"
                   placeholder="Your Name"
@@ -108,8 +121,7 @@ const ContactForm = ({ onClose }) => {
                   error={errors?.name ? errors?.name?.message : ""}
                 />
 
-                {/* Mobile Number  */}
-
+                {/* Mobile Number */}
                 <TextInput
                   name="phoneNumber"
                   placeholder="Contact Number"
@@ -121,13 +133,10 @@ const ContactForm = ({ onClose }) => {
                       message: "Invalid mobile number. Please enter 10 digits.",
                     },
                   })}
-                  error={
-                    errors?.mobileNumber ? errors?.mobileNumber?.message : ""
-                  }
+                  error={errors?.phoneNumber ? errors?.phoneNumber?.message : ""}
                 />
 
-                {/* email  */}
-
+                {/* email */}
                 <TextInput
                   name="email"
                   placeholder="email@example.com"
@@ -142,8 +151,7 @@ const ContactForm = ({ onClose }) => {
                   error={errors?.email ? errors?.email?.message : ""}
                 />
 
-                {/* subject  */}
-
+                {/* subject */}
                 <TextInput
                   name="subject"
                   placeholder="Subject"
@@ -152,25 +160,23 @@ const ContactForm = ({ onClose }) => {
                   error={errors?.subject ? errors?.subject?.message : ""}
                 />
 
-                {/* message content  */}
-
+                {/* message content */}
                 <textarea
                   placeholder="Message"
                   rows="6"
-                  className="w-full rounded-lg px-4 text-gray-800 text-sm pt-3 outline-[#06425f]"
+                  className="w-full rounded-lg px-2 md:px-4 text-gray-800 text-sm  outline-[#06425f]"
                   {...register("message")}
                 ></textarea>
 
-                {/* submit button  */}
+                {/* submit button */}
                 <button
                   type="submit"
-                  className="text-white bg-[#1c4f6e] hover:bg-[#2b5c77e2] tracking-wide rounded-lg text-sm px-4 py-3 flex items-center justify-center w-full !mt-6"
+                  className="text-white bg-[#1c4f6e] hover:bg-[#2b5c77e2] tracking-wide rounded-lg text-sm px-4 py-2 md:py-3 flex items-center justify-center w-full md:mt-6"
                 >
                   Send Message
                 </button>
 
-                {/* close button  */}
-
+                {/* close button */}
                 <div className="text-right">
                   <button
                     type="button"
@@ -181,17 +187,10 @@ const ContactForm = ({ onClose }) => {
                   </button>
                 </div>
 
-                {/* displaying error message  */}
-
-                {errMsg?.message && (
-                  <span
-                    className={`text-sm mt-0.5 ${
-                      errMsg?.status == "failed"
-                        ? "text-[#f64949fe]"
-                        : "text-[#2ba150fe]"
-                    }`}
-                  >
-                    {errMsg.message}
+                {/* displaying  message */}
+                {msg && (
+                  <span className={`text-sm mt-0.5 ${msg==='Error Occured.Sent Query again!' ? 'text-[#f64949fe]' : 'text-green-500'}`}>
+                    {msg}
                   </span>
                 )}
               </form>
