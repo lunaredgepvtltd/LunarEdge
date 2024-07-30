@@ -170,10 +170,10 @@ const Hero = () => {
 
           {(<div className=" mt-10 md:mt-24">
             <button
-              className="bg-transparent border border-white rounded-full p-3 md:p-4 text-white md:text-lg text-sm hover:shadow-white hover:shadow-md hover:scale-105 transition-all duration-200"
+              className=" border border-white rounded-full p-3 md:p-4 text-white md:text-lg text-sm  hover:shadow-white hover:shadow-sm hover:scale-95 transition-all duration-300 hero-button"
               onClick={handleButton}
             >
-              Get connect with us →
+              <span className="md:mx-4">Get connect with us →</span>
             </button>
           </div>)}
 

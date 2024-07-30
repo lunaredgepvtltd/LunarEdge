@@ -20,3 +20,9 @@ header {
 width: auto;
 }
 
+.hero-button:hover{
+  background-image: url('./assets/stars-galaxy.gif');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
