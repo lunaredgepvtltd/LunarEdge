@@ -25,6 +25,8 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import techUI from '../assets/TechboxUI.json'
 import moon from '../assets/moon.mp4'
+import layers from '../assets/layers.mp4'
+
 const Hero = () => {
 
 
@@ -120,7 +122,7 @@ const Hero = () => {
   const { user } = useSelector((state) => state.user);
 
   const [text, setText] = useState("");
-  const phrase = "LunarEdge";
+  const phrase = 'Empowering innovation, transforming ideas into reality';
 
   useEffect(() => {
     let currentIndex = 0;
@@ -131,7 +133,7 @@ const Hero = () => {
       } else {
         clearInterval(interval);
       }
-    }, 200); // Adjust typing speed here (200ms per character)
+    }, 100); // Adjust typing speed here (200ms per character)
 
     return () => clearInterval(interval);
   }, []); // Empty dependency array ensures effect runs only once
@@ -144,7 +146,7 @@ const Hero = () => {
 
       {/* first-part */}
       {/* <div className="w-full h-[1000px]  md:flex justify-around items-center bg-blue-100">  */}
-      <div className="w-full h-[700px] md:h-[1000px] p-6 md:p-0 flex justify-start  items-center relative overflow-hidden">
+      <div className="w-full h-[700px] md:h-[1000px] p-6 md:p-0 flex justify-center  items-center relative overflow-hidden">
         <video
           autoPlay
           loop
@@ -152,23 +154,23 @@ const Hero = () => {
           className="absolute inset-0 w-full h-full object-cover "
           style={{ zIndex: -1 }} // To place it behind other content
         >
-          <source src={moon} type="video/webm" />
+          <source src={layers} type="video/webm" />
           Your browser does not support the video tag.
         </video>
         {/* left content */}
-        <div className="flex flex-col  gap-6 md:w-96 md:ml-72 ">
+        <div className="flex flex-col  gap-6 md:w-[800px] ">
 
           <p className=" text-5xl md:text-7xl font-serif text-white">{text}</p>
 
           <p className=" text-md text-white">
-            Welcome to Lunaredge Private Limited, your partner in digital transformation. We specialize in delivering customized IT solutions that drive business growth and efficiency.
+            
           </p>
 
           {/* displaying button if user doesn't exist  */}
 
           {(<div className=" mt-10 md:mt-24">
             <button
-              className="bg-[#50498f] rounded-full p-3 md:p-4 text-white md:text-lg text-sm hover:bg-gray-600 hover:scale-105 transition-all duration-200"
+              className="bg-transparent border border-white rounded-full p-3 md:p-4 text-white md:text-lg text-sm hover:shadow-white hover:shadow-md hover:scale-105 transition-all duration-200"
               onClick={handleButton}
             >
               Get connect with us →
@@ -180,40 +182,64 @@ const Hero = () => {
 
       {/* second-part */}
       <div className="w-full h-full">
-        <div className="w-full text-center pt-28">
-          <div className="flex justify-between">
-            <video
-              className="main-video resource-retina hidden md:block"
-              src={robotreverse}
-              type="video/mp4"
-              width="408"
-              height="408"
-              loop={true}
-              autoPlay={true}
-              muted={true}
-              playsInline={true}
-            ></video>
-            <div className="flex flex-col gap-5 p-8">
-              <h1 className="text-5xl font-medium">Services We Offer</h1>
-              <p className="text-lg text-slate-500 my-3 py-2">
-                LunarEdge is the perfect choice for any buisness looking to
-                digitize its operations. We offers a wide range of on time{" "}
-                <br></br> and cost effective services that will help solve your
-                complex problems with IT solutions.
-              </p>
+        <div className="w-full text-center pt-16 md:pt-28">
+          {isSmallDevice ?
+            <div className="flex flex-col gap-4 justify-center items-center">
+              <div className="flex flex-col gap-1 p-4">
+                <h1 className="text-2xl md:text-5xl font-medium">Services We Offer</h1>
+                <p className="text-sm md:text-lg text-slate-500 my-3 py-2">
+                  LunarEdge is the perfect choice for any buisness looking to
+                  digitize its operations. We offers a wide range of on time{" "}
+                  <br></br> and cost effective services that will help solve your
+                  complex problems with IT solutions.
+                </p>
+              </div>
+              <video
+                className="main-video resource-retina "
+                src={robotreverse}
+                type="video/mp4"
+                width="280"
+                height="280"
+                loop={true}
+                autoPlay={true}
+                muted={true}
+                playsInline={true}
+              ></video>
             </div>
-            <video
-              className="main-video resource-retina hidden md:block"
-              src={robot}
-              type="video/mp4"
-              width="408"
-              height="408"
-              loop={true}
-              autoPlay={true}
-              muted={true}
-              playsInline={true}
-            ></video>
-          </div>
+            :
+            <div className="flex justify-between">
+              <video
+                className="main-video resource-retina hidden md:block"
+                src={robotreverse}
+                type="video/mp4"
+                width="408"
+                height="408"
+                loop={true}
+                autoPlay={true}
+                muted={true}
+                playsInline={true}
+              ></video>
+              <div className="flex flex-col gap-5 p-8">
+                <h1 className="text-5xl font-medium">Services We Offer</h1>
+                <p className="text-lg text-slate-500 my-3 py-2">
+                  LunarEdge is the perfect choice for any buisness looking to
+                  digitize its operations. We offers a wide range of on time{" "}
+                  <br></br> and cost effective services that will help solve your
+                  complex problems with IT solutions.
+                </p>
+              </div>
+              <video
+                className="main-video resource-retina hidden md:block"
+                src={robot}
+                type="video/mp4"
+                width="408"
+                height="408"
+                loop={true}
+                autoPlay={true}
+                muted={true}
+                playsInline={true}
+              ></video>
+            </div>}
         </div>
 
         {/* what we offers boxes */}

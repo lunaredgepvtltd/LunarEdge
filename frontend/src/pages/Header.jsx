@@ -65,8 +65,8 @@ const Header = () => {
 
   return (
     <div
-      className={`fixed w-full top-0 left-0 z-50 h-24 md:h-32 bg-[#080925] transition-all duration-300 ${
-        scrollNav ? "bg-opacity-70 shadow-2xl" : "bg-opacity-100"
+      className={`fixed shadow-white shadow-sm w-full top-0 left-0 z-50 h-24 md:h-32 bg-[#080925] transition-all duration-300 ${
+        scrollNav ? "bg-opacity-70" : "bg-opacity-100"
       }`}
     >
       <div className="container mx-auto flex justify-between items-center h-full px-4 md:px-0">
@@ -143,7 +143,7 @@ const Header = () => {
           {/* Contact Us */}
           <li>
             <button
-              className="bg-[#50498f] rounded-md p-3 text-white text-md hover:bg-gray-600 transition-all duration-300"
+              className="bg-[#50498f] rounded-md p-3 text-white text-md hover:bg-transparent hover:border hover:border-white hover:text-white hover:shadow-md hover:shadow-white   transition-all duration-500"
               onClick={handleButton}
             >
               Contact Us
