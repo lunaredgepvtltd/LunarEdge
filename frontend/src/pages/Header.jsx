@@ -65,7 +65,7 @@ const Header = () => {
 
   return (
     <div
-      className={`fixed w-full top-0 left-0 z-50 h-24 md:h-32 bg-[#0e353b] transition-all duration-300 ${
+      className={`fixed w-full top-0 left-0 z-50 h-24 md:h-32 bg-[#080925] transition-all duration-300 ${
         scrollNav ? "bg-opacity-70 shadow-2xl" : "bg-opacity-100"
       }`}
     >
@@ -143,7 +143,7 @@ const Header = () => {
           {/* Contact Us */}
           <li>
             <button
-              className="bg-black rounded-md p-3 text-white text-md hover:bg-gray-600 transition-all duration-300"
+              className="bg-[#50498f] rounded-md p-3 text-white text-md hover:bg-gray-600 transition-all duration-300"
               onClick={handleButton}
             >
               Contact Us

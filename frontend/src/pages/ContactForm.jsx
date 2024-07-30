@@ -15,8 +15,8 @@ const ContactForm = ({ onClose }) => {
   } = useForm({ mode: "onChange" });
 
   // usestate for error message 
-  const [msg,setMsg] = useState("");
- 
+  const [msg, setMsg] = useState("");
+
 
   // handle button click
   const handleClick = async (data) => {
@@ -31,16 +31,12 @@ const ContactForm = ({ onClose }) => {
       });
 
       const resData = await res.json();
-   
+
       if (resData.success) {
-       setMsg('Query Sent Successfully!')
-       reset()
-       setTimeout(() => {
-        // form getting auto-close 
-        onClose()
-       }, 2000);
+        setMsg('Query Sent Successfully!')
+        reset()
       } else {
-       setMsg('Error Occured.Sent Query again!')
+        setMsg('Error Occured.Sent Query again!')
       }
 
     } catch (error) {
@@ -56,11 +52,11 @@ const ContactForm = ({ onClose }) => {
           <div>
 
             <div className="hidden md:block">
-            <h1 className="text-4xl font-bold text-white">Get in Touch</h1>
-            <p className="text-sm text-gray-300 mt-4 leading-relaxed">
-              Have some big idea or brand to develop and need help? Then reach
-              out we'd love to hear about your project and provide help.
-            </p>
+              <h1 className="text-4xl font-bold text-white">Get in Touch</h1>
+              <p className="text-sm text-gray-300 mt-4 leading-relaxed">
+                Have some big idea or brand to develop and need help? Then reach
+                out we'd love to hear about your project and provide help.
+              </p>
             </div>
 
             <ul className=" md:mt-12 space-y-3 md:space-y-8 mt-4">
@@ -117,6 +113,13 @@ const ContactForm = ({ onClose }) => {
                   type="text"
                   register={register("name", {
                     required: "name is required",
+                    validate: {
+                      maxLetters: value => {
+                        const letterCount = value.trim().length;
+                        return letterCount <= 50 || "Subject cannot exceed 50 letters";
+                      },
+                    },
+                    
                   })}
                   error={errors?.name ? errors?.name?.message : ""}
                 />
@@ -156,7 +159,14 @@ const ContactForm = ({ onClose }) => {
                   name="subject"
                   placeholder="Subject"
                   type="text"
-                  register={register("subject")}
+                  register={register("subject", {
+                    validate: {
+                      maxLetters: value => {
+                        const letterCount = value.trim().length;
+                        return letterCount <= 75 || "Subject cannot exceed 25 letters";
+                      },
+                    },
+                  })}
                   error={errors?.subject ? errors?.subject?.message : ""}
                 />
 
@@ -164,9 +174,18 @@ const ContactForm = ({ onClose }) => {
                 <textarea
                   placeholder="Message"
                   rows="6"
-                  className="w-full rounded-lg px-2 md:px-4 text-gray-800 text-sm  outline-[#06425f]"
-                  {...register("message")}
+                  className="w-full rounded-lg px-2 md:px-4 text-gray-800 text-sm outline-[#06425f]"
+                  {...register("message", {
+                    validate: {
+                      maxLetters: value => {
+                        const letterCount = value.trim().length;
+                        return letterCount <= 1000 || "Message cannot exceed 1000 letters";
+                      },
+                    },
+                  })}
                 ></textarea>
+                {errors.message && <span style={{ color: 'red' }}>{errors.message.message}</span>}
+
 
                 {/* submit button */}
                 <button
@@ -189,7 +208,7 @@ const ContactForm = ({ onClose }) => {
 
                 {/* displaying  message */}
                 {msg && (
-                  <span className={`text-sm mt-0.5 ${msg==='Error Occured.Sent Query again!' ? 'text-[#f64949fe]' : 'text-green-500'}`}>
+                  <span className={`text-sm mt-0.5 ${msg === 'Error Occured.Sent Query again!' ? 'text-[#f64949fe]' : 'text-green-500'}`}>
                     {msg}
                   </span>
                 )}
