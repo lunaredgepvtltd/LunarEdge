@@ -23,7 +23,7 @@ import Slider from 'react-slick';
 import { useMediaQuery } from 'react-responsive';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-
+import techUI from '../assets/TechboxUI.json'
 const Hero = () => {
 
   
@@ -37,7 +37,9 @@ const Hero = () => {
     speen : 500,
     slidesToShow : 1,
     slidesToScroll : 1,
-    arrows : false
+    arrows : false,
+    autoplay: true,
+    autoplaySpeed: 4000
    }
 
   // offers Object 
@@ -81,7 +83,6 @@ const Hero = () => {
   ];
 
   // technical skill stack 
-
 
 const techStack = [
   { name: "HTML", logo: <IoLogoHtml5 className="h-[70px] w-[70px] md:w-[130px] md:h-[100px]" /> },
@@ -156,7 +157,7 @@ const techStack = [
 
           {(<div className=" mt-10 md:mt-24">
             <button
-              className="bg-black rounded-full p-3 text-white md:text-md text-sm hover:bg-gray-600 transition-all duration-300"
+              className="bg-black rounded-full p-3 text-white md:text-md text-sm hover:bg-gray-600 hover:scale-105 transition-all duration-200"
               onClick={handleButton}
             >
               Get connect with us
@@ -254,14 +255,14 @@ const techStack = [
 
       {/* rendering technical skill-box  */}
       <div className="md:flex justify-between items-center p-4">
-        <div className=" shadow-2xl rounded-xl border-black bg-[#195269] md:ml-[10%] md:mt-[8%] md:w-[30%] grid grid-rows-4 gap-2 md:gap-5 grid-cols-3 p-3 md:p-6">
+        <div className=" shadow-2xl rounded-xl border-black bg-[#195269] md:ml-[10%] md:mt-[8%] md:w-[30%] grid grid-rows-4 gap-2 md:gap-5 grid-cols-3 p-3 md:p-6 ">
         
         {techStack.map((tech, index) => (
          <TechBox key={index} name={tech.name} logo={tech.logo} />
          ))}
          </div>
         <div className="w-[32%] h-[32%] mr-[8%] hidden md:block">
-          <Lottie animationData={computer} />
+          <Lottie animationData={techUI} />
         </div>
       
     </div>

@@ -24,7 +24,7 @@ export const Footer = () => {
                 Call us
               </span>
               <a
-                href="#"
+                href="tel:0141-4512611"
                 className="block text-2xl font-medium text-gray-900 hover:opacity-75 sm:text-3xl dark:text-white"
               >
                 0141-4512611
@@ -35,19 +35,21 @@ export const Footer = () => {
               <br />
               <li className="flex gap-2 items-center">
                 <div className="mb-[2px]">
-                  <BsWhatsapp />
+                  <BsWhatsapp className="text-green-600" />
                 </div>
-                <p>
-                  +91-9829011076<span className="font-semibold "> [Sandeep Katariya]</span>
-                </p>
+                <p className="text-[#2f63b1] hover:underline underline-offset-2 transition-all duration-300">
+                  <a href="https://wa.me/919829011076" target="_blank">+91-9829011076</a></p>
+                  <span className="font-semibold "> [Sandeep Katariya]</span>
+                
               </li>
               <li className="flex gap-2 items-center">
                 <div>
-                  <BsWhatsapp />
+                  <BsWhatsapp className="text-green-600" />
                 </div>
-                <p>
-                  +91-9829011076<span className="font-semibold"> [Sanjeev Ola]</span>
-                </p>
+                <p className="text-[#2f63b1] hover:underline underline-offset-2 transition-all duration-300">
+                <a href="https://wa.me/917760701155" target="_blank">+91-7760701155</a></p>
+                <span className="font-semibold"> [Sanjeev Ola]</span>
+                
               </li>
             </ul>
           </div>
