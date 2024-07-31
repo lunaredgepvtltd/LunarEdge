@@ -1,40 +1,27 @@
-import './App.css';
-import { Footer } from './pages/Footer';
-import Header from './pages/Header'; 
-import Hero from './pages/Hero';
-
+import "./App.css";
+import { Footer } from "./pages/Footer";
+import Header from "./pages/Header";
+import Hero from "./pages/Hero";
+import PreLoader from "./PRELOADER/preLoader.js";
 
 function App() {
-
   return (
-    <div className="App">
- 
-      {/* Header */}
-      <Header/>
+    <>
+      <PreLoader/>
+      <div className="App">
+        
+        {/* Header */}
+        <Header />
 
-      {/* Hero Section */}
-      <Hero/>
+        {/* Hero Section */}
+        <Hero />
 
-      {/* footer */}
-   
-       <Footer/>
-    </div>
+        {/* footer */}
+
+        <Footer />
+      </div>
+    </>
   );
 }
 
 export default App;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

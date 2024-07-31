@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import Lottie from "lottie-react";
-import computer from "../assets/computer.json";
 import Offer from "../components/Offer";
 import robot from "../assets/robot.mp4";
 import robotreverse from "../assets/robotReverse.mp4";
@@ -166,8 +165,11 @@ const Hero = () => {
             
           </p>
 
-          {/* displaying button if user doesn't exist  */}
-
+          
+          \{/* displaying button if user doesn't exist  */}/85210-*-9+6
+          3+
+          {/* -+  N B;G7*- */}
+          .3*9637',M 
           {(<div className=" mt-10 md:mt-24">
             <button
               className=" border border-white rounded-full p-3 md:p-4 text-white md:text-lg text-sm  hover:shadow-white hover:shadow-sm hover:scale-95 transition-all duration-300 hero-button"
