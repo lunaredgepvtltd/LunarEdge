@@ -1,10 +1,12 @@
 import React from "react";
 import MyImage from "../assets/MyImage.gif";
 import { BsWhatsapp } from "react-icons/bs";
-
+import { useMediaQuery } from 'react-responsive';
 export const Footer = () => {
+  const isSmallDevice = useMediaQuery({ maxWidth: 767 })
+
   return (
-    <footer className="bg-[#bfbdbd] bg-opacity-70 lg:grid lg:grid-cols-5 dark:bg-gray-900 mt-40  ">
+    <footer data-aos={isSmallDevice ? undefined : "zoom-out"} className="bg-[#bfbdbd] bg-opacity-70 lg:grid lg:grid-cols-5 dark:bg-gray-900 mt-40  ">
       <div className=" hidden relative md:block h-32 lg:col-span-2 lg:h-full">
         <img
           className="z-5 absolute inset-0 h-[150px] md:h-full w-full object-cover"

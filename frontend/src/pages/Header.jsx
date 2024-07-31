@@ -7,6 +7,9 @@ import LunaredgeLogo from '../assets/Lunaredge.png'
 
 
 const Header = () => {
+
+  
+
   const [scrollNav, setScrollNav] = useState(false);
   const [showForm, setShowForm] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -63,15 +66,18 @@ const Header = () => {
     };
   }, []);
 
+
+
+
   return (
     <div
-      className={`fixed shadow-white shadow-sm w-full top-0 left-0 z-50 h-24 md:h-32 bg-[#080925] transition-all duration-300 ${
+      className={`fixed shadow-[#585aa1] shadow-md w-full top-0 left-0 z-50 h-24 md:h-32 bg-[#080925] transition-all duration-300 ${
         scrollNav ? "bg-opacity-70" : "bg-opacity-100"
       }`}
     >
       <div className="container mx-auto flex justify-between items-center h-full px-4 md:px-0">
         {/* Logo */}
-        <div className="mt-4">
+        <div  className="mt-4">
           <img src={logo} alt="Company Logo" className="w-[109px] h-auto md:h-[192px] md:w-[178px]" />
         </div>
 
@@ -103,7 +109,7 @@ const Header = () => {
           </li>
 
           {/* Services */}
-          <li className="h-full relative hover:bg-[#082847] group flex items-center p-3 cursor-pointer transition-all duration-300">
+          <li  className="h-full relative hover:bg-[#082847] group flex items-center p-3 cursor-pointer transition-all duration-300">
             <a href="/services" className="text-xl text-white group-hover:text-white">Services</a>
             <span className="text-lg text-white group-hover:text-white mt-1">
               <IoIosArrowDown />
@@ -142,7 +148,7 @@ const Header = () => {
 
           {/* Contact Us */}
           <li>
-            <button
+            <button 
               className="bg-[#50498f] rounded-md p-3 text-white text-md hover:bg-transparent hover:border hover:border-white hover:text-white hover:shadow-md hover:shadow-white   transition-all duration-500"
               onClick={handleButton}
             >

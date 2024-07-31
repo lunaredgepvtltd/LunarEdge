@@ -25,6 +25,7 @@ import 'slick-carousel/slick/slick-theme.css';
 import techUI from '../assets/TechboxUI.json'
 import moon from '../assets/moon.mp4'
 import layers from '../assets/layers.mp4'
+import maleImg from '../assets/male.png'
 
 const Hero = () => {
 
@@ -132,10 +133,10 @@ const Hero = () => {
       } else {
         clearInterval(interval);
       }
-    }, 100); // Adjust typing speed here (200ms per character)
+    }, 50);
 
     return () => clearInterval(interval);
-  }, []); // Empty dependency array ensures effect runs only once
+  }, []);
 
   return (
 
@@ -162,17 +163,14 @@ const Hero = () => {
           <p className=" text-5xl md:text-7xl font-serif text-white">{text}</p>
 
           <p className=" text-md text-white">
-            
+
           </p>
 
-          
-          \{/* displaying button if user doesn't exist  */}/85210-*-9+6
-          3+
-          {/* -+  N B;G7*- */}
-          .3*9637',M 
           {(<div className=" mt-10 md:mt-24">
             <button
-              className=" border border-white rounded-full p-3 md:p-4 text-white md:text-lg text-sm  hover:shadow-white hover:shadow-sm hover:scale-95 transition-all duration-300 hero-button"
+              data-aos="zoom-out"
+
+              className=" border border-white bg-white bg-opacity-30 rounded-full p-3 md:p-4 text-white md:text-lg text-sm  hover:shadow-white hover:shadow-sm hover:scale-95 transition-all duration-300 hero-button"
               onClick={handleButton}
             >
               <span className="md:mx-4">Get connect with us →</span>
@@ -197,6 +195,7 @@ const Hero = () => {
                 </p>
               </div>
               <video
+
                 className="main-video resource-retina "
                 src={robotreverse}
                 type="video/mp4"
@@ -209,19 +208,26 @@ const Hero = () => {
               ></video>
             </div>
             :
+            // for larger-devices 
             <div className="flex justify-between">
-              <video
-                className="main-video resource-retina hidden md:block"
-                src={robotreverse}
-                type="video/mp4"
-                width="408"
-                height="408"
-                loop={true}
-                autoPlay={true}
-                muted={true}
-                playsInline={true}
-              ></video>
-              <div className="flex flex-col gap-5 p-8">
+              {/* left-robot  */}
+              <div data-aos="slide-right"
+                data-aos-duration="500"
+                data-aos-delay="300" >
+                <video
+                  className="main-video resource-retina hidden md:block"
+                  src={robotreverse}
+                  type="video/mp4"
+                  width="408"
+                  height="408"
+                  loop={true}
+                  autoPlay={true}
+                  muted={true}
+                  playsInline={true}
+                ></video>
+              </div>
+              {/* center-content  */}
+              <div data-aos="zoom-out" data-aos-duration="300" className="flex flex-col gap-5 p-8">
                 <h1 className="text-5xl font-medium">Services We Offer</h1>
                 <p className="text-lg text-slate-500 my-3 py-2">
                   LunarEdge is the perfect choice for any buisness looking to
@@ -230,17 +236,24 @@ const Hero = () => {
                   complex problems with IT solutions.
                 </p>
               </div>
-              <video
-                className="main-video resource-retina hidden md:block"
-                src={robot}
-                type="video/mp4"
-                width="408"
-                height="408"
-                loop={true}
-                autoPlay={true}
-                muted={true}
-                playsInline={true}
-              ></video>
+              {/* center-content-ends  */}
+
+              {/* right-robot  */}
+              <div data-aos="slide-left"
+                data-aos-duration="500"
+                data-aos-delay="300">
+                <video
+                  className="main-video resource-retina hidden md:block"
+                  src={robot}
+                  type="video/mp4"
+                  width="408"
+                  height="408"
+                  loop={true}
+                  autoPlay={true}
+                  muted={true}
+                  playsInline={true}
+                ></video>
+              </div>
             </div>}
         </div>
 
@@ -274,12 +287,12 @@ const Hero = () => {
 
 
       {/* technical-skill content  */}
-      <div className="flex-col p-5 md:p-0">
-        <p className=" font-medium text-center text-2xl md:text-5xl mt-14 md:mt-[150px]">
+      <div  data-aos-duration="300" className="flex-col p-5 md:p-1  bg-[#6a96e7] border border-none mt-24 md:mt-36">
+        <p className=" font-medium md:font-semibold text-center text-2xl md:text-5xl mt-14 md:mt-[100px]">
           Empowering Technologies We Use
         </p>
         <div>
-          <p className=" text-sm md:text-xl text-center mt-7 mg:mt-11 text-[#424141]">
+          <p className=" text-sm md:text-xl text-center mt-7 mg:mt-11 text-[#3a3939] md:pb-10">
             Explore the cutting-edge technologies driving our solutions. From AI
             and cloud computing to cybersecurity,<br></br> we harness the latest tools to
             deliver exceptional results.
@@ -288,15 +301,25 @@ const Hero = () => {
       </div>
 
       {/* rendering technical skill-box  */}
-      <div className="md:flex justify-between items-center p-4">
-        <div className=" shadow-2xl rounded-xl border-black bg-[#195269] md:ml-[10%] md:mt-[8%] md:w-[30%] grid grid-rows-4 gap-2 md:gap-5 grid-cols-3 p-3 md:p-6 ">
+      <div className="md:flex justify-around
+       items-center p-4 md:pb-40 border border-none w-auto" style={{
+        backgroundImage: `url(${maleImg})`, // Correct syntax
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'cover'
+      }}>
+
+        {/* left side  */}
+        <div data-aos={isSmallDevice ? undefined : "fade-right"} data-aos-delay="500"className="shadow-2xl rounded-xl border-black bg-gray-800/50 md:ml-[10%] md:mt-[8%] md:w-[30%] grid grid-rows-4 gap-2 md:gap-5 grid-cols-3 p-3 md:p-6 backdrop-blur-xl" >
 
           {techStack.map((tech, index) => (
             <TechBox key={index} name={tech.name} logo={tech.logo} />
           ))}
         </div>
-        <div className="w-[32%] h-[32%] mr-[8%] hidden md:block">
-          <Lottie animationData={techUI} />
+
+        {/* right-side  */}
+
+        <div  data-aos={isSmallDevice ? undefined : "fade-left"} className="hidden md:block">
+          <p className="text-7xl bebas-neue-regular space-x-2 drop-shadow-md"><span className="text-[#6a96e7]">Transforming Business</span>{<br></br>} <span className="text-white">With Advance Technology</span></p>
         </div>
 
       </div>
