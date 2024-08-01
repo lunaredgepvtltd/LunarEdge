@@ -46,8 +46,8 @@ const ContactForm = ({ onClose }) => {
 
   return (
     <div className="fixed top-10 md:top-0 m-2 inset-0 z-50 flex  h-auto md:h-full justify-center items-center bg-gray-500 bg-opacity-50 overflow-auto rounded-lg">
-      <div className=" mt-6 max-w-6xl max-lg:max-w-3xl mx-auto bg-[#236385] rounded-lg pr-7 pt-6">
-        <div className="grid lg:grid-cols-2 items-center gap-8 md:gap-14 p-3 md:p-4 font-[sans-serif]">
+      <div className=" mt-6 max-w-6xl max-lg:max-w-3xl mx-auto bg-[#585aa1] rounded-lg pr-7 pt-6">
+        <div className="grid lg:grid-cols-2 items-center gap-8 md:gap-14 p-3 md:p-8 font-[sans-serif]">
           {/* left side of form */}
           <div>
 
@@ -190,7 +190,7 @@ const ContactForm = ({ onClose }) => {
                 {/* submit button */}
                 <button
                   type="submit"
-                  className="text-white bg-[#1c4f6e] hover:bg-[#2b5c77e2] tracking-wide rounded-lg text-sm px-4 py-2 md:py-3 flex items-center justify-center w-full md:mt-6"
+                  className="text-white bg-[#585aa1] hover:bg-[#2b5c77e2] tracking-wide rounded-lg text-sm px-4 py-2 md:py-3 flex items-center justify-center w-full md:mt-6"
                 >
                   Send Message
                 </button>
