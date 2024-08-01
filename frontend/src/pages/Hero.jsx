@@ -122,7 +122,7 @@ const Hero = () => {
   const { user } = useSelector((state) => state.user);
 
   const [text, setText] = useState("");
-  const phrase = 'Empowering innovation, transforming ideas into reality';
+  const phrase = 'Empowering Innovation, Transforming Ideas into Reality';
 
   useEffect(() => {
     let currentIndex = 0;
@@ -170,7 +170,7 @@ const Hero = () => {
             <button
               data-aos="zoom-out"
 
-              className=" border border-white bg-white bg-opacity-30 rounded-full p-3 md:p-4 text-white md:text-lg text-sm  hover:shadow-white hover:shadow-sm hover:scale-95 transition-all duration-300 hero-button"
+              className=" border border-white bg-purple-400 bg-opacity-30 rounded-full p-3 md:p-4 text-white md:text-lg text-sm  hover:shadow-white hover:shadow-sm hover:scale-95 transition-all duration-300 hero-button"
               onClick={handleButton}
             >
               <span className="md:mx-4">Get connect with us →</span>

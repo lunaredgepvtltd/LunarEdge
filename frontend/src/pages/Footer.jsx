@@ -6,7 +6,7 @@ export const Footer = () => {
   const isSmallDevice = useMediaQuery({ maxWidth: 767 })
 
   return (
-    <footer data-aos={isSmallDevice ? undefined : "zoom-out"} className="bg-[#bfbdbd] bg-opacity-70 lg:grid lg:grid-cols-5 dark:bg-gray-900 mt-40  ">
+    <footer data-aos={isSmallDevice ? undefined : "zoom-out"} className="bg-[#bfbdbd] bg-opacity-70 lg:grid lg:grid-cols-5 dark:bg-gray-900 md:mt-0  ">
       <div className=" hidden relative md:block h-32 lg:col-span-2 lg:h-full">
         <img
           className="z-5 absolute inset-0 h-[150px] md:h-full w-full object-cover"
