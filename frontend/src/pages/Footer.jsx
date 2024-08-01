@@ -6,7 +6,7 @@ export const Footer = () => {
   const isSmallDevice = useMediaQuery({ maxWidth: 767 })
 
   return (
-    <footer data-aos={isSmallDevice ? undefined : "zoom-out"} className="bg-[#bfbdbd] bg-opacity-70 lg:grid lg:grid-cols-5 dark:bg-gray-900 md:mt-0  ">
+    <footer data-aos={isSmallDevice ? undefined : "zoom-out"} className="`bg-[#bfbdbd] bg-opacity-70 lg:grid lg:grid-cols-5 dark:bg-gray-900 md:mt-0  ">
       <div className=" hidden relative md:block h-32 lg:col-span-2 lg:h-full">
         <img
           className="z-5 absolute inset-0 h-[150px] md:h-full w-full object-cover"
@@ -157,7 +157,7 @@ export const Footer = () => {
             </ul>
 
             <p className=" mt-3 md:mt-8 text-xs text-gray-500 sm:mt-0 dark:text-gray-400">
-              &copy; 2024. LunarEdge IT Services Ltd. All rights reserved.
+              &copy; 2024. LunarEdge IT Services Pvt. Ltd. All rights reserved.
             </p>
           </div>
         </div>

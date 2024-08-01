@@ -132,8 +132,8 @@ const ContactForm = ({ onClose }) => {
                   register={register("phoneNumber", {
                     required: "Mobile number is required",
                     pattern: {
-                      value: /^\d{10}$/,
-                      message: "Invalid mobile number. Please enter 10 digits.",
+                      value: "[0-9]{5}[-][0-9]{7}[-][0-9]{1}",
+                      message: "Enter a valid number",
                     },
                   })}
                   error={errors?.phoneNumber ? errors?.phoneNumber?.message : ""}
@@ -147,7 +147,7 @@ const ContactForm = ({ onClose }) => {
                   register={register("email", {
                     required: "email is required",
                     pattern: {
-                      value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                      value: /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
                       message: "Invalid email address. Please enter a valid email.",
                     }
                   })}
