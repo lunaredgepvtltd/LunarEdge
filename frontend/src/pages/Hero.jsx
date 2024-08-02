@@ -122,7 +122,7 @@ const Hero = () => {
   const { user } = useSelector((state) => state.user);
 
   const [text, setText] = useState("");
-  const phrase = 'Empowering Innovation, Transforming Ideas into Reality';
+  const phrase = 'Empowering Innovation, Transforming Ideas into Reality.';
 
   useEffect(() => {
     let currentIndex = 0;
