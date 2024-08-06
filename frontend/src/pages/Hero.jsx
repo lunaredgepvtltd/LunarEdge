@@ -26,6 +26,10 @@ import techUI from '../assets/TechboxUI.json'
 import moon from '../assets/moon.mp4'
 import layers from '../assets/layers.mp4'
 import maleImg from '../assets/male.png'
+import service_box from '../assets/service_box.gif'
+import service_boxr from '../assets/service_boxr.gif'
+
+
 
 const Hero = () => {
 
@@ -209,23 +213,12 @@ const Hero = () => {
             </div>
             :
             // for larger-devices 
-            <div className="flex justify-between">
-              {/* left-robot  */}
-              <div data-aos="slide-right"
-                data-aos-duration="500"
-                data-aos-delay="300" >
-                <video
-                  className="main-video resource-retina hidden md:block"
-                  src={robotreverse}
-                  type="video/mp4"
-                  width="408"
-                  height="408"
-                  loop={true}
-                  autoPlay={true}
-                  muted={true}
-                  playsInline={true}
-                ></video>
+            <div className="flex justify-between px-3">
+              {/* left-computer-gif  */}
+              <div>
+              <img src={service_box} className="h-80 w-90"/>
               </div>
+
               {/* center-content  */}
               <div data-aos="zoom-out" data-aos-duration="300" className="flex flex-col gap-5 p-8">
                 <h1 className="text-5xl font-medium">Services We Offer</h1>
@@ -238,21 +231,10 @@ const Hero = () => {
               </div>
               {/* center-content-ends  */}
 
-              {/* right-robot  */}
-              <div data-aos="slide-left"
-                data-aos-duration="500"
-                data-aos-delay="300">
-                <video
-                  className="main-video resource-retina hidden md:block"
-                  src={robot}
-                  type="video/mp4"
-                  width="408"
-                  height="408"
-                  loop={true}
-                  autoPlay={true}
-                  muted={true}
-                  playsInline={true}
-                ></video>
+              {/* right-computer-gif  */}
+              <div>
+               
+                <img src={service_boxr} className="h-80 w-90"/>
               </div>
             </div>}
         </div>
