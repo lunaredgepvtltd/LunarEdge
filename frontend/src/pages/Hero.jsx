@@ -48,7 +48,7 @@ const Hero = () => {
   // offers Object 
   const offers = [
     {
-      service: "Mobile App Development",
+      service: " App Development",
       content: "Creating intuitive mobile applications for iOS and Android platforms that deliver seamless user experiences."
     },
     {
