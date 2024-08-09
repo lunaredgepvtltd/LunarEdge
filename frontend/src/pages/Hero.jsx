@@ -198,18 +198,10 @@ const Hero = () => {
                   complex problems with IT solutions.
                 </p>
               </div>
-              <video
+              <div>
+              <img src={service_box} className="md:hidden block h-70 w-80"/>
+              </div>
 
-                className="main-video resource-retina "
-                src={robotreverse}
-                type="video/mp4"
-                width="280"
-                height="280"
-                loop={true}
-                autoPlay={true}
-                muted={true}
-                playsInline={true}
-              ></video>
             </div>
             :
             // for larger-devices 
