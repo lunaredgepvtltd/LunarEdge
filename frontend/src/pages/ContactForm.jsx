@@ -5,8 +5,9 @@ import { CiLocationOn } from "react-icons/ci";
 import TextInput from "../components/TextInput";
 import { useForm } from "react-hook-form";
 import { RxCross1 } from "react-icons/rx";
-import ReactFlagsSelect from 'react-flags-select';
 import { countries } from '../assets/countries.js'
+import PhoneInput from 'react-phone-input-2'
+import 'react-phone-input-2/lib/style.css'
 import '../App.css'
 
 const ContactForm = ({ onClose }) => {
@@ -99,7 +100,7 @@ const ContactForm = ({ onClose }) => {
               <li className="flex items-center">
                 <AiOutlineMail className="h-[16px] w-[16px] text-white" />
                 <a href="mailto:info@lunaredge.input" className="text-white text-sm ml-4">
-                  info@lunaredge.input
+                  info@lunaredge.in
                 </a>
               </li>
 
@@ -119,7 +120,7 @@ const ContactForm = ({ onClose }) => {
 
               <li className="flex items-center">
                 <CiLocationOn className="h-[20px] w-[20px] text-white" />
-                <a href="#" className="text-white text-sm ml-4">
+                <a href="https://www.google.com/maps/place/Manglam+Signature+Tower/@26.8829504,75.797004,17z/data=!3m1!4b1!4m6!3m5!1s0x396db425ddce111d:0x86a0e026f4ec9d27!8m2!3d26.8829456!4d75.7995789!16s%2Fg%2F11byyfpqq7?entry=ttu" className="text-white text-sm ml-4">
                   Address - 203, Manglam, Signature Tower, Lal Kothi, Gandhi Nagar, Jaipur, Rajasthan - 302015
                 </a>
               </li>

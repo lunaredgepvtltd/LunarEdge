@@ -1,7 +1,6 @@
 import React from "react";
 import MyImage from "../assets/MyImage.gif";
 import { BsWhatsapp } from "react-icons/bs";
-import { useMediaQuery } from 'react-responsive';
 export const Footer = () => {
 
 

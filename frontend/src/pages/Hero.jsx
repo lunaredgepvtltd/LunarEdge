@@ -21,7 +21,6 @@ import Slider from 'react-slick';
 import { useMediaQuery } from 'react-responsive';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import techUI from '../assets/TechboxUI.json'
 import layers from '../assets/layers.mp4'
 import maleImg from '../assets/male.png'
 
