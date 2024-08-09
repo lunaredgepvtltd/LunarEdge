@@ -76,7 +76,7 @@ const Header = () => {
       }`}
     >
       <div className="container mx-auto flex justify-between items-center h-full px-4 md:px-0">
-        {/* Logo */}.
+        {/* Logo */}
         <div  className="mt-4">
           <img src={logo} alt="Company Logo" className="w-[109px] h-auto md:h-[192px] md:w-[178px]" />
         </div>
@@ -269,3 +269,4 @@ const Header = () => {
 };
 
 export default Header;
+
