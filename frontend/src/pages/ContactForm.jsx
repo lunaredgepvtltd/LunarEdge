@@ -7,6 +7,7 @@ import { useForm } from "react-hook-form";
 import { RxCross1 } from "react-icons/rx";
 import ReactFlagsSelect from 'react-flags-select';
 import { countries } from '../assets/countries.js'
+import '../App.css'
 
 const ContactForm = ({ onClose }) => {
   // Example countries with codes
@@ -160,22 +161,7 @@ const ContactForm = ({ onClose }) => {
                 />
 
                 {/* Mobile Number */}
-                <div className="flex items-center justify-center">
-
-                  {/* flag-section  */}
-                  <ReactFlagsSelect
-                    className="w-36 mt-3"
-                    countries={countries.map(country => country.code)}
-                    customLabels={countries.reduce((acc, country) => {
-                      acc[country.code] = `${country.phoneCode} (${country.code})`;
-                      return acc;
-                    }, {})}
-                    selected={selected} // Set the default selected country to India
-                    onSelect={handleSelectChange} // Handle country selection
-                  />
-
-                  {/* phone-number input-field  */}
-
+ 
                   <input
                     type="text"
                     name="phoneNumber"
@@ -193,7 +179,7 @@ const ContactForm = ({ onClose }) => {
                   {errors && (
                     <span className='text-xs text-[#f64949fe] mt-0.5'>{errors?.phoneNumber?.message}</span>
                   )}
-                </div>
+
 
 
                 {/* email */}
