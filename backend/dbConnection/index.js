@@ -3,7 +3,7 @@ import mongoose  from "mongoose";
 
 const dbConnect = async()=>{
     try{
-        const connection = await mongoose.connect('mongodb+srv://newofe8426:grPvlkJrHxRvpMQG@lunaredge.kfnjrlr.mongodb.net/LunarEdge_database');
+        const connection = await mongoose.connect(process.env.MONGO_URL);
     console.log("database connected successfully!")
     }
     catch(error){

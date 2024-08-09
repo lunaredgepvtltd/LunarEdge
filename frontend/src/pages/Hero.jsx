@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Lottie from "lottie-react";
 import Offer from "../components/Offer";
 import robot from "../assets/robot.mp4";
 import robotreverse from "../assets/robotReverse.mp4";
@@ -23,7 +22,6 @@ import { useMediaQuery } from 'react-responsive';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import techUI from '../assets/TechboxUI.json'
-import moon from '../assets/moon.mp4'
 import layers from '../assets/layers.mp4'
 import maleImg from '../assets/male.png'
 
@@ -37,7 +35,7 @@ const Hero = () => {
   const sliderSetting = {
     dots: true,
     infinite: true,
-    speen: 500,
+    speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: false,

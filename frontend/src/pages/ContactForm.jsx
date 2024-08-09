@@ -5,14 +5,49 @@ import { CiLocationOn } from "react-icons/ci";
 import TextInput from "../components/TextInput";
 import { useForm } from "react-hook-form";
 import { RxCross1 } from "react-icons/rx";
+import ReactFlagsSelect from 'react-flags-select';
+import { countries } from '../assets/countries.js'
 
 const ContactForm = ({ onClose }) => {
+  // Example countries with codes
+
+  const [phoneNumber, setPhoneNumber] = useState('');
+  const [selected, setSelected] = React.useState('IN'); // Set India as default selected country
+
+  const handleSelectChange = (code) => {
+    setSelected(code); // Update selected country code on change
+    setPhoneNumber('')
+  };
+
+  const handlePhoneNumberChange = (e) => {
+    const value = e.target.value
+    console.log("Input Value:", value); // Log the input value for debugging
+    setPhoneNumber(value);
+
+    // Extract country code from the input
+    const countryCodeMatch = value.match(/^\+(\d{1,3})/); // Match the + followed by 1 to 3 digits
+    console.log("Matched Country Code:", countryCodeMatch); // Log the matched country code
+
+    if (countryCodeMatch) {
+        const code = `+${countryCodeMatch[1]}`; // Include the plus sign
+        console.log("Extracted Country Code:", code); // Log the extracted country code
+
+        // Find the country based on the full phone code
+        const foundCountry = countries.find(country => country.phoneCode === code);
+        console.log("Found Country:", foundCountry); // Log the found country
+
+        if (foundCountry) {
+            setSelected(foundCountry.code); // Update selected flag
+        }
+    }
+};
+
   const {
     register,
     handleSubmit,
     formState: { errors },
     reset,
-  } = useForm({ mode: "onChange" });
+  } = useForm({ mode: "onChange " });
 
   // usestate for error message 
   const [msg, setMsg] = useState("");
@@ -84,7 +119,7 @@ const ContactForm = ({ onClose }) => {
               <li className="flex items-center">
                 <CiLocationOn className="h-[20px] w-[20px] text-white" />
                 <a href="#" className="text-white text-sm ml-4">
-                  address-203, Manglam, Signature Tower, Lal Kothi, Gandhi Nagar, jaipur, Rajasthan
+                  Address - 203, Manglam, Signature Tower, Lal Kothi, Gandhi Nagar, Jaipur, Rajasthan - 302015
                 </a>
               </li>
             </ul>
@@ -119,25 +154,47 @@ const ContactForm = ({ onClose }) => {
                         return letterCount <= 50 || "Subject cannot exceed 50 letters";
                       },
                     },
-                    
+
                   })}
                   error={errors?.name ? errors?.name?.message : ""}
                 />
 
                 {/* Mobile Number */}
-                <TextInput
-                  name="phoneNumber"
-                  placeholder="Contact Number"
-                  type="number"
-                  register={register("phoneNumber", {
-                    required: "Mobile number is required",
-                    pattern: {
-                      value: /^\d{10}$/,
-                      message: "Invalid mobile number. Please enter 10 digits.",
-                    },
-                  })}
-                  error={errors?.phoneNumber ? errors?.phoneNumber?.message : ""}
-                />
+                <div className="flex items-center justify-center">
+
+                  {/* flag-section  */}
+                  <ReactFlagsSelect
+                    className="w-36 mt-3"
+                    countries={countries.map(country => country.code)}
+                    customLabels={countries.reduce((acc, country) => {
+                      acc[country.code] = `${country.phoneCode} (${country.code})`;
+                      return acc;
+                    }, {})}
+                    selected={selected} // Set the default selected country to India
+                    onSelect={handleSelectChange} // Handle country selection
+                  />
+
+                  {/* phone-number input-field  */}
+
+                  <input
+                    type="text"
+                    name="phoneNumber"
+                    placeholder="Contact Number"
+                    onChange={handlePhoneNumberChange}
+                    className={`w-full rounded-lg py-3 px-4 text-gray-800 text-sm outline-[#06425f]`}
+                    register={register("phoneNumber", {
+                      required: "Mobile number is required",
+                      pattern: {
+                        value: /^\+?\d{10}$/,
+                        message: "Invalid mobile number. Please enter 10 digits.",
+                      },
+                    })}
+                    aria-invalid={errors ? "true" : "false"} />
+                  {errors && (
+                    <span className='text-xs text-[#f64949fe] mt-0.5'>{errors?.phoneNumber?.message}</span>
+                  )}
+                </div>
+
 
                 {/* email */}
                 <TextInput
