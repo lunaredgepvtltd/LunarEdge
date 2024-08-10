@@ -5,45 +5,9 @@ import { CiLocationOn } from "react-icons/ci";
 import TextInput from "../components/TextInput";
 import { useForm } from "react-hook-form";
 import { RxCross1 } from "react-icons/rx";
-import { countries } from '../assets/countries.js'
-import PhoneInput from 'react-phone-input-2'
-import 'react-phone-input-2/lib/style.css'
-import '../App.css'
+import "../App.css";
 
 const ContactForm = ({ onClose }) => {
-  // Example countries with codes
-
-  const [phoneNumber, setPhoneNumber] = useState('');
-  const [selected, setSelected] = React.useState('IN'); // Set India as default selected country
-
-  const handleSelectChange = (code) => {
-    setSelected(code); // Update selected country code on change
-    setPhoneNumber('')
-  };
-
-  const handlePhoneNumberChange = (e) => {
-    const value = e.target.value
-    console.log("Input Value:", value); // Log the input value for debugging
-    setPhoneNumber(value);
-
-    // Extract country code from the input
-    const countryCodeMatch = value.match(/^\+(\d{1,3})/); // Match the + followed by 1 to 3 digits
-    console.log("Matched Country Code:", countryCodeMatch); // Log the matched country code
-
-    if (countryCodeMatch) {
-        const code = `+${countryCodeMatch[1]}`; // Include the plus sign
-        console.log("Extracted Country Code:", code); // Log the extracted country code
-
-        // Find the country based on the full phone code
-        const foundCountry = countries.find(country => country.phoneCode === code);
-        console.log("Found Country:", foundCountry); // Log the found country
-
-        if (foundCountry) {
-            setSelected(foundCountry.code); // Update selected flag
-        }
-    }
-};
-
   const {
     register,
     handleSubmit,
@@ -51,43 +15,44 @@ const ContactForm = ({ onClose }) => {
     reset,
   } = useForm({ mode: "onChange " });
 
-  // usestate for error message 
+  // usestate for error message
   const [msg, setMsg] = useState("");
-
 
   // handle button click
   const handleClick = async (data) => {
     try {
       // making API request
-      const res = await fetch('http://localhost:3000/register', {
-        method: 'post',
+      const res = await fetch("http://localhost:3000/register", {
+        method: "post",
         headers: {
-          "content-type": "application/json"
+          "content-type": "application/json",
         },
-        body: JSON.stringify(data)
+        body: JSON.stringify(data),
       });
 
       const resData = await res.json();
 
       if (resData.success) {
-        setMsg('Query Sent Successfully!')
-        reset()
+        setMsg("Query Sent Successfully!");
+        reset();
       } else {
-        setMsg('Error Occured.Sent Query again!')
+        setMsg("Error Occured.Sent Query again!");
       }
-
     } catch (error) {
-      setMsg('Error Occured.Sent Query again!')
+      setMsg("Error Occured.Sent Query again!");
     }
+
+    setTimeout(() => {
+      setMsg('')
+    }, 2000);
   };
 
   return (
     <div className="fixed top-10 md:top-0 m-2 inset-0 z-50 flex  h-auto md:h-full justify-center items-center bg-gray-500 bg-opacity-50 overflow-auto rounded-lg">
-      <div className=" mt-6 max-w-6xl max-lg:max-w-3xl mx-auto bg-[#585aa1] rounded-lg pr-7 pt-6">
+      <div className=" mt-6 max-w-6xl max-lg:max-w-3xl mx-auto bg-[#4f519a] rounded-lg pr-7 pt-6">
         <div className="grid lg:grid-cols-2 items-center gap-8 md:gap-14 p-3 md:p-8 font-[sans-serif]">
           {/* left side of form */}
           <div>
-
             <div className="hidden md:block">
               <h1 className="text-4xl font-bold text-white">Get in Touch</h1>
               <p className="text-sm text-gray-300 mt-4 leading-relaxed">
@@ -99,7 +64,10 @@ const ContactForm = ({ onClose }) => {
             <ul className=" md:mt-12 space-y-3 md:space-y-8 mt-4">
               <li className="flex items-center">
                 <AiOutlineMail className="h-[16px] w-[16px] text-white" />
-                <a href="mailto:info@lunaredge.input" className="text-white text-sm ml-4">
+                <a
+                  href="mailto:info@lunaredge.input"
+                  className="text-white text-sm ml-4"
+                >
                   info@lunaredge.in
                 </a>
               </li>
@@ -120,8 +88,12 @@ const ContactForm = ({ onClose }) => {
 
               <li className="flex items-center">
                 <CiLocationOn className="h-[20px] w-[20px] text-white" />
-                <a href="https://www.google.com/maps/place/Manglam+Signature+Tower/@26.8829504,75.797004,17z/data=!3m1!4b1!4m6!3m5!1s0x396db425ddce111d:0x86a0e026f4ec9d27!8m2!3d26.8829456!4d75.7995789!16s%2Fg%2F11byyfpqq7?entry=ttu" className="text-white text-sm ml-4">
-                  Address - 203, Manglam, Signature Tower, Lal Kothi, Gandhi Nagar, Jaipur, Rajasthan - 302015
+                <a
+                  href="https://www.google.com/maps/place/Manglam+Signature+Tower/@26.8829504,75.797004,17z/data=!3m1!4b1!4m6!3m5!1s0x396db425ddce111d:0x86a0e026f4ec9d27!8m2!3d26.8829456!4d75.7995789!16s%2Fg%2F11byyfpqq7?entry=ttu"
+                  className="text-white text-sm ml-4"
+                >
+                  Address - 203, Manglam, Signature Tower, Lal Kothi, Gandhi
+                  Nagar, Jaipur, Rajasthan - 302015
                 </a>
               </li>
             </ul>
@@ -151,37 +123,35 @@ const ContactForm = ({ onClose }) => {
                   register={register("name", {
                     required: "name is required",
                     validate: {
-                      maxLetters: value => {
+                      maxLetters: (value) => {
                         const letterCount = value.trim().length;
-                        return letterCount <= 50 || "Subject cannot exceed 50 letters";
+                        return (
+                          letterCount <= 50 ||
+                          "Subject cannot exceed 50 letters"
+                        );
                       },
                     },
-
                   })}
                   error={errors?.name ? errors?.name?.message : ""}
                 />
 
                 {/* Mobile Number */}
- 
-                  <input
-                    type="text"
-                    name="phoneNumber"
-                    placeholder="Contact Number"
-                    onChange={handlePhoneNumberChange}
-                    className={`w-full rounded-lg py-3 px-4 text-gray-800 text-sm outline-[#06425f]`}
-                    register={register("phoneNumber", {
-                      required: "Mobile number is required",
-                      pattern: {
-                        value: /^\+?\d{10}$/,
-                        message: "Invalid mobile number. Please enter 10 digits.",
-                      },
-                    })}
-                    aria-invalid={errors ? "true" : "false"} />
-                  {errors && (
-                    <span className='text-xs text-[#f64949fe] mt-0.5'>{errors?.phoneNumber?.message}</span>
-                  )}
 
-
+                <TextInput
+                  name="phoneNumber"
+                  placeholder="Contact Number"
+                  type="text"
+                  register={register("phoneNumber", {
+                    required: "Phone number is required",
+                    pattern: {
+                      value: /^\+?\d{10}$/,
+                      message: "Invalid phone number. Please enter 10 digits.",
+                    },
+                  })}
+                  error={
+                    errors?.phoneNumber ? errors?.phoneNumber?.message : ""
+                  }
+                />
 
                 {/* email */}
                 <TextInput
@@ -192,8 +162,9 @@ const ContactForm = ({ onClose }) => {
                     required: "email is required",
                     pattern: {
                       value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-                      message: "Invalid email address. Please enter a valid email.",
-                    }
+                      message:
+                        "Invalid email address. Please enter a valid email.",
+                    },
                   })}
                   error={errors?.email ? errors?.email?.message : ""}
                 />
@@ -205,9 +176,12 @@ const ContactForm = ({ onClose }) => {
                   type="text"
                   register={register("subject", {
                     validate: {
-                      maxLetters: value => {
+                      maxLetters: (value) => {
                         const letterCount = value.trim().length;
-                        return letterCount <= 75 || "Subject cannot exceed 25 letters";
+                        return (
+                          letterCount <= 75 ||
+                          "Subject cannot exceed 25 letters"
+                        );
                       },
                     },
                   })}
@@ -218,18 +192,22 @@ const ContactForm = ({ onClose }) => {
                 <textarea
                   placeholder="Message"
                   rows="6"
-                  className="w-full rounded-lg px-2 md:px-4 text-gray-800 text-sm outline-[#06425f]"
+                  className="w-full rounded-lg p-2 md:p-4 text-gray-800 text-sm outline-[#06425f] text-[18px]"
                   {...register("message", {
                     validate: {
-                      maxLetters: value => {
+                      maxLetters: (value) => {
                         const letterCount = value.trim().length;
-                        return letterCount <= 1000 || "Message cannot exceed 1000 letters";
+                        return (
+                          letterCount <= 1000 ||
+                          "Message cannot exceed 1000 letters"
+                        );
                       },
                     },
                   })}
                 ></textarea>
-                {errors.message && <span style={{ color: 'red' }}>{errors.message.message}</span>}
-
+                {errors.message && (
+                  <span style={{ color: "red" }}>{errors.message.message}</span>
+                )}
 
                 {/* submit button */}
                 <button
@@ -252,7 +230,13 @@ const ContactForm = ({ onClose }) => {
 
                 {/* displaying  message */}
                 {msg && (
-                  <span className={`text-sm mt-0.5 ${msg === 'Error Occured.Sent Query again!' ? 'text-[#f64949fe]' : 'text-green-500'}`}>
+                  <span
+                    className={`text-sm mt-0.5 ${
+                      msg === "Error Occured.Sent Query again!"
+                        ? "text-[#f64949fe]"
+                        : "text-green-500"
+                    }`}
+                  >
                     {msg}
                   </span>
                 )}

@@ -8,7 +8,7 @@ const TextInput = React.forwardRef(({type,placeholder,register,name,error},ref) 
             name={name}
             placeholder={placeholder}
             ref={ref}
-            className={`w-full rounded-lg py-3 px-4 text-gray-800 text-sm outline-[#06425f]`}
+            className={`w-full rounded-lg py-3 px-4 text-gray-800 text-[18px] outline-[#06425f] border p-2`}
             {...register}
             aria-invalid={error ? "true" : "false"}/>
         {error && (
