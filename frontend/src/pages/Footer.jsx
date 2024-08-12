@@ -4,7 +4,7 @@ import { BsWhatsapp } from "react-icons/bs";
 import { Link } from "react-router-dom";
 export const Footer = () => {
   return (
-    <footer className="bg-white bg-opacity-70 lg:grid lg:grid-cols-5 dark:bg-gray-900 md:mt-0  ">
+    <footer className="bg-white bg-opacity-70 lg:grid lg:grid-cols-5  md:mt-0  ">
       <div className=" hidden relative md:block h-32 lg:col-span-2 lg:h-full">
         <img
           className="z-5 absolute inset-0 h-[150px] md:h-full w-full object-cover"
@@ -42,7 +42,7 @@ export const Footer = () => {
                     +91-9829011076
                   </a>
                 </p>
-                <span className="font-semibold "> [Sandeep Katariya]</span>
+                <span className="font-semibold text-gray-500"> [Sandeep Katariya]</span>
               </li>
               <li className="flex gap-2 items-center">
                 <div>
@@ -53,7 +53,7 @@ export const Footer = () => {
                     +91-7760701155
                   </a>
                 </p>
-                <span className="font-semibold"> [Sanjeev Ola]</span>
+                <span className="font-semibold text-gray-500"> [Sanjeev Ola]</span>
               </li>
             </ul>
           </div>

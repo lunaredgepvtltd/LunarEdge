@@ -62,19 +62,20 @@ const Header = () => {
 
   return (
     <div
-      className={`fixed shadow-[#585aa1] shadow-md w-full top-0 left-0 z-50 h-24 md:h-32 bg-[#080925] transition-all duration-300 ${
+      className={`fixed shadow-[#585aa1] shadow-md w-full top-0 left-0 z-50 h-24 md:h-24 bg-[#080925] transition-all duration-300 ${
         scrollNav ? "bg-opacity-70" : "bg-opacity-100"
       }`}
     >
-      <div className="container mx-auto flex justify-between items-center h-full px-4 md:px-0">
+      <div className="max-w-screen-xl mx-auto flex justify-between items-center h-full px-6 md:px-10">
+
         {/* Logo */}
-        <div className="mt-4">
+        <div className="flex-shrink-0 mt-4">
           <img
-            src={logo}
+            src={logo} 
             alt="Company Logo"
-            className="w-[109px] h-auto md:h-[192px] md:w-[178px]"
+            className="h-auto w-24  md:w-24 md:pt-3" 
           />
-        </div>
+        </div>
 
         {/* Mobile Menu Toggle */}
         <button className="md:hidden text-white text-2xl" onClick={toggleMenu}>
