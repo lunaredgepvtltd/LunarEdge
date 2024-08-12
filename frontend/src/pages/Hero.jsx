@@ -274,7 +274,7 @@ const Hero = () => {
       }}>
 
         {/* left side  */}
-        <div data-aos={isSmallDevice ? undefined : "fade-right"} data-aos-delay="500"className="shadow-2xl rounded-xl border-black bg-gray-800/50 md:ml-[10%] md:mt-[8%] md:w-[30%] grid grid-rows-4 gap-2 md:gap-5 grid-cols-3 p-3 md:p-6 backdrop-blur-xl" >
+        <div data-aos={isSmallDevice ? undefined : "fade-up"} data-aos-delay="500"className="shadow-2xl rounded-xl border-black bg-gray-800/50 md:ml-[10%] md:mt-[8%] md:w-[30%] grid grid-rows-4 gap-2 md:gap-5 grid-cols-3 p-3 md:p-6 backdrop-blur-xl" >
 
           {techStack.map((tech, index) => (
             <TechBox key={index} name={tech.name} logo={tech.logo} />
@@ -283,7 +283,7 @@ const Hero = () => {
 
         {/* right-side  */}
 
-        <div  data-aos={isSmallDevice ? undefined : "fade-left"} className="hidden md:block">
+        <div  data-aos={isSmallDevice ? undefined : "fade-up"} className="hidden md:block">
           <p className="text-7xl bebas-neue-regular space-x-2 drop-shadow-md"><span className="text-[#6a96e7]">Transforming Business</span>{<br></br>} <span className="text-white">With Advance Technology</span></p>
         </div>
 

@@ -6,7 +6,7 @@ import Hero from "./pages/Hero";
 import PreLoader from "./PRELOADER/preLoader.js";
 import AOS from 'aos'
 import "aos/dist/aos.css"
-
+import { Outlet } from "react-router-dom";
 function App() {
 
 
@@ -33,8 +33,9 @@ function App() {
         {/* Header */}
         <Header />
 
-        {/* Hero Section */}
-        <Hero />
+        <main>
+          <Outlet/>
+        </main>
 
         {/* footer */}
 

@@ -143,10 +143,6 @@ const ContactForm = ({ onClose }) => {
                   type="text"
                   register={register("phoneNumber", {
                     required: "Phone number is required",
-                    pattern: {
-                      value: /^\+?\d{10}$/,
-                      message: "Invalid phone number. Please enter 10 digits.",
-                    },
                   })}
                   error={
                     errors?.phoneNumber ? errors?.phoneNumber?.message : ""
