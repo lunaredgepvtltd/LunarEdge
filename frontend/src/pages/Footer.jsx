@@ -156,7 +156,7 @@ export const Footer = () => {
             </ul>
 
             <p className=" mt-3 md:mt-8 text-xs text-gray-500 sm:mt-0 dark:text-gray-400">
-              &copy; 2024. LunarEdge IT Services Ltd. All rights reserved.
+              &copy; 2024. LunarEdge IT Services Pvt. Ltd. All rights reserved.
             </p>
           </div>
         </div>

@@ -23,6 +23,10 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import layers from '../assets/layers.mp4'
 import maleImg from '../assets/male.png'
+import service_box from '../assets/service_box.gif'
+import service_boxr from '../assets/service_boxr.gif'
+
+
 
 const Hero = () => {
 
