@@ -75,14 +75,21 @@ const Header = () => {
         scrollNav ? "bg-opacity-70" : "bg-opacity-100"
       }`}
     >
-      <div className="container mx-auto flex justify-between items-center h-full px-4 md:px-0">
+            <div className="max-w-screen-xl mx-auto flex justify-between items-center h-full px-6 md:px-8">
+
         {/* Logo */}
-        <div  className="mt-4">
-          <img src={logo} alt="Company Logo" className="w-[109px] h-auto md:h-[192px] md:w-[178px]" />
+
+        <div className="flex-shrink-0 mt-4">
+          <img
+            src={logo} 
+            alt="Company Logo"
+            className="h-auto w-24 sm:w-28 md:w-28 lg:w-32 xl:w-36" 
+          />
         </div>
 
+
         {/* Mobile Menu Toggle */}
-        <button className="md:hidden text-white text-2xl" onClick={toggleMenu}>
+        <button className="md:hidden text-white text-3xl" onClick={toggleMenu}>
           {menuOpen ? <IoIosClose /> : <IoIosMenu />}
         </button>
 
@@ -149,7 +156,7 @@ const Header = () => {
           {/* Contact Us */}
           <li>
             <button 
-              className="bg-[#50498f] rounded-md p-3 text-white text-md hover:bg-transparent hover:border hover:border-white hover:text-white hover:shadow-md hover:shadow-white   transition-all duration-500"
+              className="bg-[#50498f] rounded-md p-3 text-white text-md hover:bg-transparent hover:border hover:border-white hover:text-white hover:shadow-md hover:shadow-white   "
               onClick={handleButton}
             >
               Contact Us

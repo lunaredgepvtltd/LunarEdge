@@ -119,7 +119,7 @@ const Hero = () => {
   const { user } = useSelector((state) => state.user);
 
   const [text, setText] = useState("");
-  const phrase = 'Empowering Innovation, Transforming Ideas into Reality';
+  const phrase = 'Empowering Innovation, Transforming Ideas into Reality.';
 
   useEffect(() => {
     let currentIndex = 0;
@@ -155,13 +155,9 @@ const Hero = () => {
           Your browser does not support the video tag.
         </video>
         {/* left content */}
-        <div className="flex flex-col  gap-6 md:w-[800px] ">
+        <div className="flex flex-col  gap-6  md:w-[800px] ">
 
-          <p className=" text-5xl md:text-7xl font-serif text-white">{text}</p>
-
-          <p className=" text-md text-white">
-
-          </p>
+          <p className=" text-4xl md:text-6xl font-serif text-white">{text}</p>
 
           {(<div className=" mt-10 md:mt-24">
             <button
@@ -176,51 +172,46 @@ const Hero = () => {
 
         </div>
       </div>
-
-      {/* second-part */}
-      <div className="w-full h-full">
-        <div className="w-full text-center pt-16 md:pt-28">
-          {isSmallDevice ?
-            <div className="flex flex-col gap-4 justify-center items-center">
-              <div className="flex flex-col gap-1 p-4">
-                <h1 className="text-2xl md:text-5xl font-medium">Services We Offer</h1>
-                <p className="text-sm md:text-lg text-slate-500 my-3 py-2">
-                  LunarEdge is the perfect choice for any buisness looking to
-                  digitize its operations. We offers a wide range of on time{" "}
-                  <br></br> and cost effective services that will help solve your
-                  complex problems with IT solutions.
-                </p>
-              </div>
-              <div>
-              <img src={service_box} className="md:hidden block h-70 w-80"/>
-              </div> 
-            </div>
-            :
-            // for larger-devices 
-            <div className="flex justify-between">
-             {/* left-computer-gif  */}
-             <div>
-              <img src={service_box} className="h-80 w-90"/>
-              </div>
-
-              {/* center-content  */}
-              <div data-aos="zoom-out" data-aos-duration="300" className="flex flex-col gap-5 p-8">
-                <h1 className="text-5xl font-medium">Services We Offer</h1>
-                <p className="text-lg text-slate-500 my-3 py-2">
-                  LunarEdge is the perfect choice for any buisness looking to
-                  digitize its operations. We offers a wide range of on time{" "}
-                  <br></br> and cost effective services that will help solve your
-                  complex problems with IT solutions.
-                </p>
-              </div>
-              {/* center-content-ends  */}
-
-              {/* right-computer-gif  */}
-              <div>
-                <img src={service_boxr} className="h-80 w-90"/>
-              </div>
-            </div>}
+{/* Second-part */}
+<div className="w-full h-full">
+  <div className="w-full text-center pt-16 md:pt-28">
+    {isSmallDevice ? (
+      <div className="flex flex-col gap-4 justify-center items-center">
+        <div className="flex flex-col gap-1 p-4">
+          <h1 className="text-3xl md:text-5xl font-medium">Services We Offer</h1>
+          <p className="text-sm md:text-lg text-slate-500 my-3 py-2">
+            LunarEdge is the perfect choice for any business looking to digitize its operations. We offer a wide range of on-time and cost-effective services that will help solve your complex problems with IT solutions.
+          </p>
         </div>
+        <div>
+          <img src={service_box} alt="Service Overview" className="block md:hidden h-56 w-72 object-cover" />
+        </div>
+      </div>
+    ) : (
+      // For larger devices
+      <div className="flex flex-col md:flex-row justify-between items-center md:gap-10">
+        {/* Left-computer-gif */}
+        <div className="flex-1">
+          <img src={service_box} alt="Service Overview Left" className="h-64 md:h-80 w-full md:w-auto object-cover" />
+        </div>
+
+        {/* Center-content */}
+        <div data-aos="zoom-out" data-aos-duration="300" className="flex-1 flex flex-col gap-5 p-4 md:p-8 text-center md:text-left">
+          <h1 className="text-4xl md:text-5xl font-medium">Services We Offer</h1>
+          <p className="text-base md:text-lg text-slate-500 my-3 py-2">
+            LunarEdge is the perfect choice for any business looking to digitize its operations. We offer a wide range of on-time and cost-effective services that will help solve your complex problems with IT solutions.
+          </p>
+        </div>
+        {/* Center-content-ends */}
+
+        {/* Right-computer-gif */}
+        <div className="flex-1">
+          <img src={service_boxr} alt="Service Overview Right" className="h-64 md:h-80 w-full md:w-auto object-cover" />
+        </div>
+      </div>
+    )}
+  </div>
+
 
         {/* what we offers boxes */}
         <div >
@@ -274,7 +265,7 @@ const Hero = () => {
       }}>
 
         {/* left side  */}
-        <div data-aos={isSmallDevice ? undefined : "fade-right"} data-aos-delay="500"className="shadow-2xl rounded-xl border-black bg-gray-800/50 md:ml-[10%] md:mt-[8%] md:w-[30%] grid grid-rows-4 gap-2 md:gap-5 grid-cols-3 p-3 md:p-6 backdrop-blur-xl" >
+        <div data-aos={isSmallDevice ? undefined : "fade-up"} data-aos-delay="500"className="shadow-2xl rounded-xl border-black bg-gray-800/50 md:ml-[10%] md:mt-[8%] md:w-[30%] grid grid-rows-4 gap-2 md:gap-5 grid-cols-3 p-3 md:p-6 backdrop-blur-xl" >
 
           {techStack.map((tech, index) => (
             <TechBox key={index} name={tech.name} logo={tech.logo} />
@@ -283,7 +274,7 @@ const Hero = () => {
 
         {/* right-side  */}
 
-        <div  data-aos={isSmallDevice ? undefined : "fade-left"} className="hidden md:block">
+        <div  data-aos={isSmallDevice ? undefined : "fade-up"} className="hidden md:block">
           <p className="text-7xl bebas-neue-regular space-x-2 drop-shadow-md"><span className="text-[#6a96e7]">Transforming Business</span>{<br></br>} <span className="text-white">With Advance Technology</span></p>
         </div>
 

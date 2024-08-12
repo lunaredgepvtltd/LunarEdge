@@ -12,7 +12,7 @@ export const Footer = () => {
           src={MyImage}
           alt="please reload"
         />
-        <p className="absolute bottom-0 ml-24 mb-9 text-black text-4xl animated-text">
+        <p className="absolute bottom-0 ml-4 mb-9 text-black text-4xl animated-text">
           Smart Innovation Meets Infinity
         </p>
       </div>
@@ -40,7 +40,7 @@ export const Footer = () => {
                 </div>
                 <p className="text-[#2f63b1] hover:underline underline-offset-2 transition-all duration-300">
                   <a href="https://wa.me/919829011076" target="_blank">+91-9829011076</a></p>
-                  <span className="font-semibold "> [Sandeep Katariya]</span>
+                  <span className="font-semibold text-gray-300"> [Sandeep Katariya]</span>
                 
               </li>
               <li className="flex gap-2 items-center">
@@ -49,7 +49,7 @@ export const Footer = () => {
                 </div>
                 <p className="text-[#2f63b1] hover:underline underline-offset-2 transition-all duration-300">
                 <a href="https://wa.me/917760701155" target="_blank">+91-7760701155</a></p>
-                <span className="font-semibold"> [Sanjeev Ola]</span>
+                <span className="font-semibold text-gray-300"> [Sanjeev Ola]</span>
                 
               </li>
             </ul>
