@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 export const Footer = () => {
   return (
     <footer className="bg-white bg-opacity-70 lg:grid lg:grid-cols-5  md:mt-0  ">
-      <div className=" hidden relative md:block h-32 lg:col-span-2 lg:h-full">
+      <div className=" hidden relative md:block  lg:col-span-2 lg:h-full">
         <img
           className="z-5 absolute inset-0 h-[150px] md:h-full w-full object-cover"
           src={MyImage}

@@ -69,13 +69,13 @@ const Header = () => {
       <div className="max-w-screen-xl mx-auto flex justify-between items-center h-full px-6 md:px-10">
 
         {/* Logo */}
-        <div className="flex-shrink-0 mt-4">
+        <Link to={'/'} className="flex-shrink-0 mt-4">
           <img
             src={logo} 
             alt="Company Logo"
             className="h-auto w-24  md:w-24 md:pt-3" 
           />
-        </div>
+        </Link>
 
         {/* Mobile Menu Toggle */}
         <button className="md:hidden text-white text-2xl" onClick={toggleMenu}>
