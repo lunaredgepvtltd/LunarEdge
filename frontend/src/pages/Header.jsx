@@ -87,7 +87,7 @@ const Header = () => {
         <ul className={`hidden md:flex space-x-4 items-center`}>
           {/* About Us */}
           <li className="h-full relative hover:bg-[#082847] group flex items-center p-3 cursor-pointer transition-all duration-300">
-            <span className="text-xl text-white group-hover:text-white">
+            <span className="text-lg text-white group-hover:text-white">
               About Us
             </span>
             <span className="text-lg text-white group-hover:text-white mt-1">
@@ -125,7 +125,7 @@ const Header = () => {
 
           {/* Services */}
           <li className="h-full relative hover:bg-[#082847] group flex items-center p-3 cursor-pointer transition-all duration-300">
-            <span className="text-xl text-white group-hover:text-white">
+            <span className="text-lg text-white group-hover:text-white">
               Services
             </span>
             <span className="text-lg text-white group-hover:text-white mt-1">
@@ -161,7 +161,7 @@ const Header = () => {
 
           {/* Industries */}
           <li className="h-full relative hover:bg-[#082847] group flex items-center p-3 cursor-pointer transition-all duration-300">
-            <span className="text-xl text-white group-hover:text-white">
+            <span className="text-lg text-white group-hover:text-white">
               Industries
             </span>
             <span className="text-lg text-white group-hover:text-white mt-1">
