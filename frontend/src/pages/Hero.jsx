@@ -183,7 +183,7 @@ const Hero = () => {
           {isSmallDevice ?
             <div className="flex flex-col gap-4 justify-center items-center">
               <div className="flex flex-col gap-1 p-4">
-                <h1 className="text-2xl md:text-5xl font-medium">Services We Offer</h1>
+                <h1 className="text-2xl md:text-5xl font-medium">Services We Offer </h1>
                 <p className="text-sm md:text-lg text-slate-500 my-3 py-2">
                   LunarEdge is the perfect choice for any buisness looking to
                   digitize its operations. We offers a wide range of on time{" "}
