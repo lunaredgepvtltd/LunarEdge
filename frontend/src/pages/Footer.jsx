@@ -2,7 +2,7 @@ import React from "react";
 import MyImage from "../assets/MyImage.gif";
 import { BsWhatsapp } from "react-icons/bs";
 import { Link } from "react-router-dom";
-export const Footer = () => {
+ const Footer = () => {
   return (
     <footer className="bg-white bg-opacity-70 lg:grid lg:grid-cols-5  md:mt-0  ">
       <div className=" hidden relative md:block  lg:col-span-2 lg:h-full">
@@ -171,3 +171,5 @@ export const Footer = () => {
     </footer>
   );
 };
+
+export default Footer
