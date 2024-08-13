@@ -48,8 +48,8 @@ const ContactForm = ({ onClose }) => {
   };
 
   return (
-    <div className="fixed top-10 md:top-0 m-2 inset-0 z-50 flex  h-auto md:h-full justify-center items-center bg-gray-500 bg-opacity-50 overflow-auto rounded-lg">
-      <div className=" mt-6 max-w-6xl max-lg:max-w-3xl mx-auto bg-[#4f519a] rounded-lg pr-7 pt-6">
+    <div className="fixed   inset-0 z-50 flex  h-full md:h-full justify-center items-center bg-gray-300 bg-opacity-50 overflow-auto md:rounded-lg ">
+      <div className=" mt-6 max-w-6xl max-lg:max-w-3xl mx-auto bg-[#4f519a] rounded-lg  md:pr-7 p-1 ">
         <div className="grid lg:grid-cols-2 items-center gap-8 md:gap-14 p-3 md:p-8 font-[sans-serif]">
           {/* left side of form */}
           <div>
@@ -63,7 +63,7 @@ const ContactForm = ({ onClose }) => {
 
             <ul className=" md:mt-12 space-y-3 md:space-y-8 mt-4">
               <li className="flex items-center">
-                <AiOutlineMail className="h-[16px] w-[16px] text-white" />
+              <AiOutlineMail className="h-[16px] w-[16px] text-white" />
                 <a
                   href="mailto:info@lunaredge.input"
                   className="text-white text-sm ml-4"
@@ -101,18 +101,18 @@ const ContactForm = ({ onClose }) => {
 
           {/* right side of form */}
           <div className="relative">
-            {/* close icon */}
+            {/* close icon for big device */}
             <div
-              className="absolute -right-9 -top-10 text-2xl font-black cursor-pointer"
+              className="md:block hidden absolute -right-9 -top-5 text-2xl font-black cursor-pointer"
               onClick={onClose}
             >
               <RxCross1 />
             </div>
 
             {/* form container */}
-            <div className="bg-gray-100 p-3 md:p-6 rounded-lg">
+            <div className="bg-gray-100 p-2 md:p-6 rounded-lg ">
               <form
-                className="mt-2 md:mt-8 space-y-4"
+                className="mt-2 md:mt-8 md:space-y-4 space-y-2"
                 onSubmit={handleSubmit(handleClick)}
               >
                 {/* name */}
@@ -188,7 +188,7 @@ const ContactForm = ({ onClose }) => {
                 <textarea
                   placeholder="Message"
                   rows="6"
-                  className="w-full rounded-lg p-2 md:p-4 text-gray-800 text-sm outline-[#06425f] text-[18px]"
+                  className=" w-full rounded-lg p-2 md:p-4 text-gray-800 text-sm outline-[#06425f] text-[12px] md:text-[18px]"
                   {...register("message", {
                     validate: {
                       maxLetters: (value) => {

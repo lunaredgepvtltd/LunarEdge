@@ -93,7 +93,7 @@ const Hero = () => {
     { name: "NODE JS", logo: <FaNodeJs className="h-[70px] w-[70px] md:w-[130px] md:h-[100px]" /> },
     { name: "PYTHON", logo: <FaPython className="h-[70px] w-[70px] md:w-[130px] md:h-[100px]" /> },
     { name: "ANDROID", logo: <IoLogoAndroid className="h-[70px] w-[70px] md:w-[130px] md:h-[100px]" /> },
-    { name: "APPLE", logo: <FaApple className="h-[70px] w-[70px] md:w-[130px] md:h-[100px]" /> },
+    { name: "IOS", logo: <FaApple className="h-[70px] w-[70px] md:w-[130px] md:h-[100px]" /> },
     { name: "EXPRESS", logo: <SiExpress className="h-[70px] w-[70px] md:w-[130px] md:h-[100px]" /> },
     { name: "MONGODB", logo: <SiMongodb className="h-[70px] w-[70px] md:w-[130px] md:h-[100px]" /> },
     { name: "AWS", logo: <FaAws className="h-[70px] w-[70px] md:w-[130px] md:h-[100px]" /> }
@@ -119,7 +119,7 @@ const Hero = () => {
   const { user } = useSelector((state) => state.user);
 
   const [text, setText] = useState("");
-  const phrase = 'Empowering Innovation, Transforming Ideas into Reality';
+  const phrase = 'Empowering Innovation, Transforming Ideas Into Reality';
 
   useEffect(() => {
     let currentIndex = 0;
@@ -157,7 +157,7 @@ const Hero = () => {
         {/* left content */}
         <div className="flex flex-col  gap-6 md:w-[800px] ">
 
-          <p className=" text-5xl md:text-7xl font-serif text-white">{text}</p>
+          <p className=" text-4xl md:text-7xl font-serif text-white">{text}</p>
 
           <p className=" text-md text-white">
 

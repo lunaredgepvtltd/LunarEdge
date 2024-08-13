@@ -62,7 +62,7 @@ const Header = () => {
 
   return (
     <div
-      className={`fixed shadow-[#585aa1] shadow-md w-full top-0 left-0 z-50 h-24 md:h-24 bg-[#080925] transition-all duration-300 ${
+      className={`fixed shadow-[#585aa1] shadow-md w-full top-0 left-0 z-50 h-20 md:h-24 bg-[#080925] transition-all duration-300 ${
         scrollNav ? "bg-opacity-70" : "bg-opacity-100"
       }`}
     >
@@ -73,7 +73,7 @@ const Header = () => {
           <img
             src={logo} 
             alt="Company Logo"
-            className="h-auto w-24  md:w-24 md:pt-3" 
+            className="h-auto w-[90px] pt-[5px] md:w-24 md:pt-3" 
           />
         </Link>
 
@@ -211,7 +211,7 @@ const Header = () => {
           <div className="fixed top-0 left-0 w-full h-auto bg-white z-40 md:hidden flex flex-col transition-all duration-500 overflow-auto pb-5 rounded-b-lg">
             {/* header  */}
             <div className="flex justify-between items-center p-2">
-              <img src={LunaredgeLogo} alt="lunarEdge" className="h-20 w-20" />
+              <img src={LunaredgeLogo} alt="lunarEdge" className="h-16 w-20" />
               <button className="text-4xl" onClick={toggleMenu}>
                 <IoIosClose />
               </button>
@@ -224,7 +224,7 @@ const Header = () => {
                 onClick={handleAboutUs}
               >
                 <div className="flex gap-1 items-center">
-                  <span className=" text-xl text-[#082847] hover:underline">
+                  <span className=" text-md text-[#082847] hover:underline">
                     About Us
                   </span>
                   <IoIosArrowDown />
@@ -271,7 +271,7 @@ const Header = () => {
                 onClick={handleServices}
               >
                 <div className="flex gap-1 items-center mr-2">
-                  <span className=" text-xl text-[#082847] hover:underline">
+                  <span className=" text-md text-[#082847] hover:underline">
                     Services
                   </span>
                   <IoIosArrowDown />
@@ -318,7 +318,7 @@ const Header = () => {
                 onClick={handleIndustries}
               >
                 <div className="flex gap-1 items-center ml-1">
-                  <span className=" text-xl text-[#082847] hover:underline">
+                  <span className=" text-md text-[#082847] hover:underline">
                     Industries
                   </span>
                   <IoIosArrowDown />
@@ -361,7 +361,7 @@ const Header = () => {
 
               <li className="py-2  flex gap-1 items-center">
                 <button
-                  className="bg-black text-white p-3 rounded-md"
+                  className="bg-black text-white p-2 md:p-3 rounded-md"
                   onClick={() => {
                     handleButton();
                     toggleMenu();
