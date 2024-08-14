@@ -61,44 +61,47 @@ const Header = () => {
   }, []);
 
   return (
-    <div
-      className={`fixed shadow-[#585aa1] shadow-md w-full top-0 left-0 z-50 h-20 md:h-24 bg-[#080925] transition-all duration-300 ${
-        scrollNav ? "bg-opacity-70" : "bg-opacity-100"
-      }`}
-    >
-      <div className="max-w-screen-xl mx-auto flex justify-between items-center h-full px-6 md:px-10">
-
+    <div className=" w-full h-[125px] fixed z-40 px-5 pt-6">
+      <div className=" flex bg-white h-full w-full rounded-3xl justify-between items-center px-10 md:px-20 ">
         {/* Logo */}
-        <Link to={'/'} className="flex-shrink-0 mt-4">
+        <Link to={"/"} className="flex-shrink-0 mt-4">
           <img
-            src={logo} 
+            src={logo}
             alt="Company Logo"
-            className="h-auto w-[90px] pt-[5px] md:w-24 md:pt-3" 
+            className="h-auto w-[90px] pt-[5px] md:w-24 md:pt-3"
           />
-        </Link>
-
+                  
+        </Link>
         {/* Mobile Menu Toggle */}
-        <button className="md:hidden text-white text-2xl" onClick={toggleMenu}>
+        <button className="md:hidden block text-black  text-2xl" onClick={toggleMenu}>
           {menuOpen ? <IoIosClose /> : <IoIosMenu />}
         </button>
 
         {/* Nav Links for Desktop */}
 
         <ul className={`hidden md:flex space-x-4 items-center`}>
+
+          {/* home button */}
+         <li>
+         <span className=" h-full relative rounded-full text-white bg-[#222222] p-3 px-6 cursor-pointer">
+             Home
+            </span>
+         </li>
           {/* About Us */}
-          <li className="h-full relative hover:bg-[#082847] group flex items-center p-3 cursor-pointer transition-all duration-300">
-            <span className="text-lg text-white group-hover:text-white">
+          <li className=" h-full relative rounded-full hover:bg-[#616161] group flex items-center p-3 cursor-pointer transition-all duration-300">
+            
+            <span className=" text-lg text-black hover:text-white hover:fall-in">
               About Us
             </span>
-            <span className="text-lg text-white group-hover:text-white mt-1">
+            <span className="text-lg text-black hover:text-white mt-1">
               <IoIosArrowDown />
             </span>
-            <ul className="absolute mt-2 top-[40px] left-0 rounded-lg shadow-lg transition-opacity duration-500 invisible group-hover:visible group-hover:opacity-100 bg-white w-48 pt-3 pb-3">
-              <li>
+            <ul className="absolute mt-2 top-[40px] left-0 rounded-lg shadow-lg transition-opacity duration-500 invisible group-hover:visible group-hover:opacity-100 bg-[#292828] w-48 pt-3 pb-3">
+              <li >
                 <li>
                   <Link
                     to="/common"
-                    className="block px-4 py-2 text-[#082847] hover:underline underline-offset-2"
+                    className="block px-4 py-2 text-white hover:text-red-500 hover:text-shadow-md-red"
                   >
                     Digital Innovators
                   </Link>
@@ -106,7 +109,7 @@ const Header = () => {
                 <li>
                   <Link
                     to="/common"
-                    className="block px-4 py-2 text-[#082847] hover:underline underline-offset-2"
+                    className="block px-4 py-2 text-white hover:text-red-500  hover:text-shadow-md-red"
                   >
                     Our Clients
                   </Link>
@@ -114,7 +117,7 @@ const Header = () => {
                 <li>
                   <Link
                     to="/common"
-                    className="block px-4 py-2 text-[#082847] hover:underline underline-offset-2"
+                    className="block px-4 py-2 text-white hover:text-red-500  hover:text-shadow-md-red"
                   >
                     Careers
                   </Link>
@@ -124,18 +127,18 @@ const Header = () => {
           </li>
 
           {/* Services */}
-          <li className="h-full relative hover:bg-[#082847] group flex items-center p-3 cursor-pointer transition-all duration-300">
-            <span className="text-lg text-white group-hover:text-white">
+          <li className="h-full relative rounded-full hover:bg-[#616161] group flex items-center p-3 cursor-pointer transition-all duration-300">
+            <span className="text-lg text-black group-hover:text-white">
               Services
             </span>
-            <span className="text-lg text-white group-hover:text-white mt-1">
+            <span className="text-lg text-black group-hover:text-white mt-1">
               <IoIosArrowDown />
             </span>
-            <ul className="absolute mt-2 top-[40px] left-0 rounded-lg shadow-lg transition-opacity duration-500 invisible group-hover:visible group-hover:opacity-100 bg-white w-48 pt-3 pb-3">
-              <li>
+            <ul className="absolute mt-2 top-[40px] left-0 rounded-lg shadow-lg transition-opacity duration-500 invisible group-hover:visible group-hover:opacity-100 bg-[#292828] w-48 pt-3 pb-3">
+              <li >
                 <Link
                   to="/common"
-                  className="block px-4 py-2 text-[#082847] hover:underline underline-offset-2"
+                  className="block px-4 py-2  text-white hover:text-red-500  hover:text-shadow-md-red"
                 >
                   Web Development
                 </Link>
@@ -143,7 +146,7 @@ const Header = () => {
               <li>
                 <Link
                   to="/common"
-                  className="block px-4 py-2 text-[#082847] hover:underline underline-offset-2"
+                  className="block px-4 py-2  text-white hover:text-red-500  hover:text-shadow-md-red "
                 >
                   Mobile App Development
                 </Link>
@@ -151,7 +154,7 @@ const Header = () => {
               <li>
                 <Link
                   to="/common"
-                  className="block px-4 py-2 text-[#082847] hover:underline underline-offset-2"
+                  className="block px-4 py-2  text-white hover:text-red-500  hover:text-shadow-md-red"
                 >
                   IT Consulting
                 </Link>
@@ -160,18 +163,18 @@ const Header = () => {
           </li>
 
           {/* Industries */}
-          <li className="h-full relative hover:bg-[#082847] group flex items-center p-3 cursor-pointer transition-all duration-300">
-            <span className="text-lg text-white group-hover:text-white">
+          <li className="h-full relative rounded-full hover:bg-[#616161] group flex items-center p-3 cursor-pointer transition-all duration-300">
+            <span className="text-lg text-black group-hover:text-white">
               Industries
             </span>
-            <span className="text-lg text-white group-hover:text-white mt-1">
+            <span className="text-lg text-black group-hover:text-white mt-1">
               <IoIosArrowDown />
             </span>
-            <ul className="absolute mt-2 top-[40px] left-0 rounded-lg shadow-lg transition-opacity duration-500 invisible group-hover:visible group-hover:opacity-100 bg-white w-48 pt-3 pb-3">
+            <ul className="absolute mt-2 top-[40px] left-0 rounded-lg shadow-lg transition-opacity duration-500 invisible group-hover:visible group-hover:opacity-100 bg-[#292828] w-48 pt-3 pb-3">
               <li>
                 <Link
                   to="/common"
-                  className="block px-4 py-2 text-[#082847] hover:underline underline-offset-2"
+                  className="translate-x-2 block px-4 py-2  text-white hover:text-red-500  hover:text-shadow-md-red"
                 >
                   Education
                 </Link>
@@ -179,7 +182,7 @@ const Header = () => {
               <li>
                 <Link
                   to="/common"
-                  className="block px-4 py-2 text-[#082847] hover:underline underline-offset-2"
+                  className="block px-4 py-2  text-white hover:text-red-500  hover:text-shadow-md-red"
                 >
                   Healthcare
                 </Link>
@@ -187,27 +190,25 @@ const Header = () => {
               <li>
                 <Link
                   to="/common"
-                  className="block px-4 py-2 text-[#082847] hover:underline underline-offset-2"
+                  className="block px-4 py-2  text-white hover:text-red-500  hover:text-shadow-md-red"
                 >
                   Ecommerce
                 </Link>
               </li>
             </ul>
           </li>
-
-          {/* Contact Us */}
-          <li>
-            <button
-              className="bg-[#50498f] rounded-md p-3 text-white text-md hover:bg-transparent hover:border hover:border-white hover:text-white hover:shadow-md hover:shadow-white   transition-all duration-500"
-              onClick={handleButton}
-            >
-              Contact Us
-            </button>
-          </li>
         </ul>
-
-        {/* Mobile Menu */}
-        {menuOpen && (
+        {/* Contact Us */}
+        <div className="md:block hidden">
+          <button
+            className="  rounded-full  py-4 px-8 text-black text-md hover:bg-[#703299] border border-[#703299] hover:text-white hover:shadow-md   hover:bg-gradient-to-r from-[#386bb7] to-[#e24c4a] transition-all duration-100"
+            onClick={handleButton}
+          >
+            Contact Us
+          </button>
+        </div>
+         {/* Mobile Menu */}
+         {menuOpen && (
           <div className="fixed top-0 left-0 w-full h-auto bg-white z-40 md:hidden flex flex-col transition-all duration-500 overflow-auto pb-5 rounded-b-lg">
             {/* header  */}
             <div className="flex justify-between items-center p-2">
@@ -374,8 +375,8 @@ const Header = () => {
           </div>
         )}
       </div>
+     {showForm && <ContactForm onClose={closeForm} />}
 
-      {showForm && <ContactForm onClose={closeForm} />}
     </div>
   );
 };

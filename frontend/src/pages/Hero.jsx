@@ -137,23 +137,14 @@ const Hero = () => {
 
   return (
 
-    <div className="w-full h-auto">
+    <div className="w-full h-auto ">
 
       {showForm && <ContactForm onClose={closeForm} />}
 
       {/* first-part */}
       {/* <div className="w-full h-[1000px]  md:flex justify-around items-center bg-blue-100">  */}
-      <div className="w-full h-[700px] md:h-[1000px] p-6 md:p-0 flex justify-center  items-center relative overflow-hidden">
-        <video
-          autoPlay
-          loop
-          muted
-          className="absolute inset-0 w-full h-full object-cover "
-          style={{ zIndex: -1 }} // To place it behind other content
-        >
-          <source src={layers} type="video/webm" />
-          Your browser does not support the video tag.
-        </video>
+      <div className="w-full h-[700px] md:h-[1000px] p-6 md:p-0 flex justify-center  items-center relative overflow-hidden bg-gray-700">
+       
         {/* left content */}
         <div className="flex flex-col  gap-6 md:w-[800px] ">
 

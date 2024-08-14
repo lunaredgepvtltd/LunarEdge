@@ -4,7 +4,28 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      textShadow: {
+        'default': '1px 1px 2px rgba(0, 0, 0, 0.5)',
+        'md': '2px 2px 4px rgba(0, 0, 0, 0.6)',
+        'lg': '3px 3px 6px rgba(0, 0, 0, 0.7)',
+        'xl': '4px 4px 8px rgba(0, 0, 0, 0.8)',
+        'md-red': '2px 2px 4px rgba(255, 0, 0, 0.5)',
+      },
+    },
+    
   },
-  plugins: [],
+  plugins: [
+    function({ addUtilities, theme, e }) {
+      const textShadow = theme('textShadow');
+      const textShadowUtilities = Object.keys(textShadow).map(key => {
+        return {
+          [`.${e(`text-shadow-${key}`)}`]: {
+            textShadow: textShadow[key],
+          },
+        };
+      });
+      addUtilities(textShadowUtilities, ['responsive', 'hover']);
+    },
+  ],
 }
