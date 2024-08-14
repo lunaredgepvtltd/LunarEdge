@@ -61,7 +61,7 @@ const Header = () => {
   }, []);
 
   return (
-    <div className=" w-full h-[125px] fixed z-40 px-5 pt-6">
+    <div className=" w-full h-[125px] fixed z-50 px-5 pt-6">
       <div className=" flex bg-white h-full w-full rounded-3xl justify-between items-center px-10 md:px-20 ">
         {/* Logo */}
         <Link to={"/"} className="flex-shrink-0 mt-4">

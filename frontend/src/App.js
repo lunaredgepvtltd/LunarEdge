@@ -27,9 +27,9 @@ function App() {
       <div className="App">
         
         {/* Lazy loading the Header */}
-        {/* <Suspense fallback={<div>Loading Header...</div>}>
+        <Suspense fallback={<div>Loading Header...</div>}>
           <Header />
-        </Suspense> */}
+        </Suspense>
 
         <main>
           {/* Outlet for nested routes */}
