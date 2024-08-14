@@ -21,8 +21,9 @@ import Slider from 'react-slick';
 import { useMediaQuery } from 'react-responsive';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import layers from '../assets/layers.mp4'
 import maleImg from '../assets/male.png'
+import employmoon from '../assets/employmoon.jpg'
+import textimage from '../assets/textimage.png'
 
 const Hero = () => {
 
@@ -118,22 +119,22 @@ const Hero = () => {
 
   const { user } = useSelector((state) => state.user);
 
-  const [text, setText] = useState("");
-  const phrase = 'Empowering Innovation, Transforming Ideas Into Reality';
+  // const [text, setText] = useState("");
+  // const phrase = 'Empowering Innovation, Transforming Ideas Into Reality';
 
-  useEffect(() => {
-    let currentIndex = 0;
-    const interval = setInterval(() => {
-      if (currentIndex <= phrase.length) {
-        setText(phrase.substring(0, currentIndex));
-        currentIndex++;
-      } else {
-        clearInterval(interval);
-      }
-    }, 50);
+  // useEffect(() => {
+  //   let currentIndex = 0;
+  //   const interval = setInterval(() => {
+  //     if (currentIndex <= phrase.length) {
+  //       setText(phrase.substring(0, currentIndex));
+  //       currentIndex++;
+  //     } else {
+  //       clearInterval(interval);
+  //     }
+  //   }, 50);
 
-    return () => clearInterval(interval);
-  }, []);
+  //   return () => clearInterval(interval);
+  // }, []);
 
   return (
 
@@ -142,29 +143,18 @@ const Hero = () => {
       {showForm && <ContactForm onClose={closeForm} />}
 
       {/* first-part */}
-      {/* <div className="w-full h-[1000px]  md:flex justify-around items-center bg-blue-100">  */}
-      <div className="w-full h-[700px] md:h-[1000px] p-6 md:p-0 flex justify-center  items-center relative overflow-hidden bg-gray-700">
-       
-        {/* left content */}
-        <div className="flex flex-col  gap-6 md:w-[800px] ">
 
-          <p className=" text-4xl md:text-7xl font-serif text-white">{text}</p>
-
-          <p className=" text-md text-white">
-
-          </p>
-
-          {(<div className=" mt-10 md:mt-24">
-            <button
-              data-aos="zoom-out"
-
-              className=" border border-white bg-purple-400 bg-opacity-30 rounded-full p-3 md:p-4 text-white md:text-lg text-sm  hover:shadow-white hover:shadow-sm hover:scale-95 transition-all duration-300 hero-button"
-              onClick={handleButton}
-            >
-              <span className="md:mx-4">Get connect with us →</span>
-            </button>
-          </div>)}
-
+      <div
+        className="w-full h-[700px] md:h-[960px] md:p-0
+        "
+        style={{
+          backgroundImage: `url(${employmoon})`,
+          backgroundSize: 'cover',
+          backgroundRepeat: 'no-repeat'
+        }}
+      >
+        <div className="w-[50%] h-full flex items-center justify-center">
+          <img src={textimage} className="md:w-[80%]"/>
         </div>
       </div>
 
@@ -183,15 +173,15 @@ const Hero = () => {
                 </p>
               </div>
               <div>
-              <img src={service_box} className="md:hidden block h-70 w-80"/>
-              </div> 
+                <img src={service_box} className="md:hidden block h-70 w-80" />
+              </div>
             </div>
             :
             // for larger-devices 
             <div className="flex justify-between">
-             {/* left-computer-gif  */}
-             <div>
-              <img src={service_box} className="h-80 w-90"/>
+              {/* left-computer-gif  */}
+              <div>
+                <img src={service_box} className="h-80 w-90" />
               </div>
 
               {/* center-content  */}
@@ -208,7 +198,7 @@ const Hero = () => {
 
               {/* right-computer-gif  */}
               <div>
-                <img src={service_boxr} className="h-80 w-90"/>
+                <img src={service_boxr} className="h-80 w-90" />
               </div>
             </div>}
         </div>
@@ -243,7 +233,7 @@ const Hero = () => {
 
 
       {/* technical-skill content  */}
-      <div  data-aos-duration="300" className="flex-col p-5 md:p-1  bg-[#6a96e7] border border-none mt-24 md:mt-36">
+      <div data-aos-duration="300" className="flex-col p-5 md:p-1  bg-[#6a96e7] border border-none mt-24 md:mt-36">
         <p className=" font-medium md:font-semibold text-center text-2xl md:text-5xl mt-14 md:mt-[100px]">
           Empowering Technologies We Use
         </p>
@@ -259,13 +249,13 @@ const Hero = () => {
       {/* rendering technical skill-box  */}
       <div className="md:flex justify-around
        items-center p-4 md:pb-40 border border-none w-auto" style={{
-        backgroundImage: `url(${maleImg})`, // Correct syntax
-        backgroundRepeat: 'no-repeat',
-        backgroundSize: 'cover'
-      }}>
+          backgroundImage: `url(${maleImg})`, // Correct syntax
+          backgroundRepeat: 'no-repeat',
+          backgroundSize: 'cover'
+        }}>
 
         {/* left side  */}
-        <div data-aos={isSmallDevice ? undefined : "fade-up"} data-aos-delay="500"className="shadow-2xl rounded-xl border-black bg-gray-800/50 md:ml-[10%] md:mt-[8%] md:w-[30%] grid grid-rows-4 gap-2 md:gap-5 grid-cols-3 p-3 md:p-6 backdrop-blur-xl" >
+        <div data-aos={isSmallDevice ? undefined : "fade-up"} data-aos-delay="500" className="shadow-2xl rounded-xl border-black bg-gray-800/50 md:ml-[10%] md:mt-[8%] md:w-[30%] grid grid-rows-4 gap-2 md:gap-5 grid-cols-3 p-3 md:p-6 backdrop-blur-xl" >
 
           {techStack.map((tech, index) => (
             <TechBox key={index} name={tech.name} logo={tech.logo} />
@@ -274,7 +264,7 @@ const Hero = () => {
 
         {/* right-side  */}
 
-        <div  data-aos={isSmallDevice ? undefined : "fade-up"} className="hidden md:block">
+        <div data-aos={isSmallDevice ? undefined : "fade-up"} className="hidden md:block">
           <p className="text-7xl bebas-neue-regular space-x-2 drop-shadow-md"><span className="text-[#6a96e7]">Transforming Business</span>{<br></br>} <span className="text-white">With Advance Technology</span></p>
         </div>
 
