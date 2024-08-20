@@ -64,12 +64,15 @@ const ContactForm = ({ onClose }) => {
             <ul className=" md:mt-12 space-y-3 md:space-y-8 mt-4">
               <li className="flex items-center">
               <AiOutlineMail className="h-[16px] w-[16px] text-white" />
+                <div className="w-full flex justify-between items-center">
                 <a
                   href="mailto:info@lunaredge.input"
                   className="text-white text-sm ml-4"
                 >
                   info@lunaredge.in
                 </a>
+                <RxCross1 className="text-lg md:hidden" style={{ strokeWidth: '1px' }} onClick={onClose}/>
+                </div>
               </li>
 
               <li className="flex items-center">

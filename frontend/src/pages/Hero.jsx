@@ -27,10 +27,7 @@ import textimage from '../assets/textimage.png'
 
 const Hero = () => {
 
-
   const isSmallDevice = useMediaQuery({ maxWidth: 767 })
-
-
 
   const sliderSetting = {
     dots: true,
@@ -117,24 +114,7 @@ const Hero = () => {
 
   // fetching user
 
-  const { user } = useSelector((state) => state.user);
 
-  // const [text, setText] = useState("");
-  // const phrase = 'Empowering Innovation, Transforming Ideas Into Reality';
-
-  // useEffect(() => {
-  //   let currentIndex = 0;
-  //   const interval = setInterval(() => {
-  //     if (currentIndex <= phrase.length) {
-  //       setText(phrase.substring(0, currentIndex));
-  //       currentIndex++;
-  //     } else {
-  //       clearInterval(interval);
-  //     }
-  //   }, 50);
-
-  //   return () => clearInterval(interval);
-  // }, []);
 
   return (
 
@@ -145,7 +125,7 @@ const Hero = () => {
       {/* first-part */}
 
       <div
-        className="w-full h-[1100px] md:h-[960px] md:p-0 flex items-center justify-center"
+        className="w-full h-[660px] md:h-[800px] md:p-0 flex items-center justify-center"
         style={{
           backgroundImage: `url(${employmoon})`,
           backgroundSize: 'cover',
@@ -155,8 +135,8 @@ const Hero = () => {
         {/* text image for big devices   */}
         <img src={textimage} className="md:block hidden md:w-[40%] "/>
 
-        <div className=" w-[80%] h-[80%] md:w-[50%] items-center">
-          <div className="h-[60%] md:hidden flex flex-col justify-around ">
+        <div className=" w-[80%] h-[65%] md:w-[50%] items-center">
+          <div className="h-auto md:hidden flex flex-col gap-6 justify-around ">
            <span> <img src={textimage} className=" md:w-[80%]"/></span>
               {/* Contact Us */}
           
@@ -175,7 +155,7 @@ const Hero = () => {
 
       {/* second-part */}
       <div className="w-full h-full">
-        <div className="w-full text-center pt-16 md:pt-28">
+        <div className="w-full text-center  md:pt-16">
           {isSmallDevice ?
             <div className="flex flex-col gap-4 justify-center items-center">
               <div className="flex flex-col gap-1 p-4">
