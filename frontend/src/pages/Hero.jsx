@@ -135,14 +135,20 @@ const Hero = () => {
         {/* text image for big devices --- left-side  */}
         <div className="md:block hidden md:w-[40%] relative">
           <img src={textimage} />
-          <div className=" hidden lg:block absolute top-[42%] left-[31%] rotate-continuous">
-          <img src={moon} className="w-[4.5rem] h-[4.5rem]"/>
+          <div className=" hidden xl:block absolute top-[42%] left-[31%]  h-full w-full">
+          <img src={moon} className="w-[12%] h-[16%] rotate-continuous"/>
           </div>
           </div>
 
          {/* right-side  */}
-        <div className=" w-[80%] h-[65%] md:w-[50%] items-center">
-          <div className="h-auto md:hidden flex flex-col gap-6 justify-around ">
+        <div className=" w-[80%] h-[65%] md:w-[50%] items-center relative">
+          {/* swipe-down button  */}
+          
+          <div className="w-[7rem] h-[7rem] rounded-full bg-black absolute bottom-0 left-[15%]">
+
+          </div>
+
+          <div className="h-auto md:hidden flex flex-col gap-6 justify-around">
            <span> <img src={textimage} className=" md:w-[80%]"/></span>
               {/* Contact Us */}
           
