@@ -24,7 +24,7 @@ import 'slick-carousel/slick/slick-theme.css';
 import maleImg from '../assets/male.png'
 import employmoon from '../assets/employmoon.png'
 import textimage from '../assets/textimage.png'
-
+import moon from '../assets/moon.png'
 const Hero = () => {
 
   const isSmallDevice = useMediaQuery({ maxWidth: 767 })
@@ -132,9 +132,15 @@ const Hero = () => {
           backgroundRepeat: 'no-repeat'
         }}
       >
-        {/* text image for big devices   */}
-        <img src={textimage} className="md:block hidden md:w-[40%] "/>
+        {/* text image for big devices --- left-side  */}
+        <div className="md:block hidden md:w-[40%] relative">
+          <img src={textimage} />
+          <div className=" hidden lg:block absolute top-[42%] left-[31%] rotate-continuous">
+          <img src={moon} className="w-[4.5rem] h-[4.5rem]"/>
+          </div>
+          </div>
 
+         {/* right-side  */}
         <div className=" w-[80%] h-[65%] md:w-[50%] items-center">
           <div className="h-auto md:hidden flex flex-col gap-6 justify-around ">
            <span> <img src={textimage} className=" md:w-[80%]"/></span>
