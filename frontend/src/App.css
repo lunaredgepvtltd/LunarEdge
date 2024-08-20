@@ -83,5 +83,5 @@ width: auto;
 }
 
 .rotate-continuous {
-  animation: rotate 7s linear infinite;
+  animation: rotate 20s linear infinite;
 }
