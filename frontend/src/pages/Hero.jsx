@@ -22,7 +22,7 @@ import { useMediaQuery } from 'react-responsive';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import maleImg from '../assets/male.png'
-import employmoon from '../assets/employmoon.jpg'
+import employmoon from '../assets/employmoon.png'
 import textimage from '../assets/textimage.png'
 
 const Hero = () => {
@@ -145,16 +145,31 @@ const Hero = () => {
       {/* first-part */}
 
       <div
-        className="w-full h-[700px] md:h-[960px] md:p-0
-        "
+        className="w-full h-[1100px] md:h-[960px] md:p-0 flex items-center justify-center"
         style={{
           backgroundImage: `url(${employmoon})`,
           backgroundSize: 'cover',
           backgroundRepeat: 'no-repeat'
         }}
       >
-        <div className="w-[50%] h-full flex items-center justify-center">
-          <img src={textimage} className="md:w-[80%]"/>
+        {/* text image for big devices   */}
+        <img src={textimage} className="md:block hidden md:w-[40%] "/>
+
+        <div className=" w-[80%] h-[80%] md:w-[50%] items-center">
+          <div className="h-[60%] md:hidden flex flex-col justify-around ">
+           <span> <img src={textimage} className=" md:w-[80%]"/></span>
+              {/* Contact Us */}
+          
+              <h2 className="text-md mb-4">Welcome to Lunaredge Private Limited, your partner in digital transformation. We specialize in delivering customized IT solutions that drive business growth and efficiency.</h2>
+            
+          
+            <button
+                className="  rounded-full  py-4 px-8 text-md bg-[#703299] border border-[#703299] text-white hover:shadow-md bg-gradient-to-r from-[#386bb7] to-[#e24c4a] transition-all duration-100"
+                onClick={handleButton}
+              >
+                Get In Touch
+              </button>
+          </div>
         </div>
       </div>
 
@@ -186,7 +201,7 @@ const Hero = () => {
 
               {/* center-content  */}
               <div data-aos="zoom-out" data-aos-duration="300" className="flex flex-col gap-5 p-8">
-                <h1 className="text-5xl font-medium">Services We Offer</h1>
+                <h1 className="text-5xl font-semibold">SERVICES WE OFFER</h1>
                 <p className="text-lg text-slate-500 my-3 py-2">
                   LunarEdge is the perfect choice for any buisness looking to
                   digitize its operations. We offers a wide range of on time{" "}

@@ -12,7 +12,7 @@ console.log("Inside register")
       throw new Error('Email is required!')
     }
     if (!phoneNumber) {
-      throw new Error('Password is required!')
+      throw new Error('Phone Number is required!')
     }
 
 

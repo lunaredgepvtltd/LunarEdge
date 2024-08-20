@@ -163,7 +163,7 @@ import { Link } from "react-router-dom";
             </ul>
 
             <p className=" mt-3 md:mt-8 text-xs text-gray-300 sm:mt-0 ">
-              &copy; 2024. LunarEdge IT Services Ltd. All rights reserved.
+              &copy; 2024. LunarEdge IT Services Pvt. Ltd. All rights reserved.
             </p>
           </div>
         </div>

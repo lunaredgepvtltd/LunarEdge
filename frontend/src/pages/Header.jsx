@@ -61,19 +61,19 @@ const Header = () => {
   }, []);
 
   return (
-    <div className=" w-full h-[125px] fixed z-50 px-5 pt-6">
-      <div className=" flex bg-white h-full w-full rounded-3xl justify-between items-center px-10 md:px-20 ">
+    <div className=" w-full h-[90px] md:h-[125px] fixed z-50 pt-3 px-3 md:px-5 md:pt-6">
+      <div className=" flex bg-white h-full w-full rounded-xl md:rounded-3xl justify-between items-center px-4 md:px-20 box">
         {/* Logo */}
         <Link to={"/"} className="flex-shrink-0 mt-4">
           <img
             src={logo}
             alt="Company Logo"
-            className="h-auto w-[90px] pt-[5px] md:w-24 md:pt-3"
+            className="h-auto w-[80px] pt-[5px] md:w-24 md:pt-3"
           />
                   
         </Link>
         {/* Mobile Menu Toggle */}
-        <button className="md:hidden block text-black  text-2xl" onClick={toggleMenu}>
+        <button className="md:hidden block text-black  text-xl" onClick={toggleMenu}>
           {menuOpen ? <IoIosClose /> : <IoIosMenu />}
         </button>
 
@@ -82,18 +82,18 @@ const Header = () => {
         <ul className={`hidden md:flex space-x-4 items-center`}>
 
           {/* home button */}
-         <li>
-         <span className=" h-full relative rounded-full text-white bg-[#222222] p-3 px-6 cursor-pointer">
+        
+         <Link to={"/"} className=" h-full relative rounded-full text-white bg-[#222222] hover:text-red-500 p-3 px-6 cursor-pointer">
              Home
-            </span>
-         </li>
+            </Link>
+        
           {/* About Us */}
           <li className=" h-full relative rounded-full hover:bg-[#616161] group flex items-center p-3 cursor-pointer transition-all duration-300">
-            
-            <span className=" text-lg text-black hover:text-white hover:fall-in">
+           
+            <span className=" text-lg text-black group-hover:text-white hover:fall-in">
               About Us
             </span>
-            <span className="text-lg text-black hover:text-white mt-1">
+            <span className="text-lg text-black group-hover:text-white mt-1">
               <IoIosArrowDown />
             </span>
             <ul className="absolute mt-2 top-[40px] left-0 rounded-lg shadow-lg transition-opacity duration-500 invisible group-hover:visible group-hover:opacity-100 bg-[#292828] w-48 pt-3 pb-3">
@@ -125,6 +125,7 @@ const Header = () => {
               </li>
             </ul>
           </li>
+         
 
           {/* Services */}
           <li className="h-full relative rounded-full hover:bg-[#616161] group flex items-center p-3 cursor-pointer transition-all duration-300">
@@ -163,7 +164,7 @@ const Header = () => {
           </li>
 
           {/* Industries */}
-          <li className="h-full relative rounded-full hover:bg-[#616161] group flex items-center p-3 cursor-pointer transition-all duration-300">
+          <li className="h-full relative rounded-full hover:bg-[#616161] left-0 group flex items-center p-3 cursor-pointer transition-all duration-300">
             <span className="text-lg text-black group-hover:text-white">
               Industries
             </span>
@@ -174,7 +175,7 @@ const Header = () => {
               <li>
                 <Link
                   to="/common"
-                  className="translate-x-2 block px-4 py-2  text-white hover:text-red-500  hover:text-shadow-md-red"
+                  className=" block px-4 py-2  text-white hover:text-red-500  hover:text-shadow-md-red"
                 >
                   Education
                 </Link>
@@ -212,7 +213,9 @@ const Header = () => {
           <div className="fixed top-0 left-0 w-full h-auto bg-white z-40 md:hidden flex flex-col transition-all duration-500 overflow-auto pb-5 rounded-b-lg">
             {/* header  */}
             <div className="flex justify-between items-center p-2">
-              <img src={LunaredgeLogo} alt="lunarEdge" className="h-16 w-20" />
+
+                {/* logo   */}
+              <img src={LunaredgeLogo} alt="lunarEdge" className="h-auto w-[80px]" />
               <button className="text-4xl" onClick={toggleMenu}>
                 <IoIosClose />
               </button>
