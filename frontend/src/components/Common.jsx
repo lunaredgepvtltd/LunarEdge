@@ -5,7 +5,7 @@ const Common = () => {
   return (
 <div className="w-full h-screen flex items-center justify-center bg-gray-200">
   <div className="text-center flex flex-col justify-center gap-8 p-8 md:p-14 bg-white shadow-xl rounded-lg max-w-4xl mx-4 border border-gray-300">
-    <div className="mb-6">
+    <div className="mb-4">
       <h1 className="text-2xl md:text-6xl font-bold text-gray-900 mb-4">
         🚧 Work in Progress!
       </h1>
