@@ -125,7 +125,7 @@ const Hero = () => {
       {/* first-part */}
 
       <div
-        className="w-full h-[660px] md:h-[900px] md:p-0 flex items-center justify-center text-center"
+        className="w-full h-[690px] md:h-[900px] md:p-0 flex items-center justify-center text-center"
         style={{
           backgroundImage: `url(${employmoon})`,
           backgroundSize: 'cover',
@@ -142,13 +142,13 @@ const Hero = () => {
 
          {/* right-side for small and medium devices */}
         <div className=" w-[80%] h-[65%] md:w-[50%] items-center relative">
-          {/* swipe-down button  */}
-          
+         
+           {/* swipe-down button  */}
           <div className=" hidden md:block w-[7rem] h-[7rem] rounded-full bg-black absolute bottom-0 left-[15%]">
 
           </div>
-         
-          <div className="h-auto md:hidden flex flex-col gap-6 justify-around">
+        
+          <div className="h-auto md:hidden flex flex-col gap-6 justify-around items-center">
            <div className="w-[80%] relative">
           <img src={textimage} />
           <div className=" md:hidden absolute top-[42%] left-[31%]  h-full w-full">
@@ -172,7 +172,7 @@ const Hero = () => {
 
       {/* second-part */}
       <div className="w-full h-full ">
-        <div className="w-full text-center  md:pt-16">
+        <div className="w-full text-center  md:pt-14">
           {isSmallDevice ?
             <div className="flex flex-col gap-4 justify-center items-center">
               <div className="flex flex-col gap-1 p-4">
