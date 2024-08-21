@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
           src={MyImage}
           alt="please reload"
         />
-        <p className=" hidden 2xl:block text-4xl absolute bottom-0 ml-24 mb-9 text-black animated-text">
+        <p className=" hidden 2xl:block text-3xl absolute bottom-0 ml-24 mb-9 text-black animated-text  whitespace-nowrap">
           Smart Innovation Meets Infinity
         </p>
       </div>
@@ -37,12 +37,12 @@ import { Link } from "react-router-dom";
                 <div className="mb-[2px]">
                   <BsWhatsapp className="text-green-600" />
                 </div>
-                <p className="text-[#4688eb] hover:underline underline-offset-2 transition-all duration-300">
+                <p className="text-[#4688eb] hover:underline underline-offset-2 transition-all duration-300 whitespace-nowrap">
                   <a href="https://wa.me/919829011076" target="_blank" >
                     +91-9829011076
                   </a>
                 </p>
-                <span className="font-semibold text-gray-300 "> [Sandeep Katariya]</span>
+                <span className="font-semibold text-gray-300 whitespace-nowrap"> [Sandeep Katariya]</span>
               </li>
               <li className="flex gap-2 items-center">
                 <div>
@@ -58,7 +58,7 @@ import { Link } from "react-router-dom";
             </ul>
           </div>
 
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2  px-4">
             <div className="hidden md:block">
               <p className="font-medium text-gray-100 ">
                 Services

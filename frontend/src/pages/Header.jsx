@@ -79,13 +79,13 @@ const Header = () => {
                   
         </Link>
         {/* Mobile Menu Toggle */}
-        <button className="md:hidden block text-black  text-xl" onClick={toggleMenu}>
+        <button className="lg:hidden block text-black  text-xl" onClick={toggleMenu}>
           {menuOpen ? <IoIosClose /> : <IoIosMenu />}
         </button>
 
         {/* Nav Links for Desktop */}
 
-        <ul className={`hidden md:flex space-x-4 items-center`}>
+        <ul className={`hidden lg:flex space-x-4 items-center`}>
 
           {/* home button */}
          <li>
@@ -218,7 +218,7 @@ const Header = () => {
           </li>
         </ul>
         {/* Contact Us */}
-        <div className="md:block hidden">
+        <div className="lg:block hidden">
           <button
             className="  rounded-full py-4 px-8 text-black text-md hover:bg-[#703299] border border-[#703299] hover:text-white hover:shadow-md  hover:bg-gradient-to-r from-[#386bb7] to-[#e24c4a] transition-all duration-100"
             onClick={handleButton}
