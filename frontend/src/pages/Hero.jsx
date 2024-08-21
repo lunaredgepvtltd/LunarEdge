@@ -125,7 +125,7 @@ const Hero = () => {
       {/* first-part */}
 
       <div
-        className="w-full h-[660px] md:h-[900px] md:p-0 flex items-center justify-center"
+        className="w-full h-[660px] md:h-[900px] md:p-0 flex items-center justify-center text-center"
         style={{
           backgroundImage: `url(${employmoon})`,
           backgroundSize: 'cover',

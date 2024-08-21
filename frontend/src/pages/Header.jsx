@@ -227,7 +227,7 @@ const Header = () => {
             <div className="flex justify-between items-center p-2">
 
                 {/* logo   */}
-              <img src={LunaredgeLogo} alt="lunarEdge" className="h-auto w-[80px]" />
+              <Link to={'/'}><img src={LunaredgeLogo} alt="lunarEdge" className="h-auto w-[80px]" /></Link>
               <button className="text-4xl" onClick={toggleMenu}>
                 <IoIosClose />
               </button>
@@ -257,6 +257,7 @@ const Header = () => {
                       <Link
                         to="/common"
                         className="block px-4 py-1 text-[#082847] hover:underline underline-offset-2 w-48 text-sm"
+                        onClick={toggleMenu}
                       >
                         Digital Innovators
                       </Link>
@@ -265,6 +266,7 @@ const Header = () => {
                       <Link
                         to="/common"
                         className="block px-4 py-1 text-[#082847] hover:underline underline-offset-2 w-32 text-sm"
+                        onClick={toggleMenu}
                       >
                         Our Clients
                       </Link>
@@ -273,6 +275,7 @@ const Header = () => {
                       <Link
                         to="/common"
                         className="block px-4 py-1 text-[#082847] hover:underline underline-offset-2 w-32 text-sm"
+                        onClick={toggleMenu}
                       >
                         Careers
                       </Link>
@@ -304,6 +307,7 @@ const Header = () => {
                       <Link
                         to="/common"
                         className="block px-4 py-1 text-[#082847] hover:underline underline-offset-2 w-48 text-sm"
+                        onClick={toggleMenu}
                       >
                         Web Development
                       </Link>
@@ -312,6 +316,7 @@ const Header = () => {
                       <Link
                         to="/common"
                         className="block px-4 py-1 text-[#082847] hover:underline underline-offset-2 w-56 text-sm"
+                        onClick={toggleMenu}
                       >
                         Mobile App Development
                       </Link>
@@ -320,6 +325,7 @@ const Header = () => {
                       <Link
                         to="/common"
                         className="block px-4 py-1 text-[#082847] hover:underline underline-offset-2 w-32 text-sm"
+                        onClick={toggleMenu}
                       >
                         IT Consulting
                       </Link>
@@ -351,6 +357,7 @@ const Header = () => {
                       <Link
                         to="/common"
                         className="block px-4 py-1 text-[#082847] hover:underline underline-offset-2 w-48 text-sm"
+                        onClick={toggleMenu}
                       >
                         Education
                       </Link>
@@ -359,6 +366,7 @@ const Header = () => {
                       <Link
                         to="/common"
                         className="block px-4 py-1 text-[#082847] hover:underline underline-offset-2 w-56 text-sm"
+                        onClick={toggleMenu}
                       >
                         Healthcare
                       </Link>
@@ -367,6 +375,7 @@ const Header = () => {
                       <Link
                         to="/common"
                         className="block px-4 py-1 text-[#082847] hover:underline underline-offset-2 w-32 text-sm"
+                        onClick={toggleMenu}
                       >
                         Ecommerce
                       </Link>
