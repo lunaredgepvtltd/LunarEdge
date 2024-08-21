@@ -229,9 +229,9 @@ const Hero = () => {
             </div>
           ) : (
             // rendering grid-boxex for large-devices 
-            <div className='flex flex-wrap justify-center items-stretch'>
+            <div className='flex flex-wrap justify-center items-stretch xl:px-3'>
             {offers.map((offer, index) => (
-              <div className='w-full md:w-1/3 p-4'>
+              <div className='w-full md:w-1/3 px-1 py-3 xl:px-2'>
                 <Offer key={index} service={offer.service} content={offer.content} />
               </div>
             ))}
@@ -258,7 +258,7 @@ const Hero = () => {
       </div>
 
       {/* rendering technical skill-box  */}
-      <div className="md:flex justify-around
+      <div className="md:flex justify-between xl:justify-around
        items-center p-4 md:pb-40 border border-none w-auto" style={{
           backgroundImage: `url(${maleImg})`, // Correct syntax
           backgroundRepeat: 'no-repeat',
@@ -266,7 +266,7 @@ const Hero = () => {
         }}>
 
         {/* left side  */}
-        <div data-aos={isSmallDevice ? undefined : "fade-up"} data-aos-delay="500" className="shadow-2xl rounded-xl border-black bg-gray-800/50 md:ml-[10%] md:mt-[8%] md:w-[30%] grid grid-rows-4 gap-2 md:gap-5 grid-cols-3 p-3 md:p-6 backdrop-blur-xl" >
+        <div data-aos={isSmallDevice ? undefined : "fade-up"} data-aos-delay="500" className="shadow-2xl rounded-xl border-black bg-gray-800/50   grid grid-rows-4  grid-cols-3 p-3 backdrop-blur-xl w-full md:w-[70%] xl:w-[40%] h-auto mx-auto" >
 
           {techStack.map((tech, index) => (
             <TechBox key={index} name={tech.name} logo={tech.logo} />
@@ -275,8 +275,8 @@ const Hero = () => {
 
         {/* right-side  */}
 
-        <div data-aos={isSmallDevice ? undefined : "fade-up"} className="hidden md:block">
-          <p className="text-7xl bebas-neue-regular space-x-2 drop-shadow-md"><span className="text-[#6a96e7]">Transforming Business</span>{<br></br>} <span className="text-white">With Advance Technology</span></p>
+        <div data-aos={isSmallDevice ? undefined : "fade-up"} className="hidden md:block w-auto h-full text-center">
+          <p className=" md:text-5xl xl:text-7xl bebas-neue-regular space-x-2 drop-shadow-md xl:mr-5"><span className="text-[#6a96e7]">Transforming Business</span>{<br></br>} <span className="text-white">With Advance Technology</span></p>
         </div>
 
       </div>
