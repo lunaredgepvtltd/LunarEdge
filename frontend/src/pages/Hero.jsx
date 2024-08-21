@@ -218,7 +218,7 @@ const Hero = () => {
         <div >
           {isSmallDevice ? (
             // rendering slider for small devices 
-            <div className="w-[350px] pl-5 my-8">
+            <div className="w-full container mx-auto">
               <Slider {...sliderSetting}>
                 {offers.map((offer, index) => (
                   <div key={index}>
@@ -229,13 +229,13 @@ const Hero = () => {
             </div>
           ) : (
             // rendering grid-boxex for large-devices 
-            <div className="md:flex justify-center items-center w-full h-auto">
-              <div className="grid grid-cols-1 grid-col-9 md:grid-cols-3 md:grid-rows-3 gap-4 p-3 md:px-10 w-full h-full">
-                {offers.map((offer, index) => (
-                  <Offer key={index} service={offer.service} content={offer.content} />
-                ))}
+            <div className='flex flex-wrap justify-center items-stretch'>
+            {offers.map((offer, index) => (
+              <div className='w-full md:w-1/3 p-4'>
+                <Offer key={index} service={offer.service} content={offer.content} />
               </div>
-            </div>
+            ))}
+          </div>
           )}
         </div>
       </div>
