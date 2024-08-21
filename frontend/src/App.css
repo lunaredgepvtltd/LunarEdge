@@ -88,32 +88,5 @@ width: auto;
 
 /* swipe-down-button  */
 
-.circle-text-wrapper {
-  position: absolute;
-  width: 240px; /* Adjusted to be larger than the inner circle */
-  height: 240px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  animation: rotate-circle 10s linear infinite; /* Rotation animation */
-}
-
-.circle-text {
-  position: absolute;
-  font-weight: bold;
-  font-size: 14px;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  white-space: nowrap; /* Ensures that text doesn't break into multiple lines */
-}
-
-@keyframes rotate-circle {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
 
 

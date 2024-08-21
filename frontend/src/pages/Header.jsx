@@ -82,26 +82,30 @@ const Header = () => {
         <ul className={`hidden md:flex space-x-4 items-center`}>
 
           {/* home button */}
-        
-         <Link to={"/"} className=" h-full relative rounded-full text-white bg-[#222222] hover:text-red-500 p-3 px-6 cursor-pointer">
+         <li>
+         <Link to={"/"} className=" h-full relative rounded-full text-black text-lg hover:text-white hover:bg-[#616161] p-3 px-6 cursor-pointer transition-all duration-300">
              Home
             </Link>
+         </li>
         
           {/* About Us */}
-          <li className=" h-full relative rounded-full hover:bg-[#616161] group flex items-center p-3 cursor-pointer transition-all duration-300">
+          <li className=" h-full relative group flex items-center px-2 py-4 cursor-pointer transition-all duration-300">
            
+            <div className="flex items-center justify-between rounded-full group-hover:bg-[#616161] p-3">
             <span className=" text-lg text-black group-hover:text-white hover:fall-in">
               About Us
             </span>
             <span className="text-lg text-black group-hover:text-white mt-1">
               <IoIosArrowDown />
             </span>
-            <ul className="absolute mt-2 top-[40px] left-0 rounded-lg shadow-lg transition-opacity duration-500 invisible group-hover:visible group-hover:opacity-100 bg-[#292828] w-48 pt-3 pb-3">
+            </div>
+
+            <ul className="absolute mt-2 top-[63px] left-0 rounded-lg shadow-lg invisible group-hover:visible group-hover:opacity-100 bg-[#292828] w-48 pt-3 pb-3">
               <li >
                 <li>
                   <Link
                     to="/common"
-                    className="block px-4 py-2 text-white hover:text-red-500 hover:text-shadow-md-red"
+                    className="block px-4 py-2 text-white hover:text-red-500 hover:text-shadow-md-red "
                   >
                     Digital Innovators
                   </Link>
@@ -128,14 +132,18 @@ const Header = () => {
          
 
           {/* Services */}
-          <li className="h-full relative rounded-full hover:bg-[#616161] group flex items-center p-3 cursor-pointer transition-all duration-300">
-            <span className="text-lg text-black group-hover:text-white">
+          <li className=" h-full relative group flex items-center px-2 py-4 cursor-pointer transition-all duration-300">
+
+          <div className="flex items-center justify-between rounded-full group-hover:bg-[#616161] p-3">
+            <span className=" text-lg text-black group-hover:text-white hover:fall-in">
               Services
             </span>
             <span className="text-lg text-black group-hover:text-white mt-1">
               <IoIosArrowDown />
             </span>
-            <ul className="absolute mt-2 top-[40px] left-0 rounded-lg shadow-lg transition-opacity duration-500 invisible group-hover:visible group-hover:opacity-100 bg-[#292828] w-48 pt-3 pb-3">
+            </div>
+
+            <ul className="absolute mt-2 top-[63px] left-0 rounded-lg shadow-lg invisible group-hover:visible group-hover:opacity-100 bg-[#292828] w-48 pt-3 pb-3">
               <li >
                 <Link
                   to="/common"
@@ -164,14 +172,18 @@ const Header = () => {
           </li>
 
           {/* Industries */}
-          <li className="h-full relative rounded-full hover:bg-[#616161] left-0 group flex items-center p-3 cursor-pointer transition-all duration-300">
-            <span className="text-lg text-black group-hover:text-white">
+          <li className=" h-full relative group flex items-center px-2 py-4 cursor-pointer transition-all duration-300">
+
+             <div className="flex items-center justify-between rounded-full group-hover:bg-[#616161] p-3">
+            <span className=" text-lg text-black group-hover:text-white hover:fall-in">
               Industries
             </span>
             <span className="text-lg text-black group-hover:text-white mt-1">
               <IoIosArrowDown />
             </span>
-            <ul className="absolute mt-2 top-[40px] left-0 rounded-lg shadow-lg transition-opacity duration-500 invisible group-hover:visible group-hover:opacity-100 bg-[#292828] w-48 pt-3 pb-3">
+            </div>
+
+            <ul className="absolute mt-2 top-[63px] left-0 rounded-lg shadow-lg invisible group-hover:visible group-hover:opacity-100 bg-[#292828] w-40 pt-3 pb-3">
               <li>
                 <Link
                   to="/common"
@@ -202,7 +214,7 @@ const Header = () => {
         {/* Contact Us */}
         <div className="md:block hidden">
           <button
-            className="  rounded-full  py-4 px-8 text-black text-md hover:bg-[#703299] border border-[#703299] hover:text-white hover:shadow-md   hover:bg-gradient-to-r from-[#386bb7] to-[#e24c4a] transition-all duration-100"
+            className="  rounded-full py-4 px-8 text-black text-md hover:bg-[#703299] border border-[#703299] hover:text-white hover:shadow-md  hover:bg-gradient-to-r from-[#386bb7] to-[#e24c4a] transition-all duration-100"
             onClick={handleButton}
           >
             Contact Us

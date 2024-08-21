@@ -133,7 +133,7 @@ const Hero = () => {
         }}
       >
         {/* text image for big devices --- left-side  */}
-        <div className="md:block hidden md:w-[40%] relative">
+        <div className="block md:w-[40%] relative">
           <img src={textimage} />
           <div className=" hidden xl:block absolute top-[42%] left-[31%]  h-full w-full">
           <img src={moon} className="w-[12%] h-[16%] rotate-continuous"/>
