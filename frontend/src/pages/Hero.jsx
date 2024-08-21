@@ -145,7 +145,6 @@ const Hero = () => {
          
            {/* swipe-down button  */}
           {/* <div className=" hidden md:block w-[7rem] h-[7rem] rounded-full bg-black absolute bottom-0 left-[15%]">
-
           </div> */}
         
           <div className="h-auto md:hidden flex flex-col gap-6 justify-around items-center">
@@ -230,8 +229,8 @@ const Hero = () => {
             </div>
           ) : (
             // rendering grid-boxex for large-devices 
-            <div className="md:flex justify-center items-center">
-              <div className="grid grid-cols-1 grid-col-9 md:grid-cols-3 md:grid-rows-3 gap-4 p-3 md:p-0">
+            <div className="md:flex justify-center items-center w-full h-auto">
+              <div className="grid grid-cols-1 grid-col-9 md:grid-cols-3 md:grid-rows-3 gap-4 p-3 md:px-10 w-full h-full">
                 {offers.map((offer, index) => (
                   <Offer key={index} service={offer.service} content={offer.content} />
                 ))}
