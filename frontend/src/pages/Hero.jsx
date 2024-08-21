@@ -133,7 +133,7 @@ const Hero = () => {
         }}
       >
         {/* text image for big devices --- left-side  */}
-        <div className="block md:w-[40%] relative">
+        <div className="hidden md:block md:w-[40%] relative">
           <img src={textimage} />
           <div className=" hidden xl:block absolute top-[42%] left-[31%]  h-full w-full">
           <img src={moon} className="w-[12%] h-[16%] rotate-continuous"/>
@@ -144,7 +144,7 @@ const Hero = () => {
         <div className=" w-[80%] h-[65%] md:w-[50%] items-center relative">
           {/* swipe-down button  */}
           
-          <div className="w-[7rem] h-[7rem] rounded-full bg-black absolute bottom-0 left-[15%]">
+          <div className=" hidden md:block w-[7rem] h-[7rem] rounded-full bg-black absolute bottom-0 left-[15%]">
 
           </div>
 
@@ -167,7 +167,7 @@ const Hero = () => {
 
       {/* second-part */}
       <div className="w-full h-full">
-        <div className="w-full text-center  md:pt-16">
+        <div className="w-full text-center md:pt-16">
           {isSmallDevice ?
             <div className="flex flex-col gap-4 justify-center items-center">
               <div className="flex flex-col gap-1 p-4">
