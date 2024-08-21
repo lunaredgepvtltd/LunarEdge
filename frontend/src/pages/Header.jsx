@@ -19,14 +19,20 @@ const Header = () => {
 
   const handleAboutUs = () => {
     setAboutUs(!aboutUs);
+    if(industries) {setIndustries(!industries)}
+    if(services) {setServices(!services)}
   };
 
   const handleServices = () => {
     setServices(!services);
+    if(aboutUs) {setAboutUs(!aboutUs)}
+    if(industries) {setIndustries(!industries)}
   };
 
   const handleIndustries = () => {
     setIndustries(!industries);
+    if(services) {setServices(!services)}
+    if(aboutUs) {setAboutUs(!aboutUs)}
   };
 
   // show form button
