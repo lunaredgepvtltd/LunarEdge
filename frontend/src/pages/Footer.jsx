@@ -5,13 +5,13 @@ import { Link } from "react-router-dom";
  const Footer = () => {
   return (
     <footer className="bg-[#222222]  lg:grid lg:grid-cols-5  md:mt-0  ">
-      <div className=" hidden relative md:block  lg:col-span-2 lg:h-full">
+      <div className=" hidden relative lg:block  lg:col-span-2 lg:h-full">
         <img
           className="z-5 absolute inset-0 h-[150px] md:h-full w-full object-cover"
           src={MyImage}
           alt="please reload"
         />
-        <p className="absolute bottom-0 ml-24 mb-9 text-black text-4xl animated-text">
+        <p className=" hidden 2xl:block text-4xl absolute bottom-0 ml-24 mb-9 text-black animated-text">
           Smart Innovation Meets Infinity
         </p>
       </div>
@@ -31,18 +31,18 @@ import { Link } from "react-router-dom";
               </a>
             </p>
 
-            <ul>
+            <ul className="text-sm">
               <br />
               <li className="flex gap-2 items-center">
                 <div className="mb-[2px]">
                   <BsWhatsapp className="text-green-600" />
                 </div>
                 <p className="text-[#4688eb] hover:underline underline-offset-2 transition-all duration-300">
-                  <a href="https://wa.me/919829011076" target="_blank">
+                  <a href="https://wa.me/919829011076" target="_blank" >
                     +91-9829011076
                   </a>
                 </p>
-                <span className="font-semibold text-gray-300"> [Sandeep Katariya]</span>
+                <span className="font-semibold text-gray-300 "> [Sandeep Katariya]</span>
               </li>
               <li className="flex gap-2 items-center">
                 <div>
