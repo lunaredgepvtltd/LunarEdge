@@ -144,9 +144,9 @@ const Hero = () => {
         <div className=" w-[80%] h-[65%] md:w-[50%] items-center relative">
          
            {/* swipe-down button  */}
-          <div className=" hidden md:block w-[7rem] h-[7rem] rounded-full bg-black absolute bottom-0 left-[15%]">
+          {/* <div className=" hidden md:block w-[7rem] h-[7rem] rounded-full bg-black absolute bottom-0 left-[15%]">
 
-          </div>
+          </div> */}
         
           <div className="h-auto md:hidden flex flex-col gap-6 justify-around items-center">
            <div className="w-[80%] relative">
