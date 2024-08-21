@@ -232,7 +232,7 @@ const Hero = () => {
             // rendering grid-boxex for large-devices 
             <div className='flex flex-wrap justify-center items-stretch xl:px-3'>
             {offers.map((offer, index) => (
-              <div className='w-full md:w-1/3 px-1 py-3 xl:px-2'>
+              <div className='w-full md:w-1/3 px-1 py-3 xl:px-5'>
                 <Offer key={index} service={offer.service} content={offer.content} />
               </div>
             ))}
@@ -267,7 +267,7 @@ const Hero = () => {
         }}>
 
         {/* left side  */}
-        <div data-aos={isSmallDevice ? undefined : "fade-up"} data-aos-delay="500" className="shadow-2xl rounded-xl border-black bg-gray-800/50   grid grid-rows-4  grid-cols-3 p-3 backdrop-blur-xl w-full md:w-[70%] xl:w-[40%] h-auto mx-auto" >
+        <div data-aos={isSmallDevice ? undefined : "fade-up"} data-aos-delay="500" className="shadow-2xl rounded-xl border-black bg-gray-800/50   grid grid-rows-4  grid-cols-3 p-3 backdrop-blur-xl w-full md:w-[60%] xl:w-[40%] h-auto mx-auto" >
 
           {techStack.map((tech, index) => (
             <TechBox key={index} name={tech.name} logo={tech.logo} />
@@ -277,7 +277,7 @@ const Hero = () => {
         {/* right-side  */}
 
         <div data-aos={isSmallDevice ? undefined : "fade-up"} className="hidden md:block w-auto h-full text-center">
-          <p className=" md:text-5xl xl:text-7xl bebas-neue-regular space-x-2 drop-shadow-md xl:mr-5"><span className="text-[#6a96e7]">Transforming Business</span>{<br></br>} <span className="text-white">With Advance Technology</span></p>
+          <p className="text-4xl lg:text-7xl  bebas-neue-regular space-x-2 drop-shadow-md xl:mr-5"><span className="text-[#6a96e7]">Transforming Business</span>{<br></br>} <span className="text-white">With Advance Technology</span></p>
         </div>
 
       </div>
