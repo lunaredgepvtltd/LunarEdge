@@ -140,16 +140,21 @@ const Hero = () => {
           </div>
           </div>
 
-         {/* right-side  */}
+         {/* right-side for small and medium devices */}
         <div className=" w-[80%] h-[65%] md:w-[50%] items-center relative">
           {/* swipe-down button  */}
           
           <div className=" hidden md:block w-[7rem] h-[7rem] rounded-full bg-black absolute bottom-0 left-[15%]">
 
           </div>
-
+         
           <div className="h-auto md:hidden flex flex-col gap-6 justify-around">
-           <span> <img src={textimage} className=" md:w-[80%]"/></span>
+           <div className="w-[80%] relative">
+          <img src={textimage} />
+          <div className=" md:hidden absolute top-[42%] left-[31%]  h-full w-full">
+          <img src={moon} className="w-[12%] h-[16%] rotate-continuous"/>
+          </div>
+          </div>
               {/* Contact Us */}
           
               <h2 className="text-md mb-4">Welcome to Lunaredge Private Limited, your partner in digital transformation. We specialize in delivering customized IT solutions that drive business growth and efficiency.</h2>
@@ -166,8 +171,8 @@ const Hero = () => {
       </div>
 
       {/* second-part */}
-      <div className="w-full h-full">
-        <div className="w-full text-center md:pt-16">
+      <div className="w-full h-full ">
+        <div className="w-full text-center  md:pt-16">
           {isSmallDevice ?
             <div className="flex flex-col gap-4 justify-center items-center">
               <div className="flex flex-col gap-1 p-4">
