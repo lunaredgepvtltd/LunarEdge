@@ -125,7 +125,7 @@ const Hero = () => {
       {/* first-part */}
 
       <div
-        className="w-full h-[690px] md:h-[900px] md:p-0 flex items-center justify-center text-center"
+        className="w-full xl:h-[750px] h-[680px] md:p-0 flex items-center justify-center text-center"
         style={{
           backgroundImage: `url(${employmoon})`,
           backgroundSize: 'cover',
@@ -133,7 +133,7 @@ const Hero = () => {
         }}
       >
         {/* text image for big devices --- left-side  */}
-        <div className="hidden md:block md:w-[40%] relative">
+        <div className="hidden lg:block md:w-[40%] relative">
           <img src={textimage} />
           <div className=" hidden xl:block absolute top-[42%] left-[31%]  h-full w-full">
           <img src={moon} className="w-[12%] h-[16%] rotate-continuous"/>
@@ -146,11 +146,11 @@ const Hero = () => {
            {/* swipe-down button  */}
           {/* <div className=" hidden md:block w-[7rem] h-[7rem] rounded-full bg-black absolute bottom-0 left-[15%]">
           </div> */}
-        
-          <div className="h-auto md:hidden flex flex-col gap-6 justify-around items-center">
+            {/* for small device          */}
+          <div className="h-auto lg:hidden flex flex-col gap-6 justify-around items-center md:mt-[20px]">
            <div className="w-[80%] relative">
           <img src={textimage} />
-          <div className=" md:hidden absolute top-[42%] left-[31%]  h-full w-full">
+          <div className=" lg:hidden absolute top-[42%] left-[31%]  h-full w-full">
           <img src={moon} className="w-[12%] h-[16%] rotate-continuous"/>
           </div>
           </div>
@@ -171,11 +171,11 @@ const Hero = () => {
 
       {/* second-part */}
       <div className="w-full h-full ">
-        <div className="w-full text-center  md:pt-14">
+        <div className="w-full text-center  md:pt-12">
           {isSmallDevice ?
             <div className="flex flex-col gap-4 justify-center items-center">
               <div className="flex flex-col gap-1 p-4">
-                <h1 className="text-2xl md:text-5xl font-medium">Services We Offer </h1>
+                <h1 className="text-2xl lg:text-5xl font-medium">Services We Offer </h1>
                 <p className="text-sm md:text-lg text-slate-500 my-3 py-2">
                   LunarEdge is the perfect choice for any buisness looking to
                   digitize its operations. We offers a wide range of on time{" "}
@@ -189,16 +189,17 @@ const Hero = () => {
             </div>
             :
             // for larger-devices 
-            <div className="flex justify-between">
+            <div className="flex justify-between items-center">
               {/* left-computer-gif  */}
               <div>
-                <img src={service_box} className="h-80 w-90" />
+                <img src={service_box} className=" xl:h-[300px] xl:w-[400px] lg:h-[350px] lg:w-[650px] 
+                md:h-[300px] md:w-[600px]" />
               </div>
 
               {/* center-content  */}
               <div data-aos="zoom-out" data-aos-duration="300" className="flex flex-col gap-5 p-8">
-                <h1 className="text-5xl font-semibold">SERVICES WE OFFER</h1>
-                <p className="text-lg text-slate-500 my-3 py-2">
+                <h1 className="text-3xl lg:text-5xl font-semibold">SERVICES WE OFFER</h1>
+                <p className="text-sm lg:text-lg text-slate-500 my-3 py-2">
                   LunarEdge is the perfect choice for any buisness looking to
                   digitize its operations. We offers a wide range of on time{" "}
                   <br></br> and cost effective services that will help solve your
@@ -208,8 +209,8 @@ const Hero = () => {
               {/* center-content-ends  */}
 
               {/* right-computer-gif  */}
-              <div>
-                <img src={service_boxr} className="h-80 w-90" />
+              <div className="xl:block hidden">
+                <img src={service_boxr} className=" h-[300px] w-[400px]" />
               </div>
             </div>}
         </div>

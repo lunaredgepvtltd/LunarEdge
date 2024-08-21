@@ -68,7 +68,7 @@ const Header = () => {
 
   return (
     <div className=" w-full h-[90px] md:h-[125px] fixed z-50 pt-3 px-3 md:px-5 md:pt-6">
-      <div className=" flex bg-white h-full w-full rounded-xl md:rounded-3xl justify-between items-center px-4 xl:px-10">
+      <div className="box flex bg-white h-full w-full rounded-xl md:rounded-3xl justify-between items-center px-4 xl:px-10">
         {/* Logo */}
         <Link to={"/"} className="flex-shrink-0 mt-4">
           <img
