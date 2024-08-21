@@ -197,7 +197,7 @@ const Hero = () => {
               </div>
 
               {/* center-content  */}
-              <div data-aos="zoom-out" data-aos-duration="300" className="flex flex-col gap-5 p-8">
+              <div data-aos="fade-up" data-aos-duration="300" className="flex flex-col gap-5 p-8">
                 <h1 className="text-3xl lg:text-5xl font-semibold">SERVICES WE OFFER</h1>
                 <p className="text-sm lg:text-lg text-slate-500 my-3 py-2">
                   LunarEdge is the perfect choice for any buisness looking to

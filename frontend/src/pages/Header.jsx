@@ -228,7 +228,7 @@ const Header = () => {
         </div>
          {/* Mobile Menu */}
          {menuOpen && (
-          <div className="fixed top-0 left-0 w-full h-auto bg-white z-40 md:hidden flex flex-col transition-all duration-500 overflow-auto pb-5 rounded-b-lg">
+          <div className="fixed top-0 left-0 w-full h-auto bg-white z-40 lg:hidden flex flex-col transition-all duration-500 overflow-auto pb-5 rounded-b-lg">
             {/* header  */}
             <div className="flex justify-between items-center p-2">
 
