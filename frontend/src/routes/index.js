@@ -15,7 +15,7 @@ const router = createBrowserRouter([
         element : <Common/>
     },
   {
-    path:'aboutus',
+    path:'aboutLunarEdge/aboutUs',
     element:<AboutUs/>
   }]
   },

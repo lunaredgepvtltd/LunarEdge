@@ -110,7 +110,7 @@ const Header = () => {
               <li >
               <li>
                   <Link
-                    to="/aboutus"
+                    to="/aboutLunarEdge/aboutUs"
                     className="block px-4 py-2 text-white hover:text-red-500 hover:text-shadow-md-red "
                   >
                    About Us
