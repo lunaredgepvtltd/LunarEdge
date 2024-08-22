@@ -89,7 +89,7 @@ const Header = () => {
 
           {/* home button */}
          <li>
-         <Link to={"/aboutus"} className=" h-full relative rounded-full text-black text-lg hover:text-white hover:bg-[#616161] p-3 px-6 cursor-pointer transition-all duration-300">
+         <Link to={"/"} className=" h-full relative rounded-full text-black text-lg hover:text-white hover:bg-[#616161] p-3 px-6 cursor-pointer transition-all duration-300">
              Home
             </Link>
          </li>
@@ -99,7 +99,7 @@ const Header = () => {
            
             <div className="flex items-center justify-between rounded-full group-hover:bg-[#616161] p-3">
             <span className=" text-lg text-black group-hover:text-white hover:fall-in">
-              About Us
+              About LunarEdge
             </span>
             <span className="text-lg text-black group-hover:text-white mt-1">
               <IoIosArrowDown />
@@ -108,6 +108,14 @@ const Header = () => {
 
             <ul className="absolute mt-2 top-[63px] left-0 rounded-lg shadow-lg invisible group-hover:visible group-hover:opacity-100 bg-[#292828] w-48 pt-3 pb-3">
               <li >
+              <li>
+                  <Link
+                    to="/aboutus"
+                    className="block px-4 py-2 text-white hover:text-red-500 hover:text-shadow-md-red "
+                  >
+                   About Us
+                  </Link>
+                </li>
                 <li>
                   <Link
                     to="/common"
