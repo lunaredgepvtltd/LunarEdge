@@ -150,8 +150,8 @@ const Hero = () => {
           <div className="h-auto md:hidden flex flex-col gap-6 justify-around items-center">
            <div className="w-[80%] relative">
           <img src={textimage} />
-          <div className=" md:hidden absolute top-[42%] left-[31%]  h-full w-full">
-          <img src={moon} className="w-[12%] h-[16%] rotate-continuous"/>
+          <div className=" md:hidden absolute top-[42%] left-[31%]  h-auto w-auto">
+          <img src={moon} className="w-[18%] lg:w-[12%] h-[16%] rotate-continuous"/>
           </div>
           </div>
               {/* Contact Us */}
