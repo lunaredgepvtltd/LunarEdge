@@ -5,7 +5,6 @@ import { CiLocationOn } from "react-icons/ci";
 import TextInput from "../components/TextInput";
 import { useForm } from "react-hook-form";
 import { RxCross1 } from "react-icons/rx";
-import "../App.css";
 
 const ContactForm = ({ onClose }) => {
   const {

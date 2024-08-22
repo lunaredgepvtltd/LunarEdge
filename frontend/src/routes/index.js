@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import App from "../App.js";
 import Common from "../components/Common.jsx";
 import Hero from "../pages/Hero.jsx";
+import { AboutUs } from "../components/AboutUs.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -12,7 +13,11 @@ const router = createBrowserRouter([
     },{
         path : 'common',
         element : <Common/>
-    }]
+    },
+  {
+    path:'aboutus',
+    element:<AboutUs/>
+  }]
   },
 ]);
 

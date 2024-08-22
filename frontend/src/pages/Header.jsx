@@ -89,7 +89,7 @@ const Header = () => {
 
           {/* home button */}
          <li>
-         <Link to={"/"} className=" h-full relative rounded-full text-black text-lg hover:text-white hover:bg-[#616161] p-3 px-6 cursor-pointer transition-all duration-300">
+         <Link to={"/aboutus"} className=" h-full relative rounded-full text-black text-lg hover:text-white hover:bg-[#616161] p-3 px-6 cursor-pointer transition-all duration-300">
              Home
             </Link>
          </li>

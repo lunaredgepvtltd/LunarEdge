@@ -25,6 +25,8 @@ import maleImg from '../assets/male.png'
 import employmoon from '../assets/employmoon.png'
 import textimage from '../assets/textimage.png'
 import moon from '../assets/moon.png'
+import '../App.css'
+
 const Hero = () => {
 
   const isSmallDevice = useMediaQuery({ maxWidth: 767 })
@@ -52,7 +54,7 @@ const Hero = () => {
     },
     {
       service: "Game Development",
-      content: "Immerse your audience in captivating virtual worlds with Lunaredge Pvt. Ltd. game development expertise."
+      content: "Immerse your audience in captivating virtual worlds with Lunaredge game development expertise."
     },
     {
       service: "IT Consulting",
@@ -72,7 +74,7 @@ const Hero = () => {
     },
     {
       service: "AI and Machine Learning Solutions",
-      content: "Harness the power of artificial intelligence and machine learning with Lunaredge Pvt. Ltd. Our advanced AI solutions are designed to revolutionize."
+      content: "Harness the power of artificial intelligence and machine learning with Lunaredge Our advanced AI solutions are designed to revolutionize."
     },
     {
       service: "Agriculture Technology Solutions",
@@ -125,7 +127,7 @@ const Hero = () => {
       {/* first-part */}
 
       <div
-        className="w-full xl:h-[750px] h-[680px] md:p-0 flex items-center justify-center text-center"
+        className="w-full 2xl:h-[910px] xl:h-[750px] h-[680px] md:p-0 flex items-center justify-center text-center"
         style={{
           backgroundImage: `url(${employmoon})`,
           backgroundSize: 'cover',
@@ -173,9 +175,9 @@ const Hero = () => {
       <div className="w-full h-full ">
         <div className="w-full text-center  md:pt-12">
           {isSmallDevice ?
-            <div className="flex flex-col gap-4 justify-center items-center">
+            <div className="flex flex-col gap-4 justify-center items-center ">
               <div className="flex flex-col gap-1 p-4">
-                <h1 className="text-2xl lg:text-5xl font-medium">Services We Offer </h1>
+                <h1 className="text-2xl lg:text-5xl font-semibold gradient-text">SERVICES WE OFFER </h1>
                 <p className="text-sm md:text-lg text-slate-500 my-3 py-2">
                   LunarEdge is the perfect choice for any buisness looking to
                   digitize its operations. We offers a wide range of on time{" "}
@@ -184,7 +186,7 @@ const Hero = () => {
                 </p>
               </div>
               <div>
-                <img src={service_box} className="md:hidden block h-70 w-80" />
+                <img src={service_box} className="md:hidden block h-[150px] w-[200px]" />
               </div>
             </div>
             :
@@ -198,7 +200,7 @@ const Hero = () => {
 
               {/* center-content  */}
               <div data-aos="fade-up" data-aos-duration="300" className="flex flex-col gap-5 p-8">
-                <h1 className="text-3xl lg:text-5xl font-semibold">SERVICES WE OFFER</h1>
+                <h1 className="text-3xl lg:text-5xl font-semibold gradient-text">SERVICES WE OFFER</h1>
                 <p className="text-sm lg:text-lg text-slate-500 my-3 py-2">
                   LunarEdge is the perfect choice for any buisness looking to
                   digitize its operations. We offers a wide range of on time{" "}
@@ -216,7 +218,7 @@ const Hero = () => {
         </div>
 
         {/* what we offers boxes */}
-        <div >
+        <div className="lg:py-20 py-10"  >
           {isSmallDevice ? (
             // rendering slider for small devices 
             <div className="w-full container mx-auto">
@@ -230,7 +232,7 @@ const Hero = () => {
             </div>
           ) : (
             // rendering grid-boxex for large-devices 
-            <div className='flex flex-wrap justify-center items-stretch xl:px-3'>
+            <div className='flex flex-wrap justify-center items-stretch lg:px-3'>
             {offers.map((offer, index) => (
               <div className='w-full md:w-1/3 px-1 py-3 xl:px-5'>
                 <Offer key={index} service={offer.service} content={offer.content} />

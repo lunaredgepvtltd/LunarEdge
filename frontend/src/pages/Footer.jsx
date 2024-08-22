@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
           src={MyImage}
           alt="please reload"
         />
-        <p className=" hidden 2xl:block text-3xl absolute bottom-0 ml-24 mb-9 text-black animated-text  whitespace-nowrap">
+        <p className=" hidden 2xl:block text-5xl absolute bottom-0 mx-auto mb-9 text-black animated-text  whitespace-nowrap">
           Smart Innovation Meets Infinity
         </p>
       </div>
