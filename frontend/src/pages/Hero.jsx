@@ -25,7 +25,7 @@ import maleImg from '../assets/male.png'
 import employmoon from '../assets/employmoon.png'
 import textimage from '../assets/textimage.png'
 import moon from '../assets/moon.png'
-import scrollDown from '../assets/scrollDown.png'
+
 import '../App.css'
 
 const Hero = () => {
