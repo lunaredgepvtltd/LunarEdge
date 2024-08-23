@@ -114,7 +114,7 @@ import { Link } from "react-router-dom";
               <ul className="mt-6 space-y-3 md:space-y-4 text-sm">
                 <li>
                   <Link
-                    to="/common"
+                    to="/AboutLunarEdge/AboutUs"
                     className="text-gray-300 transition hover:opacity-75"
                   >
                     About

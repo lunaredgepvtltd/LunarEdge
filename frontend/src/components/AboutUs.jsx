@@ -10,9 +10,9 @@ import m2 from "../assets/m2.png";
 export const AboutUs = () => {
   return (
     <div className="h-full w-full bg-gray-100">
-      <div className="h-[1100px] flex flex-col items-center justify-evenly  ">
+      <div className="h-[1050px] flex flex-col items-center justify-evenly  ">
         {/* center text content container    */}
-        <div className="flex flex-col gap-6 opacity-70">
+        <div className="flex flex-col gap-6 opacity-70 pt-20">
           <span className="text-xl mx-auto bg-gray-700 p-1 rounded-md text-white">
             LUNAREDGE
           </span>
@@ -22,26 +22,27 @@ export const AboutUs = () => {
             </h1>
             <h1> Vision Into Reality.”</h1>
           </div>
-          <button className="bg-blue-400 rounded-md mx-auto px-4 p-3 opacity-100">
-            PULL DOWN
-          </button>
+          <a href="#our-vision" className="mx-auto">
+            <button className="bg-blue-400 rounded-md  px-4 p-3 opacity-100 hover:bg-white hover:text-blue-600 hover:shadow-md">
+              PULL DOWN
+            </button>
+          </a>
         </div>
 
         {/* circular images div */}
-        <div className="h-[30%] w-[50%]  ">
+        <div className="h-[35%] w-[69%]  ">
           <img src={bgAboutus} alt="" className="h-[100%] w-[100%]" />
         </div>
       </div>
 
       {/* our vision part  */}
-      <div className="h-[600px]">
+      <div id="our-vision" className="h-[600px] flex items-end">
         <div className="h-[450px] w-full flex justify-around">
           <div className="w-[40%] flex flex-col gap-4">
-            <span className="text-[#2b1999] flex items-center gap-1">
-              <img src={iconAboutus} alt="" className="w-[2%] h-[2%]" />
-              LUNAREDGE-OUR VISION
+            <span className="text-[#2b1999]   flex items-center gap-1 ">
+              Our Vision
             </span>
-            <h3 className="text-3xl font-bold">
+            <h3 className="text-3xl font-semibold">
               Driving Innovation: Our Vision
             </h3>
             <div className="flex flex-col gap-6 pr-4 h-[91%]">
@@ -70,14 +71,12 @@ export const AboutUs = () => {
         </div>
       </div>
       {/* our mission part   */}
-      <div className="h-[600px]">
+      <div className="h-[700px] flex items-center">
         <div className="h-[450px] w-full flex justify-around  items-center ">
           <img src={ourMission} alt="" className="w-[26%] h-full" />
           <div className="w-[40%] h-auto  flex flex-col gap-3 ">
-            <span className="text-[#2b1999] flex gap-1 ">
-              Our Mission - lunaredge
-            </span>
-            <p className="text-3xl font-bold">
+            <span className="text-[#2b1999] flex gap-1 ">Our Mission</span>
+            <p className="text-3xl font-semibold">
               Innovating for Success: Our <br />
               Technology Mission
             </p>
