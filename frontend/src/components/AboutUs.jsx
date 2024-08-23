@@ -2,10 +2,10 @@ import React from "react";
 import bgAboutus from "../assets/bgAboutus.png";
 import "../App.css";
 import ourVision from "../assets/ourVision.png";
-import iconAboutus from "../assets/iconAboutus.png";
 import ourMission from "../assets/ourMission.png";
 import m1 from "../assets/m1.png";
 import m2 from "../assets/m2.png";
+import '../dynamic.scss'
 
 export const AboutUs = () => {
   return (
@@ -22,11 +22,10 @@ export const AboutUs = () => {
             </h1>
             <h1> Vision Into Reality.”</h1>
           </div>
-          <a href="#our-vision" className="mx-auto">
-            <button className="bg-blue-400 rounded-md  px-4 p-3 opacity-100 hover:bg-white hover:text-blue-600 hover:shadow-md">
-              PULL DOWN
-            </button>
-          </a>
+        
+          
+          <div class="btn btn__secondary mx-auto bg-purple-200"><p>Get Connect</p></div>
+          
         </div>
 
         {/* circular images div */}
@@ -36,7 +35,7 @@ export const AboutUs = () => {
       </div>
 
       {/* our vision part  */}
-      <div id="our-vision" className="h-[600px] flex items-end">
+      <div id="our-vision" className="h-[600px] lg:flex items-end">
         <div className="h-[450px] w-full flex justify-around">
           <div className="w-[40%] flex flex-col gap-4">
             <span className="text-[#2b1999]   flex items-center gap-1 ">
@@ -47,7 +46,6 @@ export const AboutUs = () => {
             </h3>
             <div className="flex flex-col gap-6 pr-4 h-[91%]">
               {" "}
-              {/* Added px-4 for uniform padding */}
               <p>
                 At LunarEdge, our mission is to transform the digital landscape
                 by providing cutting-edge IT solutions that drive growth,

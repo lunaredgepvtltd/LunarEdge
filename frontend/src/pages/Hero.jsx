@@ -25,6 +25,7 @@ import maleImg from '../assets/male.png'
 import employmoon from '../assets/employmoon.png'
 import textimage from '../assets/textimage.png'
 import moon from '../assets/moon.png'
+import scrollDown from '../assets/scrollDown.png'
 import '../App.css'
 
 const Hero = () => {
@@ -146,7 +147,8 @@ const Hero = () => {
         <div className=" w-[80%] h-[65%] md:w-[50%] items-center relative">
          
            {/* swipe-down button  */}
-          {/* <div className=" hidden md:block w-[7rem] h-[7rem] rounded-full bg-black absolute bottom-0 left-[15%]">
+          {/* <div className=" hidden md:block h-[300px] w-[300px] rounded-full  top-[50%] bottom-4 left-[0%]">
+            <img src={scrollDown} alt="" />
           </div> */}
             {/* for small device          */}
           <div className="h-auto lg:hidden flex flex-col gap-6 justify-around items-center md:mt-[20px]">
