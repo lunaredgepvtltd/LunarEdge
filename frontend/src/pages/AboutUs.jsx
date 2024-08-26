@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import bgAboutus from "../assets/bgAboutus.png";
 import "../App.css";
 import ourVision from "../assets/ourVision.png";
@@ -7,8 +7,16 @@ import m1 from "../assets/m1.png";
 import m2 from "../assets/m2.png";
 import '../dynamic.scss'
 import '../pages/Header.jsx';
+import ContactForm from "./ContactForm.jsx";
 
 export const AboutUs = () => {
+  const [showForm, setShowForm] = useState(false);
+  const handleButton = () => {
+    setShowForm(!showForm);
+  };
+  const closeForm = () => {
+    setShowForm(false);
+  };
   return (
     <div className="h-full w-full bg-gray-100">
       <div className="h-[1050px] flex flex-col items-center justify-evenly  ">
@@ -107,6 +115,7 @@ export const AboutUs = () => {
           </div>
         </div>
       </div>
+      {showForm && <ContactForm onClose={closeForm} />}
     </div>
   );
 };
