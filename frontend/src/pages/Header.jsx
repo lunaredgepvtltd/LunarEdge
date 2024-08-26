@@ -246,12 +246,12 @@ const Header = () => {
                 {/* About Us sub-items */}
                 {
                   <ul
-                    className={` ${aboutUs ? "block" : "hidden"} mt-1 ml-20 pt-1 pb-4 w-auto transition-all duration-500`}
+                    className={` ${aboutUs ? "block" : "hidden"} mt-1 ml-0 pt-1 pb-4 w-auto transition-all duration-500`}
                   >
                     <li>
                       <Link
                         to="AboutLunarEdge/AboutUs"
-                        className="block px-2 py-1 text-[#082847] hover:underline underline-offset-2 w-48 text-sm"
+                        className="block px-2 py-1 text-[#082847] hover:underline underline-offset-2 w-32 text-sm "
                         onClick={toggleMenu}
                       >
                         About Us
@@ -260,7 +260,7 @@ const Header = () => {
                     <li>
                       <Link
                         to="/common"
-                        className="block px-4 py-1 text-[#082847] hover:underline underline-offset-2 w-32 text-sm"
+                        className="block px-2 py-1 text-[#082847] hover:underline underline-offset-2 w-32 text-sm "
                         onClick={toggleMenu}
                       >
                         Our Clients
@@ -269,7 +269,7 @@ const Header = () => {
                     <li>
                       <Link
                         to="/common"
-                        className="block px-4 py-1 text-[#082847] hover:underline underline-offset-2 w-32 text-sm"
+                        className="block px-2 py-1 text-[#082847] hover:underline underline-offset-2 w-32 text-sm "
                         onClick={toggleMenu}
                       >
                         Careers
@@ -281,10 +281,10 @@ const Header = () => {
 
               {/* Services */}
               <li
-                className=" w-35 py-2 flex flex-col gap-1 items-center cursor-pointer transition-all duration-700 mr-1"
+                className=" w-35 py-2 flex flex-col gap-1 cursor-pointer transition-all duration-700 mr-1"
                 onClick={handleServices}
               >
-                <div className="flex gap-1 items-center mr-2">
+                <div className="flex gap-1 mr-2 items-center">
                   <span className="text-md text-[#082847] hover:underline">
                     Services
                   </span>
@@ -293,12 +293,12 @@ const Header = () => {
                 {/* Services sub-items */}
                 {
                   <ul
-                    className={` ${services ? "block" : "hidden"} mt-1 ml-28 pt-1 pb-4 w-auto transition-all duration-500`}
+                    className={` ${services ? "block" : "hidden"} mt-1 pt-1 pb-4 w-auto transition-all duration-500`}
                   >
                     <li>
                       <Link
                         to="/common"
-                        className="block px-4 py-1 text-[#082847] hover:underline underline-offset-2 w-48 text-sm"
+                        className="block px-2 py-1 text-[#082847] hover:underline underline-offset-2 w-56 text-sm"
                         onClick={toggleMenu}
                       >
                         Web Development
@@ -307,7 +307,7 @@ const Header = () => {
                     <li>
                       <Link
                         to="/common"
-                        className="block px-4 py-1 text-[#082847] hover:underline underline-offset-2 w-56 text-sm"
+                        className="block px-2 py-1 text-[#082847] hover:underline underline-offset-2 w-56 text-sm"
                         onClick={toggleMenu}
                       >
                         Mobile App Development
@@ -316,7 +316,7 @@ const Header = () => {
                     <li>
                       <Link
                         to="/common"
-                        className="block px-4 py-1 text-[#082847] hover:underline underline-offset-2 w-32 text-sm"
+                        className="block px-2 py-1 text-[#082847] hover:underline underline-offset-2 w-56 text-sm"
                         onClick={toggleMenu}
                       >
                         IT Consulting
@@ -328,10 +328,10 @@ const Header = () => {
 
               {/* Industries */}
               <li
-                className=" w-35 py-2 flex flex-col gap-1 items-center cursor-pointer transition-all duration-700"
+                className=" w-35 py-2 flex flex-col gap-1  cursor-pointer transition-all duration-700"
                 onClick={handleIndustries}
               >
-                <div className="flex gap-1 items-center ml-1">
+                <div className="flex gap-1 items-center ">
                   <span className="text-md text-[#082847] hover:underline">
                     Industries
                   </span>
@@ -340,12 +340,12 @@ const Header = () => {
                 {/* Industries sub-items */}
                 {
                   <ul
-                    className={` ${industries ? "block" : "hidden"} mt-1 ml-28 pt-1 pb-4 w-auto transition-all duration-500`}
+                    className={` ${industries ? "block" : "hidden"} mt-1  pt-1 pb-4 w-auto transition-all duration-500`}
                   >
                     <li>
                       <Link
                         to="/common"
-                        className="block px-4 py-1 text-[#082847] hover:underline underline-offset-2 w-48 text-sm"
+                        className="block px-2 py-1 text-[#082847] hover:underline underline-offset-2 w-48 text-sm"
                         onClick={toggleMenu}
                       >
                         Education
@@ -354,7 +354,7 @@ const Header = () => {
                     <li>
                       <Link
                         to="/common"
-                        className="block px-4 py-1 text-[#082847] hover:underline underline-offset-2 w-56 text-sm"
+                        className="block px-2 py-1 text-[#082847] hover:underline underline-offset-2 w-56 text-sm"
                         onClick={toggleMenu}
                       >
                         Healthcare
@@ -363,7 +363,7 @@ const Header = () => {
                     <li>
                       <Link
                         to="/common"
-                        className="block px-4 py-1 text-[#082847] hover:underline underline-offset-2 w-32 text-sm"
+                        className="block px-2 py-1 text-[#082847] hover:underline underline-offset-2 w-32 text-sm"
                         onClick={toggleMenu}
                       >
                         Ecommerce
