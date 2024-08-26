@@ -13,11 +13,11 @@ export const AboutUs = () => {
     <div className="h-full w-full bg-gray-100">
       <div className="h-[1050px] flex flex-col items-center justify-evenly  ">
         {/* center text content container    */}
-        <div className="flex flex-col gap-6 opacity-70 pt-20">
+        <div className="flex flex-col gap-6 opacity-70 xl:pt-10 2xl:pt-20">
           <span className="text-xl mx-auto bg-gray-700 p-1 rounded-md text-white">
             LUNAREDGE
           </span>
-          <div className="text-4xl flex flex-col items-center gap-3">
+          <div className="lg:text-4xl md:text-2xl flex flex-col items-center gap-3">
             <h1>
               “Dedicated To Transforming Your Digital <br />
             </h1>
@@ -25,20 +25,20 @@ export const AboutUs = () => {
           </div>
         
           
-          <div class="btn btn__secondary mx-auto bg-purple-200"><p>Get Connect</p></div>
+          <button className="btn btn__secondary mx-auto bg-purple-200"><p>Get Connect</p></button>
           
         </div>
 
         {/* circular images div */}
         <div className="h-[35%] w-[69%]  ">
-          <img src={bgAboutus} alt="" className="h-[100%] w-[100%]" />
+          <img src={bgAboutus} alt="" className=" xl:h-[86%] 2xl:h-[100%] w-[100%]" />
         </div>
       </div>
 
       {/* our vision part  */}
       <div id="our-vision" className="h-[600px] lg:flex items-end">
         <div className="h-[450px] w-full flex justify-around">
-          <div className="w-[40%] flex flex-col gap-4">
+          <div className="w-[40%] flex flex-col gap-4 md:text-sm">
             <span className="text-[#2b1999]   flex items-center gap-1 ">
               Our Vision
             </span>
@@ -54,7 +54,7 @@ export const AboutUs = () => {
                 We aim to be the trusted partner businesses rely on to
                 successfully navigate the complexities of the digital world.
               </p>
-              <p>
+              <p className="md:hidden block">
                 At LunarEdge, our mission is to empower businesses through
                 technology. By leveraging innovation and utilizing advanced
                 technologies like HTML, CSS, JavaScript, Java, React, Node.js,
