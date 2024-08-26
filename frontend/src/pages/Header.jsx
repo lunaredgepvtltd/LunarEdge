@@ -248,14 +248,14 @@ const Header = () => {
             </div>
             <hr />
             {/* lower-content  */}
-            <ul className="flex flex-col  items-start mt-3 pl-4 transition-all duration-300 ">
+            <ul className="w-35 flex flex-col  items-start mt-3 pl-4 transition-all duration-300 ">
               <li
-                className=" w-28 py-2 flex flex-col gap-1 items-center cursor-pointer transition-all duration-700"
+                className="  py-2 flex flex-col gap-1 items-center cursor-pointer transition-all duration-700"
                 onClick={handleAboutUs}
               >
                 <div className="flex gap-1 items-center">
                   <span className=" text-md text-[#082847] hover:underline">
-                    About Us
+                    About LunarEdge
                   </span>
                   <IoIosArrowDown />
                 </div>
@@ -269,11 +269,11 @@ const Header = () => {
                   >
                     <li>
                       <Link
-                        to="/common"
-                        className="block px-4 py-1 text-[#082847] hover:underline underline-offset-2 w-48 text-sm"
+                        to="AboutLunarEdge/AboutUs"
+                        className="block px-2 py-1 text-[#082847] hover:underline underline-offset-2 w-48 text-sm"
                         onClick={toggleMenu}
                       >
-                        Digital Innovators
+                        About Us
                       </Link>
                     </li>
                     <li>
@@ -300,7 +300,7 @@ const Header = () => {
 
               {/* services  */}
               <li
-                className=" w-28 py-2 flex flex-col gap-1 items-center cursor-pointer transition-all duration-700 mr-1"
+                className=" w-35 py-2 flex flex-col gap-1 items-center cursor-pointer transition-all duration-700 mr-1"
                 onClick={handleServices}
               >
                 <div className="flex gap-1 items-center mr-2">
@@ -350,7 +350,7 @@ const Header = () => {
 
               {/* Industries */}
               <li
-                className=" w-28 py-2 flex flex-col gap-1 items-center cursor-pointer transition-all duration-700"
+                className=" w-35 py-2 flex flex-col gap-1 items-center cursor-pointer transition-all duration-700"
                 onClick={handleIndustries}
               >
                 <div className="flex gap-1 items-center ml-1">

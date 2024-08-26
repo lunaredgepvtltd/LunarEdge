@@ -45,7 +45,7 @@ export const AboutUs = () => {
       {/* our vision part  */}
       <div id="our-vision" className="h-[600px] lg:flex items-end">
         <div className="h-[450px] w-full flex justify-around">
-          <div className="w-[40%] flex flex-col gap-4 md:text-sm">
+          <div className="w-[40%] flex flex-col gap-4  lg:text-base text-sm">
             <span className="text-[#2b1999]   flex items-center gap-1 ">
               Our Vision
             </span>
@@ -61,7 +61,7 @@ export const AboutUs = () => {
                 We aim to be the trusted partner businesses rely on to
                 successfully navigate the complexities of the digital world.
               </p>
-              <p className="md:hidden block">
+              <p className="hidden lg:block">
                 At LunarEdge, our mission is to empower businesses through
                 technology. By leveraging innovation and utilizing advanced
                 technologies like HTML, CSS, JavaScript, Java, React, Node.js,
