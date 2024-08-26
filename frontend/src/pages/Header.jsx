@@ -7,7 +7,6 @@ import LunaredgeLogo from "../assets/Lunaredge.png";
 import { Link } from "react-router-dom";
 
 const Header = () => {
-  const [scrollNav, setScrollNav] = useState(false); // State for scroll effect
   const [showForm, setShowForm] = useState(false); // State to show/hide contact form
   const [menuOpen, setMenuOpen] = useState(false); // State to manage mobile menu visibility
   const [isTouchDevice, setIsTouchDevice] = useState(false); // State to check if the device is touch-enabled
@@ -52,14 +51,7 @@ const Header = () => {
     setMenuOpen(!menuOpen);
   };
 
-  // Change navbar opacity based on scroll position
-  const changeNav = () => {
-    if (window.scrollY >= 50) {
-      setScrollNav(true);
-    } else {
-      setScrollNav(false);
-    }
-  };
+
 
   // Handle mouse enter/leave for dropdowns
   const handleMouseEnter = (dropdownName) => {
@@ -74,12 +66,6 @@ const Header = () => {
     }
   };
 
-  useEffect(() => {
-    window.addEventListener("scroll", changeNav);
-    return () => {
-      window.removeEventListener("scroll", changeNav);
-    };
-  }, []);
 
   useEffect(() => {
     // Check if the device is touch-enabled
@@ -100,7 +86,7 @@ const Header = () => {
     <div className="w-full h-[90px] md:h-[125px] fixed z-50 pt-3 px-3 md:px-5 md:pt-6">
       <div className="box flex bg-white h-full w-full rounded-xl md:rounded-3xl justify-between items-center px-4 xl:px-10">
         {/* Logo */}
-        <Link to={"/"} className="flex-shrink-0 mt-4">
+        <Link to={"/"} className="flex-shrink-0 ">
           <img
             src={logo}
             alt="Company Logo"
@@ -116,7 +102,7 @@ const Header = () => {
         {/* Nav Links for Desktop */}
         <ul className="hidden lg:flex space-x-4 items-center">
           <li>
-            <Link to="/" className="h-full relative rounded-full text-black text-lg hover:text-white hover:bg-[#616161] p-3 px-6 cursor-pointer transition-all duration-300">
+            <Link to="/" className="h-full relative rounded-full text-black text-lg hover:text-white hover:bg-[#616161] p-3 px-6 cursor-pointer transition-all duration-300" onClick={() => handleDropdownToggle()}>
               Home
             </Link>
           </li>
