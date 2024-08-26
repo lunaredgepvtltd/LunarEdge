@@ -33,12 +33,7 @@ export const AboutUs = () => {
           </div>
         
           
-<<<<<<< HEAD
           <div class="btn btn__secondary mx-auto bg-purple-200" onClick={handleButton}><p>Get Connect</p></div>
-=======
-          <button className="btn btn__secondary mx-auto bg-purple-200"><p>Get Connect</p></button>
->>>>>>> fe107147aaebca8f5dd1d09cc4a17526a510adf8
-          
         </div>
 
         {/* circular images div */}
