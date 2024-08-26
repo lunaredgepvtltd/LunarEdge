@@ -33,7 +33,7 @@ export const AboutUs = () => {
           </div>
         
           
-          <div class="btn btn__secondary mx-auto bg-purple-200" onClick={handleButton}><p>Get Connect</p></div>
+          <div class="btn btn__secondary mx-auto bg-purple-200"><p>Get Connect</p></div>
           
         </div>
 
