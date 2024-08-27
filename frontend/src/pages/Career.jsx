@@ -33,8 +33,8 @@ export const Career = () => {
     },
     {
       jobTitle: "Backend Developer",
-      location: "Bangalore, India",
-      experience: "Experience: 3 - 5 Years",
+      location: "Jaipur, India",
+      experience: "Experience: 2 - 3 Years",
       postedDate: "Posted: 08/15/2024",
       jobDescription: {
         rolePurpose:
@@ -46,8 +46,8 @@ export const Career = () => {
     },
     {
       jobTitle: "Full Stack Developer",
-      location: "Mumbai, India",
-      experience: "Experience: 4 - 6 Years",
+      location: "Jaipur, India",
+      experience: "Experience: 2 - 3 Years",
       postedDate: "Posted: 09/01/2024",
       jobDescription: {
         rolePurpose:
@@ -61,16 +61,20 @@ export const Career = () => {
   ];
 
   return (
-    <div className="h-full bg-gray-100">
-      <div className="pt-[135px] px-4">
+<div className="h-full bg-gray-100">
+      <div className="relative pt-[135px] px-4"> {/* Added relative positioning */}
         <img src={bgCareer} alt="Career Background" className="w-full h-auto" />
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
+          {/* <h1 className="text-white text-4xl font-bold">Your Centered Text</h1>
+          <p className="text-white text-xl mt-2">Subtitle or additional information</p> */}
+        </div>
         <form onSubmit={handleSubmit} className="flex items-center mt-4 pb-3">
           <input
             type="text"
             placeholder="Try 'Skills' or 'Keywords'"
             value={searchTerm}
             onChange={handleChange}
-            className="bg-[#ECE8FF] w-full px-4 py-2 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#160962]"
+            className="bg-[#edeafa] w-full px-4 py-2 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#160962]"
           />
           <button
             type="submit"
@@ -81,10 +85,8 @@ export const Career = () => {
         </form>
         {/* Render VacancyBox components for each job */}
         {jobDataArray.map((job, index) => (
-          <div className="p-2 ">
-            {" "}
+          <div key={index} className="p-2">
             <VacancyBox
-              key={index} // Unique key for each item in the list
               jobTitle={job.jobTitle}
               location={job.location}
               experience={job.experience}

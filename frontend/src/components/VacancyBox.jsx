@@ -14,11 +14,16 @@ export const VacancyBox = ({
     setIsOpen(!isOpen);
   };
 
+  const handleApplyNowClick = (event) => {
+    event.stopPropagation(); // Prevent event from bubbling up to parent div
+    // Handle Apply Now button click logic here (e.g., show a form)
+  };
+
   return (
-    <div className="bg-purple-100 rounded-xl p-4 shadow-md px-10">
+    <div className="bg-[#edeafa] rounded-xl p-4 shadow-md px-10">
       <div
         className="flex justify-between items-center cursor-pointer"
-        onClick={toggleContent}
+        onClick={toggleContent} // Toggle job details visibility
       >
         <h2 className="text-2xl font-semibold text-[#160962] flex items-center">
           {jobTitle}
@@ -26,7 +31,10 @@ export const VacancyBox = ({
             {isOpen ? <FaChevronUp /> : <FaChevronDown />}
           </span>
         </h2>
-        <button className="bg-[#160962] rounded-full hover:bg-[#4636a1] text-white  py-2 px-4 ">
+        <button
+          className="bg-[#160962] rounded-full hover:bg-[#4636a1] text-white py-2 px-4"
+          onClick={handleApplyNowClick} // Prevent event from toggling the job details
+        >
           Apply Now
         </button>
       </div>
@@ -40,8 +48,8 @@ export const VacancyBox = ({
       </div>
       {/* Conditionally visible job description */}
       {isOpen && (
-        <div className="mt-4 space-y-4 ">
-          <hr className=" border border-[#160962]" />
+        <div className="mt-4 space-y-4">
+          <hr className="border border-[#160962]" />
           <h3 className="text-xl font-semibold text-indigo-600">
             Job Description:
           </h3>
