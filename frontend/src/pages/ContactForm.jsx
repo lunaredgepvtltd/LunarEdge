@@ -47,7 +47,7 @@ const ContactForm = ({ onClose }) => {
   };
 
   return (
-    <div className="fixed   inset-0 z-50 flex  h-full md:h-full justify-center items-center bg-gray-300 bg-opacity-50 overflow-auto md:rounded-lg px-3 ">
+    <div className="fixed   inset-0 z-50 flex  h-full  justify-center items-center bg-gray-300 bg-opacity-50 overflow-auto md:rounded-lg px-3 ">
       <div className=" mt-6 max-w-6xl max-lg:max-w-3xl mx-auto bg-[#4f519a] rounded-lg  md:pr-7 p-1 ">
         <div className="grid lg:grid-cols-2 items-center gap-8 md:gap-14 p-3 md:p-8 font-[sans-serif]">
           {/* left side of form */}

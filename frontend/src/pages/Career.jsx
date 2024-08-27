@@ -11,7 +11,6 @@ export const Career = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // Perform search with searchTerm
     console.log("Search term:", searchTerm);
   };
 
