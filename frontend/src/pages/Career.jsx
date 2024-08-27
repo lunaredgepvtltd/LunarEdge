@@ -63,9 +63,9 @@ export const Career = () => {
 <div className="h-full bg-gray-100">
       <div className="relative pt-[135px] px-4"> {/* Added relative positioning */}
         <img src={bgCareer} alt="Career Background" className="w-full h-auto" />
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
-          {/* <h1 className="text-white text-4xl font-bold">Your Centered Text</h1>
-          <p className="text-white text-xl mt-2">Subtitle or additional information</p> */}
+        <div className=" absolute top-1/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center ">
+          <h1 className="text-white text-md md:text-4xl font-bold text-shadow-md-white">Explore Your Career Opportunities</h1>
+          <p className="text-white text-sm md:text-xl mt-2 text-center ">Find your dream job with us</p>
         </div>
         <form onSubmit={handleSubmit} className="flex items-center mt-4 pb-3">
           <input

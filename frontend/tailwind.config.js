@@ -11,6 +11,8 @@ module.exports = {
         'lg': '3px 3px 6px rgba(0, 0, 0, 0.7)',
         'xl': '4px 4px 8px rgba(0, 0, 0, 0.8)',
         'md-red': '2px 2px 4px rgba(255, 0, 0, 0.5)',
+        'sm-white': '1px 1px 2px rgba(255, 255, 255, 0.7)', 
+        'md-white': '2px 2px 4px rgba(255, 255, 255, 0.7)',
       },
     },
     
