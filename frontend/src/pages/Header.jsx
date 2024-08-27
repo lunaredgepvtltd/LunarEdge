@@ -136,7 +136,7 @@ const Header = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link to="/common" className="block px-4 py-2 text-white hover:text-red-500">
+                  <Link to="/career" className="block px-4 py-2 text-white hover:text-red-500">
                     Careers
                   </Link>
                 </li>

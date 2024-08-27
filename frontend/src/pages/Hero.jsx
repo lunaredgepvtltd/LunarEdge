@@ -121,7 +121,7 @@ const Hero = () => {
 
   return (
 
-    <div className="w-full h-auto ">
+    <div className="w-full h-auto">
 
       {showForm && <ContactForm onClose={closeForm} />}
 
@@ -147,9 +147,9 @@ const Hero = () => {
         <div className=" w-[80%] h-[65%] md:w-[50%] items-center relative">
          
            {/* swipe-down button  */}
-          {/* <div className=" hidden md:block h-[300px] w-[300px] rounded-full  top-[50%] bottom-4 left-[0%]">
-            <img src={scrollDown} alt="" />
-          </div> */}
+          <div className="mouse hidden md:block  top-[50%] bottom-4 left-[0%]">
+          
+          </div>
             {/* for small device          */}
           <div className="h-auto lg:hidden flex flex-col gap-6 justify-around items-center md:mt-[20px]">
            <div className="w-[80%] relative">

@@ -3,6 +3,7 @@ import App from "../App.js";
 import Common from "../components/Common.jsx";
 import Hero from "../pages/Hero.jsx";
 import { AboutUs } from "../pages/AboutUs.jsx"
+import { Career } from "../pages/Career.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -17,7 +18,12 @@ const router = createBrowserRouter([
   {
     path:'AboutLunarEdge/AboutUs',
     element:<AboutUs/>
-  }]
+  },
+  {
+    path:'career',
+    element:<Career/>
+  }
+]
   },
 ]);
 
