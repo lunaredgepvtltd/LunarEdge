@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import bgCareer from "../assets/bgCareer.png";
 import { VacancyBox } from "../components/VacancyBox";
+import bgCareerSM from "../assets/bgCareerSM.png";
 
 export const Career = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -60,12 +61,28 @@ export const Career = () => {
   ];
 
   return (
-<div className="h-full bg-gray-100">
-      <div className="relative pt-[135px] px-4"> {/* Added relative positioning */}
-        <img src={bgCareer} alt="Career Background" className="w-full h-auto" />
-        <div className=" absolute top-1/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center ">
-          <h1 className="text-white text-md md:text-4xl font-bold text-shadow-md-white">Explore Your Career Opportunities</h1>
-          <p className="text-white text-sm md:text-xl mt-2 text-center ">Find your dream job with us</p>
+    <div className="h-full bg-gray-100">
+      <div className="pt-[98px] md:pt-[135px] px-4">
+        <div className="relative">
+          {/* Added relative positioning */}
+          <img
+            src={bgCareer}
+            alt="Career Background"
+            className=" md:block hidden w-full h-auto"
+          />
+           <img
+            src={bgCareerSM}
+            alt="Career Background"
+            className=" block md:hidden w-full h-auto"
+          />
+          <div className="  absolute top-[40%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center ">
+            <h1 className="text-white text-md  md:text-4xl font-bold sm:text-shadow-md-white text-shadow-sm-white">
+              Explore Your Career Opportunities
+            </h1>
+            <p className="text-white text-md md:text-xl mt-2 text-center sm:block hidden ">
+              Find your dream job with us
+            </p>
+          </div>
         </div>
         <form onSubmit={handleSubmit} className="flex items-center mt-4 pb-3">
           <input
@@ -73,11 +90,11 @@ export const Career = () => {
             placeholder="Try 'Skills' or 'Keywords'"
             value={searchTerm}
             onChange={handleChange}
-            className="bg-[#edeafa] w-full px-4 py-2 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#160962]"
+            className="bg-[#edeafa] w-full text-xs md:text-base px-4 py-2 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#160962]"
           />
           <button
             type="submit"
-            className="w-[100px] ml-[-100px] py-2 rounded-full bg-[#160962] text-white hover:bg-[#5c45dd] focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-[100px] ml-[-100px] text-xs md:text-base py-2 rounded-full bg-[#160962] text-white hover:bg-[#5c45dd] focus:outline-none focus:ring-2 focus:ring-blue-500"
           >
             Find Jobs
           </button>
