@@ -11,7 +11,11 @@ const adminSchema = new Schema({
     password : {
         type : String,
         required : [true,'password is required']
-    }  
+    },
+    role : {
+        type : String,
+        default : 'GENERAL'
+    }
 },{
     timestamps : true
 })

@@ -23,7 +23,7 @@ function App() {
 
   return (
     <>
-      <PreLoader />
+      {/* <PreLoader /> */}
       <div className="App">
         
         {/* Lazy loading the Header */}

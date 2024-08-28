@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import bgCareer from "../assets/bgCareer.png";
 import { VacancyBox } from "../components/VacancyBox";
+import { useSelector } from "react-redux";
 
 export const Career = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -13,6 +14,11 @@ export const Career = () => {
     event.preventDefault();
     console.log("Search term:", searchTerm);
   };
+
+  // getting user
+
+  const { user } = useSelector((state) => state.user);
+  console.log(user);
 
   // Array of job vacancies
   const jobDataArray = [
@@ -60,8 +66,10 @@ export const Career = () => {
   ];
 
   return (
-<div className="h-full bg-gray-100">
-      <div className="relative pt-[135px] px-4"> {/* Added relative positioning */}
+    <div className="h-full bg-gray-100">
+      <div className="relative pt-[135px] px-4">
+        {" "}
+        {/* Added relative positioning */}
         <img src={bgCareer} alt="Career Background" className="w-full h-auto" />
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
           {/* <h1 className="text-white text-4xl font-bold">Your Centered Text</h1>
@@ -82,6 +90,13 @@ export const Career = () => {
             Find Jobs
           </button>
         </form>
+        {/* showing add-new-vacancy button only if user is admin  */}
+        {user?.role === 'ADMIN' ?
+       <div className="w-full text-center my-3">
+       <button className="hover:text-green-400 hover:bg-white border border-green-400 p-2 text-white bg-green-400 rounded-lg transition-all duration-300">
+          Add New Vacancy
+        </button>
+       </div> : ''}
         {/* Render VacancyBox components for each job */}
         {jobDataArray.map((job, index) => (
           <div key={index} className="p-2">
