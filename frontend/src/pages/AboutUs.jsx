@@ -65,7 +65,7 @@ export const AboutUs = () => {
 
       {/* First part About LunarEdge  */}
 
-      <div className="border-2 border-[#dbd5ff]  rounded-3xl w-[95%] mx-auto">
+      <div className="border-2 border-[#dbd5ff]  rounded-3xl w-[95%] mx-auto ">
         <AboutusPart
           title="WELCOME TO LUNAREDGE"
           headline="About LunarEdge"
@@ -83,20 +83,20 @@ export const AboutUs = () => {
 
       {/* Our journey box   */}
 
-      <div className="flex w-full h-[500px] border mt-[50px] ">
-        <div className="relative h-[85%] w-[25%] mx-auto my-8 rounded-3xl ">
+      <div className="md:flex xl:gap-0 md:gap-1 w-full md:h-[450px] h-[1000px] mt-[50px] md:px-3 ">
+        <div className="relative h-auto 2xl:w-[30%] xl:w-[35%] md:w-[40%] w-[95%] mx-auto md:my-8 rounded-3xl ">
           {" "}
           {/* Centering the component */}
           <img
             src={ourJourney}
             alt="Our Journey"
-            className="w-full h-full object-fill z-10"
+            className="w-[100%] h-[100%] object-fill z-10"
           />
           {/* Positioned text on top of the image */}
-          <p className="absolute inset-0 flex  justify-center z-30 text-white  font-bold text-4xl  p-6 ">
+          <p className="absolute inset-0 flex  justify-center z-30 text-white  font-semibold md:text-4xl text-2xl p-6 ">
             Our Journey</p>
-          <div className="absolute inset-0 bg-white z-20 p-8  mt-[25%]  rounded-3xl border-4 border-[#dbd5ff]">
-            <p className="text-justify text-md mx-4">
+          <div className="absolute inset-0 bg-white z-20 md:p-6 p-3 lg:mt-[25%] md:mt-[38%] mt-[23%] rounded-3xl border-4 border-[#dbd5ff]">
+            <p className="text-justify xl:text-md lg:text-sm text-xs 2xl:mx-8 xl:mx-6 lg:mx-4 mx-2  ">
               LunarEdge was founded with a clear mission: to generate value
               through technology. Our vision is to evolve into a dynamic IT
               services provider with proficiency spanning multiple industries.
@@ -108,32 +108,34 @@ export const AboutUs = () => {
         </div>
 
           {/* Our Values box            */}
-          
-        <div className="relative h-[85%] w-[60%] mx-auto my-8">
+
+        <div className=" relative h-auto w-[95%] md:w-[60%] 2xl:w-[60%]  mx-auto my-8">
           {/* Centering the component */}
           <img
             src={ourValues}
             alt="Our Journey"
-            className="h-[70%] object-fill w-[100%] z-10"
+            className="md:h-[67%] h-[100%] object-fill w-[100%] z-10"
           />
           {/* Positioned text on top of the image */}
-          <p className="absolute inset-0 flex flex-col items-center z-30 text-white  font-bold text-4xl  p-5 ">
+          <p className="absolute inset-0 flex flex-col gap-1 items-center z-30 text-white  font-semibold md:text-4xl text-2xl p-6 ">
             <p>Our Values</p>
-            <p className="text-sm">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, eveniet!
-            </p>
+            <p className="xl:text-sm md:text-xs md:block  hidden ">
+            At the heart of LunarEdge is a set of core values that define who we are and how we work</p>
           </p>
           {/* Existing content */}
-          <div className="absolute inset-0 bg-white z-20 p-8 mt-[13%] rounded-3xl border-4 border-[#dbd5ff]">
-            <p className="text-justify text-md mx-4">
-              Innovation: We are constantly exploring new ways to solve problems
-              and create value. Integrity: We conduct our business with the
-              highest level of ethics and transparency. Excellence: We strive
-              for perfection in every project, delivering quality results.
-              Collaboration: We work closely with our clients, fostering
-              partnerships that drive success. Sustainability: We are committed
+          <div className="absolute inset-0 bg-white z-20 p-6 2xl:mt-[11.6%] xl:mt-[14.7%] lg:mt-[16.9%] md:mt-[26%] mt-[23%] rounded-3xl border-4 border-[#dbd5ff]">
+            <p className="text-justify xl:text-md lg:text-sm text-xs mx-4 xl:space-y-4 md:space-y-2">
+              <p>Innovation: We are constantly exploring new ways to solve problems
+              and create value.</p> 
+             <p> Integrity: We conduct our business with the
+             highest level of ethics and transparency.</p>
+             <p> Excellence: We strive
+             for perfection in every project, delivering quality results.</p>
+              <p>Collaboration: We work closely with our clients, fostering
+              partnerships that drive success.</p> 
+              <p className="hidden md:block">Sustainability: We are committed
               to sustainable practices that benefit our community and the
-              environment.
+              environment.</p>
             </p>
           </div>
         </div>
