@@ -81,15 +81,20 @@ export const AboutUs = () => {
         />
       </div>
 
-      <div className="flex w-full h-[400px]">
-        <div className="relative h-full w-[25%] mx-auto my-8 ">
+      {/* Our journey box   */}
+
+      <div className="flex w-full h-[500px] border mt-[50px] ">
+        <div className="relative h-[85%] w-[25%] mx-auto my-8 rounded-3xl ">
           {" "}
           {/* Centering the component */}
           <img
             src={ourJourney}
             alt="Our Journey"
-            className="w-full h-full object-cover z-10"
+            className="w-full h-full object-fill z-10"
           />
+          {/* Positioned text on top of the image */}
+          <p className="absolute inset-0 flex  justify-center z-30 text-white  font-bold text-4xl  p-6 ">
+            Our Journey</p>
           <div className="absolute inset-0 bg-white z-20 p-8  mt-[25%]  rounded-3xl border-4 border-[#dbd5ff]">
             <p className="text-justify text-md mx-4">
               LunarEdge was founded with a clear mission: to generate value
@@ -102,15 +107,24 @@ export const AboutUs = () => {
           </div>
         </div>
 
-        <div className="relative h-[400px] w-[60%] mx-auto my-8 ">
-          {" "}
+          {/* Our Values box            */}
+          
+        <div className="relative h-[85%] w-[60%] mx-auto my-8">
           {/* Centering the component */}
           <img
             src={ourValues}
             alt="Our Journey"
-            className="h-[65%] w-full z-10"
+            className="h-[70%] object-fill w-[100%] z-10"
           />
-          <div className="absolute inset-0 bg-white z-20 p-8  mt-[10%]  rounded-3xl border-4 border-[#dbd5ff]">
+          {/* Positioned text on top of the image */}
+          <p className="absolute inset-0 flex flex-col items-center z-30 text-white  font-bold text-4xl  p-5 ">
+            <p>Our Values</p>
+            <p className="text-sm">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, eveniet!
+            </p>
+          </p>
+          {/* Existing content */}
+          <div className="absolute inset-0 bg-white z-20 p-8 mt-[13%] rounded-3xl border-4 border-[#dbd5ff]">
             <p className="text-justify text-md mx-4">
               Innovation: We are constantly exploring new ways to solve problems
               and create value. Integrity: We conduct our business with the
@@ -124,6 +138,7 @@ export const AboutUs = () => {
           </div>
         </div>
       </div>
+
 
       {/* our vision part  */}
       <AboutusPart
