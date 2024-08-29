@@ -5,6 +5,7 @@ import { CiLocationOn } from "react-icons/ci";
 import TextInput from "../components/TextInput";
 import { useForm } from "react-hook-form";
 import { RxCross1 } from "react-icons/rx";
+import { API } from "../helper";
 
 const ContactForm = ({ onClose }) => {
   const {
@@ -21,13 +22,15 @@ const ContactForm = ({ onClose }) => {
   const handleClick = async (data) => {
     try {
       // making API request
-      const res = await fetch("http://localhost:3000/register", {
-        method: "post",
+      const res = await fetch(API.register.url, {
+        method: API.register.method,
         headers: {
           "content-type": "application/json",
         },
         body: JSON.stringify(data),
       });
+
+      console.log(res)
 
       const resData = await res.json();
 

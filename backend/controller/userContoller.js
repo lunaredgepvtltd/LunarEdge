@@ -1,7 +1,7 @@
 import Users from "../modals/userModal.js";
 import nodemailer from 'nodemailer'
-export const register = async (req, res, next) => {
-console.log("Inside register")
+ const query = async (req, res, next) => {
+console.log("Inside query")
   try {
     const { name, phoneNumber, email, subject, message } = req.body;
 
@@ -144,3 +144,4 @@ console.log("Inside register")
   }
 }
 
+export default query

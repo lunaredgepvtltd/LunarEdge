@@ -5,12 +5,9 @@ import { IoIosArrowDown, IoIosMenu, IoIosClose } from "react-icons/io";
 import ContactForm from "./ContactForm";
 import LunaredgeLogo from "../assets/Lunaredge.png";
 import { Link } from "react-router-dom";
-import { FaUserTie } from "react-icons/fa";
-import AdminLoginForm from "../components/AdminLoginForm";
 
 const Header = () => {
   const [showForm, setShowForm] = useState(false); // State to show/hide contact form
-  const [showAdminForm,setShowAdminForm] = useState(false) ;
   const [menuOpen, setMenuOpen] = useState(false); // State to manage mobile menu visibility
   const [isTouchDevice, setIsTouchDevice] = useState(false); // State to check if the device is touch-enabled
   const [openDropdown, setOpenDropdown] = useState(null); // State to manage which dropdown is open
@@ -48,11 +45,6 @@ const Header = () => {
   const closeForm = () => {
     setShowForm(false);
   };
-
-  // close AdminForm 
-  const closeAdminForm = ()=>{
-    setShowAdminForm(false)
-  }
 
   // Toggle mobile menu visibility
   const toggleMenu = () => {
@@ -218,14 +210,13 @@ const Header = () => {
         </ul>
 
         {/* Contact Us Button */}
-        <div className=" hidden lg:flex items-center gap-3">
+        <div className=" hidden lg:block items-center">
           <button
             className="rounded-full py-4 px-8 text-black text-md hover:bg-[#703299] border border-[#703299] hover:text-white hover:shadow-md hover:bg-gradient-to-r from-[#386bb7] to-[#e24c4a] transition-all duration-100"
             onClick={handleButton}
           >
             Contact Us
           </button>
-          <button className="text-lg" onClick={()=>{setShowAdminForm(true)}}><FaUserTie/></button>
         </div>
 
         {/* Mobile Menu */}
@@ -383,7 +374,7 @@ const Header = () => {
               </li>
 
               {/* Contact Us Button */}
-              <li className="py-2 flex gap-4 items-center">
+              <li className="py-2 items-center">
               <button
                   className="bg-black text-white p-2 md:p-3 rounded-md"
                   onClick={() => {
@@ -393,7 +384,6 @@ const Header = () => {
                 >
                   Contact Us
                 </button>
-                <button className="text-lg" onClick={()=>{setShowAdminForm(true)}}><FaUserTie/></button>
               </li>
             </ul>
           </div>
@@ -401,7 +391,6 @@ const Header = () => {
       </div>
       {/* Contact Form */}
       {showForm && <ContactForm onClose={closeForm} />}
-      {showAdminForm && <AdminLoginForm onClose={closeAdminForm}/>}
     </div>
   );
 };

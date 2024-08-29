@@ -1,10 +1,16 @@
 import React, { useState } from "react";
 import bgCareer from "../assets/bgCareer.png";
 import { VacancyBox } from "../components/VacancyBox";
+import { useSelector } from "react-redux";
 import bgCareerSM from "../assets/bgCareerSM.png";
-
+import AddVacancy from "../components/AddVacancy";
 export const Career = () => {
   const [searchTerm, setSearchTerm] = useState("");
+  const [showAddVacancy,setShowAddVacancy] = useState(false)
+
+  const handleClose = ()=>{
+  setShowAddVacancy(false)
+  }
 
   const handleChange = (event) => {
     setSearchTerm(event.target.value);
@@ -14,6 +20,11 @@ export const Career = () => {
     event.preventDefault();
     console.log("Search term:", searchTerm);
   };
+
+  // getting user
+
+  const { user } = useSelector((state) => state.user);
+  console.log(user);
 
   // Array of job vacancies
   const jobDataArray = [
@@ -99,6 +110,13 @@ export const Career = () => {
             Find Jobs
           </button>
         </form>
+        {/* showing add-new-vacancy button only if user is admin  */}
+        {user?.role === 'ADMIN' ?
+       <div className="w-full text-center my-3">
+       <button className="hover:text-green-400 hover:bg-white border border-green-400 p-2 text-white bg-green-400 rounded-lg transition-all duration-300" onClick={()=>{setShowAddVacancy(true)}}>
+          Add New Vacancy
+        </button>
+       </div> : ''}
         {/* Render VacancyBox components for each job */}
         {jobDataArray.map((job, index) => (
           <div key={index} className="p-2">
@@ -112,6 +130,7 @@ export const Career = () => {
           </div>
         ))}
       </div>
+      {showAddVacancy && <AddVacancy onClose={handleClose}/>}
     </div>
   );
 };

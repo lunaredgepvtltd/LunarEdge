@@ -4,6 +4,7 @@ import Common from "../components/Common.jsx";
 import Hero from "../pages/Hero.jsx";
 import { AboutUs } from "../pages/AboutUs.jsx"
 import { Career } from "../pages/Career.jsx";
+import AdminLoginForm from "../components/AdminLoginForm.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
   {
     path:'career',
     element:<Career/>
+  },
+  {
+    path : 'admin',
+    element : <AdminLoginForm/>
   }
 ]
   },
