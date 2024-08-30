@@ -4,19 +4,19 @@ import { BsWhatsapp } from "react-icons/bs";
 import { Link } from "react-router-dom";
  const Footer = () => {
   return (
-    <footer className="bg-[#222222]  lg:grid lg:grid-cols-5  md:mt-0  ">
+    <footer className="bg-[#222222]  lg:grid lg:grid-cols-5   ">
       <div className=" hidden relative lg:block  lg:col-span-2 lg:h-full">
         <img
           className="z-5 absolute inset-0 h-[150px] md:h-full w-full object-cover"
           src={MyImage}
           alt="please reload"
         />
-        <p className=" hidden 2xl:block text-5xl absolute bottom-0 mx-auto mb-9 text-black animated-text  whitespace-nowrap">
+        {/* <p className=" hidden 2xl:block text-3xl absolute bottom-0 mx-auto mb-9 text-black  whitespace-nowrap">
           Smart Innovation Meets Infinity
-        </p>
+        </p> */}
       </div>
 
-      <div className="px-4 py-8 md:py-16 sm:px-6 lg:col-span-3 lg:px-8">
+      <div className="px-4 py-8 md:py-6 sm:px-6 lg:col-span-3 lg:px-8">
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
           <div>
             <p>
@@ -63,7 +63,7 @@ import { Link } from "react-router-dom";
               <p className="font-medium text-gray-100 ">
                 Services
               </p>
-              <ul className="mt-6 space-y-3 md:space-y-4 text-sm">
+              <ul className="mt-4 space-y-2 text-sm">
                 <li>
                   <Link
                     to="/common"
@@ -111,7 +111,7 @@ import { Link } from "react-router-dom";
               <p className="font-medium text-gray-100">
                 Company
               </p>
-              <ul className="mt-6 space-y-3 md:space-y-4 text-sm">
+              <ul className="mt-4 space-y-2 text-sm">
                 <li>
                   <Link
                     to="/AboutLunarEdge/AboutUs"
@@ -133,7 +133,7 @@ import { Link } from "react-router-dom";
           </div>
         </div>
 
-        <div className=" mt-5 md:mt-12 border-t border-gray-100 pt-6 md:pt-12 ">
+        <div className=" mt-4 md:mt-8 border-t border-gray-100 pt-5 md:pt-8 ">
           <div className="sm:flex sm:items-center sm:justify-between">
             <ul className="flex flex-wrap gap-4 text-xs">
               <li>
@@ -162,7 +162,7 @@ import { Link } from "react-router-dom";
               </li>
             </ul>
 
-            <p className=" mt-3 md:mt-8 text-xs text-gray-300 sm:mt-0 ">
+            <p className=" mt-3 md:mt-6 text-xs text-gray-300 sm:mt-0 ">
               &copy; 2024. LunarEdge IT Services Pvt. Ltd. All rights reserved.
             </p>
           </div>

@@ -7,7 +7,7 @@ const TechBox = ({ logo, name }) => {
       <span className='tech-content'>
         {logo}
       </span>
-      <span className='text-sm md:text-lg text-center xl:w-[40%]'>{name}</span>
+      <span className='text-sm md:text-lg text-center xl:w-[59%]'>{name}</span>
     </div>
   );
 }

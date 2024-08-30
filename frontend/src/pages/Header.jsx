@@ -268,7 +268,7 @@ const Header = () => {
                     </li>
                     <li>
                       <Link
-                        to="/common"
+                        to="/career"
                         className="block px-2 py-1 text-[#082847] hover:underline underline-offset-2 w-32 text-sm "
                         onClick={toggleMenu}
                       >
