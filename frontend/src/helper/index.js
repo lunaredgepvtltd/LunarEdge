@@ -6,5 +6,17 @@ export const API = {
     adminLogin  : {
         url : 'http://localhost:8080/api/adminLogin',
         method : 'post'
-       }
+       },
+    addNewVacancy : {
+        url : 'http://localhost:8080/api/addNewVacancy',
+        method : 'post'
+    },
+    getAllVacancy : {
+        url : 'http://localhost:8080/api/getAllVacancy',
+        method : "get"
+    },
+    deleteVacancy : {
+        url : 'http://localhost:8080/api/deleteVacancy',
+        method : 'delete'
+    }
 }

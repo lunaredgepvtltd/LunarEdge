@@ -1,21 +1,26 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import bgCareer from "../assets/bgCareer.png";
 import { VacancyBox } from "../components/VacancyBox";
 import { useSelector } from "react-redux";
 import bgCareerSM from "../assets/bgCareerSM.png";
 import AddVacancy from "../components/AddVacancy";
+import { API } from "../helper";
 export const Career = () => {
   const [searchTerm, setSearchTerm] = useState("");
-  const [showAddVacancy,setShowAddVacancy] = useState(false)
+  const [showAddVacancy,setShowAddVacancy] = useState(false);
 
   const handleClose = ()=>{
   setShowAddVacancy(false)
   }
 
+  const [data,setData] = useState([])
+ 
+
   const handleChange = (event) => {
     setSearchTerm(event.target.value);
   };
 
+ 
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log("Search term:", searchTerm);
@@ -26,50 +31,24 @@ export const Career = () => {
   const { user } = useSelector((state) => state.user);
   console.log(user);
 
-  // Array of job vacancies
-  const jobDataArray = [
-    {
-      jobTitle: "Frontend Developer",
-      location: "Jaipur, India",
-      experience: "Experience: 2 - 3 Years",
-      postedDate: "Posted: 07/05/2024",
-      jobDescription: {
-        rolePurpose:
-          "The purpose of this role is to perform the development of VLSI systems by defining the various functionalities, architecture, layout, and implementation for a client.",
-        expert:
-          "Applies the competency in all situations and serves as a guide to others.",
-        master:
-          "Coaches others and builds organizational capability in the competency area. Serves as a key resource for that competency and is recognized within the entire organization.",
-      },
-    },
-    {
-      jobTitle: "Backend Developer",
-      location: "Jaipur, India",
-      experience: "Experience: 2 - 3 Years",
-      postedDate: "Posted: 08/15/2024",
-      jobDescription: {
-        rolePurpose:
-          "Responsible for server-side web application logic and integration of the work front-end developers do.",
-        expert:
-          "In-depth knowledge of server-side scripting languages and database management.",
-        master: "Mentors junior developers and optimizes back-end processes.",
-      },
-    },
-    {
-      jobTitle: "Full Stack Developer",
-      location: "Jaipur, India",
-      experience: "Experience: 2 - 3 Years",
-      postedDate: "Posted: 09/01/2024",
-      jobDescription: {
-        rolePurpose:
-          "Develops and maintains both front-end and back-end of web applications.",
-        expert:
-          "Proficient in both front-end and back-end technologies and frameworks.",
-        master:
-          "Leads projects and mentors teams in both front-end and back-end development.",
-      },
-    },
-  ];
+  const fetchVacancyDetails = async()=>{
+    try{
+      const response = await fetch(API.getAllVacancy.url,{
+        method : API.getAllVacancy.method,
+      })
+
+      const responseData = await response.json();
+
+      setData(responseData.data)
+    }
+    catch(error){
+      console.log(error);
+    }
+  }
+
+ useEffect(()=>{
+  fetchVacancyDetails()
+ },[])
 
   return (
     <div className="h-full bg-gray-100">
@@ -118,19 +97,20 @@ export const Career = () => {
         </button>
        </div> : ''}
         {/* Render VacancyBox components for each job */}
-        {jobDataArray.map((job, index) => (
+        {data.length > 0 && data.map((job, index) => (
           <div key={index} className="p-2">
             <VacancyBox
               jobTitle={job.jobTitle}
               location={job.location}
               experience={job.experience}
-              postedDate={job.postedDate}
-              jobDescription={job.jobDescription}
+              rolePurpose={job.rolePurpose}
+              id={job._id}
+              fetchDetails={fetchVacancyDetails}
             />
           </div>
         ))}
       </div>
-      {showAddVacancy && <AddVacancy onClose={handleClose}/>}
+      {showAddVacancy && <AddVacancy onClose={handleClose} setVacancyData={setData}/>}
     </div>
   );
 };

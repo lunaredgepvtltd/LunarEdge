@@ -1,18 +1,30 @@
 import React, { useState } from "react";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
+import { MdDelete } from "react-icons/md";
+import DeleteVacancy from "./deleteVacancy";
+import { useSelector } from "react-redux";
 
 export const VacancyBox = ({
   jobTitle,
   location,
   experience,
-  postedDate,
-  jobDescription,
+  rolePurpose,
+  id,
+  fetchDetails
 }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [deleteVacancyItem,setDeleteVacancyItem] = useState(false)
+
+  const {user} = useSelector(state=>state.user);
 
   const toggleContent = () => {
     setIsOpen(!isOpen);
   };
+
+  const handleDeleteClose = ()=>{
+    setDeleteVacancyItem(false)
+    }
+  
 
   const handleApplyNowClick = (event) => {
     event.stopPropagation(); // Prevent event from bubbling up to parent div
@@ -20,7 +32,13 @@ export const VacancyBox = ({
   };
 
   return (
-    <div className="bg-[#edeafa] rounded-xl p-3 shadow-md px-2 md:px-6 lg:px-10">
+    <>
+    <div className="bg-[#edeafa] rounded-xl p-3 shadow-md px-2 md:px-6 lg:px-10 relative">
+      {/* delete-button  */}
+      {user?.role === "ADMIN" && 
+      <div className="absolute right-4 bottom-4" onClick={()=>{setDeleteVacancyItem(true)}}>
+      <MdDelete className="text-lg cursor-pointer hover:text-red-500"/>
+      </div>}
       <div
         className="flex justify-between items-center cursor-pointer"
         onClick={toggleContent} // Toggle job details visibility
@@ -43,10 +61,9 @@ export const VacancyBox = ({
       {/* Always visible job details */}
       <div className="mt-2 flex flex-col md:flex-row justify-between text-sm md:text-lg items-start">
         <div>
-          <p className="text-gray-700">{location}</p>
-          <p className="text-gray-700">{experience}</p>
+          <p className="text-gray-500">Location: <span className="text-gray-700">{location}</span></p>
+          <p className="text-gray-500">Expericence: <span className="text-gray-700">{experience}</span></p>
         </div>
-        <p className="text-gray-500 mt-2 md:mt-0">{postedDate}</p>
       </div>
       {/* Conditionally visible job description */}
       {isOpen && (
@@ -56,16 +73,17 @@ export const VacancyBox = ({
             Job Description:
           </h3>
           <p className="mt-2 text-sm md:text-lg text-gray-700">
-            <strong>Role Purpose:</strong> {jobDescription.rolePurpose}
+            <strong>Role Purpose:</strong> {rolePurpose}
           </p>
-          <p className="mt-2 text-sm md:text-lg text-gray-700">
-            <strong>Expert:</strong> {jobDescription.expert}
-          </p>
-          <p className="mt-2 text-sm md:text-lg text-gray-700">
-            <strong>Master:</strong> {jobDescription.master}
-          </p>
+        
         </div>
+        
       )}
+    {/* delete-vacancy-box */}
+    <div className=" absolute z-50 right-3">
+     {deleteVacancyItem && <DeleteVacancy onClose={handleDeleteClose} id={id} fetchDetails={fetchDetails}/>}
+     </div>
     </div>
+    </>
   );
 };
