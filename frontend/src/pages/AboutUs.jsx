@@ -126,15 +126,15 @@ export const AboutUs = () => {
           {/* Existing content */}
           <div className="absolute inset-0 md:h-auto h-[220px] bg-white z-20 md:p-6 p-3 2xl:mt-[11.6%] xl:mt-[14.7%] lg:mt-[16.9%] md:mt-[26%] mt-[23%] rounded-3xl border-4 border-[#dbd5ff]">
             <span className="flex flex-col justify-center text-justify xl:text-md lg:text-sm text-xs mx-2 xl:space-y-4 md:space-y-2 space-y-[0.5]">
-              <p>Innovation: We are constantly exploring new ways to solve problems
+              <p><span className="font-semibold">Innovation:</span> We are constantly exploring new ways to solve problems
               and create value.</p> 
-             <p> Integrity: We conduct our business with the
+             <p><span className="font-semibold"> Integrity:</span> We conduct our business with the
              highest level of ethics and transparency.</p>
-             <p> Excellence: We strive
+             <p><span className="font-semibold"> Excellence:</span> We strive
              for perfection in every project, delivering quality results.</p>
-              <p>Collaboration: We work closely with our clients, fostering
+              <p><span className="font-semibold">Collaboration:</span> We work closely with our clients, fostering
               partnerships that drive success.</p> 
-              <p className="hidden md:block">Sustainability: We are committed
+              <p className="hidden md:block"><span className="font-semibold">Sustainability: </span>We are committed
               to sustainable practices that benefit our community and the
               environment.</p>
             </span>
