@@ -5,7 +5,7 @@ import ourVision from "../assets/ourVision.png";
 import ourMission from "../assets/ourMission.png";
 import m1 from "../assets/m1.png";
 import m2 from "../assets/m2.png";
-import "../dynamic.scss";
+
 import "../pages/Header.jsx";
 import ContactForm from "./ContactForm.jsx";
 import { AboutusPart } from "../components/AboutusPart.jsx";
@@ -22,6 +22,7 @@ export const AboutUs = () => {
     setShowForm(false);
   };
   return (
+    <React.Fragment>
     <div className="h-full w-full bg-gray-100">
       <div className="md:h-[1050px] h-[740px] flex flex-col items-center justify-evenly  ">
         {/* center text content container    */}
@@ -46,7 +47,7 @@ export const AboutUs = () => {
           </div>
 
           <button
-            class=" mx-auto bg-purple-950 text-white hover:bg-purple-800 md:p-4 p-2 rounded-xl"
+            className=" mx-auto bg-purple-950 text-white hover:bg-purple-800 md:p-4 p-2 rounded-xl"
             onClick={handleButton}
           >
             Get Connect
@@ -65,7 +66,7 @@ export const AboutUs = () => {
 
       {/* First part About LunarEdge  */}
 
-      <div className="border-2 border-[#dbd5ff]  rounded-3xl w-[95%] mx-auto ">
+      <div className="border-2 border-[#dbd5ff]  rounded-3xl w-[95%] mx-auto lg:pt-0 pt-3 ">
         <AboutusPart
           title="WELCOME TO LUNAREDGE"
           headline="About LunarEdge"
@@ -83,7 +84,7 @@ export const AboutUs = () => {
 
       {/* Our journey box   */}
 
-      <div className="md:flex xl:gap-0 md:gap-1 w-full md:h-[450px] h-[1000px] mt-[50px] md:px-3 ">
+      <div className="md:flex xl:gap-0 md:gap-1 w-full md:h-[450px] h-[650px] mt-[50px] md:px-3 ">
         <div className="relative h-auto 2xl:w-[30%] xl:w-[35%] md:w-[40%] w-[95%] mx-auto md:my-8 rounded-3xl ">
           {" "}
           {/* Centering the component */}
@@ -96,7 +97,7 @@ export const AboutUs = () => {
           <p className="absolute inset-0 flex  justify-center z-30 text-white  font-semibold md:text-4xl text-2xl p-6 ">
             Our Journey</p>
           <div className="absolute inset-0 bg-white z-20 md:p-6 p-3 lg:mt-[25%] md:mt-[38%] mt-[23%] rounded-3xl border-4 border-[#dbd5ff]">
-            <p className="text-justify xl:text-md lg:text-sm text-xs 2xl:mx-8 xl:mx-6 lg:mx-4 mx-2  ">
+            <p className="text-justify flex items-center xl:text-md lg:text-sm text-xs 2xl:mx-8 xl:mx-6 lg:mx-4 mx-2  ">
               LunarEdge was founded with a clear mission: to generate value
               through technology. Our vision is to evolve into a dynamic IT
               services provider with proficiency spanning multiple industries.
@@ -109,7 +110,7 @@ export const AboutUs = () => {
 
           {/* Our Values box            */}
 
-        <div className=" relative h-auto w-[95%] md:w-[60%] 2xl:w-[60%]  mx-auto my-8">
+        <div className=" relative h-auto w-[95%] md:w-[60%] 2xl:w-[60%]  mx-auto my-8 rounded-3xl">
           {/* Centering the component */}
           <img
             src={ourValues}
@@ -123,8 +124,8 @@ export const AboutUs = () => {
             At the heart of LunarEdge is a set of core values that define who we are and how we work</p>
           </p>
           {/* Existing content */}
-          <div className="absolute inset-0 bg-white z-20 p-6 2xl:mt-[11.6%] xl:mt-[14.7%] lg:mt-[16.9%] md:mt-[26%] mt-[23%] rounded-3xl border-4 border-[#dbd5ff]">
-            <p className="text-justify xl:text-md lg:text-sm text-xs mx-4 xl:space-y-4 md:space-y-2">
+          <div className="absolute inset-0 md:h-auto h-[220px] bg-white z-20 md:p-6 p-3 2xl:mt-[11.6%] xl:mt-[14.7%] lg:mt-[16.9%] md:mt-[26%] mt-[23%] rounded-3xl border-4 border-[#dbd5ff]">
+            <span className="flex flex-col justify-center text-justify xl:text-md lg:text-sm text-xs mx-2 xl:space-y-4 md:space-y-2 space-y-[0.5]">
               <p>Innovation: We are constantly exploring new ways to solve problems
               and create value.</p> 
              <p> Integrity: We conduct our business with the
@@ -136,7 +137,7 @@ export const AboutUs = () => {
               <p className="hidden md:block">Sustainability: We are committed
               to sustainable practices that benefit our community and the
               environment.</p>
-            </p>
+            </span>
           </div>
         </div>
       </div>
@@ -209,5 +210,6 @@ export const AboutUs = () => {
       </div>
       {showForm && <ContactForm onClose={closeForm} />}
     </div>
+    </React.Fragment>
   );
 };
