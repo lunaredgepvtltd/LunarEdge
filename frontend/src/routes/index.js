@@ -5,6 +5,9 @@ import Hero from "../pages/Hero.jsx";
 import { AboutUs } from "../pages/AboutUs.jsx"
 import { Career } from "../pages/Career.jsx";
 import AdminLoginForm from "../components/AdminLoginForm.jsx";
+import Services from "../pages/Services.jsx";
+
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -27,6 +30,10 @@ const router = createBrowserRouter([
   {
     path : 'admin',
     element : <AdminLoginForm/>
+  },
+  {
+    path: 'services',
+    element: <Services/>
   }
 ]
   },
