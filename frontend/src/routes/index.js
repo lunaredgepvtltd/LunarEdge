@@ -31,10 +31,10 @@ const router = createBrowserRouter([
     path : 'admin',
     element : <AdminLoginForm/>
   },
-  {
-    path: 'services',
-    element: <Services/>
-  }
+  // {
+  //   path: 'services',
+  //   element: <Services/>
+  // }
 ]
   },
 ]);
