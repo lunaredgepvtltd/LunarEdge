@@ -62,7 +62,7 @@ export const VacancyBox = ({
       <div className="mt-2 flex flex-col md:flex-row justify-between text-sm md:text-lg items-start">
         <div>
           <p className="text-gray-500">Location: <span className="text-gray-700">{location}</span></p>
-          <p className="text-gray-500">Expericence: <span className="text-gray-700">{experience}</span></p>
+          <p className="text-gray-500">Experience: <span className="text-gray-700">{experience}</span></p>
         </div>
       </div>
       {/* Conditionally visible job description */}
