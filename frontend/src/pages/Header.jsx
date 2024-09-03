@@ -20,20 +20,32 @@ const Header = () => {
   // Handle dropdown toggles for mobile menu
   const handleAboutUs = () => {
     setAboutUs(!aboutUs);
-    if (industries) { setIndustries(!industries) }
-    if (services) { setServices(!services) }
+    if (industries) {
+      setIndustries(!industries);
+    }
+    if (services) {
+      setServices(!services);
+    }
   };
 
   const handleServices = () => {
     setServices(!services);
-    if (aboutUs) { setAboutUs(!aboutUs) }
-    if (industries) { setIndustries(!industries) }
+    if (aboutUs) {
+      setAboutUs(!aboutUs);
+    }
+    if (industries) {
+      setIndustries(!industries);
+    }
   };
 
   const handleIndustries = () => {
     setIndustries(!industries);
-    if (services) { setServices(!services) }
-    if (aboutUs) { setAboutUs(!aboutUs) }
+    if (services) {
+      setServices(!services);
+    }
+    if (aboutUs) {
+      setAboutUs(!aboutUs);
+    }
   };
 
   // Show contact form
@@ -51,8 +63,6 @@ const Header = () => {
     setMenuOpen(!menuOpen);
   };
 
-
-
   // Handle mouse enter/leave for dropdowns
   const handleMouseEnter = (dropdownName) => {
     if (!isTouchDevice) {
@@ -66,10 +76,10 @@ const Header = () => {
     }
   };
 
-
   useEffect(() => {
     // Check if the device is touch-enabled
-    const isTouchScreen = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+    const isTouchScreen =
+      "ontouchstart" in window || navigator.maxTouchPoints > 0;
     setIsTouchDevice(isTouchScreen);
   }, []);
 
@@ -95,14 +105,21 @@ const Header = () => {
         </Link>
 
         {/* Mobile Menu Toggle */}
-        <button className="lg:hidden block text-black text-xl" onClick={toggleMenu}>
+        <button
+          className="lg:hidden block text-black text-xl"
+          onClick={toggleMenu}
+        >
           {menuOpen ? <IoIosClose /> : <IoIosMenu />}
         </button>
 
         {/* Nav Links for Desktop */}
         <ul className="hidden lg:flex space-x-4 items-center">
           <li>
-            <Link to="/" className="h-full relative rounded-full text-black text-lg hover:text-white hover:bg-[#616161] p-3 px-6 cursor-pointer transition-all duration-300" onClick={() => handleDropdownToggle()}>
+            <Link
+              to="/"
+              className="h-full relative rounded-full text-black text-lg hover:text-white hover:bg-[#616161] p-3 px-6 cursor-pointer transition-all duration-300"
+              onClick={() => handleDropdownToggle()}
+            >
               Home
             </Link>
           </li>
@@ -111,7 +128,9 @@ const Header = () => {
           <li
             className="h-full relative flex items-center px-2 py-4 cursor-pointer transition-all duration-300"
             onClick={() => handleDropdownToggle("aboutUs")}
-            onMouseEnter={!isTouchDevice ? () => handleMouseEnter("aboutUs") : null}
+            onMouseEnter={
+              !isTouchDevice ? () => handleMouseEnter("aboutUs") : null
+            }
             onMouseLeave={!isTouchDevice ? handleMouseLeave : null}
           >
             <div className="flex items-center justify-between rounded-full p-3">
@@ -121,22 +140,34 @@ const Header = () => {
             {openDropdown === "aboutUs" && (
               <ul className="absolute top-[63px] left-0 rounded-lg shadow-lg bg-[#292828] w-48 pt-3 pb-3">
                 <li>
-                  <Link to="/aboutLunarEdge/aboutUs" className="block px-4 py-2 text-white hover:text-red-500">
+                  <Link
+                    to="/aboutLunarEdge/aboutUs"
+                    className="block px-4 py-2 text-white hover:text-red-500"
+                  >
                     About Us
                   </Link>
                 </li>
                 <li>
-                  <Link to="/common" className="block px-4 py-2 text-white hover:text-red-500">
+                  <Link
+                    to="/common"
+                    className="block px-4 py-2 text-white hover:text-red-500"
+                  >
                     Digital Innovators
                   </Link>
                 </li>
                 <li>
-                  <Link to="/common" className="block px-4 py-2 text-white hover:text-red-500">
+                  <Link
+                    to="/common"
+                    className="block px-4 py-2 text-white hover:text-red-500"
+                  >
                     Our Clients
                   </Link>
                 </li>
                 <li>
-                  <Link to="/career" className="block px-4 py-2 text-white hover:text-red-500">
+                  <Link
+                    to="/career"
+                    className="block px-4 py-2 text-white hover:text-red-500"
+                  >
                     Careers
                   </Link>
                 </li>
@@ -148,7 +179,9 @@ const Header = () => {
           <li
             className="h-full relative flex items-center px-2 py-4 cursor-pointer transition-all duration-300"
             onClick={() => handleDropdownToggle("services")}
-            onMouseEnter={!isTouchDevice ? () => handleMouseEnter("services") : null}
+            onMouseEnter={
+              !isTouchDevice ? () => handleMouseEnter("services") : null
+            }
             onMouseLeave={!isTouchDevice ? handleMouseLeave : null}
           >
             <div className="flex items-center justify-between rounded-full p-3">
@@ -156,23 +189,86 @@ const Header = () => {
               <IoIosArrowDown />
             </div>
             {openDropdown === "services" && (
-              <ul className="absolute top-[63px] left-0 rounded-lg shadow-lg bg-[#292828] w-48 pt-3 pb-3">
-                <li>
-                  <Link to="/common" className="block px-4 py-2 text-white hover:text-red-500">
-                    Web Development
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/common" className="block px-4 py-2 text-white hover:text-red-500">
-                    Mobile App Development
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/common" className="block px-4 py-2 text-white hover:text-red-500">
-                    IT Consulting
-                  </Link>
-                </li>
-              </ul>
+              <div className="flex absolute top-[63px] left-0 rounded-lg shadow-lg bg-[#292828] w-auto pt-3 pb-3">
+                <ul className="">
+                  <li>
+                    <Link
+                      to="/services"
+                      className="block px-4 py-2 text-white hover:text-red-500"
+                    >
+                      Web Development
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="/common"
+                      className="block px-4 py-2 text-white hover:text-red-500"
+                    >
+                      Mobile App Development
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="/common"
+                      className="block px-4 py-2 text-white hover:text-red-500"
+                    >
+                      IT Consulting
+                    </Link>
+                  </li>
+                </ul>
+                <ul>
+                  <li>
+                    <Link
+                      to="/common"
+                      className="block px-4 py-2 text-white hover:text-red-500"
+                    >
+                      Cloud Solutions
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="/common"
+                      className="block px-4 py-2 text-white hover:text-red-500"
+                    >
+                      CyberSecurity Services
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="/common"
+                      className="block px-4 py-2 text-white hover:text-red-500"
+                    >
+                      Game Development
+                    </Link>
+                  </li>
+                </ul>
+                <ul>
+                  <li>
+                    <Link
+                      to="/common"
+                      className="block px-4 py-2 text-white hover:text-red-500"
+                    >
+                      Banking Services
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="/common"
+                      className="block px-4 py-2 text-white hover:text-red-500"
+                    >
+                      AI Solutions
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="/common"
+                      className="block px-4 py-2 text-white hover:text-red-500"
+                    >
+                      Game Development
+                    </Link>
+                  </li>
+                </ul>
+              </div>
             )}
           </li>
 
@@ -180,7 +276,9 @@ const Header = () => {
           <li
             className="h-full relative flex items-center px-2 py-4 cursor-pointer transition-all duration-300"
             onClick={() => handleDropdownToggle("industries")}
-            onMouseEnter={!isTouchDevice ? () => handleMouseEnter("industries") : null}
+            onMouseEnter={
+              !isTouchDevice ? () => handleMouseEnter("industries") : null
+            }
             onMouseLeave={!isTouchDevice ? handleMouseLeave : null}
           >
             <div className="flex items-center justify-between rounded-full p-3">
@@ -190,17 +288,26 @@ const Header = () => {
             {openDropdown === "industries" && (
               <ul className="absolute top-[63px] left-0 rounded-lg shadow-lg bg-[#292828] w-40 pt-3 pb-3">
                 <li>
-                  <Link to="/common" className="block px-4 py-2 text-white hover:text-red-500">
+                  <Link
+                    to="/common"
+                    className="block px-4 py-2 text-white hover:text-red-500"
+                  >
                     Education
                   </Link>
                 </li>
                 <li>
-                  <Link to="/common" className="block px-4 py-2 text-white hover:text-red-500">
+                  <Link
+                    to="/common"
+                    className="block px-4 py-2 text-white hover:text-red-500"
+                  >
                     Healthcare
                   </Link>
                 </li>
                 <li>
-                  <Link to="/common" className="block px-4 py-2 text-white hover:text-red-500">
+                  <Link
+                    to="/common"
+                    className="block px-4 py-2 text-white hover:text-red-500"
+                  >
                     Ecommerce
                   </Link>
                 </li>
@@ -221,11 +328,21 @@ const Header = () => {
 
         {/* Mobile Menu */}
         {menuOpen && (
-          <div className="fixed top-0 left-0 w-full h-auto bg-white z-40 lg:hidden flex flex-col transition-all duration-500 overflow-auto pb-5 rounded-b-lg " data-aos="fade-down" data-aos-duration="200">
+          <div
+            className="fixed top-0 left-0 w-full h-auto bg-white z-40 lg:hidden flex flex-col transition-all duration-500 overflow-auto pb-5 rounded-b-lg "
+            data-aos="fade-down"
+            data-aos-duration="200"
+          >
             {/* Mobile menu header */}
             <div className="flex justify-between items-center p-2">
               {/* Mobile logo */}
-              <Link to={'/'}><img src={LunaredgeLogo} alt="lunarEdge" className="h-auto w-[80px]" /></Link>
+              <Link to={"/"}>
+                <img
+                  src={LunaredgeLogo}
+                  alt="lunarEdge"
+                  className="h-auto w-[80px]"
+                />
+              </Link>
               <button className="text-4xl" onClick={toggleMenu}>
                 <IoIosClose />
               </button>
@@ -246,7 +363,9 @@ const Header = () => {
                 {/* About Us sub-items */}
                 {
                   <ul
-                    className={` ${aboutUs ? "block" : "hidden"} mt-1 ml-0 pt-1 pb-4 w-auto transition-all duration-500`}
+                    className={` ${
+                      aboutUs ? "block" : "hidden"
+                    } mt-1 ml-0 pt-1 pb-4 w-auto transition-all duration-500`}
                   >
                     <li>
                       <Link
@@ -293,7 +412,9 @@ const Header = () => {
                 {/* Services sub-items */}
                 {
                   <ul
-                    className={` ${services ? "block" : "hidden"} mt-1 pt-1 pb-4 w-auto transition-all duration-500`}
+                    className={` ${
+                      services ? "block" : "hidden"
+                    } mt-1 pt-1 pb-4 w-auto transition-all duration-500`}
                   >
                     <li>
                       <Link
@@ -340,7 +461,9 @@ const Header = () => {
                 {/* Industries sub-items */}
                 {
                   <ul
-                    className={` ${industries ? "block" : "hidden"} mt-1  pt-1 pb-4 w-auto transition-all duration-500`}
+                    className={` ${
+                      industries ? "block" : "hidden"
+                    } mt-1  pt-1 pb-4 w-auto transition-all duration-500`}
                   >
                     <li>
                       <Link
@@ -375,7 +498,7 @@ const Header = () => {
 
               {/* Contact Us Button */}
               <li className="py-2 items-center">
-              <button
+                <button
                   className="bg-black text-white p-2 md:p-3 rounded-md"
                   onClick={() => {
                     handleButton();

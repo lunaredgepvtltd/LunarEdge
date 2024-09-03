@@ -15,10 +15,10 @@ module.exports = {
         'md-white': '2px 2px 4px rgba(255, 255, 255, 0.7)',
       },
     },
-    
   },
   plugins: [
     function({ addUtilities, theme, e }) {
+      // Text Shadow Utilities
       const textShadow = theme('textShadow');
       const textShadowUtilities = Object.keys(textShadow).map(key => {
         return {
@@ -28,6 +28,13 @@ module.exports = {
         };
       });
       addUtilities(textShadowUtilities, ['responsive', 'hover']);
+
+      // Grayscale Utilities
+      addUtilities({
+        '.grayscale-100': {
+          filter: 'grayscale(100%)',
+        },
+      }, ['responsive', 'hover']);
     },
   ],
-}
+};
