@@ -8,12 +8,13 @@ export const ServiceBox = () => {
 
   return (
     <div
-      className="relative rounded-lg p-8 text-white w-[20%] mx-auto flex flex-col gap-4 bg-gray-800 shadow-inner"
+      className="relative rounded-lg p-8 text-white w-[25%] mx-auto flex flex-col gap-4 bg-gray-800 shadow-inner"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       style={{
         backgroundImage: isHovered ? `url(${bgServiceBox})` : 'none',
-        backgroundSize: "contain",
+        width: "full",
+        backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
       }}
