@@ -25,6 +25,7 @@ import maleImg from "../assets/male.png";
 import employmoon from "../assets/employmoon.png";
 import textimage from "../assets/textimage.png";
 import moon from "../assets/moon.png";
+import hawaMahal from "../assets/hawaMahal.png";
 
 import "../App.css";
 
@@ -218,7 +219,7 @@ const Hero = () => {
             {/* Contact Us */}
 
             <h2 className="text-justify text-md mb-4">
-              Welcome to Lunaredge Private Limited, your partner in digital
+              Welcome to LunarEdge, your partner in digital
               transformation. We specialize in delivering customized IT
               solutions that drive business growth and efficiency.
             </h2>
@@ -304,8 +305,8 @@ const Hero = () => {
             <div className="w-full container mx-auto">
               <Slider {...sliderSetting}>
                 {offers.map((offer, index) => (
-                  <div key={index}>
-                    <Offer service={offer.service} content={offer.content} />
+                  <div >
+                    <Offer key={index} service={offer.service} content={offer.content} />
                   </div>
                 ))}
               </Slider>
@@ -314,7 +315,7 @@ const Hero = () => {
             // rendering grid-boxex for large-devices
             <div className="flex flex-wrap justify-center items-stretch lg:px-3">
               {offers.map((offer, index) => (
-                <div className="w-full md:w-1/3 px-1 py-3 xl:px-5">
+                <div key={index} className="w-full md:w-1/3 px-1 py-3 xl:px-5">
                   <Offer
                     key={index}
                     service={offer.service}
