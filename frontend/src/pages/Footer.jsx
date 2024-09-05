@@ -4,7 +4,7 @@ import { BsWhatsapp } from "react-icons/bs";
 import { Link } from "react-router-dom";
  const Footer = () => {
   return (
-    <footer className="bg-[#222222]  lg:grid lg:grid-cols-5   ">
+    <footer className="bg-[#222222]  lg:grid lg:grid-cols-5 border-t-2 border-black  ">
       <div className=" hidden relative lg:block  lg:col-span-2 lg:h-full">
         <img
           className="z-5 absolute inset-0 h-[150px] md:h-full w-full object-cover"
@@ -16,7 +16,7 @@ import { Link } from "react-router-dom";
         </p> */}
       </div>
 
-      <div className="px-4 py-8 md:py-6 sm:px-6 lg:col-span-3 lg:px-8">
+      <div className="px-3 py-3 md:py-2 sm:px-6 lg:col-span-3 lg:px-6">
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
           <div>
             <p>
@@ -77,7 +77,7 @@ import { Link } from "react-router-dom";
                     to="/common"
                     className="text-gray-300 transition hover:opacity-75 "
                   >
-                    Mobile App Development
+                     App Development
                   </Link>
                 </li>
                 <li>
@@ -133,7 +133,7 @@ import { Link } from "react-router-dom";
           </div>
         </div>
 
-        <div className=" mt-4 md:mt-8 border-t border-gray-100 pt-5 md:pt-8 ">
+        <div className=" mt-2 md:mt-4 border-t border-gray-100 pt-2 md:pt-4 ">
           <div className="sm:flex sm:items-center sm:justify-between">
             <ul className="flex flex-wrap gap-4 text-xs">
               <li>
