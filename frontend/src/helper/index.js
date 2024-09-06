@@ -18,5 +18,9 @@ export const API = {
     deleteVacancy : {
         url : 'http://localhost:8080/api/deleteVacancy',
         method : 'delete'
+    },
+    updateVacancy : {
+        url : 'http://localhost:8080/api/updateVacancy',
+        method : 'put'
     }
 }

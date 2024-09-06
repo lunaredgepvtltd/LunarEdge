@@ -17,12 +17,13 @@ const vacancySchema = new mongoose.Schema({
     required: true,
     trim: true,
   },
+  description : String,
   rolePurpose: {
-    type: String,
-    required: true,
-    trim: true,
+    type: [],
   },
-  
+  requirements: {
+    type: [],
+  },
 },{
   timestamps : true
 });

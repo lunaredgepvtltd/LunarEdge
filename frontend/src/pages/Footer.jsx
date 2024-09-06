@@ -59,54 +59,7 @@ import { Link } from "react-router-dom";
           </div>
 
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2  px-4">
-            <div className="hidden md:block">
-              <p className="font-medium text-gray-100 ">
-                Services
-              </p>
-              <ul className="mt-4 space-y-2 text-sm">
-                <li>
-                  <Link
-                    to="/common"
-                    className="text-gray-300 transition hover:opacity-75 "
-                  >
-                    Web Development
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/common"
-                    className="text-gray-300 transition hover:opacity-75 "
-                  >
-                    Mobile App Development
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/common"
-                    className="text-gray-300 transition hover:opacity-75 "
-                  >
-                    IT Consulting
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/common"
-                    className="text-gray-300 transition hover:opacity-75"
-                  >
-                    Game Development
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/common"
-                    className="text-gray-300 transition hover:opacity-75 "
-                  >
-                    Hardware Solutions
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
+         
             <div>
               <p className="font-medium text-gray-100">
                 Company
