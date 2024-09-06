@@ -85,7 +85,7 @@ export const Career = () => {
             placeholder="Search Job Title"
             // value={searchTerm}
             onChange={handleChange}
-            className="bg-[#edeafa] w-full text-xs md:text-base px-4 py-2 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#160962]"
+            className="bg-ring-[#160962]  w-full text-xs md:text-base px-4 py-2 rounded-full border border-gray-800 "
           />
         </form>
         {/* showing add-new-vacancy button only if user is admin  */}
@@ -96,6 +96,7 @@ export const Career = () => {
         </button>
        </div> : ''}
         {/* Render VacancyBox components for each job */}
+        <div className="pt-3 pb-5">
         {filteredData.length > 0 && filteredData.map((job, index) => (
           <div key={index} className="p-2">
             <VacancyBox
@@ -110,6 +111,7 @@ export const Career = () => {
             />
           </div>
         ))}
+        </div>
     
       </div>
       {showAddVacancy && <AddVacancy onClose={handleClose} setVacancyData={setData}/>}
