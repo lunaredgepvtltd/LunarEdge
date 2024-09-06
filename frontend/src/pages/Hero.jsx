@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Offer from "../components/Offer";
 import service_box from "../assets/service_box.gif";
 import service_boxr from "../assets/service_boxr.gif";
 import { useSelector } from "react-redux";
@@ -25,9 +24,18 @@ import maleImg from "../assets/male.png";
 import employmoon from "../assets/employmoon.png";
 import textimage from "../assets/textimage.png";
 import moon from "../assets/moon.png";
-import hawaMahal from "../assets/hawaMahal.png";
-
 import "../App.css";
+import { ServiceBox } from "../components/ServiceBox";
+import bgCyber from "../assets/bgCyber.png";
+import bgServicePart from "../assets/bgServicePart.png";
+import bgCloud from "../assets/bgCloud.png";
+import bgHardware from "../assets/bgHardware.png";
+import bgApp from "../assets/bgApp.png";
+import bgGame from "../assets/bgGame.png";
+import bgConsulting from "../assets/bgConsulting.png";
+import bgAi from "../assets/bgAi.png";
+import bgWeb from "../assets/bgWeb.png";
+import bgBank from "../assets/bgBank.png";
 
 const Hero = () => {
   const isSmallDevice = useMediaQuery({ maxWidth: 767 });
@@ -46,52 +54,60 @@ const Hero = () => {
   // offers Object
   const offers = [
     {
-      service: "Mobile App Development",
-      content:
-        "Creating intuitive mobile applications for iOS and Android platforms that deliver seamless user experiences.",
-    },
-    {
+      bgimg: bgWeb,
       service: "Web Development",
       content:
-        "Crafting engaging and user-friendly websites that enhance your online presence and drive customer engagement.",
+        "Our web development services focus on creating engaging, user-friendly websites that enhance your online presence. We design and develop responsive sites that drive customer engagement and deliver a seamless user experience.",
     },
     {
+      bgimg: bgApp,
+      service: "App Development",
+      content:
+        "Our app development services are designed to create intuitive, high-performance applications that meet your specific requirements. We handle the entire development lifecycle, from design and coding to testing and deployment.",
+    },
+    {
+      bgimg: bgGame,
       service: "Game Development",
       content:
-        "Immerse your audience in captivating virtual worlds with Lunaredge game development expertise.",
+        "Our game development services encompass the entire process from ideation to launch. We create immersive, interactive experiences that captivate players and provide exceptional gameplay, tailored to meet your vision and market demands.",
     },
     {
+      bgimg: bgConsulting,
       service: "IT Consulting",
       content:
-        "Expert guidance and strategic advice to optimize your IT infrastructure and achieve operational excellence.",
+        "Our IT consulting services provide expert guidance on optimizing your technology strategy. We analyze your current systems, identify opportunities for improvement, and offer strategic recommendations to enhance efficiency and drive growth.",
     },
     {
+      bgimg: bgCloud,
       service: "Cloud Solutions",
       content:
-        "Harnessing the power of cloud technology to improve scalability, security, and efficiency in your business operations.",
+        "We specialize in delivering robust cloud solutions that enhance your business’s scalability and flexibility. Our services include cloud migration, infrastructure management, and optimization, ensuring your systems are secure, reliable, and cost-effective.",
     },
     {
-      service: "Cybersecurity Services",
+      bgimg: bgCyber,
+      service: "Security Services",
       content:
-        "Protecting your digital assets with robust cybersecurity measures and proactive threat detection.",
+        "Our cybersecurity services are designed to protect your digital assets from evolving threats. We provide comprehensive security assessments, threat monitoring, and incident response strategies to safeguard your organization’s data and maintain compliance.",
     },
     {
-      service: "Banking and Financial Services",
+      bgimg: bgBank,
+      service: " Banking Solutions",
       content:
-        "Providing tailored IT solutions for banking and financial institutions, including core banking systems, loan management system, mobile banking apps.",
+        "We deliver specialized solutions for the banking and financial sectors, focusing on enhancing operational efficiency and regulatory compliance. Our services include software development, system integration, and data management tailored to the unique needs of the financial industry.",
     },
     {
-      service: "AI and Machine Learning Solutions",
+      bgimg: bgAi,
+      service: "AI & ML Solutions",
       content:
-        "Harness the power of artificial intelligence and machine learning with Lunaredge Our advanced AI solutions are designed to revolutionize.",
+        "Our AI and machine learning solutions leverage advanced technologies to drive innovation and optimize business processes. We develop custom algorithms and models that provide actionable insights, automate tasks, and enhance decision-making capabilities.",
     },
     {
-      service: "Agriculture Technology Solutions",
+      bgimg: bgHardware,
+      service: "Hardware Solutions",
       content:
-        "Innovating agriculture processes with smart technology solutions such as precision farming, crop monitoring systems, and agricultural data analytics.",
+        "Our hardware solutions and services focus on delivering reliable and high-performance equipment tailored to your business needs. We provide a range of hardware options, including servers, networking devices, and peripherals. Our experts ensure seamless integration and ongoing support to optimize your technology infrastructure.",
     },
   ];
-
   // technical skill stack
 
   const techStack = [
@@ -219,9 +235,9 @@ const Hero = () => {
             {/* Contact Us */}
 
             <h2 className="text-justify text-md mb-4">
-              Welcome to LunarEdge, your partner in digital
-              transformation. We specialize in delivering customized IT
-              solutions that drive business growth and efficiency.
+              Welcome to LunarEdge, your partner in digital transformation. We
+              specialize in delivering customized IT solutions that drive
+              business growth and efficiency.
             </h2>
 
             <button
@@ -235,12 +251,19 @@ const Hero = () => {
       </div>
 
       {/* second-part */}
-      <div className="w-full h-full ">
-        <div className="w-full text-center  md:pt-12">
+      <div
+        className="w-full h-full bg-[#edeafa]"
+        style={{
+          backgroundImage: `url(${bgServicePart})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        <div className="w-full text-center  ">
           {isSmallDevice ? (
             <div className="flex flex-col gap-4 justify-center items-center ">
               <div className="flex flex-col gap-1 p-4">
-                <h1 className="text-2xl lg:text-5xl font-semibold gradient-text">
+                <h1 className="text-2xl lg:text-5xl font-semibold">
                   SERVICES WE OFFER{" "}
                 </h1>
                 <p className="text-sm md:text-lg text-slate-500 my-3 py-2">
@@ -259,70 +282,58 @@ const Hero = () => {
             </div>
           ) : (
             // for larger-devices
-            <div className="flex justify-around items-center">
-              {/* left-computer-gif  */}
-              <div>
-                <img
-                  src={service_box}
-                  className=" xl:h-[300px] xl:w-[600px] lg:h-[350px] lg:w-[650px] 
-                md:h-[300px] md:w-[600px]"
-                />
-              </div>
-
+            <div className="flex flex-col justify-center items-center h-[300px] backdrop-blur-xl  bg-black/70 ">
               {/* center-content  */}
-              <div
-                data-aos="fade-up"
-                data-aos-duration="300"
-                className="flex flex-col gap-5 "
-              >
-                <h1 className="text-3xl lg:text-5xl font-semibold gradient-text">
-                  SERVICES WE OFFER
-                </h1>
-                <p className="text-sm text-justify lg:text-lg text-slate-500 my-3 py-2 px-[10%] ">
-                  LunarEdge is the perfect choice for any buisness looking to
-                  digitize its operations. We offers a wide range of on time and
-                  cost effective services that will help solve your complex
-                  problems with IT solutions.
-                </p>
-              </div>
-              {/* center-content-ends  */}
 
-              {/* right-computer-gif  */}
-              <div className="xl:block hidden">
-                <img
-                  src={service_boxr}
-                  className=" xl:h-[300px] xl:w-[600px] h-[300px] w-[400px]"
-                />
-              </div>
+              <h1 className="text-3xl lg:text-5xl font-semibold text-[#EBB840] ">
+                SERVICES WE OFFER
+              </h1>
+              <p className="text-sm text-justify lg:text-lg text-white my-3 py-2 w-[65%]">
+                LunarEdge is the perfect choice for any business looking to
+                digitize its operations and stay ahead in the digital age. We
+                offer a wide range of on-time and cost-effective services that
+                will help solve your complex problems with IT solutions. Our
+                team of experts is dedicated to delivering innovative and
+                scalable solutions tailored to your specific needs, ensuring
+                that your business achieves optimal performance and growth.
+              </p>
+
+              {/* center-content-ends  */}
             </div>
           )}
         </div>
 
         {/* what we offers boxes */}
-        <div className="lg:py-20 py-10">
+        <div className="lg:py-20 py-10 w-full">
           {isSmallDevice ? (
             // rendering slider for small devices
-            <div className="w-full container mx-auto">
+            <div className="w-full container px-4 mx-auto">
               <Slider {...sliderSetting}>
                 {offers.map((offer, index) => (
-                  <div >
-                    <Offer key={index} service={offer.service} content={offer.content} />
+                  <div>
+                    <ServiceBox
+                      key={index}
+                      service={offer.service}
+                      content={offer.content}
+                      bgimg={offer.bgimg}
+                    />
                   </div>
                 ))}
               </Slider>
             </div>
           ) : (
             // rendering grid-boxex for large-devices
-            <div className="flex flex-wrap justify-center items-stretch lg:px-3">
-              {offers.map((offer, index) => (
-                <div key={index} className="w-full md:w-1/3 px-1 py-3 xl:px-5">
-                  <Offer
+            <div className="mx-[5%]">
+              <div className="flex flex-wrap gap-7 px-36 w-full">
+                {offers.map((offer, index) => (
+                  <ServiceBox
                     key={index}
+                    bgimg={offer.bgimg}
                     service={offer.service}
                     content={offer.content}
                   />
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           )}
         </div>
@@ -333,7 +344,7 @@ const Hero = () => {
       {/* technical-skill content  */}
       <div
         data-aos-duration="300"
-        className="flex-col p-5 md:p-1  bg-[#6a96e7] border border-none mt-14 md:mt-30"
+        className="flex-col p-5 md:p-1  bg-[#6a96e7] border border-none  md:mt-30"
       >
         <p className=" font-medium md:font-semibold text-center text-2xl md:text-4xl lg:text-5xl mt-14 md:mt-[100px]">
           Empowering Technologies We Use
