@@ -105,7 +105,7 @@ const Hero = () => {
       bgimg: bgHardware,
       service: "Hardware Solutions",
       content:
-        "Our hardware solutions and services focus on delivering reliable and high-performance equipment tailored to your business needs. We provide a range of hardware options, including servers, networking devices, and peripherals. Our experts ensure seamless integration and ongoing support to optimize your technology infrastructure.",
+        "Our hardware services focus on delivering reliable and high-performance equipment tailored to your business needs. We provide a range of hardware options, networking devices, and peripherals. Our experts ensure seamless integration and ongoing support to optimize your technology infrastructure.",
     },
   ];
   // technical skill stack
@@ -252,7 +252,7 @@ const Hero = () => {
 
       {/* second-part */}
       <div
-        className="w-full h-full bg-[#edeafa]"
+        className="w-full h-full bg-[#edeafa] md:mt-12 mt-0"
         style={{
           backgroundImage: `url(${bgServicePart})`,
           backgroundSize: "cover",
@@ -261,24 +261,19 @@ const Hero = () => {
       >
         <div className="w-full text-center  ">
           {isSmallDevice ? (
-            <div className="flex flex-col gap-4 justify-center items-center ">
-              <div className="flex flex-col gap-1 p-4">
-                <h1 className="text-2xl lg:text-5xl font-semibold">
+            <div className="flex flex-col gap-4 justify-center p-4 items-center h-[230px] backdrop-blur-xl  bg-black/70 ">
+              
+                <h1 className="text-2xl lg:text-5xl font-semibold text-[#EBB840]">
                   SERVICES WE OFFER{" "}
                 </h1>
-                <p className="text-sm md:text-lg text-slate-500 my-3 py-2">
+                <p className="text-sm md:text-lg text-white my-3 py-2">
                   LunarEdge is the perfect choice for any buisness looking to
                   digitize its operations. We offers a wide range of on time and
                   cost effective services that will help solve your complex
                   problems with IT solutions.
                 </p>
-              </div>
-              <div>
-                <img
-                  src={service_box}
-                  className="md:hidden block h-[170px] w-[200px]"
-                />
-              </div>
+              
+            
             </div>
           ) : (
             // for larger-devices
@@ -288,14 +283,13 @@ const Hero = () => {
               <h1 className="text-3xl lg:text-5xl font-semibold text-[#EBB840] ">
                 SERVICES WE OFFER
               </h1>
-              <p className="text-sm text-justify lg:text-lg text-white my-3 py-2 w-[65%]">
+              <p className="text-sm text-justify lg:text-lg text-white my-3 py-2 2xl:w-[65%] md:w-[80%]">
                 LunarEdge is the perfect choice for any business looking to
                 digitize its operations and stay ahead in the digital age. We
                 offer a wide range of on-time and cost-effective services that
                 will help solve your complex problems with IT solutions. Our
                 team of experts is dedicated to delivering innovative and
-                scalable solutions tailored to your specific needs, ensuring
-                that your business achieves optimal performance and growth.
+                scalable solutions. 
               </p>
 
               {/* center-content-ends  */}
@@ -324,7 +318,7 @@ const Hero = () => {
           ) : (
             // rendering grid-boxex for large-devices
             <div className="mx-[5%]">
-              <div className="flex flex-wrap gap-7 px-36 w-full">
+              <div className="flex flex-wrap gap-7 2xl:px-36 xl:px-30 w-full">
                 {offers.map((offer, index) => (
                   <ServiceBox
                     key={index}
