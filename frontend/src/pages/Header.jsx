@@ -117,7 +117,7 @@ const Header = () => {
           <li>
             <Link
               to="/"
-              className="h-full relative rounded-full text-black text-lg hover:text-white hover:bg-[#616161] p-3 px-6 cursor-pointer transition-all duration-300"
+              className=" h-full relative rounded-full text-black text-lg hover:text-white hover:bg-[#616161] p-3 px-6 cursor-pointer transition-all duration-300"
               onClick={() => handleDropdownToggle()}
             >
               Home
@@ -165,30 +165,72 @@ const Header = () => {
                 </li>
                 <li>
                   <Link
-                    to="/career"
+                    to="/services"
                     className="block px-4 py-2 text-white hover:text-red-500"
                   >
-                    Careers
+                    Services
                   </Link>
                 </li>
               </ul>
             )}
           </li>
 
-          {/* Services Dropdown */}
+
+          {/* Industries Dropdown */}
           <li
             className="h-full relative flex items-center px-2 py-4 cursor-pointer transition-all duration-300"
-            onClick={() => handleDropdownToggle("services")}
+            onClick={() => handleDropdownToggle("industries")}
             onMouseEnter={
-              !isTouchDevice ? () => handleMouseEnter("services") : null
+              !isTouchDevice ? () => handleMouseEnter("industries") : null
             }
             onMouseLeave={!isTouchDevice ? handleMouseLeave : null}
           >
             <div className="flex items-center justify-between rounded-full p-3">
-              <span className="text-lg text-black">Services</span>
+              <span className="text-lg text-black">Industries</span>
               <IoIosArrowDown />
             </div>
-            {openDropdown === "services" && (
+            {openDropdown === "industries" && (
+              <ul className="absolute top-[63px] left-0 rounded-lg shadow-lg bg-[#292828] w-40 pt-3 pb-3">
+                <li>
+                  <Link
+                    to="/common"
+                    className="block px-4 py-2 text-white hover:text-red-500"
+                  >
+                    Education
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/common"
+                    className="block px-4 py-2 text-white hover:text-red-500"
+                  >
+                    Healthcare
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/common"
+                    className="block px-4 py-2 text-white hover:text-red-500"
+                  >
+                    Ecommerce
+                  </Link>
+                </li>
+              </ul>
+            )}
+          </li>
+
+          
+          {/* Services Dropdown */}
+          <li>
+            <Link
+              to="/career"
+              className="h-full relative rounded-full text-black text-lg hover:text-white hover:bg-[#616161] p-3 px-6 cursor-pointer transition-all duration-300"
+              onClick={() => handleDropdownToggle()}
+            >
+              Career
+            </Link>
+          </li>
+            {/* {openDropdown === "services" && (
               <div className="flex absolute top-[63px] left-0 rounded-lg shadow-lg bg-[#292828] w-auto pt-3 pb-3">
                 <ul className="">
                   <li>
@@ -268,52 +310,9 @@ const Header = () => {
                     </Link>
                   </li>
                 </ul>
-              </div>
-            )}
-          </li>
-
-          {/* Industries Dropdown */}
-          <li
-            className="h-full relative flex items-center px-2 py-4 cursor-pointer transition-all duration-300"
-            onClick={() => handleDropdownToggle("industries")}
-            onMouseEnter={
-              !isTouchDevice ? () => handleMouseEnter("industries") : null
-            }
-            onMouseLeave={!isTouchDevice ? handleMouseLeave : null}
-          >
-            <div className="flex items-center justify-between rounded-full p-3">
-              <span className="text-lg text-black">Industries</span>
-              <IoIosArrowDown />
-            </div>
-            {openDropdown === "industries" && (
-              <ul className="absolute top-[63px] left-0 rounded-lg shadow-lg bg-[#292828] w-40 pt-3 pb-3">
-                <li>
-                  <Link
-                    to="/common"
-                    className="block px-4 py-2 text-white hover:text-red-500"
-                  >
-                    Education
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/common"
-                    className="block px-4 py-2 text-white hover:text-red-500"
-                  >
-                    Healthcare
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/common"
-                    className="block px-4 py-2 text-white hover:text-red-500"
-                  >
-                    Ecommerce
-                  </Link>
-                </li>
-              </ul>
-            )}
-          </li>
+              </div> */}
+            {/* )}
+          </li> */}
         </ul>
 
         {/* Contact Us Button */}

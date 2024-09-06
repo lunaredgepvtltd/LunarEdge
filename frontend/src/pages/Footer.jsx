@@ -16,7 +16,7 @@ import { Link } from "react-router-dom";
         </p> */}
       </div>
 
-      <div className="px-3 py-3 md:py-2 sm:px-6 lg:col-span-3 lg:px-6">
+      <div className="px-3 py-3 md:py-6 sm:px-6 lg:col-span-3 lg:px-6">
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
           <div>
             <p>
@@ -61,49 +61,34 @@ import { Link } from "react-router-dom";
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2  px-4">
             <div className="hidden md:block">
               <p className="font-medium text-gray-100 ">
-                Services
+                Quick Links
               </p>
               <ul className="mt-4 space-y-2 text-sm">
                 <li>
                   <Link
-                    to="/common"
+                    to="/career"
                     className="text-gray-300 transition hover:opacity-75 "
                   >
-                    Web Development
+                    Career
                   </Link>
                 </li>
                 <li>
                   <Link
-                    to="/common"
+                    to="/services"
                     className="text-gray-300 transition hover:opacity-75 "
                   >
-                     App Development
+                     Services
                   </Link>
                 </li>
                 <li>
                   <Link
-                    to="/common"
+                    to="https://www.linkedin.com/company/lunaredge/" target="_blank"
                     className="text-gray-300 transition hover:opacity-75 "
                   >
-                    IT Consulting
+                     LinkedIn
                   </Link>
                 </li>
-                <li>
-                  <Link
-                    to="/common"
-                    className="text-gray-300 transition hover:opacity-75"
-                  >
-                    Game Development
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/common"
-                    className="text-gray-300 transition hover:opacity-75 "
-                  >
-                    Hardware Solutions
-                  </Link>
-                </li>
+                
               </ul>
             </div>
 
@@ -133,7 +118,7 @@ import { Link } from "react-router-dom";
           </div>
         </div>
 
-        <div className=" mt-2 md:mt-4 border-t border-gray-100 pt-2 md:pt-4 ">
+        <div className=" mt-2 md:mt-4 border-t border-gray-200 pt-2 md:pt-4 ">
           <div className="sm:flex sm:items-center sm:justify-between">
             <ul className="flex flex-wrap gap-4 text-xs">
               <li>

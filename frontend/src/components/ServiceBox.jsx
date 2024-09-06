@@ -2,13 +2,12 @@ import React, { useState } from "react";
 import ServiceBoxPointer from "../assets/ServiceBoxPointer.svg";
 import ServiceBoxArrow from "../assets/ServiceBoxArrow.svg";
 
-
-export const ServiceBox = ({ service, content , bgimg,key  }) => {
+export const ServiceBox = ({ service, content, bgimg, key }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
     <div
-      className="relative rounded-lg p-8 text-white xl:w-[28%] md:w-[50%] sm:w-[70%] mx-auto flex flex-col gap-4 backdrop-blur-xl  bg-gray-950/70 shadow-inner overflow-hidden border-2 border-[#EBB840] "
+      className="relative rounded-lg p-8 text-white xl:w-[28%] lg:w-[30%] md:w-[40%] sm:w-[70%] mx-auto flex flex-col gap-4 backdrop-blur-xl  bg-gray-950/70 shadow-inner overflow-hidden border-2 border-[#EBB840] "
       key={key}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
@@ -23,7 +22,6 @@ export const ServiceBox = ({ service, content , bgimg,key  }) => {
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
-        
         }}
       />
       <div className="relative z-10 flex items-center justify-between">
@@ -34,7 +32,9 @@ export const ServiceBox = ({ service, content , bgimg,key  }) => {
             isHovered ? "grayscale" : "grayscale-0"
           }`}
         />
-        <h2 className="text-xl font-bold px-5">{service}</h2>
+        <h2 className="2xl:text-xl md:text-lg text-lg font-bold 2xl:px-5 xl:px-3 text-center">
+          {service}
+        </h2>
         <img
           src={ServiceBoxArrow}
           alt="Arrow Icon"
@@ -43,8 +43,10 @@ export const ServiceBox = ({ service, content , bgimg,key  }) => {
           }`}
         />
       </div>
-      <ul className="space-y-4 px-2 z-10 opacity-100 ">
-        <li className="text-justify">{content}</li>
+      <ul className="space-y-4 md:px-1 px-4 z-10 opacity-100 ">
+        <li>
+          <p className="xl:text-base text-pretty md:text-sm text-sm ">{content}</p>
+        </li>
       </ul>
     </div>
   );
