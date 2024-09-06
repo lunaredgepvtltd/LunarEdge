@@ -29,9 +29,8 @@
                 success : false,
             })
         }
-        
-        // setting role to admin 
-
+        else{
+            
         existedUser.role = 'ADMIN';
 
         res.status(200).json({
@@ -40,6 +39,7 @@
             error : false,
             success : true
         })
+        }
 
     }
     else{

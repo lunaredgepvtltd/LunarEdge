@@ -3,20 +3,29 @@ import { IoClose } from "react-icons/io5";
 import { API } from "../helper";
 import { MdDelete } from "react-icons/md";
 
-const AddVacancy = ({ onClose, setVacancyData }) => {
+const UpdateVacancy = ({
+  onClose,
+  id,
+  fetchDetails,
+  prevJobTitle,
+  prevLocation,
+  prevExperience,
+  prevRolePurpose,
+  prevDescription,
+  prevRequirements,
+  setVacancyData,
+}) => {
   const [data, setData] = useState({
-    jobTitle: "",
-    location: "",
-    experience: "",
-    description: "",
-    rolePurpose: [],
-    requirements: [],
+    jobTitle: prevJobTitle,
+    location: prevLocation,
+    experience: prevExperience,
+    description: prevDescription,
   });
 
-  const [role, setRole] = useState([]);
+  const [role, setRole] = useState(prevRolePurpose);
   const [roleValue, setRoleValue] = useState("");
 
-  const [require, setRequire] = useState([]);
+  const [require, setRequire] = useState(prevRequirements);
   const [requireValue, setRequireValue] = useState("");
 
   const handleRolePurposeChange = (e) => {
@@ -48,13 +57,13 @@ const AddVacancy = ({ onClose, setVacancyData }) => {
       console.log("Please enter all details");
       return;
     }
-
-    const response = await fetch(API.addNewVacancy.url, {
-      method: API.addNewVacancy.method,
+    const response = await fetch(API.updateVacancy.url, {
+      method: API.updateVacancy.method,
       headers: {
         "content-type": "application/json",
       },
       body: JSON.stringify({
+        id,
         jobTitle,
         location,
         experience,
@@ -67,7 +76,7 @@ const AddVacancy = ({ onClose, setVacancyData }) => {
     const responseData = await response.json();
 
     if (responseData.success) {
-      setVacancyData((prev) => [responseData.data, ...prev]);
+      fetchDetails();
       onClose();
     }
   };
@@ -278,13 +287,14 @@ const AddVacancy = ({ onClose, setVacancyData }) => {
 
         <button
           type="submit"
-          className="mt-5 text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm w-full px-5 py-2.5 text-center"
+          className="mt-5 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm w-full px-5 py-2.5 text-center"
+          onClick={handleSubmit}
         >
-          Submit
+          Edit
         </button>
       </form>
     </div>
   );
 };
 
-export default AddVacancy;
+export default UpdateVacancy;

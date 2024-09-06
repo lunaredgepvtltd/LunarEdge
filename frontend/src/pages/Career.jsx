@@ -6,8 +6,8 @@ import bgCareerSM from "../assets/bgCareerSM.png";
 import AddVacancy from "../components/AddVacancy";
 import { API } from "../helper";
 export const Career = () => {
-  const [searchTerm, setSearchTerm] = useState("");
   const [showAddVacancy,setShowAddVacancy] = useState(false);
+  const [filteredData, setFilteredData] = useState([]);
 
   const handleClose = ()=>{
   setShowAddVacancy(false)
@@ -17,19 +17,21 @@ export const Career = () => {
  
 
   const handleChange = (event) => {
-    setSearchTerm(event.target.value);
+    // console.log(event.target.value)
+    // setSearchTerm(event.target.value);
+    const filtered = data.filter((job) =>
+      job.jobTitle.toLowerCase().includes(event.target.value.toLowerCase())
+    );
+    console.log(filtered)
+    setFilteredData(filtered)
   };
 
  
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log("Search term:", searchTerm);
-  };
 
   // getting user
 
   const { user } = useSelector((state) => state.user);
-  console.log(user);
+
 
   const fetchVacancyDetails = async()=>{
     try{
@@ -39,7 +41,10 @@ export const Career = () => {
 
       const responseData = await response.json();
 
+      console.log(responseData)
+
       setData(responseData.data)
+      setFilteredData(responseData.data)
     }
     catch(error){
       console.log(error);
@@ -48,7 +53,7 @@ export const Career = () => {
 
  useEffect(()=>{
   fetchVacancyDetails()
- },[])
+ },[showAddVacancy])
 
   return (
     <div className="h-full bg-gray-100">
@@ -74,20 +79,14 @@ export const Career = () => {
             </p>
           </div>
         </div>
-        <form onSubmit={handleSubmit} className="flex items-center mt-4 pb-3">
+        <form className="flex items-center mt-4 pb-3">
           <input
             type="text"
-            placeholder="Try 'Skills' or 'Keywords'"
-            value={searchTerm}
+            placeholder="Search Job Title"
+            // value={searchTerm}
             onChange={handleChange}
             className="bg-[#edeafa] w-full text-xs md:text-base px-4 py-2 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#160962]"
           />
-          <button
-            type="submit"
-            className="w-[100px] ml-[-100px] text-xs md:text-base py-2 rounded-full bg-[#160962] text-white hover:bg-[#5c45dd] focus:outline-none focus:ring-2 focus:ring-blue-500"
-          >
-            Find Jobs
-          </button>
         </form>
         {/* showing add-new-vacancy button only if user is admin  */}
         {user?.role === 'ADMIN' ?
@@ -97,18 +96,21 @@ export const Career = () => {
         </button>
        </div> : ''}
         {/* Render VacancyBox components for each job */}
-        {data.length > 0 && data.map((job, index) => (
+        {filteredData.length > 0 && filteredData.map((job, index) => (
           <div key={index} className="p-2">
             <VacancyBox
-              jobTitle={job.jobTitle}
-              location={job.location}
-              experience={job.experience}
-              rolePurpose={job.rolePurpose}
-              id={job._id}
+              jobTitle={job?.jobTitle}
+              location={job?.location}
+              experience={job?.experience}
+              rolePurpose={job?.rolePurpose}
+              id={job?._id}
+              description={job?.description}
+              requirements={job?.requirements}
               fetchDetails={fetchVacancyDetails}
             />
           </div>
         ))}
+    
       </div>
       {showAddVacancy && <AddVacancy onClose={handleClose} setVacancyData={setData}/>}
     </div>
