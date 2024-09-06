@@ -5,7 +5,7 @@ import { FaRegEdit } from "react-icons/fa";
 import DeleteVacancy from "./deleteVacancy";
 import { useSelector } from "react-redux";
 import UpdateVacancy from "./UpdateVacancy";
-
+import {JobForm} from '../components/JobForm.jsx'
 export const VacancyBox = ({
   jobTitle,
   location,
@@ -18,7 +18,8 @@ export const VacancyBox = ({
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [deleteVacancyItem, setDeleteVacancyItem] = useState(false);
-  const [updateVacancy,setUpdateVacancy] = useState(false)
+  const [updateVacancy,setUpdateVacancy] = useState(false);
+  const [showVacancyForm,setShowVacancyForm] = useState(false)
 
   const { user } = useSelector((state) => state.user);
 
@@ -33,11 +34,10 @@ export const VacancyBox = ({
   const handleEditClose = ()=>{
     setUpdateVacancy(false)
   }
-  {console.log(updateVacancy)}
 
   const handleApplyNowClick = (event) => {
-    event.stopPropagation(); // Prevent event from bubbling up to parent div
-    // Handle Apply Now button click logic here (e.g., show a form)
+    event.preventDefault();
+    setShowVacancyForm(!showVacancyForm)
   };
 
   return (
@@ -149,6 +149,9 @@ export const VacancyBox = ({
             />
           )}
         </div>
+
+        {/* showing-vacancy-form  */}
+        {showVacancyForm && <JobForm/>}
 
       </div>
     </>
