@@ -41,22 +41,27 @@ const Header = () => {
   const handleServiceClick = ()=>{
   
    if(isExtraSmallDevice){
+    console.log('extra-small')
     toggleMenu()
-    window.scrollTo(0, 550);
+    window.scrollTo(0, 3200);
    }
    else if(isSmallDevice){
+    console.log('small')
     toggleMenu()
-    window.scrollTo(0, 560);
+    window.scrollTo(0, 2600);
    }
    else if(isMediumDevice){
+    console.log('medium')
     toggleMenu()
-    window.scrollTo(0, 600);
+    window.scrollTo(0, 2500);
    }
    else if(isLargeDevice){
-    window.scrollTo(0, 600);
+    console.log('large')
+    window.scrollTo(0, 2650);
    }
    else{
-    window.scrollTo(0, 800);
+    console.log('extra-large')
+    window.scrollTo(0,3400);
    }
   }
 
