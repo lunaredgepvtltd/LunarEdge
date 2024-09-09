@@ -92,32 +92,32 @@ export const VacancyBox = ({
         </div>
         {/* Conditionally visible job description */}
         {isOpen && (
-          <div className="mt-4 space-y-4">
+          <div className="mt-4 space-y-4 text-xs md:text-base">
             <hr className="border border-[#160962]" />
             <h3 className="text-lg md:text-xl font-semibold text-indigo-600">
               Job Description:
             </h3>
             <p className="font-medium p-2">{description}</p>
-            <div className="mt-2 text-[17px] text-gray-700">
+            <div className="mt-2 text-[17px] text-gray-700 text-sm md:text-xl">
               <p>
                 <strong>Responsibilities:</strong>
               </p>
               <ul className=" list-disc px-7 py-2 marker:text-indigo-600">
                 {rolePurpose?.map((el, idx) => (
-                  <li key={idx} className="text-gray-500 py-1 font-normal">
+                  <li key={idx} className="text-gray-500 py-1 font-normal text-xs md:text-base">
                     {el}
                   </li>
                 ))}
               </ul>
             </div>
             {requirements?.length > 0 && (
-              <div className="mt-2 text-[17px] text-gray-700">
+              <div className="mt-2 text-[17px] text-gray-700 text-sm md:text-xl">
                 <p>
                   <strong>Requirements:</strong>
                 </p>
                 <ul className=" list-disc px-7 py-2 marker:text-indigo-600">
                   {requirements?.map((el, idx) => (
-                    <li key={idx} className="text-gray-500 py-1 font-normal">
+                    <li key={idx} className="text-gray-500 py-1 font-normal text-xs md:text-base">
                       {el}
                     </li>
                   ))}
