@@ -43,7 +43,7 @@ const Header = () => {
    if(isExtraSmallDevice){
     console.log('extra-small')
     toggleMenu()
-    window.scrollTo(0, 3200);
+    window.scrollTo(0, 3000);
    }
    else if(isSmallDevice){
     console.log('small')
@@ -365,7 +365,7 @@ const Header = () => {
         {/* Contact Us Button */}
         <div className=" hidden lg:block items-center">
           <button
-            className="rounded-full py-4 px-8 text-black text-md hover:bg-[#703299] border border-[#703299] hover:text-white hover:shadow-md hover:bg-gradient-to-r from-[#386bb7] to-[#e24c4a] transition-all duration-100"
+            className="rounded-full py-4 px-8 text-black text-md hover:bg-[#703299] border border-[#703299] hover:text-white  hover:bg-gradient-to-r from-[#386bb7] to-[#e24c4a] hover:transition-all duration-100"
             onClick={handleButton}
           >
             Contact Us

@@ -21,7 +21,7 @@ const Services = () => {
         </div>
       </div>
 
-      <div className="flex flex-wrap gap-3 p-4">
+      {/* <div className="flex flex-wrap gap-3 p-4">
         <ServiceBox service="Web Development" content="We provide end-to-end custom software development, from initial concept to final deployment. Our solutions are scalable and tailored to meet your business needs, ensuring alignment with your strategic objectives for optimal performance.to meet your business needs, ensuring alignment with your strategic ob."/>
         <ServiceBox service="Web Development" content="We provide end-to-end custom software development, from initial concept to final deployment. Our solutions are scalable and tailored to meet your business needs, ensuring alignment with your strategic objectives for optimal performance.to meet your business needs, ensuring alignment with your strategic ob."/>
         <ServiceBox service="Web Development" content="We provide end-to-end custom software development, from initial concept to final deployment. Our solutions are scalable and tailored to meet your business needs, ensuring alignment with your strategic objectives for optimal performance.to meet your business needs, ensuring alignment with your strategic ob."/>
@@ -31,7 +31,7 @@ const Services = () => {
         <ServiceBox service="Web Development" content="We provide end-to-end custom software development, from initial concept to final deployment. Our solutions are scalable and tailored to meet your business needs, ensuring alignment with your strategic objectives for optimal performance.to meet your business needs, ensuring alignment with your strategic ob."/>
         <ServiceBox service="Web Development" content="We provide end-to-end custom software development, from initial concept to final deployment. Our solutions are scalable and tailored to meet your business needs, ensuring alignment with your strategic objectives for optimal performance.to meet your business needs, ensuring alignment with your strategic oe."/>
         <ServiceBox service="Web Development" content="We provide end-to-end custom software development, from initial concept to final deployment. Our solutions are scalable and tailored to meet your business needs, ensuring alignment with your strategic objectives for optimal performance.to meet your business needs, ensuring alignment with your strategic ob."/>
-      </div>
+      </div> */}
     </>
   );
 };

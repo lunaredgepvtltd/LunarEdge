@@ -23,7 +23,7 @@ export const AboutUs = () => {
   };
   return (
     <React.Fragment>
-      <div className="h-full w-full  pt-[180px]">
+      <div className="h-full w-full">
 
         {/* First part About LunarEdge  */}
 

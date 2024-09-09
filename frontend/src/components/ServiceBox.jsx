@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import ServiceBoxPointer from "../assets/ServiceBoxPointer.svg";
 import ServiceBoxArrow from "../assets/ServiceBoxArrow.svg";
-
 export const ServiceBox = ({ service, content, bgimg, key }) => {
   const [isHovered, setIsHovered] = useState(false);
 
@@ -32,13 +31,13 @@ export const ServiceBox = ({ service, content, bgimg, key }) => {
             isHovered ? "grayscale" : "grayscale-0"
           }`}
         />
-        <h2 className="2xl:text-lg 2xl:font-extrabold md:text-lg text-lg font-bold 2xl:px-5 xl:px-3 text-center">
+        <h2 className="2xl:text-lg 2xl:font-extrabold md:text-lg text-base font-bold 2xl:px-5 xl:px-3 text-center">
           {service}
         </h2>
         <img
-          src={ServiceBoxArrow}
+          src={ServiceBoxArrow} 
           alt="Arrow Icon"
-          className={`transition-all duration-300 ${
+          className={`transition-all duration-300  ${
             isHovered ? "grayscale" : "grayscale-0"
           }`}
         />

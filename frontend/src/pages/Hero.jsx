@@ -39,9 +39,9 @@ import bgBank from "../assets/bgBank.png";
 import { AboutUs } from "./AboutUs";
 
 const Hero = () => {
-  const isExtraSmallDevice = useMediaQuery({ maxWidth: 599 });
-  const isSmallDevice = useMediaQuery({ minWidth: 600, maxWidth: 767 });
-  const isMediumDevice = useMediaQuery({ minWidth: 768, maxWidth: 991 });
+
+  const isSmallDevice = useMediaQuery({ minWidth: 300, maxWidth: 600 });
+  
 
 
   const sliderSetting = {
@@ -254,7 +254,7 @@ const Hero = () => {
         </div>
       </div>
 
-      <div >
+      <div className=" md:pt-[180px] pt-[0px]">
         <AboutUs></AboutUs>
       </div>
       {/* second-part */}
@@ -306,6 +306,7 @@ const Hero = () => {
           {isSmallDevice ? (
             // rendering slider for small devices
             <div className="w-full container px-4 mx-auto">
+            
               <Slider {...sliderSetting}>
                 {offers.map((offer, index) => (
                   <div>
