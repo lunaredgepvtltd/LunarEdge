@@ -23,50 +23,7 @@ export const AboutUs = () => {
   };
   return (
     <React.Fragment>
-      <div className="h-full w-full bg-gray-100 ">
-        <div className="hidden md:flex justify-between h-[200px]  ">
-          <img src={aboutUsTexture} alt="" />
-          <img src={aboutUsTexture} alt="" />
-        </div>
-        <div className="md:h-[950px] h-[740px] flex flex-col  items-center md:gap-28 justify-evenly md:justify-start">
-          {/* center text content container    */}
-          <div className="flex flex-col gap-6 opacity-70 ">
-            <span className="md:text-xl text-sm mx-auto bg-gray-700 p-1 rounded-md text-white">
-              LunarEdge IT Service Private Limited
-            </span>
-            <div className="xl:text-3xl md:text-2xl sm:text-xl flex flex-col items-center md:gap-3 gap-0">
-              <span className="hidden md:block ">
-                <h1>
-                  “Dedicated To Transforming Your Digital <br />
-                </h1>
-                <h1 className="text-center"> Vision Into Reality.”</h1>
-              </span>
-              <span className="block md:hidden">
-                <h1>
-                  “Dedicated To Transforming Your
-                  <br />
-                </h1>
-                <h1 className="text-center">Digital Vision Into Reality.”</h1>
-              </span>
-            </div>
-
-            <button
-              className=" mx-auto bg-purple-950 text-white hover:bg-purple-800 md:p-4 p-2 rounded-xl"
-              onClick={handleButton}
-            >
-              Get Connect
-            </button>
-          </div>
-
-          {/* circular images div */}
-          <div className="md:h-[35%] h-[20%] md:w-[69%] w-[80%] ">
-            <img
-              src={bgAboutus}
-              alt=""
-              className=" xl:h-[86%] 2xl:h-[100%] w-[100%]"
-            />
-          </div>
-        </div>
+      <div className="h-full w-full  pt-[180px]">
 
         {/* First part About LunarEdge  */}
 

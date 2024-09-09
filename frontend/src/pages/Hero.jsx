@@ -36,6 +36,7 @@ import bgConsulting from "../assets/bgConsulting.png";
 import bgAi from "../assets/bgAi.png";
 import bgWeb from "../assets/bgWeb.png";
 import bgBank from "../assets/bgBank.png";
+import { AboutUs } from "./AboutUs";
 
 const Hero = () => {
   const isExtraSmallDevice = useMediaQuery({ maxWidth: 599 });
@@ -253,9 +254,12 @@ const Hero = () => {
         </div>
       </div>
 
+      <div >
+        <AboutUs></AboutUs>
+      </div>
       {/* second-part */}
       <div
-        className="w-full h-full bg-[#edeafa] md:mt-12 mt-0"
+        className="w-full h-full  md:mt-12 mt-0"
         style={{
           backgroundImage: `url(${bgServicePart})`,
           backgroundSize: "cover",
@@ -265,18 +269,15 @@ const Hero = () => {
         <div className="w-full text-center  ">
           {isSmallDevice ? (
             <div className="flex flex-col gap-4 justify-center p-4 items-center h-[230px] backdrop-blur-xl  bg-black/70 ">
-              
-                <h1 className="text-2xl lg:text-5xl font-semibold text-[#EBB840]">
-                  SERVICES WE OFFER{" "}
-                </h1>
-                <p className="text-sm md:text-lg text-white my-3 py-2">
-                  LunarEdge is the perfect choice for any buisness looking to
-                  digitize its operations. We offers a wide range of on time and
-                  cost effective services that will help solve your complex
-                  problems with IT solutions.
-                </p>
-              
-            
+              <h1 className="text-2xl lg:text-5xl font-semibold text-[#EBB840]">
+                SERVICES WE OFFER{" "}
+              </h1>
+              <p className="text-sm md:text-lg text-white my-3 py-2">
+                LunarEdge is the perfect choice for any buisness looking to
+                digitize its operations. We offers a wide range of on time and
+                cost effective services that will help solve your complex
+                problems with IT solutions.
+              </p>
             </div>
           ) : (
             // for larger-devices
@@ -292,7 +293,7 @@ const Hero = () => {
                 offer a wide range of on-time and cost-effective services that
                 will help solve your complex problems with IT solutions. Our
                 team of experts is dedicated to delivering innovative and
-                scalable solutions. 
+                scalable solutions.
               </p>
 
               {/* center-content-ends  */}
@@ -301,7 +302,7 @@ const Hero = () => {
         </div>
 
         {/* what we offers boxes */}
-        <div className="lg:py-20 py-10 w-full">
+        <div className=" lg:py-20 py-10 w-full">
           {isSmallDevice ? (
             // rendering slider for small devices
             <div className="w-full container px-4 mx-auto">
@@ -320,7 +321,7 @@ const Hero = () => {
             </div>
           ) : (
             // rendering grid-boxex for large-devices
-            <div className="mx-[5%]">
+            <div className="2xl:mx-[0%] mx-[5%]">
               <div className="flex flex-wrap gap-7 2xl:px-36 xl:px-30 w-full">
                 {offers.map((offer, index) => (
                   <ServiceBox
