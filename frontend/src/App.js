@@ -4,7 +4,10 @@ import PreLoader from "./PRELOADER/preLoader.js";
 import AOS from 'aos';
 import "aos/dist/aos.css";
 import { Outlet } from "react-router-dom";
-import ScrollToTop from './components/ScrollToTop.jsx'
+import ScrollToTop from './components/ScrollToTop.jsx';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 const Header = lazy(() => import("./pages/Header.jsx"));
 const Footer = lazy(() => import("./pages/Footer.jsx"));
 
@@ -34,7 +37,7 @@ function App() {
         <main>
           {/* Outlet for nested routes */}
           <Suspense fallback={<div>Loading Content...</div>}>
-          <ScrollToTop/>
+            <ScrollToTop/>
             <Outlet />
           </Suspense>
         </main>
@@ -43,6 +46,19 @@ function App() {
         <Suspense fallback={<div>Loading Footer...</div>}>
           <Footer />
         </Suspense>
+
+        {/* Add ToastContainer here */}
+        <ToastContainer 
+          position="top-center"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+        />
       </div>
     </>
   );

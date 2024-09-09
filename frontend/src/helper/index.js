@@ -22,5 +22,9 @@ export const API = {
     updateVacancy : {
         url : 'http://localhost:8080/api/updateVacancy',
         method : 'put'
+    },
+    fillForm : {
+        url : 'http://localhost:8080/api/formFill',
+        method : 'post'
     }
 }

@@ -38,7 +38,10 @@ import bgWeb from "../assets/bgWeb.png";
 import bgBank from "../assets/bgBank.png";
 
 const Hero = () => {
-  const isSmallDevice = useMediaQuery({ maxWidth: 767 });
+  const isExtraSmallDevice = useMediaQuery({ maxWidth: 599 });
+  const isSmallDevice = useMediaQuery({ minWidth: 600, maxWidth: 767 });
+  const isMediumDevice = useMediaQuery({ minWidth: 768, maxWidth: 991 });
+
 
   const sliderSetting = {
     dots: true,

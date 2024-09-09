@@ -40,6 +40,10 @@ export const VacancyBox = ({
     setShowVacancyForm(!showVacancyForm)
   };
 
+  const handleVacancyFormClose =()=>{
+    setShowVacancyForm(false)
+  }
+
   return (
     <>
       <div className="bg-[#edeafa] rounded-xl p-3 shadow-md px-2 md:px-6 lg:px-10 relative">
@@ -151,7 +155,7 @@ export const VacancyBox = ({
         </div>
 
         {/* showing-vacancy-form  */}
-        {showVacancyForm && <JobForm/>}
+        {showVacancyForm && <JobForm onClose={handleVacancyFormClose}/>}
 
       </div>
     </>

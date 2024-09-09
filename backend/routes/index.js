@@ -2,8 +2,23 @@ import express from 'express'
 import query from '../controller/userContoller.js';
 import  AdminLoginController  from '../controller/adminLoginController.js';
 import { addVacancyContoller, deleteVacancy, getAllVacancy, updateVacancy } from '../controller/vacancyController.js';
+import multer from 'multer'
+import path from 'path';
+import { FormFill } from '../controller/FormFill.js';
 
 const router = express.Router();
+
+
+const storage = multer.diskStorage({
+    destination: (req, file, cb) => {
+      cb(null, 'uploads/'); // Directory to save uploaded files
+    },
+    filename: (req, file, cb) => {
+      cb(null, Date.now() + path.extname(file.originalname)); // Unique filename
+    },
+  });
+  
+  const upload = multer({ storage: storage });
 
 // user-query 
 router.post('/query',query);
@@ -21,7 +36,9 @@ router.get('/getAllVacancy',getAllVacancy)
 router.delete('/deleteVacancy',deleteVacancy)
 
 // vacancy-update 
-router.put('/updateVacancy',updateVacancy)
+
+// formFill 
+router.post('/Formfill', upload.single('cv'),FormFill)
 
 
 export default router;

@@ -7,7 +7,7 @@ export const ServiceBox = ({ service, content, bgimg, key }) => {
 
   return (
     <div
-      className="relative rounded-lg p-8 text-white xl:w-[28%] lg:w-[30%] md:w-[40%] sm:w-[70%] mx-auto flex flex-col gap-4 backdrop-blur-xl  bg-gray-950/70 shadow-inner overflow-hidden border-2 border-[#EBB840] "
+      className="relative rounded-lg p-8 text-white xl:w-[31%] lg:w-[31%] md:w-[40%] sm:w-[70%] mx-auto flex flex-col gap-4 backdrop-blur-xl  bg-gray-950/70 shadow-inner overflow-hidden border-2 border-[#EBB840] "
       key={key}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
@@ -45,7 +45,7 @@ export const ServiceBox = ({ service, content, bgimg, key }) => {
       </div>
       <ul className="space-y-4 md:px-1 px-4 z-10 opacity-100 ">
         <li>
-          <p className="xl:text-base text-pretty md:text-sm text-sm ">{content}</p>
+          <p className="xl:text-sm text-pretty md:text-sm text-sm ">{content}</p>
         </li>
       </ul>
     </div>

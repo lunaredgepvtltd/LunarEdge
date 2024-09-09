@@ -4,6 +4,8 @@ import "../App.css";
 import { IoIosArrowDown, IoIosMenu, IoIosClose } from "react-icons/io";
 import ContactForm from "./ContactForm";
 import LunaredgeLogo from "../assets/Lunaredge.png";
+import { useMediaQuery } from "react-responsive";
+
 import { Link } from "react-router-dom";
 
 const Header = () => {
@@ -27,6 +29,38 @@ const Header = () => {
       setServices(!services);
     }
   };
+
+  // scrolling-down-to-sevice-box 
+
+  const isExtraSmallDevice = useMediaQuery({ maxWidth: 599 });
+  const isSmallDevice = useMediaQuery({ minWidth: 600, maxWidth: 767 });
+  const isMediumDevice = useMediaQuery({ minWidth: 768, maxWidth: 991 });
+  const isLargeDevice = useMediaQuery({ minWidth: 992, maxWidth: 1199 });
+  const isExtraLargeDevice = useMediaQuery({ minWidth: 1200 });
+
+  const handleServiceClick = ()=>{
+  
+   if(isExtraSmallDevice){
+    toggleMenu()
+    window.scrollTo(0, 550);
+   }
+   else if(isSmallDevice){
+    toggleMenu()
+    window.scrollTo(0, 560);
+   }
+   else if(isMediumDevice){
+    toggleMenu()
+    window.scrollTo(0, 600);
+   }
+   else if(isLargeDevice){
+    window.scrollTo(0, 600);
+   }
+   else{
+    window.scrollTo(0, 800);
+   }
+  }
+
+  // scroll-code-ends 
 
   const handleServices = () => {
     setServices(!services);
@@ -164,12 +198,20 @@ const Header = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link
+                  {/* <Link
                     to="/services"
                     className="block px-4 py-2 text-white hover:text-red-500"
                   >
                     Services
-                  </Link>
+                  </Link> */}
+
+                  {/* For Temporary Purpose */}
+                  <p
+                    className="block px-4 py-2 text-white hover:text-red-500"
+                    onClick={handleServiceClick}
+                  >
+                    Services
+                  </p>
                 </li>
               </ul>
             )}
@@ -220,7 +262,7 @@ const Header = () => {
           </li>
 
           
-          {/* Services Dropdown */}
+          {/* career */}
           <li>
             <Link
               to="/career"
@@ -403,46 +445,46 @@ const Header = () => {
                 onClick={handleServices}
               >
                 <div className="flex gap-1 mr-2 items-center">
-                  <span className="text-md text-[#082847] hover:underline">
+                  <span className="text-md text-[#082847] hover:underline" onClick={handleServiceClick}>
                     Services
                   </span>
                   <IoIosArrowDown />
                 </div>
                 {/* Services sub-items */}
                 {
-                  <ul
-                    className={` ${
-                      services ? "block" : "hidden"
-                    } mt-1 pt-1 pb-4 w-auto transition-all duration-500`}
-                  >
-                    <li>
-                      <Link
-                        to="/common"
-                        className="block px-2 py-1 text-[#082847] hover:underline underline-offset-2 w-56 text-sm"
-                        onClick={toggleMenu}
-                      >
-                        Web Development
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        to="/common"
-                        className="block px-2 py-1 text-[#082847] hover:underline underline-offset-2 w-56 text-sm"
-                        onClick={toggleMenu}
-                      >
-                        Mobile App Development
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        to="/common"
-                        className="block px-2 py-1 text-[#082847] hover:underline underline-offset-2 w-56 text-sm"
-                        onClick={toggleMenu}
-                      >
-                        IT Consulting
-                      </Link>
-                    </li>
-                  </ul>
+                  // <ul
+                  //   className={` ${
+                  //     services ? "block" : "hidden"
+                  //   } mt-1 pt-1 pb-4 w-auto transition-all duration-500`}
+                  // >
+                  //   <li>
+                  //     <Link
+                  //       to="/common"
+                  //       className="block px-2 py-1 text-[#082847] hover:underline underline-offset-2 w-56 text-sm"
+                  //       onClick={toggleMenu}
+                  //     >
+                  //       Web Development
+                  //     </Link>
+                  //   </li>
+                  //   <li>
+                  //     <Link
+                  //       to="/common"
+                  //       className="block px-2 py-1 text-[#082847] hover:underline underline-offset-2 w-56 text-sm"
+                  //       onClick={toggleMenu}
+                  //     >
+                  //       Mobile App Development
+                  //     </Link>
+                  //   </li>
+                  //   <li>
+                  //     <Link
+                  //       to="/common"
+                  //       className="block px-2 py-1 text-[#082847] hover:underline underline-offset-2 w-56 text-sm"
+                  //       onClick={toggleMenu}
+                  //     >
+                  //       IT Consulting
+                  //     </Link>
+                  //   </li>
+                  // </ul>
                 }
               </li>
 
