@@ -143,7 +143,7 @@ export const AboutUs = () => {
         </div>
 
         {/* our vision part   */}
-        <div className="xl:h-[700px] h-[600px] md:h-[400px] md:flex md:items-center">
+        <div className="xl:h-[500px] h-[600px] md:h-[400px] md:flex md:items-center">
           <div className="md:h-[450px] h-[600px] w-full md:flex md:justify-around  items-center px-3 md:px-0  ">
             <img
               src={ourMission}

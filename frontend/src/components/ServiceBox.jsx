@@ -27,7 +27,7 @@ export const ServiceBox = ({ service, content, bgimg, key }) => {
         <img
           src={ServiceBoxPointer}
           alt="Pointer Icon"
-          className={`transition-all duration-300 ${
+          className={`transition-all duration-300 h-[70%] ${
             isHovered ? "grayscale" : "grayscale-0"
           }`}
         />
@@ -37,14 +37,14 @@ export const ServiceBox = ({ service, content, bgimg, key }) => {
         <img
           src={ServiceBoxArrow} 
           alt="Arrow Icon"
-          className={`transition-all duration-300  ${
+          className={`transition-all duration-300 h-[70%] ${
             isHovered ? "grayscale" : "grayscale-0"
           }`}
         />
       </div>
       <ul className="space-y-4 md:px-1 px-4 z-10 opacity-100 ">
         <li>
-          <p className="xl:text-sm text-pretty md:text-sm text-sm ">{content}</p>
+          <p className="2xl:text-base  text-pretty  text-sm ">{content}</p>
         </li>
       </ul>
     </div>

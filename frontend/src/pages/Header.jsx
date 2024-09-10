@@ -67,7 +67,7 @@ const Header = () => {
        }
        else{
         console.log('extra-large')
-        window.scrollTo(0,3400);
+        window.scrollTo(0,3200);
        }
     }, 200);
   }
