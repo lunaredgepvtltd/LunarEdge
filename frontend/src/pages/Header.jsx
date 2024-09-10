@@ -5,6 +5,7 @@ import { IoIosArrowDown, IoIosMenu, IoIosClose } from "react-icons/io";
 import ContactForm from "./ContactForm";
 import LunaredgeLogo from "../assets/Lunaredge.png";
 import { useMediaQuery } from "react-responsive";
+import { useNavigate } from "react-router-dom";
 
 import { Link } from "react-router-dom";
 
@@ -13,6 +14,8 @@ const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false); // State to manage mobile menu visibility
   const [isTouchDevice, setIsTouchDevice] = useState(false); // State to check if the device is touch-enabled
   const [openDropdown, setOpenDropdown] = useState(null); // State to manage which dropdown is open
+
+  const navigate = useNavigate();
 
   // States for managing dropdowns in mobile menu
   const [aboutUs, setAboutUs] = useState(false);
@@ -39,33 +42,72 @@ const Header = () => {
   const isExtraLargeDevice = useMediaQuery({ minWidth: 1200 });
 
   const handleServiceClick = ()=>{
-  
-   if(isExtraSmallDevice){
-    console.log('extra-small')
-    toggleMenu()
-    window.scrollTo(0, 3000);
-   }
-   else if(isSmallDevice){
-    console.log('small')
-    toggleMenu()
-    window.scrollTo(0, 2600);
-   }
-   else if(isMediumDevice){
-    console.log('medium')
-    toggleMenu()
-    window.scrollTo(0, 2500);
-   }
-   else if(isLargeDevice){
-    console.log('large')
-    window.scrollTo(0, 2650);
-   }
-   else{
-    console.log('extra-large')
-    window.scrollTo(0,3400);
-   }
+    
+    navigate('/')
+
+    setTimeout(() => {
+      if(isExtraSmallDevice){
+        console.log('extra-small')
+        toggleMenu()
+        window.scrollTo(0, 3000);
+       }
+       else if(isSmallDevice){
+        console.log('small')
+        toggleMenu()
+        window.scrollTo(0, 2600);
+       }
+       else if(isMediumDevice){
+        console.log('medium')
+        toggleMenu()
+        window.scrollTo(0, 2500);
+       }
+       else if(isLargeDevice){
+        console.log('large')
+        window.scrollTo(0, 2650);
+       }
+       else{
+        console.log('extra-large')
+        window.scrollTo(0,3400);
+       }
+    }, 200);
+  }
+
+  const handleAboutClick = ()=>{
+    navigate('/')
+    setTimeout(() => {
+      if(isExtraSmallDevice){
+        console.log('extra-small')
+        toggleMenu()
+        window.scrollTo(0, 550);
+       }
+       else if(isSmallDevice){
+        console.log('small')
+        toggleMenu()
+        window.scrollTo(0,580 );
+       }
+       else if(isMediumDevice){
+        console.log('medium')
+        toggleMenu()
+        window.scrollTo(0,700 );
+       }
+       else if(isLargeDevice){
+        console.log('large')
+        window.scrollTo(0,700 );
+       }
+       else{
+        console.log('extra-large')
+        window.scrollTo(0,900);
+       }  
+    }, 200);
   }
 
   // scroll-code-ends 
+
+  const handleLogoClick = ()=>{
+    setTimeout(() => {
+      window.scrollTo(0,0)
+    }, 200);
+  }
 
   const handleServices = () => {
     setServices(!services);
@@ -135,7 +177,8 @@ const Header = () => {
     <div className="w-full h-[90px] md:h-[125px] fixed z-50 pt-3 px-3 md:px-5 md:pt-6">
       <div className="box flex bg-white h-full w-full rounded-xl md:rounded-3xl justify-between items-center px-4 xl:px-10">
         {/* Logo */}
-        <Link to={"/"} className="flex-shrink-0 ">
+        <Link to={"/"} className="flex-shrink-0 "
+        onClick={handleLogoClick}>
           <img
             src={logo}
             alt="Company Logo"
@@ -157,7 +200,12 @@ const Header = () => {
             <Link
               to="/"
               className=" h-full relative rounded-full text-black text-lg hover:text-white hover:bg-[#616161] p-3 px-6 cursor-pointer transition-all duration-300"
-              onClick={() => handleDropdownToggle()}
+              onClick={()=>{
+                handleDropdownToggle();
+                setTimeout(() => {
+                  window.scrollTo(0,0);
+                }, 200);
+              }}
             >
               Home
             </Link>
@@ -179,12 +227,20 @@ const Header = () => {
             {openDropdown === "aboutUs" && (
               <ul className="absolute top-[63px] left-0 rounded-lg shadow-lg bg-[#292828] w-48 pt-3 pb-3">
                 <li>
-                  <Link
-                    to="/aboutLunarEdge/aboutUs"
+                  {/* <Link
+                    to="/aboutLunarEdge/aboutUs" 
                     className="block px-4 py-2 text-white hover:text-red-500"
                   >
                     About Us
-                  </Link>
+                  </Link> */}
+
+                  {/* Temporary-about-us  */}
+                  <p
+                    className="block px-4 py-2 text-white hover:text-red-500"
+                    onClick={handleAboutClick}
+                  >
+                    About Us
+                  </p>
                 </li>
                 <li>
                   <Link
@@ -414,10 +470,12 @@ const Header = () => {
                     } mt-1 ml-0 pt-1 pb-4 w-auto transition-all duration-500`}
                   >
                     <li>
+                      {/* aboutUs-code-temporary-changed-for-scroll  */}
                       <Link
-                        to="AboutLunarEdge/AboutUs"
+                        // to="AboutLunarEdge/AboutUs"
                         className="block px-2 py-1 text-[#082847] hover:underline underline-offset-2 w-32 text-sm "
-                        onClick={toggleMenu}
+                        // onClick={toggleMenu}
+                        onClick={handleAboutClick}
                       >
                         About Us
                       </Link>
