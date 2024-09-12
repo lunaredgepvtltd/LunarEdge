@@ -1,8 +1,70 @@
 import React from "react";
 import MyImage from "../assets/MyImage.gif";
 import { BsWhatsapp } from "react-icons/bs";
+import { useMediaQuery } from "react-responsive";
+import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
  const Footer = () => {
+
+    // scrolling-down-to-sevice-box 
+
+    const isExtraSmallDevice = useMediaQuery({ maxWidth: 599 });
+    const isSmallDevice = useMediaQuery({ minWidth: 600, maxWidth: 767 });
+    const isMediumDevice = useMediaQuery({ minWidth: 768, maxWidth: 991 });
+    const isLargeDevice = useMediaQuery({ minWidth: 992, maxWidth: 1199 });
+    const isExtraLargeDevice = useMediaQuery({ minWidth: 1200 });
+
+    const navigate = useNavigate();
+  
+    const handleServiceClick = ()=>{
+      
+      navigate('/')
+  
+      setTimeout(() => {
+        if(isExtraSmallDevice){
+          window.scrollTo(0, 3000);
+         }
+         else if(isSmallDevice){
+          
+          window.scrollTo(0, 2600);
+         }
+         else if(isMediumDevice){
+
+          
+          window.scrollTo(0, 2500);
+         }
+         else if(isLargeDevice){
+          window.scrollTo(0, 2650);
+         }
+         else{
+          window.scrollTo(0,3200);
+         }
+      }, 200);
+    }
+
+    
+  const handleAboutClick = ()=>{
+    navigate('/')
+    setTimeout(() => {
+      if(isExtraSmallDevice){
+        window.scrollTo(0, 550);
+       }
+       else if(isSmallDevice){
+        window.scrollTo(0,580 );
+       }
+       else if(isMediumDevice){
+        window.scrollTo(0,700 );
+       }
+       else if(isLargeDevice){
+        window.scrollTo(0,700 );
+       }
+       else{
+        window.scrollTo(0,900);
+       }  
+    }, 200);
+  }
+
+  // scroll-code-ends 
   return (
     <footer className="bg-[#222222]  lg:grid lg:grid-cols-5 border-t-2 border-black  ">
       <div className=" hidden relative lg:block  lg:col-span-2 lg:h-full">
@@ -73,12 +135,20 @@ import { Link } from "react-router-dom";
                   </Link>
                 </li>
                 <li>
-                  <Link
+                  {/* <Link
                     to="/services"
                     className="text-gray-300 transition hover:opacity-75 "
                   >
                      Services
-                  </Link>
+                  </Link> */}
+
+                  {/* temporary-service-code  */}
+                  <p
+                    onClick={handleServiceClick}
+                    className="text-gray-300 transition hover:opacity-75 cursor-pointer"
+                  >
+                     Services
+                  </p>
                 </li>
                 <li>
                   <Link
@@ -98,12 +168,19 @@ import { Link } from "react-router-dom";
               </p>
               <ul className="mt-4 space-y-2 text-sm">
                 <li>
-                  <Link
+                  {/* <Link
                     to="/AboutLunarEdge/AboutUs"
                     className="text-gray-300 transition hover:opacity-75"
                   >
                     About
-                  </Link>
+                  </Link> */}
+                   {/* temporary-service-code  */}
+                   <p
+                    onClick={handleAboutClick}
+                    className="text-gray-300 transition hover:opacity-75 cursor-pointer"
+                  >
+                     About
+                  </p>
                 </li>
                 <li>
                   <Link
