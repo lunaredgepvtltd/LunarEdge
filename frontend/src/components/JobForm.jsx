@@ -122,7 +122,7 @@ export const JobForm = ({ onClose }) => {
             onChange={handleChange}
             placeholder=" "
           />
-          <div className="cut cut-short"></div>
+          <div className="cut "></div>
           <label htmlFor="email" className="placeholder">
             Your Email
           </label>
@@ -138,7 +138,7 @@ export const JobForm = ({ onClose }) => {
             onChange={handleChange}
             placeholder=" "
           />
-          <div className="cut cut-short"></div>
+          <div className="cut cut-large"></div>
           <label htmlFor="phone" className="placeholder">
             Your Phone Number
           </label>

@@ -64,8 +64,8 @@
   width: 76px;
 }
 
-.cut-short {
-  width: 50px;
+.cut-large {
+  width: 130px;
 }
 
 .input:focus ~ .cut,

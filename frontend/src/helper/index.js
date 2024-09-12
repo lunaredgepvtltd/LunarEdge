@@ -1,30 +1,35 @@
+
+const DomainName = process.env.DOMAIN_URL
+const localDomainName = process.env.BASE_URL
+
+
 export const API = {
     register : {
-       url : 'http://localhost:8080/api/query',
+       url : `${DomainName}/api/query`,
         method : 'post'
     },
     adminLogin  : {
-        url : 'http://localhost:8080/api/adminLogin',
+        url : `${DomainName}/api/adminLogin`,
         method : 'post'
        },
     addNewVacancy : {
-        url : 'http://localhost:8080/api/addNewVacancy',
+        url : `${DomainName}/api/addNewVacancy`,
         method : 'post'
     },
     getAllVacancy : {
-        url : 'http://localhost:8080/api/getAllVacancy',
+        url : `${DomainName}/api/getAllVacancy`,
         method : "get"
     },
     deleteVacancy : {
-        url : 'http://localhost:8080/api/deleteVacancy',
+        url : `${DomainName}/api/deleteVacancy`,
         method : 'delete'
     },
     updateVacancy : {
-        url : 'http://localhost:8080/api/updateVacancy',
+        url : `${DomainName}/api/updateVacancy`,
         method : 'put'
     },
     fillForm : {
-        url : 'http://localhost:8080/api/formFill',
+        url : `${DomainName}/api/formFill`,
         method : 'post'
     }
 }
