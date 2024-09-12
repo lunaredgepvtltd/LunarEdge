@@ -5,6 +5,7 @@ import { FaRegEdit } from "react-icons/fa";
 import DeleteVacancy from "./deleteVacancy";
 import { useSelector } from "react-redux";
 import UpdateVacancy from "./UpdateVacancy";
+import { format } from 'date-fns';
 import {JobForm} from '../components/JobForm.jsx'
 export const VacancyBox = ({
   jobTitle,
@@ -15,6 +16,7 @@ export const VacancyBox = ({
   description,
   requirements,
   fetchDetails,
+  postedDate
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [deleteVacancyItem, setDeleteVacancyItem] = useState(false);
@@ -22,6 +24,8 @@ export const VacancyBox = ({
   const [showVacancyForm,setShowVacancyForm] = useState(false)
 
   const { user } = useSelector((state) => state.user);
+
+  const formattedDate = format(new Date(postedDate), 'MMMM dd, yyyy');
 
   const toggleContent = () => {
     setIsOpen(!isOpen);
@@ -89,6 +93,7 @@ export const VacancyBox = ({
               Experience: <span className="text-gray-700">{experience}</span>
             </p>
           </div>
+          <p className="text-gray-500">{formattedDate}</p>
         </div>
         {/* Conditionally visible job description */}
         {isOpen && (

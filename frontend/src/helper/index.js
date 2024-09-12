@@ -1,35 +1,68 @@
 
-const DomainName = process.env.DOMAIN_URL
-const localDomainName = process.env.BASE_URL
+const DomainName = 'https://lunaredge.in'
+const localDomainName = 'http://localhost:8080'
+
+
+
+// export const API = {
+//     register : {
+//        url : `${DomainName}/api/query`,
+//         method : 'post'
+//     },
+//     adminLogin  : {
+//         url : `${DomainName}/api/adminLogin`,
+//         method : 'post'
+//        },
+//     addNewVacancy : {
+//         url : `${DomainName}/api/addNewVacancy`,
+//         method : 'post'
+//     },
+//     getAllVacancy : {
+//         url : `${DomainName}/api/getAllVacancy`,
+//         method : "get"
+//     },
+//     deleteVacancy : {
+//         url : `${DomainName}/api/deleteVacancy`,
+//         method : 'delete'
+//     },
+//     updateVacancy : {
+//         url : `${DomainName}/api/updateVacancy`,
+//         method : 'put'
+//     },
+//     fillForm : {
+//         url : `${DomainName}/api/formFill`,
+//         method : 'post'
+//     }
+// }
 
 
 export const API = {
     register : {
-       url : `${DomainName}/api/query`,
+       url : `${localDomainName}/api/query`,
         method : 'post'
     },
     adminLogin  : {
-        url : `${DomainName}/api/adminLogin`,
+        url : `${localDomainName}/api/adminLogin`,
         method : 'post'
        },
     addNewVacancy : {
-        url : `${DomainName}/api/addNewVacancy`,
+        url : `${localDomainName}/api/addNewVacancy`,
         method : 'post'
     },
     getAllVacancy : {
-        url : `${DomainName}/api/getAllVacancy`,
+        url : `${localDomainName}/api/getAllVacancy`,
         method : "get"
     },
     deleteVacancy : {
-        url : `${DomainName}/api/deleteVacancy`,
+        url : `${localDomainName}/api/deleteVacancy`,
         method : 'delete'
     },
     updateVacancy : {
-        url : `${DomainName}/api/updateVacancy`,
+        url : `${localDomainName}/api/updateVacancy`,
         method : 'put'
     },
     fillForm : {
-        url : `${DomainName}/api/formFill`,
+        url : `${localDomainName}/api/formFill`,
         method : 'post'
     }
 }

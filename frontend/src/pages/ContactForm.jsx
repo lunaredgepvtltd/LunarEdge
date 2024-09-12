@@ -50,12 +50,12 @@ const ContactForm = ({ onClose }) => {
   };
 
   return (
-    <div className="fixed   inset-0 z-50 flex  h-full  justify-center items-center bg-gray-300 bg-opacity-50 overflow-auto md:rounded-lg px-3 ">
-      <div className=" mt-6 max-w-6xl max-lg:max-w-3xl mx-auto bg-[#4f519a] rounded-lg  md:pr-7 p-1 " data-aos="fade-down" data-aos-duration="300">
-        <div className="grid lg:grid-cols-2 items-center gap-8 md:gap-14 p-3 md:p-8 font-[sans-serif]">
+    <div className="fixed   inset-0 z-50 flex  h-full  justify-center items-center bg-gray-300 bg-opacity-50 overflow-auto lg:rounded-lg px-3 ">
+      <div className=" mt-6 max-w-6xl max-lg:max-w-3xl mx-auto bg-[#4f519a] rounded-lg  lg:pr-7 p-1 " data-aos="fade-down" data-aos-duration="300">
+        <div className="grid lg:grid-cols-2 items-center gap-8 lg:gap-14 p-3 lg:p-8 font-[sans-serif]">
           {/* left side of form */}
           <div>
-            <div className="hidden md:block">
+            <div className="hidden lg:block">
               <h1 className="text-4xl font-bold text-white">Get in Touch</h1>
               <p className="text-sm text-gray-300 mt-4 leading-relaxed">
                 Have some big idea or brand to develop and need help? Then reach
@@ -63,7 +63,7 @@ const ContactForm = ({ onClose }) => {
               </p>
             </div>
 
-            <ul className=" md:mt-12 space-y-3 md:space-y-8 mt-4">
+            <ul className=" lg:mt-12 space-y-3 lg:space-y-8 mt-4">
               <li className="flex items-center">
               <AiOutlineMail className="h-[16px] w-[16px] text-white" />
                 <div className="w-full flex justify-between items-center">
@@ -73,7 +73,7 @@ const ContactForm = ({ onClose }) => {
                 >
                   info@lunaredge.in
                 </a>
-                <RxCross1 className="text-lg md:hidden" style={{ strokeWidth: '1px' }} onClick={onClose}/>
+                <RxCross1 className="text-lg lg:hidden" style={{ strokeWidth: '1px' }} onClick={onClose}/>
                 </div>
               </li>
 
@@ -108,16 +108,16 @@ const ContactForm = ({ onClose }) => {
           <div className="relative">
             {/* close icon for big device */}
             <div
-              className="md:block hidden absolute -right-9 -top-5 text-2xl font-black cursor-pointer"
+              className="lg:block hidden absolute -right-9 -top-5 text-2xl font-black cursor-pointer"
               onClick={onClose}
             >
               <RxCross1 />
             </div>
 
             {/* form container */}
-            <div className="bg-gray-100 p-2 md:p-6 rounded-lg ">
+            <div className="bg-gray-100 p-2 lg:p-6 rounded-lg ">
               <form
-                className="mt-2 md:mt-8 md:space-y-4 space-y-2"
+                className="mt-2 lg:mt-8 lg:space-y-4 space-y-2"
                 onSubmit={handleSubmit(handleClick)}
               >
                 {/* name */}
@@ -193,7 +193,7 @@ const ContactForm = ({ onClose }) => {
                 <textarea
                   placeholder="Message"
                   rows="6"
-                  className=" w-full rounded-lg p-2 md:p-4 text-gray-800 text-sm outline-[#06425f] text-[12px] md:text-[18px]"
+                  className=" w-full rounded-lg p-2 lg:p-4 text-gray-800 text-sm outline-[#06425f] text-[12px] lg:text-[18px]"
                   {...register("message", {
                     validate: {
                       maxLetters: (value) => {
@@ -213,7 +213,7 @@ const ContactForm = ({ onClose }) => {
                 {/* submit button */}
                 <button
                   type="submit"
-                  className="text-white bg-[#585aa1] hover:bg-[#2b5c77e2] tracking-wide rounded-lg text-sm px-4 py-2 md:py-3 flex items-center justify-center w-full md:mt-6"
+                  className="text-white bg-[#585aa1] hover:bg-[#2b5c77e2] tracking-wide rounded-lg text-sm px-4 py-2 lg:py-3 flex items-center justify-center w-full lg:mt-6"
                 >
                   Send Message
                 </button>

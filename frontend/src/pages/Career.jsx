@@ -26,7 +26,7 @@ export const Career = () => {
     setFilteredData(filtered)
   };
 
- 
+
 
   // getting user
 
@@ -34,6 +34,7 @@ export const Career = () => {
 
 
   const fetchVacancyDetails = async()=>{
+    console.log(API.getAllVacancy.url , API.getAllVacancy.method)
     try{
       const response = await fetch(API.getAllVacancy.url,{
         method : API.getAllVacancy.method,
@@ -108,6 +109,7 @@ export const Career = () => {
               description={job?.description}
               requirements={job?.requirements}
               fetchDetails={fetchVacancyDetails}
+              postedDate = {job?.createdAt}
             />
           </div>
         ))}

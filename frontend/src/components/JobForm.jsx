@@ -17,12 +17,14 @@ export const JobForm = ({ onClose }) => {
 
   const handleChange = (event) => {
     const { name, value } = event.target;
+    if(!name) console.log('name errors')
     setData({ ...data, [name]: value });
   };
 
   const handleCv = (e) => {
     const file = e.target.files[0];
     if (file) {
+      
       setData({ ...data, cv: file });
 
       // Create a URL for the file preview
@@ -32,6 +34,7 @@ export const JobForm = ({ onClose }) => {
       // Clean up the URL object when the component unmounts
       return () => URL.revokeObjectURL(fileUrl);
     } else {
+      
       setCvPreviewUrl("");
     }
   };
@@ -150,7 +153,6 @@ export const JobForm = ({ onClose }) => {
           <input
             id="cv"
             className="hidden"
-            required
             type="file"
             placeholder=" "
             onChange={handleCv}
