@@ -1,11 +1,9 @@
 import React, { useState } from "react";
-import bgAboutus from "../assets/bgAboutus.png";
 import "../App.css";
 import ourVision from "../assets/ourVision.png";
 import ourMission from "../assets/ourMission.png";
 import m1 from "../assets/m1.png";
 import m2 from "../assets/m2.png";
-import aboutUsTexture from "../assets/aboutUsTexture.png";
 import "../pages/Header.jsx";
 import ContactForm from "./ContactForm.jsx";
 import { AboutusPart } from "../components/AboutusPart.jsx";
@@ -27,7 +25,7 @@ export const AboutUs = () => {
 
         {/* First part About LunarEdge  */}
 
-        <div className="border-2 border-[#dbd5ff]  rounded-3xl w-[95%] mx-auto lg:pt-0 pt-3">
+        <div className="border-2 border-[#dbd5ff]  rounded-3xl w-[90%] mx-auto lg:pt-0 pt-3">
           <AboutusPart
             title="WELCOME TO LUNAREDGE"
             headline="About LunarEdge"

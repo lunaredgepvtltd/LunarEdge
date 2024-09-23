@@ -6,7 +6,6 @@ import ContactForm from "./ContactForm";
 import LunaredgeLogo from "../assets/Lunaredge.png";
 import { useMediaQuery } from "react-responsive";
 import { useNavigate } from "react-router-dom";
-
 import { Link } from "react-router-dom";
 
 const Header = () => {
@@ -182,7 +181,8 @@ const Header = () => {
           <img
             src={logo}
             alt="Company Logo"
-            className="h-auto w-[80px] pt-[5px] md:w-24 md:pt-3"
+            className="h-auto w-[80px] pt-[4px] md:w-[108px] 
+            "
           />
         </Link>
 
@@ -421,7 +421,7 @@ const Header = () => {
         {/* Contact Us Button */}
         <div className=" hidden lg:block items-center">
           <button
-            className="rounded-full py-4 px-8 text-black text-md hover:bg-[#703299] border border-[#703299] hover:text-white  hover:bg-gradient-to-r from-[#386bb7] to-[#e24c4a] hover:transition-all duration-100"
+            className="rounded-full py-4 px-8 text-md  border border-[#703299] text-white  bg-gradient-to-r from-[#386bb7] to-[#e24c4a] hover:shadow-sm"
             onClick={handleButton}
           >
             Contact Us

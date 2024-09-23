@@ -36,6 +36,7 @@ import bgWeb from "../assets/bgWeb.png";
 import bgBank from "../assets/bgBank.png";
 import { AboutUs } from "./AboutUs";
 import upArrow from "../assets/upArrow.png";
+import Services from "./Services";
 
 const Hero = () => {
   const isSmallDevice = useMediaQuery({ minWidth: 300, maxWidth: 600 });
@@ -364,8 +365,7 @@ const Hero = () => {
       >
         {/* left side */}
         <div
-          data-aos={isSmallDevice ? undefined : "fade-up"}
-          data-aos-delay="500"
+          
           className="shadow-2xl rounded-xl border-black bg-gray-800/50 grid grid-rows-4 grid-cols-3 p-3 backdrop-blur-xl w-full md:w-[60%] xl:w-[40%] h-auto mx-auto"
         >
           {techStack.map((tech, index) => (
@@ -397,6 +397,7 @@ const Hero = () => {
           />
         </div>
       )}
+      <Services/>
     </div>
   );
 };
