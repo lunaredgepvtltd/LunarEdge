@@ -32,7 +32,7 @@ const Header = () => {
     }
   };
 
-  // scrolling-down-to-sevice-box 
+  // scrolling-down-to-sevice-box
 
   const isExtraSmallDevice = useMediaQuery({ maxWidth: 599 });
   const isSmallDevice = useMediaQuery({ minWidth: 600, maxWidth: 767 });
@@ -40,73 +40,64 @@ const Header = () => {
   const isLargeDevice = useMediaQuery({ minWidth: 992, maxWidth: 1199 });
   const isExtraLargeDevice = useMediaQuery({ minWidth: 1200 });
 
-  const handleServiceClick = ()=>{
-    
-    navigate('/')
+  const handleServiceClick = () => {
+    navigate("/");
 
     setTimeout(() => {
-      if(isExtraSmallDevice){
-        console.log('extra-small')
-        toggleMenu()
+      if (isExtraSmallDevice) {
+        console.log("extra-small");
+        toggleMenu();
         window.scrollTo(0, 3000);
-       }
-       else if(isSmallDevice){
-        console.log('small')
-        toggleMenu()
+      } else if (isSmallDevice) {
+        console.log("small");
+        toggleMenu();
         window.scrollTo(0, 2600);
-       }
-       else if(isMediumDevice){
-        console.log('medium')
-        toggleMenu()
+      } else if (isMediumDevice) {
+        console.log("medium");
+        toggleMenu();
         window.scrollTo(0, 2500);
-       }
-       else if(isLargeDevice){
-        console.log('large')
+      } else if (isLargeDevice) {
+        console.log("large");
         window.scrollTo(0, 2650);
-       }
-       else{
-        console.log('extra-large')
-        window.scrollTo(0,3200);
-       }
+      } else {
+        console.log("extra-large");
+        window.scrollTo(0, 3200);
+      }
     }, 200);
-  }
+  };
 
-  const handleAboutClick = ()=>{
-    navigate('/')
+  const handleAboutClick = () => {
+    navigate("/");
     setTimeout(() => {
-      if(isExtraSmallDevice){
-        console.log('extra-small')
-        toggleMenu()
+      if (isExtraSmallDevice) {
+        console.log("extra-small");
+        toggleMenu();
         window.scrollTo(0, 550);
-       }
-       else if(isSmallDevice){
-        console.log('small')
-        toggleMenu()
-        window.scrollTo(0,580 );
-       }
-       else if(isMediumDevice){
-        console.log('medium')
-        toggleMenu()
-        window.scrollTo(0,700 );
-       }
-       else if(isLargeDevice){
-        console.log('large')
-        window.scrollTo(0,700 );
-       }
-       else{
-        console.log('extra-large')
-        window.scrollTo(0,900);
-       }  
+      } else if (isSmallDevice) {
+        console.log("small");
+        toggleMenu();
+        window.scrollTo(0, 580);
+      } else if (isMediumDevice) {
+        console.log("medium");
+        toggleMenu();
+        window.scrollTo(0, 700);
+      } else if (isLargeDevice) {
+        console.log("large");
+        window.scrollTo(0, 700);
+      } else {
+        console.log("extra-large");
+        window.scrollTo(0, 900);
+      }
     }, 200);
-  }
+  };
 
-  // scroll-code-ends 
+  // scroll-code-ends
 
-  const handleLogoClick = ()=>{
+  const handleLogoClick = () => {
     setTimeout(() => {
-      window.scrollTo(0,0)
+      window.scrollTo(0, 0);
     }, 200);
-  }
+  };
 
   const handleServices = () => {
     setServices(!services);
@@ -173,11 +164,10 @@ const Header = () => {
   };
 
   return (
-    <div className="w-full h-[90px] md:h-[125px] fixed z-50 pt-3 px-3 md:px-5 md:pt-6">
-      <div className="box flex bg-white h-full w-full rounded-xl md:rounded-3xl justify-between items-center px-4 xl:px-10">
+    <div className="w-full h-[75px] md:h-[100px] fixed z-50 ">
+      <div className="box flex bg-[#ffbcea] h-full w-full justify-between items-center px-4 xl:px-10">
         {/* Logo */}
-        <Link to={"/"} className="flex-shrink-0 "
-        onClick={handleLogoClick}>
+        <Link to={"/"} className="flex-shrink-0 " onClick={handleLogoClick}>
           <img
             src={logo}
             alt="Company Logo"
@@ -197,18 +187,20 @@ const Header = () => {
         {/* Nav Links for Desktop */}
         <ul className="hidden lg:flex space-x-4 items-center">
           <li>
-            <Link
-              to="/"
-              className=" h-full relative rounded-full text-black text-lg hover:text-white hover:bg-[#616161] p-3 px-6 cursor-pointer transition-all duration-300"
-              onClick={()=>{
-                handleDropdownToggle();
-                setTimeout(() => {
-                  window.scrollTo(0,0);
-                }, 200);
-              }}
+            {/* <Link
+                    to="/services"
+                    className="block px-4 py-2 text-white hover:text-red-500"
+                  >
+                    Services
+                  </Link> */}
+
+            {/* For Temporary Purpose */}
+            <p
+              className="text-lg text-black cursor-pointer"
+              onClick={handleServiceClick}
             >
-              Home
-            </Link>
+              Services
+            </p>
           </li>
 
           {/* About Us Dropdown */}
@@ -258,26 +250,9 @@ const Header = () => {
                     Our Clients
                   </Link>
                 </li>
-                <li>
-                  {/* <Link
-                    to="/services"
-                    className="block px-4 py-2 text-white hover:text-red-500"
-                  >
-                    Services
-                  </Link> */}
-
-                  {/* For Temporary Purpose */}
-                  <p
-                    className="block px-4 py-2 text-white hover:text-red-500"
-                    onClick={handleServiceClick}
-                  >
-                    Services
-                  </p>
-                </li>
               </ul>
             )}
           </li>
-
 
           {/* Industries Dropdown */}
           <li
@@ -322,7 +297,6 @@ const Header = () => {
             )}
           </li>
 
-          
           {/* career */}
           <li>
             <Link
@@ -333,7 +307,7 @@ const Header = () => {
               Career
             </Link>
           </li>
-            {/* {openDropdown === "services" && (
+          {/* {openDropdown === "services" && (
               <div className="flex absolute top-[63px] left-0 rounded-lg shadow-lg bg-[#292828] w-auto pt-3 pb-3">
                 <ul className="">
                   <li>
@@ -414,7 +388,7 @@ const Header = () => {
                   </li>
                 </ul>
               </div> */}
-            {/* )}
+          {/* )}
           </li> */}
         </ul>
 
@@ -508,7 +482,10 @@ const Header = () => {
                 onClick={handleServices}
               >
                 <div className="flex gap-1 mr-2 items-center">
-                  <span className="text-md text-[#082847] hover:underline" onClick={handleServiceClick}>
+                  <span
+                    className="text-md text-[#082847] hover:underline"
+                    onClick={handleServiceClick}
+                  >
                     Services
                   </span>
                   <IoIosArrowDown />
