@@ -4,11 +4,13 @@ import "aos/dist/aos.css"; // Import AOS styles
 import { BsGlobe2 } from "react-icons/bs";
 import sideArrow from "../assets/sideArrow.png";
 
+
 const Services = () => {
   const services = [
     {
       title: "Web Solutions",
-      description: "Pride for our company and business. Consider all the drivers.",
+      description:
+        "Pride for our company and business. Consider all the drivers.",
     },
     {
       title: "Cloud Solutions",
@@ -61,6 +63,7 @@ const Services = () => {
                 index % 2 === 0 ? "mb-16" : "mt-16"
               }`}
             >
+         
               <div className={`flex flex-col px-6`}>
                 <BsGlobe2 className="text-3xl text-[#320044]" />
                 <h3 className="mt-4 text-xl font-semibold text-gray-900 ">

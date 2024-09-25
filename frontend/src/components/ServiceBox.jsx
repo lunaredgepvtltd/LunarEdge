@@ -41,7 +41,7 @@ export const ServiceBox = ({ service, content, bgimg, key }) => {
             isHovered ? "grayscale" : "grayscale-0"
           }`}
         />
-      </div>
+      </div>  
       <ul className="space-y-4 md:px-1 px-4 z-10 opacity-100 ">
         <li>
           <p className="2xl:text-base  text-pretty  text-sm ">{content}</p>
