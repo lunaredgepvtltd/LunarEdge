@@ -41,6 +41,7 @@ import NewLandingPage from "../components/NewLandingPage";
 import CoreValues from "../components/CoreValues";
 import ContactCard from "../components/ContactPage";
 import ContactPage from "../components/ContactPage";
+import NewGetInTouch from "../components/NewGetInTouch";
 import TransformingBusinessSection from "../components/TransformingBusinessSection";
 
 const Hero = () => {
@@ -402,11 +403,7 @@ const Hero = () => {
           />
         </div>
       )}
-      <Services/>
-      <NewLandingPage/>
-      <CoreValues/>
-      <ContactPage/>
-      <TransformingBusinessSection/>
+
     </div>
   );
 };

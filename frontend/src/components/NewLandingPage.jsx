@@ -4,7 +4,7 @@ import textimage from "../assets/textimage.png";
 
 const NewLandingPage = () => {
   return (
-    <div className="bg-custom-gradient h-[700px] flex flex-col justify-evenly">
+    <div className="bg-custom-gradient h-screen pt-[60px] flex flex-col justify-evenly">
       <h1 className="text-center text-4xl font-normal">ABOUT US</h1>
       <div className="h-[430px]  flex  justify-evenly items-center">
         <img
