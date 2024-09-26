@@ -393,13 +393,15 @@ const Header = () => {
         </ul>
 
         {/* Contact Us Button */}
-        <div className=" hidden lg:block items-center">
-          <button
-            className="rounded-full py-4 px-8 text-md  border border-[#703299] text-white  bg-gradient-to-r from-[#386bb7] to-[#e24c4a] hover:shadow-sm"
-            onClick={handleButton}
-          >
-            Contact Us
-          </button>
+        <div className="hidden lg:block items-center">
+          <Link to="/contactus">
+            <button
+              className="rounded-full py-4 px-8 text-md border border-[#703299] text-white bg-gradient-to-r from-[#386bb7] to-[#e24c4a] hover:shadow-sm"
+              
+            >
+              Contact Us
+            </button>
+          </Link>
         </div>
 
         {/* Mobile Menu */}
@@ -579,15 +581,16 @@ const Header = () => {
 
               {/* Contact Us Button */}
               <li className="py-2 items-center">
-                <button
-                  className="bg-black text-white p-2 md:p-3 rounded-md"
-                  onClick={() => {
-                    handleButton();
-                    toggleMenu();
-                  }}
-                >
-                  Contact Us
-                </button>
+                <Link to="/contactus">
+                  <button
+                    className="bg-black text-white p-2 md:p-3 rounded-md"
+                    onClick={() => {
+                      toggleMenu();
+                    }}
+                  >
+                    Contact Us
+                  </button>
+                </Link>
               </li>
             </ul>
           </div>

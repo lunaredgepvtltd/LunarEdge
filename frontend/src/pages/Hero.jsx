@@ -403,12 +403,7 @@ const Hero = () => {
           />
         </div>
       )}
-      <Services/>
-      <NewLandingPage/>
-      <CoreValues/>
-      <ContactPage/>
-      <NewGetInTouch/>
-      <TransformingBusinessSection/>
+
     </div>
   );
 };
