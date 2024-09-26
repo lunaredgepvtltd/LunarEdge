@@ -1,11 +1,13 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App.js";
 import Common from "../components/Common.jsx";
-import Hero from "../pages/Hero.jsx";
+
 import { AboutUs } from "../pages/AboutUs.jsx";
-import { Career } from "../pages/Career.jsx";
+// import { Career } from "../pages/Career.jsx";
 import AdminLoginForm from "../components/AdminLoginForm.jsx";
 import Services from "../pages/Services.jsx";
+import Hero2 from "../pages/Hero2.jsx";
+import ContactPage from "../components/ContactPage.jsx";
 
 const router = createBrowserRouter([
   {
@@ -14,7 +16,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "",
-        element: <Hero />,
+        element: <Hero2 />,
       },
       {
         path: "common",
@@ -36,6 +38,10 @@ const router = createBrowserRouter([
         path: "services",
         element: <Services />,
       },
+      {
+        path:"contactus",
+        element: <ContactPage/>,
+      }
     ],
   },
 ]);

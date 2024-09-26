@@ -37,6 +37,12 @@ import bgBank from "../assets/bgBank.png";
 import { AboutUs } from "./AboutUs";
 import upArrow from "../assets/upArrow.png";
 import Services from "./Services";
+import NewLandingPage from "../components/NewLandingPage";
+import CoreValues from "../components/CoreValues";
+import ContactCard from "../components/ContactPage";
+import ContactPage from "../components/ContactPage";
+import NewGetInTouch from "../components/NewGetInTouch";
+import TransformingBusinessSection from "../components/TransformingBusinessSection";
 
 const Hero = () => {
   const isSmallDevice = useMediaQuery({ minWidth: 300, maxWidth: 600 });
@@ -397,7 +403,7 @@ const Hero = () => {
           />
         </div>
       )}
-      <Services/>
+
     </div>
   );
 };

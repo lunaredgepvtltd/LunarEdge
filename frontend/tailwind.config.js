@@ -14,6 +14,9 @@ module.exports = {
         'sm-white': '1px 1px 2px rgba(255, 255, 255, 0.7)', 
         'md-white': '2px 2px 4px rgba(255, 255, 255, 0.7)',
       },
+      backgroundImage: {
+        'custom-gradient': 'linear-gradient(to right, #fff7ad, #ffa9f9)',
+      },
     },
   },
   plugins: [
