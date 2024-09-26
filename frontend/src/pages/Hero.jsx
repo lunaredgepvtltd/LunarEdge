@@ -42,6 +42,7 @@ import CoreValues from "../components/CoreValues";
 import ContactCard from "../components/ContactPage";
 import ContactPage from "../components/ContactPage";
 import NewGetInTouch from "../components/NewGetInTouch";
+import TransformingBusinessSection from "../components/TransformingBusinessSection";
 
 const Hero = () => {
   const isSmallDevice = useMediaQuery({ minWidth: 300, maxWidth: 600 });
@@ -407,6 +408,7 @@ const Hero = () => {
       <CoreValues/>
       <ContactPage/>
       <NewGetInTouch/>
+      <TransformingBusinessSection/>
     </div>
   );
 };
