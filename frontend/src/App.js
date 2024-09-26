@@ -2,6 +2,8 @@ import { useEffect, lazy, Suspense } from "react";
 import "./App.css";
 import PreLoader from "./PRELOADER/preLoader.js";
 import AOS from 'aos';
+import { useMediaQuery } from "react-responsive";
+import { useNavigate } from "react-router-dom";
 import "aos/dist/aos.css";
 import { Outlet } from "react-router-dom";
 import ScrollToTop from './components/ScrollToTop.jsx';
@@ -12,6 +14,13 @@ const Header = lazy(() => import("./pages/Header.jsx"));
 const Footer = lazy(() => import("./pages/Footer.jsx"));
 
 function App() {
+
+  
+const isExtraSmallDevice = useMediaQuery({ maxWidth: 599 });
+const isSmallDevice = useMediaQuery({ minWidth: 600, maxWidth: 767 });
+const isMediumDevice = useMediaQuery({ minWidth: 768, maxWidth: 991 });
+const isLargeDevice = useMediaQuery({ minWidth: 992, maxWidth: 1199 });
+const isExtraLargeDevice = useMediaQuery({ minWidth: 1200 });
 
   // useEffect for AOS animation
   useEffect(() => {
@@ -28,6 +37,14 @@ function App() {
     <>
       <PreLoader />
       <div className="App">
+
+        <div className=" hidden lg:block fixed right-5 top-1/2 z-50 h-auto w-auto p-4 bg-blue-600">
+        <div className="h-1 rounded-sm w-7 mx-auto bg-black my-2 cursor-pointer"></div>
+        <div className="h-1 rounded-sm w-7 mx-auto bg-black my-2 cursor-pointer"></div>
+        <div className="h-1 rounded-sm w-7 mx-auto bg-black my-2 cursor-pointer"></div>
+        <div className="h-1 rounded-sm w-7 mx-auto bg-black my-2 cursor-pointer"></div>
+        <div className="h-1 rounded-sm w-7 mx-auto bg-black my-2 cursor-pointer"></div>
+        </div>
         
         {/* Lazy loading the Header */}
         <Suspense fallback={<div>Loading Header...</div>}>
