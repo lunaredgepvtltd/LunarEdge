@@ -164,13 +164,8 @@ const Header = () => {
   };
 
   return (
-<<<<<<< HEAD
-    <div className="w-full h-[90px] md:h-[100px] fixed z-50">
-      <div className="box flex bg-white h-full w-full justify-between items-center px-4 xl:px-10">
-=======
     <div className="w-full h-[75px] md:h-[100px] fixed z-50 ">
       <div className="box flex bg-[#ffbcea] h-full w-full justify-between items-center px-4 xl:px-10">
->>>>>>> develop
         {/* Logo */}
         <Link to={"/"} className="flex-shrink-0 " onClick={handleLogoClick}>
           <img
