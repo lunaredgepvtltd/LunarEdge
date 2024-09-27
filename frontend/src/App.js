@@ -1,26 +1,24 @@
-import { useEffect, lazy, Suspense } from "react";
+import { useEffect, lazy, Suspense, useState } from "react";
 import "./App.css";
-import PreLoader from "./PRELOADER/preLoader.js";
-import AOS from 'aos';
-import { useMediaQuery } from "react-responsive";
-import { useNavigate } from "react-router-dom";
+import AOS from "aos";
+import { useLocation } from "react-router-dom";
 import "aos/dist/aos.css";
 import { Outlet } from "react-router-dom";
-import ScrollToTop from './components/ScrollToTop.jsx';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import ScrollToTop from "./components/ScrollToTop.jsx";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Header = lazy(() => import("./pages/Header.jsx"));
 const Footer = lazy(() => import("./pages/Footer.jsx"));
 
 function App() {
+  const [aboutUs, setAboutUs] = useState(false);
+  const [technology, setTechonology] = useState(false);
+  const [offers, setOffers] = useState(false);
+  const [value, setValues] = useState(false);
+  const [contact, setContact] = useState(false);
 
-  
-const isExtraSmallDevice = useMediaQuery({ maxWidth: 599 });
-const isSmallDevice = useMediaQuery({ minWidth: 600, maxWidth: 767 });
-const isMediumDevice = useMediaQuery({ minWidth: 768, maxWidth: 991 });
-const isLargeDevice = useMediaQuery({ minWidth: 992, maxWidth: 1199 });
-const isExtraLargeDevice = useMediaQuery({ minWidth: 1200 });
+
 
   // useEffect for AOS animation
   useEffect(() => {
@@ -33,19 +31,133 @@ const isExtraLargeDevice = useMediaQuery({ minWidth: 1200 });
     AOS.refresh();
   }, []);
 
+  const [scrollY, setScrollY] = useState(window.scrollY);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setAboutUs(false);
+      setContact(false);
+      setTechonology(false);
+      setOffers(false);
+      setValues(false);
+      setScrollY(window.scrollY);
+    };
+
+    // Add event listener for scroll
+    window.addEventListener("scroll", handleScroll);
+
+    // Clean up the event listener on component unmount
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const scrollToAboutUs = () => {
+    setAboutUs(true);
+    setContact(false);
+    setOffers(false);
+    setTechonology(false);
+    setValues(false);
+    setTimeout(() => {
+      window.scrollTo(0, 0);
+    }, 200);
+  };
+
+  const scrollToValues = () => {
+    setAboutUs(false);
+    setContact(false);
+    setOffers(false);
+    setTechonology(false);
+    setValues(!value);
+    setTimeout(() => {
+      window.scrollTo(0, 750);
+    }, 200);
+  };
+
+  const scrollToOffer = () => {
+    setAboutUs(false);
+    setContact(false);
+    setOffers(!offers);
+    setTechonology(false);
+    setValues(false);
+    setTimeout(() => {
+      window.scrollTo(0, 1500);
+    }, 200);
+  };
+
+  const scrollToTechnology = () => {
+    setAboutUs(false);
+    setContact(false);
+    setOffers(false);
+    setTechonology(!technology);
+    setValues(false);
+    setTimeout(() => {
+      window.scrollTo(0, 2350);
+    }, 200);
+  };
+
+  const scrollToContactUs = () => {
+    setAboutUs(false);
+    setContact(true);
+    setOffers(false);
+    setTechonology(false);
+    setValues(false);
+    setTimeout(() => {
+      window.scrollTo(0, 3130);
+    }, 200);
+  };
+
+  const location = useLocation();
+
+  const isHome = location.pathname === "/";
+
+
   return (
     <>
-      <PreLoader />
+      {/* <PreLoader /> */}
       <div className="App">
 
-        <div className=" hidden lg:block fixed right-5 top-1/2 z-50 h-auto w-auto p-4 bg-blue-600">
-        <div className="h-1 rounded-sm w-7 mx-auto bg-black my-2 cursor-pointer"></div>
-        <div className="h-1 rounded-sm w-7 mx-auto bg-black my-2 cursor-pointer"></div>
-        <div className="h-1 rounded-sm w-7 mx-auto bg-black my-2 cursor-pointer"></div>
-        <div className="h-1 rounded-sm w-7 mx-auto bg-black my-2 cursor-pointer"></div>
-        <div className="h-1 rounded-sm w-7 mx-auto bg-black my-2 cursor-pointer"></div>
-        </div>
-        
+          {isHome &&        <div className="hidden lg:block fixed right-3 top-1/2 z-50 h-auto w-auto p-4">
+  {/* About Us Button */}
+  <div
+    className={`h-1 rounded-sm w-7 mx-auto bg-black my-2 cursor-pointer 
+      ${aboutUs || scrollY < 490 ? "scale-x-150" : ""} 
+      origin-right transition-all duration-300`}
+    onClick={scrollToAboutUs}
+  ></div>
+
+  {/* Values Button */}
+  <div
+    className={`h-1 rounded-sm w-7 mx-auto bg-black my-2 cursor-pointer 
+      ${value || (scrollY >= 495 && scrollY <= 1252) ? "scale-x-150" : ""} 
+      origin-right transition-all duration-300`}
+    onClick={scrollToValues}
+  ></div>
+
+  {/* Offers Button */}
+  <div
+    className={`h-1 rounded-sm w-7 mx-auto bg-black my-2 cursor-pointer 
+      ${offers || (scrollY >= 1252 && scrollY < 2232) ? "scale-x-150" : ""} 
+      origin-right transition-all duration-300`}
+    onClick={scrollToOffer}
+  ></div>
+
+  {/* Technology Button */}
+  <div
+    className={`h-1 rounded-sm w-7 mx-auto bg-black my-2 cursor-pointer 
+      ${technology || (scrollY >= 2232 && scrollY <= 2987) ? "scale-x-150" : ""} 
+      origin-right transition-all duration-300`}
+    onClick={scrollToTechnology}
+  ></div>
+
+  {/* Contact Us Button */}
+  <div
+    className={`h-1 rounded-sm w-7 mx-auto bg-black my-2 cursor-pointer 
+      ${contact || scrollY >= 2988 ? "scale-x-150" : ""} 
+      origin-right transition-all duration-300`}
+    onClick={scrollToContactUs}
+  ></div>
+</div>}
+
+
         {/* Lazy loading the Header */}
         <Suspense fallback={<div>Loading Header...</div>}>
           <Header />
@@ -54,7 +166,7 @@ const isExtraLargeDevice = useMediaQuery({ minWidth: 1200 });
         <main>
           {/* Outlet for nested routes */}
           <Suspense fallback={<div>Loading Content...</div>}>
-            <ScrollToTop/>
+            <ScrollToTop />
             <Outlet />
           </Suspense>
         </main>
@@ -65,7 +177,7 @@ const isExtraLargeDevice = useMediaQuery({ minWidth: 1200 });
         </Suspense>
 
         {/* Add ToastContainer here */}
-        <ToastContainer 
+        <ToastContainer
           position="top-center"
           autoClose={5000}
           hideProgressBar={false}
