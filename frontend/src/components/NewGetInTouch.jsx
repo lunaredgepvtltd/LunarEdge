@@ -13,7 +13,7 @@ const NewGetInTouch = () => {
               loading="lazy"
               allowFullScreen
               title="Company Location"
-              className="rounded-lg shadow-md"
+              className="rounded-lg shadow-md h-64 md:h-96 lg:h-[500px]"
             ></iframe>
           </div>
 
