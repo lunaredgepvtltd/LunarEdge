@@ -184,14 +184,14 @@ const Header = () => {
   };
 
   return (
-   <> <div className="w-full h-[75px] md:h-[100px] fixed z-50 ">
-   {showHeader ?  <div data-aos="fade-down" data-aos-duration="300" className=" box flex bg-[#ffbcea] h-full w-full justify-between items-center px-4 xl:px-10">
+   <> <div className="w-full h-[75px] md:h-[90px] fixed z-50">
+    <div  className={`${showHeader ? 'header-visible' : 'header-hidden'} box flex  bg-gradient-to-r from-white to-[#A6A6A6] h-full w-full justify-between items-center px-4 xl:px-10`}>
       {/* Logo */}
       <Link to={"/"} className="flex-shrink-0 " onClick={handleLogoClick}>
         <img
           src={logo}
           alt="Company Logo"
-          className="h-auto w-[80px] pt-[4px] md:w-[108px] 
+          className="h-auto w-[80px] pt-[4px] md:w-[108px] hidden 
           "
         />
       </Link>
@@ -221,6 +221,49 @@ const Header = () => {
           >
             Services
           </p> */}
+        </li>
+
+         {/* Industries Dropdown */}
+         <li
+          className="h-full relative flex items-center px-2 py-4 cursor-pointer transition-all duration-300"
+          onClick={() => handleDropdownToggle("industries")}
+          onMouseEnter={
+            !isTouchDevice ? () => handleMouseEnter("industries") : null
+          }
+          onMouseLeave={!isTouchDevice ? handleMouseLeave : null}
+        >
+          <div className="flex items-center justify-between rounded-full p-3">
+            <span className="text-lg text-black">Industries</span>
+            <IoIosArrowDown />
+          </div>
+          {openDropdown === "industries" && (
+            <ul className="absolute top-[63px] left-0 rounded-lg shadow-lg bg-[#292828] w-40 pt-3 pb-3">
+              <li>
+                <Link
+                  to="/common"
+                  className="block px-4 py-2 text-white hover:text-red-500"
+                >
+                  Education
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/common"
+                  className="block px-4 py-2 text-white hover:text-red-500"
+                >
+                  Healthcare
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/common"
+                  className="block px-4 py-2 text-white hover:text-red-500"
+                >
+                  Ecommerce
+                </Link>
+              </li>
+            </ul>
+          )}
         </li>
 
         {/* About Us Dropdown */}
@@ -274,54 +317,13 @@ const Header = () => {
           )}
         </li>
 
-        {/* Industries Dropdown */}
-        <li
-          className="h-full relative flex items-center px-2 py-4 cursor-pointer transition-all duration-300"
-          onClick={() => handleDropdownToggle("industries")}
-          onMouseEnter={
-            !isTouchDevice ? () => handleMouseEnter("industries") : null
-          }
-          onMouseLeave={!isTouchDevice ? handleMouseLeave : null}
-        >
-          <div className="flex items-center justify-between rounded-full p-3">
-            <span className="text-lg text-black">Industries</span>
-            <IoIosArrowDown />
-          </div>
-          {openDropdown === "industries" && (
-            <ul className="absolute top-[63px] left-0 rounded-lg shadow-lg bg-[#292828] w-40 pt-3 pb-3">
-              <li>
-                <Link
-                  to="/common"
-                  className="block px-4 py-2 text-white hover:text-red-500"
-                >
-                  Education
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/common"
-                  className="block px-4 py-2 text-white hover:text-red-500"
-                >
-                  Healthcare
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/common"
-                  className="block px-4 py-2 text-white hover:text-red-500"
-                >
-                  Ecommerce
-                </Link>
-              </li>
-            </ul>
-          )}
-        </li>
+       
 
         {/* career */}
         <li>
           <Link
             to="/career"
-            className="h-full relative rounded-full text-black text-lg hover:text-white hover:bg-[#616161] p-3 px-6 cursor-pointer transition-all duration-300"
+            className="h-full relative rounded-full text-black text-lg  p-3 px-6 cursor-pointer transition-all duration-300"
             onClick={() => handleDropdownToggle()}
           >
             Career
@@ -416,7 +418,7 @@ const Header = () => {
       <div className="hidden lg:block items-center">
         <Link to="/contactus">
           <button
-            className="rounded-full py-4 px-8 text-md border border-[#703299] text-white bg-gradient-to-r from-[#386bb7] to-[#e24c4a] hover:shadow-sm"
+            className="rounded-full py-3 px-6 text-base border border-[#703299] text-white bg-gradient-to-r from-[#386bb7] to-[#e24c4a] hover:shadow-sm"
             
           >
             Contact Us
@@ -616,7 +618,8 @@ const Header = () => {
           </ul>
         </div>
       )}
-    </div> : <div className="text-left ml-4  lg:ml-10 mt-[8px]">
+    </div> 
+    <div  className={` fixed top-2 text-left ml-4  lg:ml-10`}>
        {/* Logo */}
        <Link to={"/"} className="flex-shrink-0 " onClick={handleLogoClick}>
         <img
@@ -625,7 +628,7 @@ const Header = () => {
           className="h-auto w-[80px] pt-[4px] md:w-[108px] 
           "
         />
-      </Link></div>}
+      </Link></div>
     {/* Contact Form */}
     {showForm && <ContactForm onClose={closeForm} />}
   </div></>

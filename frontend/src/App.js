@@ -115,7 +115,7 @@ function App() {
       {/* <PreLoader /> */}
       <div className="App">
 
-          {isHome &&        <div className="hidden lg:block fixed right-3 top-1/2 z-50 h-auto w-auto p-4">
+          {isHome &&  <div className="hidden lg:block fixed right-3 top-1/2 z-50 h-auto w-auto p-4">
   {/* About Us Button */}
   <div
     className={`h-1 rounded-sm w-7 mx-auto bg-black my-2 cursor-pointer 
