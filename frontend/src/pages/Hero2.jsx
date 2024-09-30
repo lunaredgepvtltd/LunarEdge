@@ -7,17 +7,19 @@ import TransformingBusinessSection from '../components/TransformingBusinessSecti
 
 import ServicesNewTheme from '../components/ServicesNewTheme'
 import FirstPage from '../components/FirstPage'
+import HawaMahal from '../components/HawaMahal'
 
 const Hero2 = () => {
   return (
     <div>
       <FirstPage/>
       <NewLandingPage/>
+      <HawaMahal/>
       <CoreValues/>
       <ServicesNewTheme/>    
       <TransformingBusinessSection/>
       <NewGetInTouch/>
-
+      
     </div>
   )
 }

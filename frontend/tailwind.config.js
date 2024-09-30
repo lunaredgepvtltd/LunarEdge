@@ -5,6 +5,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      animation: {
+        'spin-slow': 'spin 80s linear infinite', // 8 seconds for slow spin
+      },
       textShadow: {
         'default': '1px 1px 2px rgba(0, 0, 0, 0.5)',
         'md': '2px 2px 4px rgba(0, 0, 0, 0.6)',
