@@ -207,20 +207,20 @@ const Header = () => {
       {/* Nav Links for Desktop */}
       <ul className="hidden lg:flex space-x-4 items-center">
         <li>
-          {/* <Link
+          <Link
                   to="/services"
-                  className="block px-4 py-2 text-white hover:text-red-500"
+                  className="text-lg text-black"
                 >
                   Services
-                </Link> */}
+                </Link>
 
           {/* For Temporary Purpose */}
-          <p
+          {/* <p
             className="text-lg text-black cursor-pointer"
             onClick={handleServiceClick}
           >
             Services
-          </p>
+          </p> */}
         </li>
 
         {/* About Us Dropdown */}
@@ -504,12 +504,13 @@ const Header = () => {
               onClick={handleServices}
             >
               <div className="flex gap-1 mr-2 items-center">
-                <span
+                <Link
                   className="text-md text-[#082847] hover:underline"
-                  onClick={handleServiceClick}
+                  // onClick={handleServiceClick}
+                  to="/services"
                 >
                   Services
-                </span>
+                </Link>
                 <IoIosArrowDown />
               </div>
               {/* Services sub-items */}

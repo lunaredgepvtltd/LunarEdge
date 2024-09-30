@@ -3,7 +3,7 @@ import React from 'react'
 const NewGetInTouch = () => {
   return (
     <>
-    <div className="bg-gradient-to-r from-[#fff7ad] to-[#ffa9f9] p-6">
+    <div className="bg-white p-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
           <div className="flex justify-center items-center lg:pl-20">
             <iframe

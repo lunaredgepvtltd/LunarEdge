@@ -8,6 +8,7 @@ import AdminLoginForm from "../components/AdminLoginForm.jsx";
 import Services from "../pages/Services.jsx";
 import Hero2 from "../pages/Hero2.jsx";
 import ContactPage from "../components/ContactPage.jsx";
+import ServicesNewTheme from "../components/ServicesNewTheme.jsx";
 
 const router = createBrowserRouter([
   {
@@ -36,7 +37,7 @@ const router = createBrowserRouter([
       },
       {
         path: "services",
-        element: <Services />,
+        element: <ServicesNewTheme />,
       },
       {
         path:"contactus",

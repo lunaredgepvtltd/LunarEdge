@@ -13,7 +13,7 @@ const Hero2 = () => {
       
       <NewLandingPage/>
       <CoreValues/>
-      <ServicesNewTheme/>    
+         
       <TransformingBusinessSection/>
       <NewGetInTouch/>
 
