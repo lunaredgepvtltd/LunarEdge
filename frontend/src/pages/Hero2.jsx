@@ -6,17 +6,19 @@ import NewGetInTouch from '../components/NewGetInTouch'
 import TransformingBusinessSection from '../components/TransformingBusinessSection'
 
 import ServicesNewTheme from '../components/ServicesNewTheme'
+import HawaMahal from '../components/HawaMahal'
 
 const Hero2 = () => {
   return (
     <div>
       
       <NewLandingPage/>
+      <HawaMahal/>
       <CoreValues/>
       <ServicesNewTheme/>    
       <TransformingBusinessSection/>
       <NewGetInTouch/>
-
+      
     </div>
   )
 }
