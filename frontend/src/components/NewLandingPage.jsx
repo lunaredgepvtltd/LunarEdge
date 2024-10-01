@@ -11,8 +11,8 @@ const NewLandingPage = () => {
     <div className="w-[44%] relative  h-full">
     <img
   src={aboutMoon}
-  alt="Picture of HawaMahal"
-  className="absolute -left-[53%] h-full w-full  animate-spin-slow"
+  alt="Picture of Moon"
+  className="absolute -left-[53%] h-[95%] w-full  animate-spin-slow"
 />
     </div>
 

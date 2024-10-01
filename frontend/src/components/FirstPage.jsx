@@ -5,11 +5,11 @@ const FirstPage = () => {
   return (
     <div className="h-screen w-full relative">
       <div
-        className={`absolute  inset-0 bg-cover bg-center`}
+        className={`absolute  inset-0 bg-cover bg-center `}
         style={{ backgroundImage: `url(${bgLandingPage})` }}
       />
-      <div className="relative z-10 h-[100%] items-center   text-black w-[40%] text-center mx-auto flex flex-col justify-center gap-7 py-5 ">
-        <h1 className="text-6xl font-semibold">
+      <div className="relative z-10 h-[100%] items-center text-black  xl:w-[40%] lg:w-[50%] md:w-[45%] w-[80%] text-center mx-auto flex flex-col justify-center gap-[70px] ">
+        <h1 className="xl:text-6xl lg:text-5xl md:text-4xl text-3xl font-semibold">
           Smart Innovation Meets Infinity
         </h1>
         <h3 className="text-2xl ">
