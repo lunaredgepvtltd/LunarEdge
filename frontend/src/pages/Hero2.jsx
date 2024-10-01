@@ -11,6 +11,7 @@ import OurMissionVidio from "../assets/OurMissionVidio.mp4";
 import OurMission from "../components/OurMission";
 import OurVision from "../components/OurVision";
 
+
 const Hero2 = () => {
   return (
     <div>
