@@ -8,17 +8,17 @@ import aboutHead from "../assets/aboutHead.png";
 const NewLandingPage = () => {
   return (
     <div className="relative  w-full h-screen flex">
-    <div className="w-[44%] relative  h-full">
-    <img
-  src={aboutMoon}
-  alt="Picture of HawaMahal"
-  className="absolute h-full w-full  animate-spin-slow"
-/>
-    </div>
+      <div className="w-[44%] relative  h-full">
+        <img
+          src={aboutMoon}
+          alt="Picture of HawaMahal"
+          className="absolute h-full w-full -left-[55%] animate-spin-slow"
+        />
+      </div>
 
-    <div className="absolute left-[20%] w-[80%] h-full p-8 flex items-center gap-4">
-      <div className="w-[50%]  h-[40%] flex flex-col gap-5">
-      <h1 className=" text-left text-3xl font-normal ">ABOUT US</h1>
+      <div className="absolute left-[25%] w-[80%] h-full p-8 flex items-center gap-4">
+        <div className="w-[50%]  h-[40%] flex flex-col gap-5">
+          <h1 className=" text-left text-3xl font-normal ">ABOUT US</h1>
           <p className="text-left font-light text-sm">
             Founded with a vision to drive smart innovation, our mission is to
             bridge the gap between technology and human potential, empowering
@@ -27,23 +27,23 @@ const NewLandingPage = () => {
           <p className=" text-left font-light  text-sm">
             Our tagline,{" "}
             <span className="italic">“Smart Innovation Meets Infinity”</span>,
-            reflects our commitment to endless possibilities and our pursuit
-            of excellence in every project we undertake. Whether it’s
-            developing cutting-edge software solutions or providing strategic
-            IT consulting, we are dedicated to delivering results that exceed
+            reflects our commitment to endless possibilities and our pursuit of
+            excellence in every project we undertake. Whether it’s developing
+            cutting-edge software solutions or providing strategic IT
+            consulting, we are dedicated to delivering results that exceed
             expectations.
           </p>
-      </div>
-      <div className="w-[60%] h-[80%] text-right  flex justify-center items-center">
-      <img
+        </div>
+        <div className="w-[60%] h-[80%] text-right  flex justify-center items-center">
+          <img
             src={aboutHead}
             alt="Picture of tagline"
             className="hidden lg:block w-[60%] h-[80%]"
           />
-
+        </div>
+              
       </div>
-      </div>
-</div>
+    </div>
   );
 };
 

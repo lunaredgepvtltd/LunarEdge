@@ -17,7 +17,7 @@ const Hero2 = () => {
       <HawaMahal/>
       <CoreValues/>
          
-      <TransformingBusinessSection/>
+      {/* <TransformingBusinessSection/> */}
       <NewGetInTouch/>
       
     </div>
