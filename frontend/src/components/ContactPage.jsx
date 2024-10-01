@@ -3,7 +3,8 @@ import callContactPage from "../assets/callContactPage.png";
 import mailContactPage from "../assets/mailContactPage.png";
 import locContactPage from "../assets/locContactPage.png";
 import styles from "./ContactPage.module.css"; // Import CSS module
-import MoonImage from "../assets/halfmoon.png";
+import MoonImage from "../assets/BgServices1.png";
+import BgConTactUs from "../assets/BgContactUs.png";
 
 const ContactCard = ({ image, children }) => (
   <div className="w-[25%] bg-gradient-to-r from-[#a6a6a6] to-[#ffffff] rounded-lg flex flex-col items-center justify-evenly px-5 shadow-lg">
@@ -26,10 +27,10 @@ function ContactPage() {
         />
         <div className="container mx-auto text-center mt-[5%]">
           
-          <h2 className="text-3xl font-normal mb-8">How we can help you?</h2>
-          <h3 className="text-5xl font-normal mb-12">CONTACT US</h3>
+          <h2 className="text-xl md:text-3xl font-normal mb-8">How we can help you?</h2>
+          <h3 className="text-xl md:text-5xl font-normal mb-12">CONTACT US</h3>
 
-          <div className=" h-[350px] flex flex-wrap justify-center gap-12  ">
+          <div className=" h-[350px]   flex-col  flex md:flex-wrap  justify-center gap-12  ">
             <ContactCard image={callContactPage}>
               <p className="mb-5 text-center">0141-4512611 (Office)</p>
               <p className="text-center">+91-9829011076 (Sandeep Katariya)</p>
@@ -73,7 +74,13 @@ function ContactPage() {
         </div>
 
         {/* Contact Form Section */}
-        <div className="flex flex-col items-center bg-white">
+        <div className="flex flex-col items-center " 
+        
+        style={{
+          backgroundImage: `url(${BgConTactUs})`, // Set background image here
+          backgroundSize: "cover", // Adjust background size
+          backgroundPosition: "center", // Center the background
+        }}>
           <h1 className="text-3xl text-center font-normal text-black mb-5 p-10 ">
             Thank you for your interest in LunarEdge’s services. Please fill the
             form below. This will enable us to route your request to the

@@ -9,6 +9,7 @@ import ServicesNewTheme from '../components/ServicesNewTheme'
 import FirstPage from '../components/FirstPage'
 import HawaMahal from '../components/HawaMahal'
 
+
 const Hero2 = () => {
   return (
     <div>
@@ -16,6 +17,7 @@ const Hero2 = () => {
       <NewLandingPage/>
       <HawaMahal/>
       <CoreValues/>
+    
          
       <TransformingBusinessSection/>
       <NewGetInTouch/>
