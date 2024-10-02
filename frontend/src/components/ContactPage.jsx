@@ -129,29 +129,29 @@ function ContactPage() {
                 <input
                   type="text"
                   placeholder="First Name"
-                  className="p-2 md:p-2 text-sm border rounded-3xl w-full placeholder:text-black  placeholder:text-center focus:outline-none focus:border-[#a6a6a6] transition duration-300"
+                  className="p-2 md:p-2 text-sm border rounded-3xl w-full placeholder:text-gray-500  placeholder:text-center focus:outline-none focus:border-[#a6a6a6] transition duration-300"
                 />
                 <input
                   type="text"
                   placeholder="Last Name"
-                  className="p-2 md:p-2  text-sm border rounded-3xl w-full placeholder:text-black  placeholder:text-center focus:outline-none focus:border-[#a6a6a6] transition duration-300"
+                  className="p-2 md:p-2  text-sm border rounded-3xl w-full placeholder:text-gray-500  placeholder:text-center focus:outline-none focus:border-[#a6a6a6] transition duration-300"
                 />
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <input
                   type="email"
                   placeholder="Email Address"
-                  className="p-2 md:p-2 text-sm border rounded-3xl w-full placeholder:text-black  placeholder:text-center focus:outline-none focus:border-[#a6a6a6] transition duration-300"
+                  className="p-2 md:p-2 text-sm border rounded-3xl w-full placeholder:text-gray-500 placeholder:text-center focus:outline-none focus:border-[#a6a6a6] transition duration-300"
                 />
                 <input
                   type="tel"
                   placeholder="Phone Number"
-                  className="p-2 md:p-2 text-sm border rounded-3xl w-full placeholder:text-black  placeholder:text-center focus:outline-none focus:border-[#a6a6a6] transition duration-300"
+                  className="p-2 md:p-2 text-sm border rounded-3xl w-full placeholder:text-gray-500 placeholder:text-center focus:outline-none focus:border-[#a6a6a6] transition duration-300"
                 />
               </div>
               <textarea
                 placeholder="Your Message"
-                className="p-2 text-sm md:p-2 border rounded-3xl w-full placeholder:text-black h:[100px] md:h-[150px] placeholder:text-center focus:outline-none focus:border-[#a6a6a6] transition duration-300"
+                className="p-2 text-sm md:p-2 border rounded-3xl w-full placeholder:text-gray-500 h:[100px] md:h-[150px] placeholder:text-center focus:outline-none focus:border-[#a6a6a6] transition duration-300"
               ></textarea>
               <div className="flex justify-center">
                 <button
