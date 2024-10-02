@@ -11,8 +11,8 @@ const NewLandingPage = () => {
     <div className="w-[44%] relative  h-full">
     <img
   src={aboutMoon}
-  alt="Picture of HawaMahal"
-  className="absolute -left-[53%] h-full w-full  animate-spin-slow"
+  alt="Picture of Moon"
+  className="absolute -left-[53%] h-[95%] w-full  animate-spin-slow"
 />
     </div>
 
@@ -27,23 +27,23 @@ const NewLandingPage = () => {
           <p className=" text-left font-light  text-lg">
             Our tagline,{" "}
             <span className="italic">“Smart Innovation Meets Infinity”</span>,
-            reflects our commitment to endless possibilities and our pursuit
-            of excellence in every project we undertake. Whether it’s
-            developing cutting-edge software solutions or providing strategic
-            IT consulting, we are dedicated to delivering results that exceed
+            reflects our commitment to endless possibilities and our pursuit of
+            excellence in every project we undertake. Whether it’s developing
+            cutting-edge software solutions or providing strategic IT
+            consulting, we are dedicated to delivering results that exceed
             expectations.
           </p>
-      </div>
-      <div className="w-[60%] h-[80%] text-right  flex justify-center items-center">
-      <img
+        </div>
+        <div className="w-[60%] h-[80%] text-right  flex justify-center items-center">
+          <img
             src={aboutHead}
             alt="Picture of tagline"
             className="hidden lg:block w-[60%] h-[80%]"
           />
-
+        </div>
+              
       </div>
-      </div>
-</div>
+    </div>
   );
 };
 
