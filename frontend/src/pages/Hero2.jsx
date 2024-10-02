@@ -10,6 +10,7 @@ import OurJourneyVidio from "../assets/OurJourneyVidio.mp4";
 import OurMissionVidio from "../assets/OurMissionVidio.mp4";
 import OurMission from "../components/OurMission";
 import OurVision from "../components/OurVision";
+import TimeLine from "../components/TimeLine";
 
 
 const Hero2 = () => {
@@ -41,6 +42,7 @@ const Hero2 = () => {
 
       {/* <TransformingBusinessSection/> */}
       <NewGetInTouch />
+      <TimeLine/>
     </div>
   );
 };

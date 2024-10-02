@@ -4,7 +4,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import MoonImage from "../assets/BgServices1.png";
+import MoonImage from "../assets/bgLandingPage.png";
 import BgServices2 from "../assets/BgServices2.png";
 
 import AI_ML_Solutions from "../assets/Bg_AIML.png";
@@ -15,6 +15,7 @@ import NEXTGEN_GAME from "../assets/Bg_NEXTGAME.png";
 import IT_CONSULTING from "../assets/Bg_CONSULTING.png";
 import HARWARE_SUPPLY_SOLUTIONS from "../assets/Bg_HARDWARE.png";
 import CYBER_SECURITY from "../assets/Bg_CYBER.png";
+// import TimeLine from "../components/TimeLine";
 
 const ServicesNewTheme = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -102,8 +103,8 @@ const ServicesNewTheme = () => {
 
   return (
     <>
-      <div className="relative flex flex-col items-center justify-center h-screen overflow-hidden">
-        {/* Half Moon */}
+      {/* <div className="relative flex flex-col items-center justify-center h-screen overflow-hidden">
+        
         <img
           src={MoonImage}
           alt="Half Moon"
@@ -113,15 +114,39 @@ const ServicesNewTheme = () => {
           }}
         />
 
-        <h1 className="absolute top-1/4 text-7xl left-1/2 transform -translate-x-1/2 font-normal text-black dark:text-white">
+        <h1 className="absolute top-1/4 text-2xl md:text-7xl left-1/2 transform -translate-x-1/2 font-normal text-black">
           Services
         </h1>
 
-        <h2 className="absolute text-6xl left-1/2 transform -translate-x-1/2 -translate-y-1/2  text-black dark:text-white ">
+        <h2 className="absolute text-xl md:text-6xl left-1/2 transform -translate-x-1/2 -translate-y-1/2 font-light text-black ">
           What we do
         </h2>
 
-        <p className="absolute  text-4xl left-1/2 transform -translate-x-1/2 mt-[25%] text-black dark:text-white text-center ">
+        <p className="absolute text-base md:text-4xl left-1/2 transform -translate-x-1/2 mt-[25%] text-black font-normal  text-center ">
+          With technology, we advance your business
+        </p>
+      </div>  */}
+
+      <div className="relative flex flex-col items-center justify-center  h-screen overflow-hidden">
+        {/* Half Moon */}
+        <img
+          src={MoonImage}
+          alt="Half Moon"
+          className="absolute top-0 left-0 w-full h-full object-cover"
+          style={{
+            zIndex: -1,
+          }}
+        />
+
+        <h1 className="absolute   top-48 md:top-1/4 text-2xl md:text-6xl left-1/2 transform -translate-x-1/2 font-normal text-black">
+          Services
+        </h1>
+
+        <h2 className="absolute  top-54 md:top-1/2 text-xl md:text-5xl left-1/2 transform -translate-x-1/2 -translate-y-1/2 font-light text-black">
+          What we do
+        </h2>
+
+        <p className="absolute top-[55%] md:top-[24%] text-base md:text-3xl left-1/2 transform -translate-x-1/2 mt-[25%] text-black font-normal text-center whitespace-nowrap px-2">
           With technology, we advance your business
         </p>
       </div>
@@ -183,34 +208,32 @@ const ServicesNewTheme = () => {
             ))}
           </Slider> */}
 
-<Slider {...settings}>
-    {cards.map((card) => (
-      <div
-        key={card.id}
-        className="border rounded-[25px] h-[300px] relative flex flex-col justify-between overflow-hidden transition duration-300 ease-in-out transform hover:grayscale-0 grayscale-100 cursor-pointer"
-      >
-        <img
-          src={card.image}
-          alt={card.title}
-          className="absolute inset-0 w-full h-full object-cover z-0"
-        />
+          <Slider {...settings}>
+            {cards.map((card) => (
+              <div
+                key={card.id}
+                className="border rounded-[25px] h-[300px] relative flex flex-col justify-between overflow-hidden transition duration-300 ease-in-out transform hover:grayscale-0 grayscale-100 cursor-pointer"
+              >
+                <img
+                  src={card.image}
+                  alt={card.title}
+                  className="absolute inset-0 w-full h-full object-cover z-0"
+                />
 
-       
-        <div className="relative z-10 p-4 h-full flex flex-col justify-between">
-          <h3 className="text-lg font-semibold text-center text-white">
-            {card.title}
-          </h3>
-          <div className="flex items-center justify-center mt-10">
-            <button className="text-white">Read More</button>
-            <MdKeyboardArrowRight className="text-white" />
-          </div>
-        </div>
+                <div className="relative z-10 p-4 h-full flex flex-col justify-between">
+                  <h3 className="text-lg font-semibold text-center text-white">
+                    {card.title}
+                  </h3>
+                  <div className="flex items-center justify-center mt-10">
+                    <button className="text-white">Read More</button>
+                    <MdKeyboardArrowRight className="text-white" />
+                  </div>
+                </div>
 
-        
-        <div className="absolute inset-0 bg-black opacity-40 z-5"></div>
-      </div>
-    ))}
-  </Slider>
+                <div className="absolute inset-0 bg-black opacity-40 z-5"></div>
+              </div>
+            ))}
+          </Slider>
         </div>
 
         {/* medium device scroll ri8  side  */}
@@ -249,36 +272,35 @@ const ServicesNewTheme = () => {
             ))}
           </Slider> */}
 
-<Slider {...settings2}>
-    {cards.map((card) => (
-      <div
-        key={card.id}
-        className="border rounded-[25px] h-[300px] relative flex flex-col justify-between overflow-hidden transition duration-300 ease-in-out transform hover:grayscale-0 grayscale-100 cursor-pointer"
-      >
-        {/* Full-size image */}
-        <img
-          src={card.image}
-          alt={card.title}
-          className="absolute inset-0 w-full h-full object-cover z-0"
-        />
+          <Slider {...settings2}>
+            {cards.map((card) => (
+              <div
+                key={card.id}
+                className="border rounded-[25px] h-[300px] relative flex flex-col justify-between overflow-hidden transition duration-300 ease-in-out transform hover:grayscale-0 grayscale-100 cursor-pointer"
+              >
+                {/* Full-size image */}
+                <img
+                  src={card.image}
+                  alt={card.title}
+                  className="absolute inset-0 w-full h-full object-cover z-0"
+                />
 
-        {/* Overlay content */}
-        <div className="relative z-10 p-4 h-full flex flex-col justify-between">
-          <h3 className="text-lg font-semibold text-center text-white">
-            {card.title}
-          </h3>
-          <div className="flex items-center justify-center mt-10">
-            <button className="text-white">Read More</button>
-            <MdKeyboardArrowRight className="text-white" />
-          </div>
-        </div>
+                {/* Overlay content */}
+                <div className="relative z-10 p-4 h-full flex flex-col justify-between">
+                  <h3 className="text-lg font-semibold text-center text-white">
+                    {card.title}
+                  </h3>
+                  <div className="flex items-center justify-center mt-10">
+                    <button className="text-white">Read More</button>
+                    <MdKeyboardArrowRight className="text-white" />
+                  </div>
+                </div>
 
-        {/* Background overlay for better text visibility */}
-        <div className="absolute inset-0 bg-black opacity-40 z-5"></div>
-      </div>
-    ))}
-  </Slider>
-
+                {/* Background overlay for better text visibility */}
+                <div className="absolute inset-0 bg-black opacity-40 z-5"></div>
+              </div>
+            ))}
+          </Slider>
         </div>
 
         {/* md scroll left side  */}
@@ -309,36 +331,38 @@ const ServicesNewTheme = () => {
             ))}
           </Slider> */}
           <Slider {...settings}>
-    {cards.map((card) => (
-      <div
-        key={card.id}
-        className="border rounded-[25px] h-[300px] relative flex flex-col justify-between overflow-hidden transition duration-300 ease-in-out transform hover:grayscale-0 grayscale-100 cursor-pointer"
-      >
-        {/* Full-size image */}
-        <img
-          src={card.image}
-          alt={card.title}
-          className="absolute inset-0 w-full h-full object-cover z-0"
-        />
+            {cards.map((card) => (
+              <div
+                key={card.id}
+                className="border rounded-[25px] h-[300px] relative flex flex-col justify-between overflow-hidden transition duration-300 ease-in-out transform hover:grayscale-0 grayscale-100 cursor-pointer"
+              >
+                {/* Full-size image */}
+                <img
+                  src={card.image}
+                  alt={card.title}
+                  className="absolute inset-0 w-full h-full object-cover z-0"
+                />
 
-        {/* Overlay content */}
-        <div className="relative z-10 p-4 h-full flex flex-col justify-between">
-          <h3 className="text-lg font-semibold text-center text-white">
-            {card.title}
-          </h3>
-          <div className="flex items-center justify-center mt-10">
-            <button className="text-white">Read More</button>
-            <MdKeyboardArrowRight className="text-white" />
-          </div>
-        </div>
+                {/* Overlay content */}
+                <div className="relative z-10 p-4 h-full flex flex-col justify-between">
+                  <h3 className="text-lg font-semibold text-center text-white">
+                    {card.title}
+                  </h3>
+                  <div className="flex items-center justify-center mt-10">
+                    <button className="text-white">Read More</button>
+                    <MdKeyboardArrowRight className="text-white" />
+                  </div>
+                </div>
 
-        {/* Background overlay for better text visibility */}
-        <div className="absolute inset-0 bg-black opacity-40 z-5"></div>
-      </div>
-    ))}
-  </Slider>
+                {/* Background overlay for better text visibility */}
+                <div className="absolute inset-0 bg-black opacity-40 z-5"></div>
+              </div>
+            ))}
+          </Slider>
         </div>
       </div>
+
+      {/* <TimeLine/> */}
     </>
   );
 };
