@@ -18,7 +18,7 @@ const Hero2 = () => {
     <div>
       <FirstPage />
       {/* <NewLandingPage /> */}
-      {/* <HawaMahal />
+      {/* <HawaMahal /> */}
       <OurJourney
         title="OUR JOURNEY"
         subtitle=" Established in 2024 with the goal “to create value through technology."
@@ -28,7 +28,7 @@ const Hero2 = () => {
           offer a wide range of services tailored to your business needs."
         vidiotitle="Creating Value Through Technology"
         vidiosrc={OurJourneyVidio}
-      /> */}
+      />
 
       <CoreValues />
       <OurVision />
