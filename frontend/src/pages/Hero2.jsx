@@ -11,6 +11,7 @@ import OurMissionVidio from "../assets/OurMissionVidio.mp4";
 import OurMission from "../components/OurMission";
 import OurVision from "../components/OurVision";
 import TimeLine from "../components/TimeLine";
+import TransformingBusinessSection from "../components/TransformingBusinessSection";
 
 
 const Hero2 = () => {
@@ -18,7 +19,7 @@ const Hero2 = () => {
     <div>
       <FirstPage />
       {/* <NewLandingPage /> */}
-      {/* <HawaMahal />
+      {/* <HawaMahal /> */}
       <OurJourney
         title="OUR JOURNEY"
         subtitle=" Established in 2024 with the goal “to create value through technology."
@@ -28,7 +29,7 @@ const Hero2 = () => {
           offer a wide range of services tailored to your business needs."
         vidiotitle="Creating Value Through Technology"
         vidiosrc={OurJourneyVidio}
-      /> */}
+      />
 
       <CoreValues />
       <OurVision />
@@ -40,7 +41,7 @@ const Hero2 = () => {
         vidiosrc={OurMissionVidio}
       />
 
-      {/* <TransformingBusinessSection/> */}
+      <TransformingBusinessSection/>
       <NewGetInTouch />
       {/* <TimeLine/> */}
     </div>
