@@ -30,7 +30,7 @@ const Hero2 = () => {
         vidiosrc={OurJourneyVidio}
       /> */}
 
-      {/* <CoreValues /> */}
+      <CoreValues />
       <OurVision />
 
       <OurMission
@@ -42,7 +42,7 @@ const Hero2 = () => {
 
       {/* <TransformingBusinessSection/> */}
       <NewGetInTouch />
-      <TimeLine/>
+      {/* <TimeLine/> */}
     </div>
   );
 };
