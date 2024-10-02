@@ -127,7 +127,7 @@ const ServicesNewTheme = () => {
         </p>
       </div>  */}
 
-      <div className="relative flex flex-col items-center justify-center  h-screen overflow-hidden">
+      <div className="relative flex flex-col items-center justify-center gap-10 h-[600px] md:h-screen overflow-hidden">
         {/* Half Moon */}
         <img
           src={MoonImage}
@@ -138,15 +138,15 @@ const ServicesNewTheme = () => {
           }}
         />
 
-        <h1 className="absolute   top-48 md:top-1/4 text-2xl md:text-6xl left-1/2 transform -translate-x-1/2 font-normal text-black">
+        <h1 className="text-3xl font-base text-black">
           Services
         </h1>
 
-        <h2 className="absolute  top-54 md:top-1/2 text-xl md:text-5xl left-1/2 transform -translate-x-1/2 -translate-y-1/2 font-light text-black">
+        <h2 className="text-2xl font-normal text-black">
           What we do
         </h2>
 
-        <p className="absolute top-[55%] md:top-[24%] text-base md:text-3xl left-1/2 transform -translate-x-1/2 mt-[25%] text-black font-normal text-center whitespace-nowrap px-2">
+        <p className=" text-black text-xl font-normal text-center w-[70%] px-2">
           With technology, we advance your business
         </p>
       </div>

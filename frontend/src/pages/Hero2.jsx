@@ -17,8 +17,8 @@ const Hero2 = () => {
   return (
     <div>
       <FirstPage />
-      <NewLandingPage />
-      <HawaMahal />
+      {/* <NewLandingPage /> */}
+      {/* <HawaMahal />
       <OurJourney
         title="OUR JOURNEY"
         subtitle=" Established in 2024 with the goal “to create value through technology."
@@ -28,7 +28,7 @@ const Hero2 = () => {
           offer a wide range of services tailored to your business needs."
         vidiotitle="Creating Value Through Technology"
         vidiosrc={OurJourneyVidio}
-      />
+      /> */}
 
       <CoreValues />
       <OurVision />
@@ -42,7 +42,7 @@ const Hero2 = () => {
 
       {/* <TransformingBusinessSection/> */}
       <NewGetInTouch />
-      <TimeLine/>
+      {/* <TimeLine/> */}
     </div>
   );
 };
