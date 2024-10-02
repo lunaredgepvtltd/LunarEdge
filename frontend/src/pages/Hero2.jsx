@@ -16,7 +16,7 @@ const Hero2 = () => {
       <NewLandingPage/>
       <HawaMahal/>
       <CoreValues/>
-         
+
       <TransformingBusinessSection/>
       <NewGetInTouch/>
       
