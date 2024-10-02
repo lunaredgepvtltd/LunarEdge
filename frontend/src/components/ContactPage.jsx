@@ -7,9 +7,9 @@ import MoonImage from "../assets/BgServices1.png";
 import BgConTactUs from "../assets/BgContactUs.png";
 
 const ContactCard = ({ image, children }) => (
-  <div className="w-[25%] bg-gradient-to-r from-[#a6a6a6] to-[#ffffff] rounded-lg flex flex-col items-center justify-evenly px-5 shadow-lg">
-    <img src={image} alt="" className="h-[90px] w-[90px]" />
-    <div className="text-gray-800">{children}</div>
+  <div className="md:w-[25%] w-[95%] mx-auto bg-gradient-to-r from-[#a6a6a6] to-[#ffffff] rounded-lg flex flex-row md:flex-col items-center justify-between md:justify-evenly px-5 py-4 md:py-0  shadow-lg">
+    <img src={image} alt="" className="md:h-[90px] md:w-[90px] h-[45px] w-[45px]" />
+    <div className="text-gray-800 md:w-auto w-[70%]">{children}</div>
   </div>
 );
 
@@ -25,27 +25,27 @@ function ContactPage() {
             zIndex: -1,
           }}
         />
-        <div className="container mx-auto text-center mt-[5%]">
+        <div className="container mx-auto text-center mt-[5%] flex flex-col gap-5">
           
           <h2 className="text-xl md:text-3xl font-normal mb-8">How we can help you?</h2>
           <h3 className="text-xl md:text-5xl font-normal mb-12">CONTACT US</h3>
 
-          <div className=" h-[350px]   flex-col  flex md:flex-wrap  justify-center gap-12  ">
+          <div className=" h-[300px]   flex-col  flex md:flex-row justify-center gap-8 md:gap-12 text-sm ">
             <ContactCard image={callContactPage}>
-              <p className="mb-5 text-center">0141-4512611 (Office)</p>
-              <p className="text-center">+91-9829011076 (Sandeep Katariya)</p>
-              <p className="text-center">+91-7760701155 (Sanjeev Ola)</p>
+              <p className="md:mb-5 text-left md:text-center text-xs">0141-4512611 (Office)</p>
+              <p className="text-left md:text-center text-xs">+91-9829011076 (Sandeep Katariya)</p>
+              <p className="text-left md:text-center text-xs">+91-7760701155 (Sanjeev Ola)</p>
             </ContactCard>
 
             <ContactCard image={locContactPage}>
-              <p className="text-center">
+              <p className="text-left md:text-center text-xs">
                 203, Manglam, Signature Tower, Lal Kothi, Gandhi Nagar, Jaipur,
                 Rajasthan - 302015
               </p>
             </ContactCard>
 
             <ContactCard image={mailContactPage}>
-              <p className="text-center">info@lunaredge.in</p>
+              <p className="text-left md:text-center text-xs">info@lunaredge.in</p>
             </ContactCard>
           </div>
         </div>
