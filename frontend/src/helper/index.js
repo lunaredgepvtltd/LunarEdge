@@ -1,4 +1,4 @@
-const DomainName = 'https://lunaredge.in';
+const DomainName = 'https://13.201.243.29:8080';
 const localDomainName = 'http://localhost:8080';
 
 // Determine if the app is running in a development or production environment
