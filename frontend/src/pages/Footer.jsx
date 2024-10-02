@@ -90,7 +90,7 @@ import { Link } from "react-router-dom";
                 <div className="mb-[2px]">
                   <BsWhatsapp className="text-green-600" />
                 </div>
-                <p className="text-[#4688eb] hover:underline underline-offset-2 transition-all duration-300 whitespace-nowrap">
+                <p className="text-blue-900 hover:underline underline-offset-2 transition-all duration-300 whitespace-nowrap">
                   <a href="https://wa.me/919829011076" target="_blank" >
                     +91-9829011076
                   </a>
@@ -101,7 +101,7 @@ import { Link } from "react-router-dom";
                 <div>
                   <BsWhatsapp className="text-green-600" />
                 </div>
-                <p className="text-[#4688eb] hover:underline underline-offset-2 transition-all duration-300">
+                <p className="text-blue-900 hover:underline underline-offset-2 transition-all duration-300">
                   <a href="https://wa.me/917760701155" target="_blank">
                     +91-7760701155
                   </a>
@@ -186,7 +186,7 @@ import { Link } from "react-router-dom";
           </div>
         </div>
 
-        <div className=" mt-2 md:mt-4 border-t border-gray-200 pt-2 md:pt-4 ">
+        <div className=" mt-2 md:mt-4 border-t border-black pt-2 md:pt-4 ">
           <div className="sm:flex sm:items-center sm:justify-between">
             <ul className="flex flex-wrap gap-4 text-xs">
               <li>
