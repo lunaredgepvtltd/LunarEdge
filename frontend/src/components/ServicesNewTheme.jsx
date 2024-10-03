@@ -205,10 +205,10 @@ const ServicesNewTheme = () => {
                     <div className="relative z-10 p-4 h-full flex flex-col justify-between">
                       {hoveredCardId === card.id ? ( 
                         <>
-                          <h3 className="text-lg font-semibold pt-10 text-left text-white">
+                          <h3 className="text-lg font-semibold pt-10 text-center text-white">
                             {card.title}
                           </h3>
-                          <p className="text-white mb-6 text-left">
+                          <p className="text-white mb-6 text-center">
                             {card.description}
                           </p>
                         </>
