@@ -16,15 +16,15 @@ const ContactCard = ({ image, children }) => (
       alt=""
       className="md:h-[90px] md:w-[90px] h-[45px] w-[45px]"
     />
-    <div className="text-gray-800 md:w-auto w-[70%]">{children}</div>
+    <div className="text-gray-800 md:w-auto w-[75%]">{children}</div>
   </div>
 );
 
 function ContactPage() {
   return (
-    <>
+    <div className="h-full w-full">
       <div
-        className="w-full h-[600px] pt-4 bg-cover bg-center"
+        className="w-full h-[700px] md:h-[780px] pt-4 bg-cover bg-center"
         style={{
           backgroundImage: `url(${MoonImage})`,
           zIndex: -1,
@@ -32,20 +32,20 @@ function ContactPage() {
       >
         {/* Your other content goes here */}
 
-        <div className="container z-10 mx-auto text-center mt-[5%] h-[100%] flex flex-col justify-between gap-5">
-          <h2 className=" md:text-3xl text-xl font-normal mb-8">
+        <div className="container z-10 mx-auto text-center mt-[5%] h-[90%] md:h-[100%] flex flex-col justify-evenly gap-5">
+          <h2 className=" md:text-3xl text-2l font-lg mb-[1px] md:mb-4">
             How we can help you?
           </h2>
-          <h3 className=" md:text-5xl text-2xl font-normal mb-12">
+          <h3 className=" md:text-8xl text-2xl font-semibold mb-0 md:mb-12">
             CONTACT US
           </h3>
 
-          <div className=" h-[300px]   flex-col  flex md:flex-row justify-center gap-8 md:gap-12 text-sm ">
+          <div className=" h-[300px]    flex-col  flex md:flex-row justify-center gap-8 md:gap-9 text-sm ">
             <ContactCard image={callContactPage}>
               <p className="md:mb-5 text-left md:text-center text-xs">
                 0141-4512611 (Office)
               </p>
-              <p className="text-left md:text-center text-xs">
+              <p className="text-left md:text-center text-xs whitespace-nowrap">
                 +91-9829011076 (Sandeep Katariya)
               </p>
               <p className="text-left md:text-center text-xs">
@@ -69,16 +69,14 @@ function ContactPage() {
         </div>
       </div>
 
-      <div className="bg-white ">
-        <div className=" text-black p-10 text-center ">
-          <h1 className=" text-lg md:text-2xl lg:text-5xl uppercase font-normal tracking-wide">
-            corporate office Address
-          </h1>
-        </div>
+      <div className=" h-full w-full bg-white z-10 mt-[10%] pb-[3%]">
+        <h1 className=" text-lg text-black  text-center md:text-2xl lg:text-5xl uppercase font-normal pb-8">
+          corporate office Address
+        </h1>
 
         {/* Google Map Section */}
 
-        <div className="w-full md:h-[200px] h-[300px] lg:h-auto  flex justify-center ">
+        <div className="z-10 w-full md:h-[300px] h-[300px] lg:h-[600px]  flex justify-center mb-5 ">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d241201.8443352571!2d75.74948445094843!3d26.882945649020046!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396db50072a7f755%3A0x19a18bdba8efd3cf!2sLunarEdge%20IT%20Services%20Private%20Limited!5e0!3m2!1sen!2sus!4v1630929534187!5m2!1sen!2sus"
             style={{
@@ -115,9 +113,9 @@ function ContactPage() {
             backgroundPosition: "center",
           }}
         >
-          <div>
+          <div className="flex flex-col gap-2 md:gap-5">
             {" "}
-            <h1 className="hidden md:block text-xs w-[65%] mx-auto md:text-xl  text-center font-medium  text-black mb-2 md:mb-5 p-4 lg:p-10 ">
+            <h1 className="hidden md:block text-xs w-[65%] mx-auto md:text-xl  text-center font-medium  text-black  p-4 lg:p-10 ">
               Thank you for your interest in LunarEdge’s services. Please fill
               the form below. This will enable us to route your request to the
               appropriate person to serve you better. Expected time of response
@@ -126,8 +124,8 @@ function ContactPage() {
             <h2 className="text-xl  md:text-3xl text-center text-black mb-8 tracking-wider font-bold">
               CONTACT US
             </h2>
-            <div className="bg-gradient-to-r mb-4 from-[#ffffff] to-[#a6a6a6]  border-black border-2 md:border-4  rounded-[50px] p-5 h-auto md:h-[60%] w-[90%]  md:w-[50%] lg:w-[50%] mx-auto">
-              <form className="space-y-[15px] md:space-y-4 mx-auto max-w-[110%] md:max-w-[85%] lg:max-w-[78%] mt-5">
+            <div className="bg-gradient-to-r mb-4 from-[#ffffff] to-[#a6a6a6]  border-black border-2  rounded-[50px] p-5 h-auto md:h-[60%] w-[90%]  md:w-[50%] lg:w-[40%] mx-auto">
+              <form className="space-y-[17px] md:space-y-4 mx-auto max-w-[100%] md:max-w-[85%] lg:max-w-[78%] ">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <input
                     type="text"
@@ -169,7 +167,7 @@ function ContactPage() {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 
