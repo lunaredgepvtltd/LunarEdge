@@ -19,6 +19,13 @@ const Header = () => {
   const [showHeader, setShowHeader] = useState(true); // state to control visibility
   const [lastScrollY, setLastScrollY] = useState(0); // state to store last scroll position
 
+  const scrollToAboutUs = () => {
+    navigate('/')
+    setTimeout(() => {
+      window.scrollTo(0, 750);
+    }, 300);
+  };
+
   const controlHeader = () => {
     if (window.scrollY > lastScrollY) {
       setShowHeader(false); // hide header on scroll down
@@ -236,10 +243,10 @@ const Header = () => {
               // onMouseLeave={!isTouchDevice ? handleMouseLeave : null}
             >
               <div className="flex items-center rounded-full">
-                <span className="text-lg text-black">Industries</span>
+                <Link to={'/common'} className="text-lg text-black">Industries</Link>
                 {/* <IoIosArrowDown /> */}
               </div>
-              <div className="absolute bottom-0 left-0 w-0 h-[1px] rounded-md bg-black transition-all duration-300 group-hover:w-full"></div>
+              <div className="absolute bottom-0 left-0 w-0 h-[1.3px] py-[1px] rounded-md bg-black transition-all duration-300 group-hover:w-full"></div>
               {openDropdown === "industries" && (
                 <ul className="absolute top-[63px] left-0 rounded-lg shadow-lg bg-[#292828] w-40 pt-3 pb-3">
                   <li>
@@ -280,11 +287,11 @@ const Header = () => {
               // onMouseLeave={!isTouchDevice ? handleMouseLeave : null}
             >
               <div className="flex items-center justify-between rounded-full">
-                <span className="text-lg text-black">About LunarEdge</span>
+                <span className="text-lg text-black" onClick={scrollToAboutUs}>About LunarEdge</span>
                 {/* <IoIosArrowDown /> */}
               </div>
               
-              <div className="absolute bottom-0 left-0 w-0 h-[1px] rounded-md bg-black transition-all duration-300 group-hover:w-full"></div>
+              <div className="absolute bottom-0 left-0 w-0 h-[1.3px] py-[1px] rounded-md bg-black transition-all duration-300 group-hover:w-full"></div>
 
               {openDropdown === "aboutUs" && (
                 <ul className="absolute top-[63px] left-0 rounded-lg shadow-lg bg-[#292828] w-48 pt-3 pb-3">
@@ -333,7 +340,7 @@ const Header = () => {
               >
                 Career
               </Link>
-              <div className="absolute bottom-0 left-0 w-0 h-[1px] rounded-md bg-black transition-all duration-300 group-hover:w-full"></div>
+              <div className="absolute bottom-0 left-0 w-0 h-[1.3px] py-[1px] rounded-md bg-black transition-all duration-300 group-hover:w-full"></div>
             </li>
             {/* {openDropdown === "services" && (
             <div className="flex absolute top-[63px] left-0 rounded-lg shadow-lg bg-[#292828] w-auto pt-3 pb-3">
