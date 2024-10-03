@@ -21,9 +21,12 @@ const NewCareer = () => {
           </span>
         </div>
       </div>
-      <div className="bg-[url('../assets/BgServices2.png')] bg-cover bg-center h-full">
-        {/* Your content here */}
-      </div>
+      <div
+        style={{ backgroundImage: `url(${BgServices2})` }}
+        className="bg-cover bg-center h-full"
+      >
+        
+       </div>  
     </div>
   );
 };
