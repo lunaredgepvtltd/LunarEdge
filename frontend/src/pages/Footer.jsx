@@ -119,27 +119,21 @@ import { Link } from "react-router-dom";
               <ul className="mt-4 space-y-2 text-sm">
                 <li>
                   <Link
-                    to="/career"
+                    to="/common"
                     className="text-black transition hover:opacity-75 "
                   >
                     Career
                   </Link>
                 </li>
                 <li>
-                  {/* <Link
+                  <Link
                     to="/services"
-                    className="text-gray-300 transition hover:opacity-75 "
+                    className="text-black transition hover:opacity-75 "
                   >
                      Services
-                  </Link> */}
+                  </Link>
 
-                  {/* temporary-service-code  */}
-                  <p
-                    onClick={handleServiceClick}
-                    className="text-black transition hover:opacity-75 cursor-pointer"
-                  >
-                     Services
-                  </p>
+                 
                 </li>
                 <li>
                   <Link
@@ -175,7 +169,7 @@ import { Link } from "react-router-dom";
                 </li>
                 <li>
                   <Link
-                    to="/common"
+                    to="/contactus"
                     className="text-black transition hover:opacity-75 "
                   >
                     Meet the Team

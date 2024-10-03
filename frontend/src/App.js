@@ -115,8 +115,8 @@ function App() {
       {/* <PreLoader /> */}
       <div className="App">
 
-          {isHome &&  <div className="hidden lg:block fixed right-3 top-1/2 z-50 h-auto w-auto p-4">
-  {/* About Us Button */}
+          {/* {isHome &&  <div className="hidden lg:block fixed right-3 top-1/2 z-50 h-auto w-auto p-4">
+  About Us Button
   <div
     className={`h-1 rounded-sm w-7 mx-auto bg-black my-2 cursor-pointer 
       ${aboutUs || scrollY < 490 ? "scale-x-150" : ""} 
@@ -124,7 +124,7 @@ function App() {
     onClick={scrollToAboutUs}
   ></div>
 
-  {/* Values Button */}
+  Values Button
   <div
     className={`h-1 rounded-sm w-7 mx-auto bg-black my-2 cursor-pointer 
       ${value || (scrollY >= 495 && scrollY <= 1252) ? "scale-x-150" : ""} 
@@ -132,7 +132,7 @@ function App() {
     onClick={scrollToValues}
   ></div>
 
-  {/* Offers Button */}
+  Offers Button
   <div
     className={`h-1 rounded-sm w-7 mx-auto bg-black my-2 cursor-pointer 
       ${offers || (scrollY >= 1252 && scrollY < 2232) ? "scale-x-150" : ""} 
@@ -140,7 +140,7 @@ function App() {
     onClick={scrollToOffer}
   ></div>
 
-  {/* Technology Button */}
+  Technology Button
   <div
     className={`h-1 rounded-sm w-7 mx-auto bg-black my-2 cursor-pointer 
       ${technology || (scrollY >= 2232 && scrollY <= 2987) ? "scale-x-150" : ""} 
@@ -148,14 +148,14 @@ function App() {
     onClick={scrollToTechnology}
   ></div>
 
-  {/* Contact Us Button */}
+  Contact Us Button
   <div
     className={`h-1 rounded-sm w-7 mx-auto bg-black my-2 cursor-pointer 
       ${contact || scrollY >= 2988 ? "scale-x-150" : ""} 
       origin-right transition-all duration-300`}
     onClick={scrollToContactUs}
   ></div>
-</div>}
+</div>} */}
 
 
         {/* Lazy loading the Header */}

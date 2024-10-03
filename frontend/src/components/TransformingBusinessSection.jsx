@@ -145,7 +145,7 @@ const TransformingBusinessSection = () => {
           />
 
           {/* Conditionally render content based on active technology */}
-          <p className=" text-slate-900 absolute text-[8px] md:text-[14px] xl:text-3xl w-[50%] md:w-[40%] left-[25%] xl:left-[31%] top-[68%] md:top-[47%] ">
+          <p className=" text-white absolute text-[8px] md:text-[14px] xl:text-3xl w-[50%] md:w-[45%] left-[25%] xl:left-[31%] top-[68%] md:top-[47%] text-left">
             {activeTechnology ? technologyContent[activeTechnology] : "Click on a technology to learn more."}
           </p>
         </div>
