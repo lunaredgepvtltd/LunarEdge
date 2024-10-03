@@ -44,7 +44,7 @@ const NewLandingPage = () => {
             className="hidden lg:block w-[70%] h-[82%]"
           />
         </div>
-              
+        
       </div>
     </div>
   );

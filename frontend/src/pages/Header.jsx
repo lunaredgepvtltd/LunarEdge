@@ -223,7 +223,7 @@ const Header = () => {
   >
     Services
   </p> */}
-              <div className="absolute bottom-0 left-0 w-0 h-[1px] rounded-md bg-black transition-all duration-300 group-hover:w-full"></div>
+              <div className="absolute bottom-0 left-0 w-0 h-[1.3px] py-[1px] rounded-md bg-black transition-all duration-300 group-hover:w-full"></div>
             </li>
 
             {/* Industries Dropdown */}

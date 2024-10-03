@@ -163,7 +163,8 @@ const ServicesNewTheme = () => {
         <div className="hidden lg:block mx-[5%] px-4">
           <div className="grid xl:gap-10 gap- grid-cols-1 md:grid-cols-3 lg:grid-cols-4">
             {cards.map((card) => (
-              <div
+              <div className="bg-white px-4">
+                <div
                 key={card.id}
                 className="border rounded-[25px] p-4 h-[350px] transition duration-300 ease-in-out transform hover:grayscale-0  grayscale-100 cursor-pointer  flex flex-col justify-between"
                 style={{
@@ -179,6 +180,7 @@ const ServicesNewTheme = () => {
                   <button className="text-white">Read More</button>
                   <MdKeyboardArrowRight className="text-white" />
                 </div>
+              </div>
               </div>
             ))}
           </div>

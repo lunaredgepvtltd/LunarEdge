@@ -52,7 +52,7 @@ const CoreValues = () => {
     speed: 500,
     slidesToShow: 1, // Show 1 slide on smaller devices
     slidesToScroll: 1,
-    
+
     responsive: [
       {
         breakpoint: 1024, // Adjust settings for screens <= 1024px
@@ -93,31 +93,29 @@ const CoreValues = () => {
             {services.map((service, index) => (
               <div className="bg-white px-2">
                 <div
-                key={index}
-                className={` h-[280px] rounded-3xl drop-shadow overflow-hidden flex flex-col justify-between`}
-               
-              >
-              
-                <video
-                  className="absolute inset-0 object-cover w-full h-full opacity-60 z-0"
-                  loop
-                  muted
-                  autoPlay
+                  key={index}
+                  className={` h-[280px] rounded-3xl drop-shadow overflow-hidden flex flex-col justify-between`}
                 >
-                  <source src={service.videoSrc} type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
-                <div
-                  className={`flex flex-col h-full xl:py-9 py-3 px-4 xl:px-8 justify-center lg:justify-evenly xl:justify-between z-20`}
-                >
-                  <h3 className="mt-4 xl:text-xl text-lg font-semibold text-gray-900 ">
-                    {service.title}
-                  </h3>
-                  <p className="mt-2 xl:font-semibold xl:text-lg text-sm text-left ">
-                    {service.description}
-                  </p>
+                  <video
+                    className="absolute inset-0 object-cover w-full h-full opacity-60 z-0"
+                    loop
+                    muted
+                    autoPlay
+                  >
+                    <source src={service.videoSrc} type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+                  <div
+                    className={`flex flex-col h-full xl:py-9 py-3 px-4 xl:px-8 justify-center lg:justify-evenly xl:justify-between z-20`}
+                  >
+                    <h3 className="mt-4 xl:text-xl text-lg font-semibold text-gray-900 ">
+                      {service.title}
+                    </h3>
+                    <p className="mt-2 xl:font-semibold xl:text-lg text-sm text-left ">
+                      {service.description}
+                    </p>
+                  </div>
                 </div>
-              </div>
               </div>
             ))}
           </Slider>
