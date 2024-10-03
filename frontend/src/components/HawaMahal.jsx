@@ -1,5 +1,9 @@
 import React from "react";
 import hawaMahal from "../assets/hawaMahal.png";
+import hawaMahalPhone from "../assets/hawaMahalPhone.png";
+// import { useMediaQuery } from "react-responsive";
+// const isExtraSmallDevice = useMediaQuery({ maxWidth: 699 });
+
 const HawaMahal = () => {
   return (
     <div className="w-full h-[600px]">
