@@ -9,7 +9,7 @@ const FirstPage = () => {
         style={{ backgroundImage: `url(${bgLandingPage})` }}
       />
       <div className="relative z-10 h-[100%] items-center text-black  xl:w-[40%] lg:w-[50%] md:w-[45%] w-[80%] text-center mx-auto flex flex-col justify-center md:justify-evenly gap-[70px] ">
-        <h1 className="xl:text-6xl lg:text-5xl md:text-4xl text-3xl font-semibold">
+        <h1 className="xl:text-6xl lg:text-5xl md:text-4xl text-3xl font-semibold py-6">
           Smart Innovation Meets Infinity
         </h1>
         <div className="h-[200px] flex flex-col gap-6 justify-evenly">

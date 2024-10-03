@@ -19,7 +19,7 @@ const Hero2 = () => {
     <div>
       <FirstPage />
       <NewLandingPage /> 
-      <HawaMahal />
+      {/* <HawaMahal /> */}
       <OurJourney
         title="OUR JOURNEY"
         subtitle=" Established in 2024 with the goal “to create value through technology."
