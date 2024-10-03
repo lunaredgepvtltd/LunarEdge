@@ -10,8 +10,8 @@ const NewLandingPage = () => {
   const isExtraSmallDevice = useMediaQuery({ maxWidth: 699 });
 
   return (
-    <div className="relative  w-full h-screen flex">
-      <div className="md:w-[44%] w-[80%] relative h-[650px]  md:h-full">
+    <div className="relative  w-full md:h-screen h-[450px] flex ">
+      <div className="md:w-[44%] w-[100%] relative h-[375px]  md:h-full">
         <img
           src={`${isExtraSmallDevice ? smallAboutMoon : aboutMoon}`}
           alt="Picture of Moon"

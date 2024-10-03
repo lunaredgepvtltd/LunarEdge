@@ -7,7 +7,10 @@ import MoonImage from "../assets/bgLandingPage.png";
 import BgConTactUs from "../assets/BgContactUs.png";
 
 const ContactCard = ({ image, children }) => (
-  <div className="md:w-[25%] w-[90%] mx-auto bg-gradient-to-r from-[#a6a6a6] to-[#ffffff] rounded-lg flex flex-row md:flex-col items-center justify-between md:justify-evenly px-5 py-4 md:py-0  shadow-lg">
+  <div
+    className="md:w-[25%] w-[90%] mx-auto bg-gradient-to-r from-[#a6a6a6] to-[#ffffff] rounded-lg flex flex-row md:flex-col items-center justify-between
+   md:justify-evenly px-5 py-4 md:py-0  shadow-lg"
+  >
     <img
       src={image}
       alt=""
@@ -29,7 +32,7 @@ function ContactPage() {
       >
         {/* Your other content goes here */}
 
-        <div className="container z-10 mx-auto text-center mt-[5%] flex flex-col gap-5">
+        <div className="container z-10 mx-auto text-center mt-[5%] h-[100%] flex flex-col justify-between gap-5">
           <h2 className=" md:text-3xl text-xl font-normal mb-8">
             How we can help you?
           </h2>
@@ -68,20 +71,20 @@ function ContactPage() {
 
       <div className="bg-white ">
         <div className=" text-black p-10 text-center ">
-          <h1 className=" text-lg md:text-4xl lg:text-5xl uppercase font-normal tracking-wide">
+          <h1 className=" text-lg md:text-2xl lg:text-5xl uppercase font-normal tracking-wide">
             corporate office Address
           </h1>
         </div>
 
         {/* Google Map Section */}
 
-        <div className="w-full md:h-[200px] h-[300px] lg:h-[500px] md:mb-[200px] flex justify-center ">
+        <div className="w-full md:h-[200px] h-[300px] lg:h-auto  flex justify-center ">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d241201.8443352571!2d75.74948445094843!3d26.882945649020046!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396db50072a7f755%3A0x19a18bdba8efd3cf!2sLunarEdge%20IT%20Services%20Private%20Limited!5e0!3m2!1sen!2sus!4v1630929534187!5m2!1sen!2sus"
             style={{
               width:
                 window.innerWidth >= 1024
-                  ? "80%"
+                  ? "75%"
                   : window.innerWidth >= 768
                   ? "80%"
                   : window.innerWidth >= 425
@@ -105,63 +108,64 @@ function ContactPage() {
 
         {/* Contact Form Section */}
         <div
-          className="flex flex-col items-center "
+          className="  flex flex-col items-center"
           style={{
             backgroundImage: `url(${BgConTactUs})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
-            // filter: "opacity(0.5)"
           }}
         >
-          <h1 className="hidden md:block text-xs w-[90%] md:text-xl lg:text-3xl text-left font-normal text-black mb-2 md:mb-5 p-4 lg:p-10 ">
-            Thank you for your interest in LunarEdge’s services. Please fill the
-            form below. This will enable us to route your request to the
-            appropriate person to serve you better. Expected time of response
-            should be within 24 hours.
-          </h1>
-          <h2 className="text-xl  md:text-3xl text-black mb-8 tracking-wider font-bold">
-            CONTACT US
-          </h2>
-
-          <div className="bg-gradient-to-r mb-4 from-[#ffffff] to-[#a6a6a6]  border-black border-2 md:border-4  rounded-[50px] p-5 h-auto md:h-[60%] w-[90%]  md:w-[50%] lg:w-[50%] mx-auto">
-            <form className="space-y-[15px] md:space-y-4 mx-auto max-w-[110%] md:max-w-[85%] lg::max-w-[78%] mt-5">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <input
-                  type="text"
-                  placeholder="First Name"
-                  className="p-2 md:p-2 text-sm border rounded-3xl w-full placeholder:text-gray-500  placeholder:text-center focus:outline-none focus:border-[#a6a6a6] transition duration-300"
-                />
-                <input
-                  type="text"
-                  placeholder="Last Name"
-                  className="p-2 md:p-2  text-sm border rounded-3xl w-full placeholder:text-gray-500  placeholder:text-center focus:outline-none focus:border-[#a6a6a6] transition duration-300"
-                />
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <input
-                  type="email"
-                  placeholder="Email Address"
-                  className="p-2 md:p-2 text-sm border rounded-3xl w-full placeholder:text-gray-500 placeholder:text-center focus:outline-none focus:border-[#a6a6a6] transition duration-300"
-                />
-                <input
-                  type="tel"
-                  placeholder="Phone Number"
-                  className="p-2 md:p-2 text-sm border rounded-3xl w-full placeholder:text-gray-500 placeholder:text-center focus:outline-none focus:border-[#a6a6a6] transition duration-300"
-                />
-              </div>
-              <textarea
-                placeholder="Your Message"
-                className="p-2 text-sm md:p-2 border rounded-3xl w-full placeholder:text-gray-500 h:[100px] md:h-[150px] placeholder:text-center focus:outline-none focus:border-[#a6a6a6] transition duration-300"
-              ></textarea>
-              <div className="flex justify-center">
-                <button
-                  type="submit"
-                  className="text-center text-sm items-center bg-gradient-to-r from-[#ff5757] to-[#8c52ff] text-white py-2 md:py-3 px-4 md:px-6 rounded-full hover:scale-105 transition-transform duration-300 shadow-lg"
-                >
-                  Send Message
-                </button>
-              </div>
-            </form>
+          <div>
+            {" "}
+            <h1 className="hidden md:block text-xs w-[65%] mx-auto md:text-xl  text-center font-medium  text-black mb-2 md:mb-5 p-4 lg:p-10 ">
+              Thank you for your interest in LunarEdge’s services. Please fill
+              the form below. This will enable us to route your request to the
+              appropriate person to serve you better. Expected time of response
+              should be within 24 hours.
+            </h1>
+            <h2 className="text-xl  md:text-3xl text-center text-black mb-8 tracking-wider font-bold">
+              CONTACT US
+            </h2>
+            <div className="bg-gradient-to-r mb-4 from-[#ffffff] to-[#a6a6a6]  border-black border-2 md:border-4  rounded-[50px] p-5 h-auto md:h-[60%] w-[90%]  md:w-[50%] lg:w-[50%] mx-auto">
+              <form className="space-y-[15px] md:space-y-4 mx-auto max-w-[110%] md:max-w-[85%] lg:max-w-[78%] mt-5">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <input
+                    type="text"
+                    placeholder="First Name"
+                    className="p-2 md:p-2 text-sm border rounded-3xl w-full placeholder:text-gray-500  placeholder:text-center focus:outline-none focus:border-[#a6a6a6] transition duration-300"
+                  />
+                  <input
+                    type="text"
+                    placeholder="Last Name"
+                    className="p-2 md:p-2  text-sm border rounded-3xl w-full placeholder:text-gray-500  placeholder:text-center focus:outline-none focus:border-[#a6a6a6] transition duration-300"
+                  />
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <input
+                    type="email"
+                    placeholder="Email Address"
+                    className="p-2 md:p-2 text-sm border rounded-3xl w-full placeholder:text-gray-500 placeholder:text-center focus:outline-none focus:border-[#a6a6a6] transition duration-300"
+                  />
+                  <input
+                    type="tel"
+                    placeholder="Phone Number"
+                    className="p-2 md:p-2 text-sm border rounded-3xl w-full placeholder:text-gray-500 placeholder:text-center focus:outline-none focus:border-[#a6a6a6] transition duration-300"
+                  />
+                </div>
+                <textarea
+                  placeholder="Your Message"
+                  className="p-2 text-sm md:p-2 border rounded-3xl w-full placeholder:text-gray-500 h:[100px] md:h-[150px] placeholder:text-center focus:outline-none focus:border-[#a6a6a6] transition duration-300"
+                ></textarea>
+                <div className="flex justify-center">
+                  <button
+                    type="submit"
+                    className="text-center text-sm items-center bg-gradient-to-r from-[#ff5757] to-[#8c52ff] text-white py-2 md:py-3 px-4 md:px-6 rounded-full hover:scale-105 transition-transform duration-300 shadow-lg"
+                  >
+                    Send Message
+                  </button>
+                </div>
+              </form>
+            </div>
           </div>
         </div>
       </div>
