@@ -5,6 +5,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      boxShadow: {
+        service: '0 3px 8px rgba(0, 0, 0, 0.24)',
+      },
       animation: {
         'spin-slow': 'spin 80s linear infinite', // 8 seconds for slow spin
       },

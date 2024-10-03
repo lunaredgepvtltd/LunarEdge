@@ -3,14 +3,12 @@ import NewLandingPage from "../components/NewLandingPage";
 import CoreValues from "../components/CoreValueSection/CoreValues";
 import NewGetInTouch from "../components/NewGetInTouch";
 import FirstPage from "../components/FirstPage";
-import HawaMahal from "../components/HawaMahal";
 import OurJourney from "../components/OurJourney";
 import OurJourneyVidio from "../assets/OurJourneyVidio.mp4";
-
 import OurMissionVidio from "../assets/OurMissionVidio.mp4";
 import OurMission from "../components/OurMission";
 import OurVision from "../components/OurVision";
-import TimeLine from "../components/TimeLine";
+
 import TransformingBusinessSection from "../components/TransformingBusinessSection";
 
 
@@ -43,7 +41,7 @@ const Hero2 = () => {
 
       <TransformingBusinessSection/>
       <NewGetInTouch />
-      {/* <TimeLine/> */}
+    
     </div>
   );
 };
