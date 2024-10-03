@@ -334,7 +334,7 @@ const Header = () => {
             {/* career */}
             <li className="relative group ">
               <Link
-                to="/career"
+                to="/common"
                 className="h-full  rounded-full text-black text-lg cursor-pointer transition-all duration-300"
                 onClick={() => handleDropdownToggle()}
               >
@@ -465,7 +465,10 @@ const Header = () => {
                   // onClick={handleAboutUs}
                 >
                   <div className="flex gap-1 items-center">
-                    <span className=" text-md text-[#082847] hover:underline">
+                    <span className=" text-md text-[#082847] hover:underline" onClick={()=>{
+                      toggleMenu();
+                      scrollToAboutUs()
+                    }}>
                       About LunarEdge
                     </span>
                     {/* <IoIosArrowDown /> */}
@@ -518,7 +521,10 @@ const Header = () => {
                   <div className="flex gap-1 mr-2 items-center">
                     <Link
                       className="text-md text-[#082847] hover:underline"
-                      // onClick={handleServiceClick}
+                      onClick={()=>{
+                        toggleMenu();
+                        // handleServiceClick
+                      }}
                       to="/services"
                     >
                       Services
@@ -569,9 +575,9 @@ const Header = () => {
                   // onClick={handleIndustries}
                 >
                   <div className="flex gap-1 items-center ">
-                    <span className="text-md text-[#082847] hover:underline">
+                    <Link onClick={toggleMenu} to={'/common'} className="text-md text-[#082847] hover:underline">
                       Industries
-                    </span>
+                    </Link>
                     {/* <IoIosArrowDown /> */}
                   </div>
                   {/* Industries sub-items */}

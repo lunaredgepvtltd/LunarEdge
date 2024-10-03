@@ -10,16 +10,16 @@ const NewLandingPage = () => {
   const isExtraSmallDevice = useMediaQuery({ maxWidth: 699 });
 
   return (
-    <div className="relative  w-full md:h-screen h-[450px] flex ">
+    <div className="relative  w-full md:h-screen h-[415px] flex ">
       <div className=" md:w-[44%] w-[100%] relative h-[375px]  md:h-full">
         <img
           src={`${isExtraSmallDevice ? smallAboutMoon : aboutMoon}`}
           alt="Picture of Moon"
-          className="absolute -left-[73%] md:-left-[62%] md:h-[95%] h-full w-full  animate-spin-slow"
+          className="absolute -left-[78%] md:-left-[62%] md:h-[95%] h-full w-full  animate-spin-slow"
         />
       </div>
 
-      <div className="z-10 absolute left-[20%] w-[80%] md:w-[85%] h-auto md:h-full md:flex items-center gap-4">
+      <div className="z-10 absolute left-[23%] w-[74%] md:w-[79%] h-auto md:h-full md:flex items-center gap-4">
         <div className="w-full md:w-[50%] h-full md:h-[63%] flex flex-col gap-5">
           <h1 className=" text-left text-3xl font-medium ">ABOUT US</h1>
           <p className="text-left font-normal text-[14px] md:text-lg xl:text-2xl">
@@ -41,7 +41,7 @@ const NewLandingPage = () => {
           <img
             src={aboutHead}
             alt="Picture of tagline"
-            className="hidden lg:block w-[70%] h-[82%]"
+            className="hidden lg:block w-[60%] h-[72%]"
           />
         </div>
         

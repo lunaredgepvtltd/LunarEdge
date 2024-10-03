@@ -42,26 +42,26 @@ function ContactPage() {
 
           <div className=" h-[300px]    flex-col  flex md:flex-row justify-center gap-8 md:gap-9 text-sm ">
             <ContactCard image={callContactPage}>
-              <p className="md:mb-5 text-left md:text-center text-xs">
+              <p className="md:mb-5 text-left md:text-center text-xs md:text-lg">
                 0141-4512611 (Office)
               </p>
-              <p className="text-left md:text-center text-xs whitespace-nowrap">
+              <p className="text-left md:text-center text-xs md:text-[14px] whitespace-nowrap">
                 +91-9829011076 (Sandeep Katariya)
               </p>
-              <p className="text-left md:text-center text-xs">
+              <p className="text-left md:text-center text-xs md:text-[14px] pt-2">
                 +91-7760701155 (Sanjeev Ola)
               </p>
             </ContactCard>
 
             <ContactCard image={locContactPage}>
-              <p className="text-left md:text-center text-xs">
+              <p className="text-left md:text-center text-xs md:text-[14px]">
                 203, Manglam, Signature Tower, Lal Kothi, Gandhi Nagar, Jaipur,
                 Rajasthan - 302015
               </p>
             </ContactCard>
 
             <ContactCard image={mailContactPage}>
-              <p className="text-left md:text-center text-xs">
+              <p className="text-left md:text-center text-xs md:text-lg">
                 info@lunaredge.in
               </p>
             </ContactCard>
