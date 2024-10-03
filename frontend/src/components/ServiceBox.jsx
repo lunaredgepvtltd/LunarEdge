@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import ServiceBoxPointer from "../assets/ServiceBoxPointer.svg";
 import ServiceBoxArrow from "../assets/ServiceBoxArrow.svg";
+
+
 export const ServiceBox = ({ service, content, bgimg, key }) => {
   const [isHovered, setIsHovered] = useState(false);
 

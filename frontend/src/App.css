@@ -600,3 +600,17 @@ p{
    text-justify;
 }
 
+/* header-css  */
+
+.header-hidden {
+  opacity: 0;
+  transform: translateY(-20px); /* Adjust as needed */
+  transition: opacity 0.3s ease, transform 0.1s ease;
+}
+
+.header-visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+

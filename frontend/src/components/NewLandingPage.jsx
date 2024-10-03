@@ -1,39 +1,51 @@
 import React from "react";
-import hawaMahal from "../assets/hawaMahal.png";
+// import hawaMahal from "../assets/hawaMahal.png";
 import textimage from "../assets/textimage.png";
+import smallAboutMoon from "../assets/smallAboutMoon.png";
+import aboutMoon from "../assets/aboutMoon.png";
+import aboutHead from "../assets/aboutHead.png";
+import { useMediaQuery } from "react-responsive";
 
 const NewLandingPage = () => {
+  const isExtraSmallDevice = useMediaQuery({ maxWidth: 699 });
+
   return (
-    <div className="bg-custom-gradient h-screen pt-[60px] flex flex-col justify-evenly">
-      <h1 className="text-center text-4xl font-normal">ABOUT US</h1>
-      <div className="h-[430px]  flex  justify-evenly items-center">
+    <div className="relative  w-full md:h-screen h-[415px] flex ">
+      <div className=" md:w-[44%] w-[100%] relative h-[375px]  md:h-full">
         <img
-          src={hawaMahal}
-          alt="Picture of HawaMahal"
-          className="h-[90%] w-[20%]"
+          src={`${isExtraSmallDevice ? smallAboutMoon : aboutMoon}`}
+          alt="Picture of Moon"
+          className="absolute -left-[78%] md:-left-[62%] md:h-[95%] h-full w-full  animate-spin-slow"
         />
-        <div className="w-[30%] space-y-8 text-xl font-normal text-left">
-          <p className="text-left">At LunarEdge, we transform <span className="italic">“ideas into reality”.</span></p>
-          <p className="text-left">
+      </div>
+
+      <div className="z-10 absolute left-[23%] w-[74%] md:w-[79%] h-auto md:h-full md:flex items-center gap-4">
+        <div className="w-full md:w-[50%] h-full md:h-[63%] flex flex-col gap-5">
+          <h1 className=" text-left text-3xl font-medium ">ABOUT US</h1>
+          <p className="text-left font-normal text-[14px] md:text-lg xl:text-2xl">
             Founded with a vision to drive smart innovation, our mission is to
             bridge the gap between technology and human potential, empowering
             businesses to reach new heights.
           </p>
-          <p className="text-left">
-            Our tagline, <span className="italic">“Smart Innovation Meets Infinity”</span>, reflects our
-            commitment to endless possibilities and our pursuit of excellence in
-            every project we undertake. Whether it’s developing cutting-edge
-            software solutions or providing strategic IT consulting, we are
-            dedicated to delivering results that exceed expectations.
+          <p className=" text-left font-normal text-[14px] md:text-lg xl:text-2xl">
+            Our tagline,{" "}
+            <span className="italic">“Smart Innovation Meets Infinity”</span>,
+            reflects our commitment to endless possibilities and our pursuit of
+            excellence in every project we undertake. Whether it’s developing
+            cutting-edge software solutions or providing strategic IT
+            consulting, we are dedicated to delivering results that exceed
+            expectations.
           </p>
         </div>
-        <img
-          src={textimage}
-          alt="Picture of tagline"
-          className="h-[70%] w-[20%]"
-        />
+        <div className=" hidden w-[60%] h-[80%] text-right md:flex justify-center items-center">
+          <img
+            src={aboutHead}
+            alt="Picture of tagline"
+            className="hidden lg:block w-[60%] h-[72%]"
+          />
+        </div>
+        
       </div>
-      <span className="flex justify-center "><button className="text-white rounded-full py-4 px-6 text-lg bg-gradient-to-r from-[#ff5757] to-[#8c52ff]">Get in Touch</button></span>
     </div>
   );
 };
