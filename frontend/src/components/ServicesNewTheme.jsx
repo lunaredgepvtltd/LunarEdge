@@ -3,10 +3,8 @@ import { MdDescription, MdKeyboardArrowRight } from "react-icons/md";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
 import MoonImage from "../assets/bgLandingPage.png";
 import BgServices2 from "../assets/BgServices2.png";
-
 import AI_ML_Solutions from "../assets/Bg_AIML.png";
 import CLOUD_SOLUTIONS from "../assets/Bg_CLOUD.png";
 import WEB_DEVELOPEMENT from "../assets/Bg_WEBDEV.png";
@@ -77,7 +75,7 @@ const ServicesNewTheme = () => {
   ];
 
   const settings = {
-    dots: false,
+    dots: true,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
@@ -176,7 +174,8 @@ const ServicesNewTheme = () => {
         <div className="hidden lg:block mx-[10%] px-4">
           <div className="grid xl:gap-10 gap- grid-cols-1 md:grid-cols-3 lg:grid-cols-4">
             {cards.map((card) => (
-              <div
+              <div className="bg-white px-4">
+                <div
                 key={card.id}
                 className="border rounded-[25px] h-[350px] relative flex flex-col justify-between overflow-hidden hover:transition hover:duration-300 ease-in-out transform cursor-pointer"
               >
@@ -217,6 +216,7 @@ const ServicesNewTheme = () => {
                     )}
                   </div>
                 </div>
+              </div>
               </div>
             ))}
           </div>

@@ -3,7 +3,7 @@ import SideImage from "../assets/SideImageGetInTouch.png";
 
 const GetInTouch = () => {
   return (
-    <div className="flex md:flex-row flex-col-reverse items-center w-[100%] h-full bg-white md:p-0 p-4">
+    <div className="flex md:flex-row flex-col-reverse items-center w-[100%] h-full bg-white md:mb-8 p-4">
       <div className="md:w-[60%] p-6 w-full">
         <div className="flex flex-col items-center w-full">
           <h2 className="xl:text-5xl md:text-3xl font-bold text-gray-800 mb-4">

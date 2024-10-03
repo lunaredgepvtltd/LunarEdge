@@ -3,9 +3,9 @@ import React from "react";
 
 const OurMission = ({title,subtitle,content,vidiosrc,vidiotitle}) => {
   return (
-    <div className="flex md:flex-row flex-col w-full h-[600px] md:px-9 px-4 ">
-      <div className="md:w-[50%] w-[90%] h-[80%] md:text-3xl text-sm font-light flex flex-col justify-evenly pr-6">
-        <span className="">{title}</span>
+    <div className="md:mt-[5%] flex md:flex-row flex-col w-full h-[650px] py-8 md:px-9 px-4 ">
+      <div className="md:w-[50%] w-[90%] h-[23%] md:h-[80%] md:text-3xl text-sm font-normal flex flex-col justify-evenly pr-6">
+        <span className="font-semibold md:text-2xl text-lg">{title}</span>
         <p className="text-left">
          {subtitle}
         </p>
@@ -23,7 +23,7 @@ const OurMission = ({title,subtitle,content,vidiosrc,vidiotitle}) => {
           <source src={vidiosrc} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
-        <div className="absolute text-white text-xl md:text-3xl font-semibold w-[80%] md:w-[50%] text-center rounded-lg">
+        <div className="absolute text-white text-2xl md:text-3xl font-semibold w-[80%] md:w-[50%] text-center rounded-lg">
           {vidiotitle}
         </div>
       </div>

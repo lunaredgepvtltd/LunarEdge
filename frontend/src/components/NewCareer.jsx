@@ -1,7 +1,7 @@
 import React from "react";
 import bgLandingPage from "../assets/bgLandingPage.png";
-
-const FirstPage = () => {
+import BgServices2 from "../assets/BgServices2.png";
+const NewCareer = () => {
   return (
     <div className="h-screen w-full relative">
       <div
@@ -10,24 +10,28 @@ const FirstPage = () => {
       />
       <div className="relative z-10 h-[100%] items-center text-black  xl:w-[44%] lg:w-[50%] md:w-[45%] w-[90%] text-center mx-auto flex flex-col justify-center md:pb-5 md:justify-evenly gap-[70px] ">
         <h1 className="xl:text-7xl lg:text-5xl md:text-4xl text-4xl font-semibold py-6">
-          Smart Innovation Meets Infinity
+          JOIN OUR TEAM
         </h1>
         <div className="h-[200px] flex flex-col gap-6 justify-evenly">
-          <h3 className="md:text-3xl text-2xl ">
-            We transform innovative ideas into reality.
-          </h3>
+          <h3 className="md:text-3xl text-2xl ">Why work with us ?</h3>
           <span className="flex justify-center ">
-            <button
-              className="text-white rounded-full md:py-4 md:px-6 py-2 px-3 md:text-lg text-sm bg-gradient-to-r
-         from-[#ff5757] to-[#8c52ff]"
-            >
-              Get in Touch
-            </button>
+            At LunarEdge we believe in empowering creativity, fostering
+            innovation, and driving success. Join a collaborative environment
+            where your ideas matter
           </span>
         </div>
+      </div>
+      <div
+        style={{ backgroundImage: `url(${BgServices2})` }}
+        className="z-10 bg-cover bg-center h-full"
+      >
+        <h1 className="text-4xl">
+          Don’t see a position that matches your skills? Send us your resume at
+          hr@lunaredge.com. We’d love to hear from you.
+        </h1>
       </div>
     </div>
   );
 };
 
-export default FirstPage;
+export default NewCareer;

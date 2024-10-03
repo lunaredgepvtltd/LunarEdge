@@ -52,6 +52,7 @@ const CoreValues = () => {
     speed: 500,
     slidesToShow: 1, // Show 1 slide on smaller devices
     slidesToScroll: 1,
+
     responsive: [
       {
         breakpoint: 1024, // Adjust settings for screens <= 1024px
@@ -82,7 +83,7 @@ const CoreValues = () => {
 
   return (
     <div className="w-[95%] md:h-[700px] h-1/2 mx-auto px-4 sm:px-0 xl:px-8 flex flex-col justify-around">
-      <p className="mt-9 md:text-4xl text-2xl font-light leading-8 text-center">
+      <p className="mt-9 md:text-4xl text-xl font-light leading-8 text-center">
         Our core values that define who we are and how we work
       </p>
 
@@ -90,40 +91,30 @@ const CoreValues = () => {
         {!isLg ? (
           <Slider {...settings} className="block">
             {services.map((service, index) => (
-              <div
-                key={index}
-                className={`h-[280px] rounded-3xl drop-shadow overflow-hidden flex flex-col justify-between`}
-                onMouseEnter={(e) => {
-                  const video = e.currentTarget.querySelector("video");
-                  if (video) {
-                    video.play();
-                  }
-                }}
-                onMouseLeave={(e) => {
-                  const video = e.currentTarget.querySelector("video");
-                  if (video) {
-                    video.pause();
-                    video.currentTime = 0; // Optional: Reset to the beginning
-                  }
-                }}
-              >
-                <video
-                  className="absolute inset-0 object-cover w-full h-full opacity-60 z-10"
-                  loop
-                  muted
-                >
-                  <source src={service.videoSrc} type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
+              <div className="bg-white px-2">
                 <div
-                  className={`flex flex-col h-full xl:py-9 py-3 px-4 xl:px-8 lg:justify-evenly xl:justify-between z-20`}
+                  key={index}
+                  className={` h-[280px] rounded-3xl drop-shadow overflow-hidden flex flex-col justify-between`}
                 >
-                  <h3 className="mt-4 xl:text-xl text-lg font-semibold text-gray-900 ">
-                    {service.title}
-                  </h3>
-                  <p className="mt-2 xl:font-semibold xl:text-lg text-sm text-left ">
-                    {service.description}
-                  </p>
+                  <video
+                    className="absolute inset-0 object-cover w-full h-full opacity-60 z-0"
+                    loop
+                    muted
+                    autoPlay
+                  >
+                    <source src={service.videoSrc} type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+                  <div
+                    className={`flex flex-col h-full xl:py-9 py-3 px-4 xl:px-8 justify-center lg:justify-evenly xl:justify-between z-20`}
+                  >
+                    <h3 className="mt-4 xl:text-xl text-lg font-semibold text-gray-900 ">
+                      {service.title}
+                    </h3>
+                    <p className="mt-2 xl:font-semibold xl:text-lg text-sm text-left ">
+                      {service.description}
+                    </p>
+                  </div>
                 </div>
               </div>
             ))}
