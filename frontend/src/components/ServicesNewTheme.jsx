@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { MdKeyboardArrowRight } from "react-icons/md";
+import { MdDescription, MdKeyboardArrowRight } from "react-icons/md";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -15,27 +15,64 @@ import NEXTGEN_GAME from "../assets/Bg_NEXTGAME.png";
 import IT_CONSULTING from "../assets/Bg_CONSULTING.png";
 import HARWARE_SUPPLY_SOLUTIONS from "../assets/Bg_HARDWARE.png";
 import CYBER_SECURITY from "../assets/Bg_CYBER.png";
-// import TimeLine from "../components/TimeLine";
 
 const ServicesNewTheme = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [hoveredCardId, setHoveredCardId] = useState(null);
 
   const cards = [
-    { id: 1, title: "Web Development", image: WEB_DEVELOPEMENT },
+    {
+      id: 1,
+      title: "Web Development",
+      image: WEB_DEVELOPEMENT,
+      description:
+        "Custom websites designed for performance and user experience.",
+    },
     {
       id: 2,
       title: "Software App Development",
       image: SOFTWARE_APP_DEVELOPMENT,
+      description:
+        "Innovative software solutions to enhance productivity and growth.",
     },
-    { id: 3, title: "IT Consulting", image: IT_CONSULTING },
-    { id: 4, title: "Cloud Solution", image: CLOUD_SOLUTIONS },
-    { id: 5, title: "AI & ML Solution", image: AI_ML_Solutions },
-    { id: 6, title: "NEXT-GEN GAME DEVELOPMENT", image: NEXTGEN_GAME },
-    { id: 7, title: "Cyber Security Services", image: CYBER_SECURITY },
+    {
+      id: 3,
+      title: "IT Consulting",
+      image: IT_CONSULTING,
+      description:
+        "Expert guidance to optimize your IT strategy and infrastructure.",
+    },
+    {
+      id: 4,
+      title: "Cloud Solution",
+      image: CLOUD_SOLUTIONS,
+      description:
+        "Scalable and secure cloud services tailored for your business.",
+    },
+    {
+      id: 5,
+      title: "AI & ML Solution",
+      image: AI_ML_Solutions,
+      description:
+        "Intelligent solutions that leverage AI and machine learning for data-driven decisions.",
+    },
+    {
+      id: 6,
+      title: "NEXT-GEN GAME DEVELOPMENT",
+      image: NEXTGEN_GAME,
+      description: "Engaging games built with the latest technologies.",
+    },
+    {
+      id: 7,
+      title: "Cyber Security Services",
+      image: CYBER_SECURITY,
+      description: "Robust security measures to protect your data and systems.",
+    },
     {
       id: 8,
       title: "Hardware Supply And Solution",
       image: HARWARE_SUPPLY_SOLUTIONS,
+      description: "Reliable hardware solutions to support your operations.",
     },
   ];
 
@@ -103,30 +140,6 @@ const ServicesNewTheme = () => {
 
   return (
     <>
-      {/* <div className="relative flex flex-col items-center justify-center h-screen overflow-hidden">
-        
-        <img
-          src={MoonImage}
-          alt="Half Moon"
-          className="absolute top-0 left-0 w-full h-auto lg:bg-cover"
-          style={{
-            zIndex: -1,
-          }}
-        />
-
-        <h1 className="absolute top-1/4 text-2xl md:text-7xl left-1/2 transform -translate-x-1/2 font-normal text-black">
-          Services
-        </h1>
-
-        <h2 className="absolute text-xl md:text-6xl left-1/2 transform -translate-x-1/2 -translate-y-1/2 font-light text-black ">
-          What we do
-        </h2>
-
-        <p className="absolute text-base md:text-4xl left-1/2 transform -translate-x-1/2 mt-[25%] text-black font-normal  text-center ">
-          With technology, we advance your business
-        </p>
-      </div>  */}
-
       <div className="relative flex flex-col items-center justify-center  gap-8 md:gap-10 lg:gap-16 h-[600px] md:h-screen overflow-hidden">
         {/* Half Moon */}
         <img
@@ -160,24 +173,49 @@ const ServicesNewTheme = () => {
           backgroundPosition: "center",
         }}
       >
-        <div className="hidden lg:block mx-[5%] px-4">
+        <div className="hidden lg:block mx-[10%] px-4">
           <div className="grid xl:gap-10 gap- grid-cols-1 md:grid-cols-3 lg:grid-cols-4">
             {cards.map((card) => (
               <div
                 key={card.id}
-                className="border rounded-[25px] p-4 h-[350px] transition duration-300 ease-in-out transform hover:grayscale-0  grayscale-100 cursor-pointer  flex flex-col justify-between"
-                style={{
-                  backgroundImage: `url(${card.image})`,
-                  backgroundSize: "cover",
-                  backgroundPosition: "center",
-                }}
+                className="border rounded-[25px] h-[350px] relative flex flex-col justify-between overflow-hidden hover:transition hover:duration-300 ease-in-out transform cursor-pointer"
               >
-                <h3 className="text-sm xl:text-lg font-semibold mb-4 text-center mx-2 text-white">
-                  {card.title}
-                </h3>
-                <div className="flex items-center justify-center mt-10">
-                  <button className="text-white">Read More</button>
-                  <MdKeyboardArrowRight className="text-white" />
+                <div
+                  className="relative h-full w-full"
+                  onMouseEnter={() => setHoveredCardId(card.id)}
+                  onMouseLeave={() => setHoveredCardId(null)}
+                >
+                  {/* Full-size image */}
+                  <img
+                    src={card.image}
+                    alt={card.title}
+                    className="absolute inset-0 w-full h-full object-cover z-0 transition duration-300"
+                    style={{
+                      filter:
+                        hoveredCardId === card.id
+                          ? "blur(2px)"
+                          : "grayscale(100%)", // Apply effects on hover
+                    }}
+                  />
+                  <div className="absolute inset-0 bg-black opacity-40 z-5"></div>
+
+                  {/* Overlay content */}
+                  <div className="relative z-10 p-4 h-full flex flex-col justify-between">
+                    {hoveredCardId === card.id ? ( // Show title and description on hover
+                      <>
+                        <h3 className="text-lg font-semibold pt-10 text-left text-white">
+                          {card.title}
+                        </h3>
+                        <p className="text-white mb-6 text-left">
+                          {card.description}
+                        </p>
+                      </>
+                    ) : (
+                      <h3 className="text-lg pt-10 font-semibold text-left text-white">
+                        {card.title}
+                      </h3>
+                    )}
+                  </div>
                 </div>
               </div>
             ))}
@@ -186,115 +224,121 @@ const ServicesNewTheme = () => {
 
         {/* for mobile  */}
 
-        <div className="md:hidden p-[10%] px-4">
-          {/* <Slider {...settings}>
-            {cards.map((card) => (
-              <div
-                key={card.id}
-                className="border rounded-[25px] p-4 h-[300px]  transition duration-300 ease-in-out transform hover:grayscale-0  grayscale-100 cursor-pointer flex flex-col justify-between"
-                style={{
-                  backgroundImage: `url(${card.image})`,
-                  backgroundSize: "cover",
-                  backgroundPosition: "center",
-                }}
-              >
-                <h3 className="text-xl font-semibold mb-4 text-center mx-2">
-                  {card.title}
-                </h3>
-                <div className="flex items-center justify-center mt-10">
-                  <button className="text-white">Read More</button>
-                  <MdKeyboardArrowRight className="text-white" />
-                </div>
-              </div>
-            ))}
-          </Slider> */}
-
+        {/* <div className="md:hidden p-[10%] px-4">
           <Slider {...settings}>
             {cards.map((card) => (
               <div
                 key={card.id}
-                className="border rounded-[25px] h-[300px] relative flex flex-col justify-between overflow-hidden transition duration-300 ease-in-out transform hover:grayscale-0 grayscale-100 cursor-pointer"
+                className="border rounded-[25px] h-[300px] relative flex flex-col justify-between overflow-hidden transition duration-300 ease-in-out transform cursor-pointer"
+                onMouseEnter={() => setHoveredCardId(card.id)}
+                onMouseLeave={() => setHoveredCardId(null)}
               >
                 <img
                   src={card.image}
                   alt={card.title}
                   className="absolute inset-0 w-full h-full object-cover z-0"
+                  style={{
+                    filter:
+                      hoveredCardId === card.id
+                        ? "blur(2px)"
+                        : "grayscale(100%)",
+                  }}
                 />
-
                 <div className="relative z-10 p-4 h-full flex flex-col justify-between">
                   <h3 className="text-lg font-semibold text-center text-white">
                     {card.title}
                   </h3>
-                  <div className="flex items-center justify-center mt-10">
-                    <button className="text-white">Read More</button>
-                    <MdKeyboardArrowRight className="text-white" />
-                  </div>
+                  {hoveredCardId === card.id && (
+                    <p className="text-white mb-4 text-center">
+                      {card.description}
+                    </p>
+                  )}
                 </div>
-
                 <div className="absolute inset-0 bg-black opacity-40 z-5"></div>
               </div>
             ))}
           </Slider>
+        </div> */}
+
+<div className="md:hidden p-[10%] px-4">
+  <Slider {...settings}>
+    {cards.map((card) => (
+      <div
+        key={card.id}
+        className="border rounded-[25px] h-[300px] relative flex flex-col justify-between overflow-hidden transition duration-300 ease-in-out transform cursor-pointer"
+        onMouseEnter={() => setHoveredCardId(card.id)}
+        onMouseLeave={() => setHoveredCardId(null)}
+      >
+        <img
+          src={card.image}
+          alt={card.title}
+          className="absolute inset-0 w-full h-full object-cover z-0"
+          style={{
+            filter:
+              hoveredCardId === card.id
+                ? "blur(2px)"
+                : "grayscale(100%)",
+          }}
+        />
+        <div className="absolute inset-0 bg-black opacity-40 z-5 "></div>
+        
+        <div className="relative z-10 p-5 h-full flex flex-col justify-between">
+          <h3 className="text-md  font-semibold  pt-10 text-left text-white">
+            {card.title}
+          </h3>
+          {hoveredCardId === card.id && (
+            <p className="text-md text-white mb-6 text-left">
+              {card.description}
+            </p>
+          )}
         </div>
+      </div>
+    ))}
+  </Slider>
+</div>
+
 
         {/* medium device scroll ri8  side  */}
         <div
           className="hidden md:block lg:hidden lg:mx-[5%] px-4 mb-5  "
           style={{ direction: "rtl" }}
         >
-          {/* <Slider {...settings2}>
-            {cards.map((card) => (
-              <div
-                key={card.id}
-                className="border rounded-[25px] h-[300px]  transition duration-300 ease-in-out transform hover:grayscale-0  grayscale-100 cursor-pointer flex flex-col justify-between "
-                // style={{
-                //   backgroundImage: `url(${card.image})`,
-                //   backgroundSize: "cover",
-                //   backgroundPosition: "center",
-                //   filter: 'opacity(0.8)',
-                // }}
-              >
-                <img
-                  src={card.image}
-                  alt={card.title}
-                  className="w-full h-[200px] object-cover rounded-[25px]"
-                />
-                
-                <h3 className="text-lg font-semibold text-center">
-                  {card.title}
-                </h3>
-                <div className="flex items-center justify-center mt-10">
-                  <button className="text-black dark:text-white">
-                    Read More
-                  </button>
-                  <MdKeyboardArrowRight className="text-black   dark:text-white " />
-                </div>
-              </div>
-            ))}
-          </Slider> */}
-
           <Slider {...settings2}>
             {cards.map((card) => (
               <div
                 key={card.id}
-                className="border rounded-[25px] h-[300px] relative flex flex-col justify-between overflow-hidden transition duration-300 ease-in-out transform hover:grayscale-0 grayscale-100 cursor-pointer"
+                className="border rounded-[25px] h-[300px] relative flex flex-col justify-between overflow-hidden hover:transition hover:duration-300 ease-in-out transform hover:grayscale-0 grayscale-100 cursor-pointer"
+                onMouseEnter={() => setHoveredCardId(card.id)}
+                onMouseLeave={() => setHoveredCardId(null)}
               >
-                {/* Full-size image */}
                 <img
                   src={card.image}
                   alt={card.title}
                   className="absolute inset-0 w-full h-full object-cover z-0"
+                  style={{
+                    filter:
+                      hoveredCardId === card.id
+                        ? "blur(2px)"
+                        : "grayscale(100%)", // Grayscale and blur effect
+                  }}
                 />
 
                 {/* Overlay content */}
                 <div className="relative z-10 p-4 h-full flex flex-col justify-between">
-                  <h3 className="text-lg font-semibold text-center text-white">
-                    {card.title}
-                  </h3>
-                  <div className="flex items-center justify-center mt-10">
-                    <button className="text-white">Read More</button>
-                    <MdKeyboardArrowRight className="text-white" />
-                  </div>
+                  {hoveredCardId === card.id ? ( // Show title and description on hover
+                    <>
+                      <h3 className="text-lg font-semibold text-center text-white">
+                        {card.title}
+                      </h3>
+                      <p className="text-white mb-4 text-center">
+                        {card.description}
+                      </p>
+                    </>
+                  ) : (
+                    <h3 className="text-lg font-semibold text-center text-white">
+                      {card.title}
+                    </h3>
+                  )}
                 </div>
 
                 {/* Background overlay for better text visibility */}
@@ -307,52 +351,45 @@ const ServicesNewTheme = () => {
         {/* md scroll left side  */}
 
         <div className="hidden md:block lg:hidden lg:mx-[5%] px-4">
-          {/* <Slider {...settings}>
-            {cards.slice(1).map((card) => (
-              <div
-                key={card.id}
-                className="border rounded-[25px] p-4 h-[300px] transition duration-300 ease-in-out transform hover:grayscale-0  grayscale-100 cursor-pointer flex flex-col justify-between "
-                style={{
-                  backgroundImage: `url(${card.image})`,
-                  backgroundSize: "cover",
-                  backgroundPosition: "center",
-                  filter: "opacity(0.8)",
-                }}
-              >
-                <h3 className="text-lg font-semibold text-center">
-                  {card.title}
-                </h3>
-                <div className="flex items-center justify-center  mt-10">
-                  <button className="text-black dark:text-white ">
-                    Read More
-                  </button>
-                  <MdKeyboardArrowRight className="text-black dark:text-white " />
-                </div>
-              </div>
-            ))}
-          </Slider> */}
           <Slider {...settings}>
             {cards.map((card) => (
               <div
                 key={card.id}
                 className="border rounded-[25px] h-[300px] relative flex flex-col justify-between overflow-hidden transition duration-300 ease-in-out transform hover:grayscale-0 grayscale-100 cursor-pointer"
+                onMouseEnter={() => setHoveredCardId(card.id)}
+                onMouseLeave={() => setHoveredCardId(null)}
               >
                 {/* Full-size image */}
                 <img
                   src={card.image}
                   alt={card.title}
                   className="absolute inset-0 w-full h-full object-cover z-0"
+                  style={{
+                    filter:
+                      hoveredCardId === card.id
+                        ? "blur(2px)"
+                        : "grayscale(100%)", // Grayscale and blur effect
+                  }}
                 />
 
                 {/* Overlay content */}
                 <div className="relative z-10 p-4 h-full flex flex-col justify-between">
-                  <h3 className="text-lg font-semibold text-center text-white">
-                    {card.title}
-                  </h3>
-                  <div className="flex items-center justify-center mt-10">
-                    <button className="text-white">Read More</button>
-                    <MdKeyboardArrowRight className="text-white" />
-                  </div>
+                  {hoveredCardId === card.id ? ( // Show title and description on hover
+                    <>
+                      <h3 className="text-lg font-semibold text-center text-white">
+                        {card.title}
+                      </h3>
+                      <p className="text-white mb-4 text-center">
+                        {card.description}
+                      </p>
+                    </>
+                  ) : (
+                    <>
+                      <h3 className="text-lg font-semibold text-center text-white">
+                        {card.title}
+                      </h3>
+                    </>
+                  )}
                 </div>
 
                 {/* Background overlay for better text visibility */}
@@ -362,8 +399,6 @@ const ServicesNewTheme = () => {
           </Slider>
         </div>
       </div>
-
-      {/* <TimeLine/> */}
     </>
   );
 };
