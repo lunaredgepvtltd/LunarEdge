@@ -15,11 +15,11 @@ const NewLandingPage = () => {
         <img
           src={`${isExtraSmallDevice ? smallAboutMoon : aboutMoon}`}
           alt="Picture of Moon"
-          className="absolute -left-[50%] md:h-[95%] h-full w-full  animate-spin-slow"
+          className="absolute -left-[70%] md:h-[95%] h-full w-full  animate-spin-slow"
         />
       </div>
 
-      <div className="absolute left-[20%] w-full md:w-[80%] h-auto md:h-full p-3 md:p-8 md:flex items-center gap-4">
+      <div className="absolute left-[20%] w-[80%] h-auto md:h-full p-3 md:p-8 md:flex items-center gap-4">
         <div className="w-full md:w-[50%] h-full md:h-[60%] flex flex-col gap-5 p-3">
           <h1 className=" text-left text-3xl font-medium ">ABOUT US</h1>
           <p className="text-left font-normal text-[14px] md:text-lg xl:text-2xl">
