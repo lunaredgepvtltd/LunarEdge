@@ -10,6 +10,7 @@ import OurMission from "../components/OurMission";
 import OurVision from "../components/OurVision";
 
 import TransformingBusinessSection from "../components/TransformingBusinessSection";
+import HawaMahal from "../components/HawaMahal";
 
 
 const Hero2 = () => {
