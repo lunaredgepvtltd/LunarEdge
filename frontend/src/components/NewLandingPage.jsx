@@ -19,7 +19,7 @@ const NewLandingPage = () => {
         />
       </div>
 
-      <div className="z-10 absolute left-[20%] w-[80%] md:w-[85%] h-auto md:h-full md:flex items-center gap-4">
+      <div className="z-10 absolute left-[22%] w-[76%] md:w-[85%] h-auto md:h-full md:flex items-center gap-4">
         <div className="w-full md:w-[50%] h-full md:h-[63%] flex flex-col gap-5">
           <h1 className=" text-left text-3xl font-medium ">ABOUT US</h1>
           <p className="text-left font-normal text-[14px] md:text-lg xl:text-2xl">

@@ -3,10 +3,8 @@ import { MdKeyboardArrowRight } from "react-icons/md";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
 import MoonImage from "../assets/bgLandingPage.png";
 import BgServices2 from "../assets/BgServices2.png";
-
 import AI_ML_Solutions from "../assets/Bg_AIML.png";
 import CLOUD_SOLUTIONS from "../assets/Bg_CLOUD.png";
 import WEB_DEVELOPEMENT from "../assets/Bg_WEBDEV.png";
@@ -40,7 +38,7 @@ const ServicesNewTheme = () => {
   ];
 
   const settings = {
-    dots: false,
+    dots: true,
     infinite: true,
     speed: 500,
     slidesToShow: 1,

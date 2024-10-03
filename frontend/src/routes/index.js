@@ -31,7 +31,7 @@ const router = createBrowserRouter([
       },
       {
         path: "career",
-        element: <NewCareer />,
+        element: <Common />,
       },
       {
         path: "admin",

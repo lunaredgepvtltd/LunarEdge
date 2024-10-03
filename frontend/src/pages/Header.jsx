@@ -283,7 +283,7 @@ const Header = () => {
                 <span className="text-lg text-black">About LunarEdge</span>
                 {/* <IoIosArrowDown /> */}
               </div>
-              
+
               <div className="absolute bottom-0 left-0 w-0 h-[1px] rounded-md bg-black transition-all duration-300 group-hover:w-full"></div>
 
               {openDropdown === "aboutUs" && (
@@ -446,7 +446,7 @@ const Header = () => {
                     className="h-auto w-[80px] hidden"
                   />
                 </Link>
-                <button className="text-4xl " onClick={toggleMenu} >
+                <button className="text-4xl " onClick={toggleMenu}>
                   <IoIosClose />
                 </button>
               </div>

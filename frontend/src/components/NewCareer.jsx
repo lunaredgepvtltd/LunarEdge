@@ -23,10 +23,13 @@ const NewCareer = () => {
       </div>
       <div
         style={{ backgroundImage: `url(${BgServices2})` }}
-        className="bg-cover bg-center h-full"
+        className="z-10 bg-cover bg-center h-full"
       >
-        
-       </div>  
+        <h1 className="text-4xl">
+          Don’t see a position that matches your skills? Send us your resume at
+          hr@lunaredge.com. We’d love to hear from you.
+        </h1>
+      </div>
     </div>
   );
 };
