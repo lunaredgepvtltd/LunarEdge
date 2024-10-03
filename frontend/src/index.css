@@ -2,18 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap');
-body{
-    /* font-family: "Mochiy Pop One", sans-serif; */
-    width: 100%;
-    height: 100%;
-    
-        font-family: "Roboto", sans-serif;
-        font-weight: 500;
-        font-style: normal;
-        
-      
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+/* @import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap'); */
+body {
+  /* font-family: "Mochiy Pop One", sans-serif; */
+  width: 100%;
+  height: 100%;
+
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 500;
+  font-style: normal;
 }
-p{
-    text-align: left;
+p {
+  text-align: left;
 }
