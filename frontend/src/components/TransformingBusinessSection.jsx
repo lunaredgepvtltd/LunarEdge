@@ -49,7 +49,7 @@ const TransformingBusinessSection = () => {
   }, [technologies]);
 
   return (
-    <div className="w-full h-screen md:p-5 mt-10">
+    <div className="w-full h-screen md:px-5 md:mt-14">
       <div className="w-[97%] h-[80%] md:h-full mx-auto flex flex-col justify-between">
         {/* heading-div */}
         <div className="w-full md:w-[50%] h-[40%] md:h-[60%] lg:h-auto mx-auto flex flex-col gap-5 md:gap-1 justify-center items-center">
