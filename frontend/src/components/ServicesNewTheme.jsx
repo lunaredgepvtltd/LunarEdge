@@ -171,60 +171,63 @@ const ServicesNewTheme = () => {
           backgroundPosition: "center",
         }}
       >
+
+
+        {/* for desktop */}
         <div className="hidden lg:block mx-[10%] px-4">
           <div className="grid xl:gap-10 gap- grid-cols-1 md:grid-cols-3 lg:grid-cols-4">
             {cards.map((card) => (
               <div className="bg-white px-4">
                 <div
-                key={card.id}
-                className="border rounded-[25px] h-[350px] relative flex flex-col justify-between overflow-hidden hover:transition hover:duration-300 ease-in-out transform cursor-pointer"
-              >
-                <div
-                  className="relative h-full w-full"
-                  onMouseEnter={() => setHoveredCardId(card.id)}
-                  onMouseLeave={() => setHoveredCardId(null)}
+                  key={card.id}
+                  className="border rounded-[25px] h-[350px] relative flex flex-col justify-between overflow-hidden hover:transition hover:duration-300 ease-in-out transform cursor-pointer"
                 >
-                  {/* Full-size image */}
-                  <img
-                    src={card.image}
-                    alt={card.title}
-                    className="absolute inset-0 w-full h-full object-cover z-0 transition duration-300"
-                    style={{
-                      filter:
-                        hoveredCardId === card.id
-                          ? "blur(2px)"
-                          : "grayscale(100%)", // Apply effects on hover
-                    }}
-                  />
-                  <div className="absolute inset-0 bg-black opacity-40 z-5"></div>
+                  <div
+                    className="relative h-full w-full"
+                    onMouseEnter={() => setHoveredCardId(card.id)}
+                    onMouseLeave={() => setHoveredCardId(null)}
+                  >
+                 
+                    <img
+                      src={card.image}
+                      alt={card.title}
+                      className="absolute inset-0 w-full h-full object-cover z-0 transition duration-300"
+                      style={{
+                        filter:
+                          hoveredCardId === card.id
+                            ? "blur(2px)"
+                            : "grayscale(100%)", 
+                      }}
+                    />
+                    <div className="absolute inset-0 bg-black opacity-40 z-5"></div>
 
-                  {/* Overlay content */}
-                  <div className="relative z-10 p-4 h-full flex flex-col justify-between">
-                    {hoveredCardId === card.id ? ( // Show title and description on hover
-                      <>
-                        <h3 className="text-lg font-semibold pt-10 text-left text-white">
+                  
+                    <div className="relative z-10 p-4 h-full flex flex-col justify-between">
+                      {hoveredCardId === card.id ? ( 
+                        <>
+                          <h3 className="text-lg font-semibold pt-10 text-left text-white">
+                            {card.title}
+                          </h3>
+                          <p className="text-white mb-6 text-left">
+                            {card.description}
+                          </p>
+                        </>
+                      ) : (
+                        <h3 className="text-lg pt-10 font-semibold text-left text-white">
                           {card.title}
                         </h3>
-                        <p className="text-white mb-6 text-left">
-                          {card.description}
-                        </p>
-                      </>
-                    ) : (
-                      <h3 className="text-lg pt-10 font-semibold text-left text-white">
-                        {card.title}
-                      </h3>
-                    )}
+                      )}
+                    </div>
                   </div>
                 </div>
-              </div>
               </div>
             ))}
           </div>
         </div>
 
-        {/* for mobile  */}
+      {/* for mobile */}
 
-        {/* <div className="md:hidden p-[10%] px-4">
+        <div className="md:hidden p-[10%] px-4">
           <Slider {...settings}>
             {cards.map((card) => (
               <div
@@ -244,59 +247,22 @@ const ServicesNewTheme = () => {
                         : "grayscale(100%)",
                   }}
                 />
-                <div className="relative z-10 p-4 h-full flex flex-col justify-between">
-                  <h3 className="text-lg font-semibold text-center text-white">
+                <div className="absolute inset-0 bg-black opacity-40 z-5 "></div>
+
+                <div className="relative z-10 p-5 h-full flex flex-col justify-between">
+                  <h3 className="text-md  font-semibold  pt-10 text-left text-white">
                     {card.title}
                   </h3>
                   {hoveredCardId === card.id && (
-                    <p className="text-white mb-4 text-center">
+                    <p className="text-md text-white mb-6 text-left">
                       {card.description}
                     </p>
                   )}
                 </div>
-                <div className="absolute inset-0 bg-black opacity-40 z-5"></div>
               </div>
             ))}
           </Slider>
-        </div> */}
-
-<div className="md:hidden p-[10%] px-4">
-  <Slider {...settings}>
-    {cards.map((card) => (
-      <div
-        key={card.id}
-        className="border rounded-[25px] h-[300px] relative flex flex-col justify-between overflow-hidden transition duration-300 ease-in-out transform cursor-pointer"
-        onMouseEnter={() => setHoveredCardId(card.id)}
-        onMouseLeave={() => setHoveredCardId(null)}
-      >
-        <img
-          src={card.image}
-          alt={card.title}
-          className="absolute inset-0 w-full h-full object-cover z-0"
-          style={{
-            filter:
-              hoveredCardId === card.id
-                ? "blur(2px)"
-                : "grayscale(100%)",
-          }}
-        />
-        <div className="absolute inset-0 bg-black opacity-40 z-5 "></div>
-        
-        <div className="relative z-10 p-5 h-full flex flex-col justify-between">
-          <h3 className="text-md  font-semibold  pt-10 text-left text-white">
-            {card.title}
-          </h3>
-          {hoveredCardId === card.id && (
-            <p className="text-md text-white mb-6 text-left">
-              {card.description}
-            </p>
-          )}
         </div>
-      </div>
-    ))}
-  </Slider>
-</div>
-
 
         {/* medium device scroll ri8  side  */}
         <div
@@ -307,7 +273,7 @@ const ServicesNewTheme = () => {
             {cards.map((card) => (
               <div
                 key={card.id}
-                className="border rounded-[25px] h-[300px] relative flex flex-col justify-between overflow-hidden hover:transition hover:duration-300 ease-in-out transform hover:grayscale-0 grayscale-100 cursor-pointer"
+                className="border rounded-[25px] h-[280px] md:h-[300px] relative flex flex-col justify-between overflow-hidden transition-all duration-300 ease-in-out cursor-pointer"
                 onMouseEnter={() => setHoveredCardId(card.id)}
                 onMouseLeave={() => setHoveredCardId(null)}
               >
@@ -319,29 +285,29 @@ const ServicesNewTheme = () => {
                     filter:
                       hoveredCardId === card.id
                         ? "blur(2px)"
-                        : "grayscale(100%)", // Grayscale and blur effect
+                        : "grayscale(100%)",
                   }}
                 />
 
-                {/* Overlay content */}
+               
                 <div className="relative z-10 p-4 h-full flex flex-col justify-between">
-                  {hoveredCardId === card.id ? ( // Show title and description on hover
+                  {hoveredCardId === card.id ? (
                     <>
-                      <h3 className="text-lg font-semibold text-center text-white">
+                      <h3 className="text-md md:text-lg p-8 font-semibold text-left text-white">
                         {card.title}
                       </h3>
-                      <p className="text-white mb-4 text-center">
+                      <p className="text-sm md:text-base text-white mb-4 text-left">
                         {card.description}
                       </p>
                     </>
                   ) : (
-                    <h3 className="text-lg font-semibold text-center text-white">
+                    <h3 className="text-md md:text-lg pt-8 font-semibold text-left text-white">
                       {card.title}
                     </h3>
                   )}
                 </div>
 
-                {/* Background overlay for better text visibility */}
+               
                 <div className="absolute inset-0 bg-black opacity-40 z-5"></div>
               </div>
             ))}
@@ -359,40 +325,31 @@ const ServicesNewTheme = () => {
                 onMouseEnter={() => setHoveredCardId(card.id)}
                 onMouseLeave={() => setHoveredCardId(null)}
               >
-                {/* Full-size image */}
                 <img
                   src={card.image}
                   alt={card.title}
-                  className="absolute inset-0 w-full h-full object-cover z-0"
+                  className="absolute inset-0 w-full h-full object-cover z-0 transition duration-300"
                   style={{
                     filter:
                       hoveredCardId === card.id
                         ? "blur(2px)"
-                        : "grayscale(100%)", // Grayscale and blur effect
+                        : "grayscale(100%)", 
                   }}
                 />
 
-                {/* Overlay content */}
+                
                 <div className="relative z-10 p-4 h-full flex flex-col justify-between">
-                  {hoveredCardId === card.id ? ( // Show title and description on hover
-                    <>
-                      <h3 className="text-lg font-semibold text-center text-white">
-                        {card.title}
-                      </h3>
-                      <p className="text-white mb-4 text-center">
-                        {card.description}
-                      </p>
-                    </>
-                  ) : (
-                    <>
-                      <h3 className="text-lg font-semibold text-center text-white">
-                        {card.title}
-                      </h3>
-                    </>
+                  <h3 className="text-lg pt-10 font-semibold text-left text-white">
+                    {card.title}
+                  </h3>
+                  {hoveredCardId === card.id && (
+                    <p className="text-white mb-4 text-left text-sm">
+                      {card.description}
+                    </p>
                   )}
                 </div>
 
-                {/* Background overlay for better text visibility */}
+            
                 <div className="absolute inset-0 bg-black opacity-40 z-5"></div>
               </div>
             ))}
