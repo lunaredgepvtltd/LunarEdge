@@ -3,7 +3,7 @@ const DomainName = 'https://lunaredge.in'
 const localDomainName = 'http://localhost:8080'
 
 
-
+ 
 // export const API = {
 //     register : {
 //        url : `${DomainName}/api/query`,
