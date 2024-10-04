@@ -1,4 +1,4 @@
-const DomainName = 'https://lunaredge.in';
+const DomainName = 'https://lunaredge.in:8080';
 const localDomainName = 'http://localhost:8080';
 
 // Determine if the current environment is local
