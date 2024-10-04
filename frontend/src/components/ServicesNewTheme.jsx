@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { MdDescription, MdKeyboardArrowRight } from "react-icons/md";
+// import { MdDescription, MdKeyboardArrowRight } from "react-icons/md";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -138,33 +138,33 @@ const ServicesNewTheme = () => {
 
   return (
     <>
-      <div className="relative flex flex-col items-center justify-center  gap-8 md:gap-10 lg:gap-16 h-[600px] md:h-screen overflow-hidden">
+      <div className="relative flex flex-col items-center justify-center  gap-8 md:gap-10 lg:gap-16 h-[600px] md:h-screen overflow-hidden bg-white dark:bg-black z-0">
         {/* Half Moon */}
         <img
           src={MoonImage}
           alt="Half Moon"
-          className="absolute top-0 left-0 w-full h-full object-cover"
+          className=" absolute top-0 left-0 w-full h-full object-cover"
           style={{
             zIndex: -1,
           }}
         />
 
-        <h1 className=" text-4xl md:text-5xl lg:text-7xl font-base text-black">
+        <h1 className=" text-4xl md:text-5xl lg:text-7xl font-base text-black ">
           Services
         </h1>
 
-        <h2 className="text-3xl md:text-3xl lg:text-5xl  font-normal text-black">
+        <h2 className="text-3xl md:text-3xl lg:text-5xl  font-normal text-black ">
           What we do
         </h2>
         <div className="mt-10 md:hidden"></div>
 
-        <p className=" text-black text-lg md:text-2xl lg:text-3xl  font-base text-center  w-[70%] mt-16 md:mt-16 lg:px-2 lg:mt-6">
+        <p className=" text-black dark:text-white text-lg md:text-2xl lg:text-3xl  font-base text-center  w-[70%] mt-16 md:mt-16 lg:px-2 lg:mt-6">
           With technology, we advance your business
         </p>
       </div>
 
       <div
-        className=" p-[5%] pb-[5%]"
+        className=" p-[5%] pb-[5%] bg-white dark:bg-black"
         style={{
           backgroundImage: `url(${BgServices2})`,
           backgroundSize: "cover",
@@ -174,10 +174,10 @@ const ServicesNewTheme = () => {
 
 
         {/* for desktop */}
-        <div className="hidden lg:block mx-[10%] px-4">
-          <div className="grid xl:gap-10 gap- grid-cols-1 md:grid-cols-3 lg:grid-cols-4">
+        <div className="hidden lg:block mx-[10%] px-4 ">
+          <div className="grid xl:gap-10 gap- grid-cols-1 md:grid-cols-3 lg:grid-cols-4 ">
             {cards.map((card) => (
-              <div className="bg-white px-4">
+              <div className="bg-white dark:bg-transparent px-4">
                 <div
                   key={card.id}
                   className="border rounded-[25px] h-[350px] relative flex flex-col justify-between overflow-hidden hover:transition hover:duration-300 ease-in-out transform cursor-pointer"
@@ -213,7 +213,7 @@ const ServicesNewTheme = () => {
                           </p>
                         </>
                       ) : (
-                        <h3 className="text-lg pt-10 font-semibold text-left text-white">
+                        <h3 className="text-lg pt-10 font-semibold text-center text-white">
                           {card.title}
                         </h3>
                       )}
@@ -250,14 +250,17 @@ const ServicesNewTheme = () => {
                 <div className="absolute inset-0 bg-black opacity-40 z-5 "></div>
 
                 <div className="relative z-10 p-5 h-full flex flex-col justify-between">
-                  <h3 className="text-md  font-semibold  pt-10 text-left text-white">
+                  <h3 className="text-md  font-semibold  pt-10 text-center text-white">
                     {card.title}
                   </h3>
-                  {hoveredCardId === card.id && (
-                    <p className="text-md text-white mb-6 text-left">
+                  <p className="text-md text-white mb-6 text-center">
                       {card.description}
                     </p>
-                  )}
+                  {/* {hoveredCardId === card.id && (
+                    <p className="text-md text-white mb-6 text-center">
+                      {card.description}
+                    </p>
+                  )} */}
                 </div>
               </div>
             ))}
@@ -293,15 +296,15 @@ const ServicesNewTheme = () => {
                 <div className="relative z-10 p-4 h-full flex flex-col justify-between">
                   {hoveredCardId === card.id ? (
                     <>
-                      <h3 className="text-md md:text-lg p-8 font-semibold text-left text-white">
+                      <h3 className="text-md md:text-lg p-8 font-semibold text-center text-white">
                         {card.title}
                       </h3>
-                      <p className="text-sm md:text-base text-white mb-4 text-left">
+                      <p className="text-sm md:text-base text-white mb-4 text-center">
                         {card.description}
                       </p>
                     </>
                   ) : (
-                    <h3 className="text-md md:text-lg pt-8 font-semibold text-left text-white">
+                    <h3 className="text-md md:text-lg pt-8 font-semibold text-center text-white">
                       {card.title}
                     </h3>
                   )}
@@ -339,11 +342,11 @@ const ServicesNewTheme = () => {
 
                 
                 <div className="relative z-10 p-4 h-full flex flex-col justify-between">
-                  <h3 className="text-lg pt-10 font-semibold text-left text-white">
+                  <h3 className="text-lg pt-10 font-semibold text-text-center text-white">
                     {card.title}
                   </h3>
                   {hoveredCardId === card.id && (
-                    <p className="text-white mb-4 text-left text-sm">
+                    <p className="text-white mb-4 text-center text-sm">
                       {card.description}
                     </p>
                   )}
