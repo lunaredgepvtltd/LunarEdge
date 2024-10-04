@@ -28,15 +28,15 @@ const TransformingBusinessSection = () => {
 
   // Define content for each technology
   const technologyContent = {
-    html: "HTML is the standard language for creating web pages. It describes the structure of a webpage and is used along with CSS and JavaScript.",
-    sql: "SQL (Structured Query Language) is a standard language for managing and manipulating databases, allowing for the querying, updating, and management of data.",
-    react: "React is a JavaScript library for building user interfaces, especially single-page applications, by using a component-based architecture.",
-    mongodb: "MongoDB is a NoSQL database designed for scalability and flexibility, allowing developers to store and query large amounts of unstructured data.",
-    aws: "Amazon Web Services (AWS) is a comprehensive cloud computing platform that offers services like computing power, storage, and databases.",
-    nodejs: "Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine that enables fast and scalable network applications.",
+    html: "HTML is the backbone of web development, structuring content to create intuitive and user-friendly websites. Our team ensures seamless coding for optimal website performance.",
+    sql: " MySQL is our go-to for robust, relational database management, ensuring data integrity and security. It supports high-volume transactions while maintaining optimal performance for your applications.",
+    react: " ReactJS helps us build dynamic and interactive user interfaces, enhancing user engagement. Its component-based architecture ensures efficient, scalable applications.",
+    mongodb: "MongoDB's flexible, NoSQL database structure allows for seamless data management, ensuring your applications can handle large-scale data efficiently.",
+    aws: " We utilize AWS cloud services for reliable, scalable, and cost-effective solutions. From hosting to storage, AWS supports our infrastructure needs with unmatched security.",
+    nodejs: " NodeJS enables us to create high-performance, scalable applications with efficient server-side handling. It supports real-time data processing for modern applications.",
     java: "Java is a high-level, class-based programming language designed to have as few implementation dependencies as possible, making it widely portable.",
-    figma: "Figma is a web-based UI/UX design tool that allows for collaborative design, prototyping, and sharing of designs in real-time.",
-    css: "CSS (Cascading Style Sheets) is used for describing the presentation of a document written in HTML or XML. It controls the layout and style of web pages."
+    figma: "Figma empowers our design team to collaborate in real-time, crafting intuitive user interfaces. Its cloud-based platform ensures seamless design and prototyping for web and mobile applications.",
+    css: "With CSS, we design visually engaging and responsive websites that adapt across devices. Our styling ensures an aesthetic and functional user experience."
   };
 
   useEffect(() => {

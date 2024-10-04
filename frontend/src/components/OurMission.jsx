@@ -3,15 +3,15 @@ import React from "react";
 
 const OurMission = ({title,subtitle,content,vidiosrc,vidiotitle}) => {
   return (
-    <div className="md:mt-[5%] flex md:flex-row flex-col w-full h-[650px] py-8 md:px-9 px-4 ">
-      <div className="md:w-[50%] w-[90%] h-[23%] md:h-[80%] md:text-3xl text-sm font-normal flex flex-col justify-evenly pr-6">
-        <span className="font-semibold md:text-2xl text-lg">{title}</span>
-        <p className="text-left">
+    <div className=" flex md:flex-row flex-col w-[95%] mx-auto h-[600px]  md:px-9 px-4 ">
+      <div className="md:w-[50%] w-[90%] h-[23%] md:h-[90%] xl:text-5xl lg:text-4xl md:text-3xl text-sm font-normal flex flex-col justify-evenly pr-6">
+        <span className="font-light lg:text-4xl md:text-3xl text-lg">{title}</span>
+        <p className="text-left md:w-[90%] leading-tight">
          {subtitle}
         </p>
-        <p className="text-left ">
+        {/* <p className="text-left ">
          {content}
-        </p>
+        </p> */}
       </div>
       <div className="md:w-[50%] w-[100%] relative flex items-center justify-center">
         <video

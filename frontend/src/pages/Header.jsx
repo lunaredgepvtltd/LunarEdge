@@ -20,7 +20,7 @@ const Header = () => {
   const [lastScrollY, setLastScrollY] = useState(0); // state to store last scroll position
 
   const scrollToAboutUs = () => {
-    navigate('/')
+    navigate("/");
     setTimeout(() => {
       window.scrollTo(0, 750);
     }, 300);
@@ -203,7 +203,8 @@ const Header = () => {
             <img
               src={logo}
               alt="Company Logo"
-              className="h-auto w-[80px] pt-[4px] md:w-[108px] hidden 
+              className="h-auto w-[80px] pt-[4px] md:w-[108px]  hidden 
+
           "
             />
           </Link>
@@ -243,7 +244,9 @@ const Header = () => {
               // onMouseLeave={!isTouchDevice ? handleMouseLeave : null}
             >
               <div className="flex items-center rounded-full">
-                <Link to={'/common'} className="text-lg text-black">Industries</Link>
+                <Link to={"/common"} className="text-lg text-black">
+                  Industries
+                </Link>
                 {/* <IoIosArrowDown /> */}
               </div>
               <div className="absolute bottom-0 left-0 w-0 h-[1.3px] py-[1px] rounded-md bg-black transition-all duration-300 group-hover:w-full"></div>
@@ -287,11 +290,13 @@ const Header = () => {
               // onMouseLeave={!isTouchDevice ? handleMouseLeave : null}
             >
               <div className="flex items-center justify-between rounded-full">
-                <span className="text-lg text-black" onClick={scrollToAboutUs}>About LunarEdge</span>
+                <span className="text-lg text-black" onClick={scrollToAboutUs}>
+                  About LunarEdge
+                </span>
                 {/* <IoIosArrowDown /> */}
               </div>
 
-              <div className="absolute bottom-0 left-0 w-0 h-[1px] rounded-md bg-black transition-all duration-300 group-hover:w-full"></div>
+              <div className="absolute bottom-0 left-0 w-0 h-[1px] py-[1px] rounded-md bg-black transition-all duration-300 group-hover:w-full"></div>
 
               {openDropdown === "aboutUs" && (
                 <ul className="absolute top-[63px] left-0 rounded-lg shadow-lg bg-[#292828] w-48 pt-3 pb-3">
@@ -465,10 +470,13 @@ const Header = () => {
                   // onClick={handleAboutUs}
                 >
                   <div className="flex gap-1 items-center">
-                    <span className=" text-md text-[#082847] hover:underline" onClick={()=>{
-                      toggleMenu();
-                      scrollToAboutUs()
-                    }}>
+                    <span
+                      className=" text-md text-[#082847] hover:underline"
+                      onClick={() => {
+                        toggleMenu();
+                        scrollToAboutUs();
+                      }}
+                    >
                       About LunarEdge
                     </span>
                     {/* <IoIosArrowDown /> */}
@@ -521,7 +529,7 @@ const Header = () => {
                   <div className="flex gap-1 mr-2 items-center">
                     <Link
                       className="text-md text-[#082847] hover:underline"
-                      onClick={()=>{
+                      onClick={() => {
                         toggleMenu();
                         // handleServiceClick
                       }}
@@ -575,7 +583,11 @@ const Header = () => {
                   // onClick={handleIndustries}
                 >
                   <div className="flex gap-1 items-center ">
-                    <Link onClick={toggleMenu} to={'/common'} className="text-md text-[#082847] hover:underline">
+                    <Link
+                      onClick={toggleMenu}
+                      to={"/common"}
+                      className="text-md text-[#082847] hover:underline"
+                    >
                       Industries
                     </Link>
                     {/* <IoIosArrowDown /> */}
@@ -635,13 +647,13 @@ const Header = () => {
             </div>
           )}
         </div>
-        <div className={` fixed top-2 text-left ml-4  lg:ml-10`}>
+        <div className={` fixed top-1 text-left ml-3  lg:ml-6`}>
           {/* Logo */}
           <Link to={"/"} className="flex-shrink-0 " onClick={handleLogoClick}>
             <img
               src={logo}
               alt="Company Logo"
-              className="h-auto w-[80px] pt-[4px] md:w-[108px] 
+              className="h-auto w-[80px] pt-[4px]  md:w-[108px] 
           "
             />
           </Link>
