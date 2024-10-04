@@ -5,6 +5,7 @@ import { addVacancyContoller, deleteVacancy, getAllVacancy, updateVacancy } from
 import multer from 'multer'
 import path from 'path';
 import { FormFill } from '../controller/FormFill.js';
+import { sendEmail } from '../controller/sendEmail.js';
 
 const router = express.Router();
 
@@ -39,6 +40,9 @@ router.delete('/deleteVacancy',deleteVacancy)
 
 // formFill 
 router.post('/Formfill', upload.single('cv'),FormFill)
+
+// sendemail 
+router.post('/sendEmail',sendEmail)
 
 
 export default router;
