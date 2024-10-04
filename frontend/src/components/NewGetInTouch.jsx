@@ -1,7 +1,44 @@
-import React from "react";
+import React, { useState } from "react";
 import SideImage from "../assets/SideImageGetInTouch.png";
+import { toast } from "react-toastify";
+import { API } from "../helper";
 
 const GetInTouch = () => {
+
+  const [email,setEmail] = useState('')
+
+  const handleEmail = (event)=>{
+    setEmail(event.target.value)
+  }
+
+ const handleEmailClick = async()=>{
+  if(!email) return;
+  try{
+    console.log(API.sendEmail)
+   const response = await fetch(API.sendEmail.url,{
+    method : API.sendEmail.method,
+    headers : {
+      "content-type" : "application/json"
+    },
+    body: JSON.stringify({email}),
+   })
+
+   const responseData = await response.json();
+   if(responseData.success){
+    setEmail('')
+    toast.success(responseData.message);
+   }
+   if(responseData.error){
+    toast.error('Unable to send email. Please try again!')
+   }
+   
+  }
+  catch(error){
+    console.log(error);
+    toast.error('Unable to send email. Please try again!')
+  }
+ }
+
   return (
     <div className="flex md:flex-row flex-col-reverse items-center w-[100%] h-full bg-white md:mb-8 p-4">
       <div className="md:w-[60%] p-6 w-full">
@@ -21,9 +58,12 @@ const GetInTouch = () => {
             <input
               type="email"
               placeholder="Your Email"
+              required
+              value={email}
+              onChange={handleEmail}
               className="md:w-[35%] md:text-lg text-xs border border-gray-300 bg-gray-200 rounded-s-lg py-2 px-4 focus:outline-none focus:ring-1 focus:ring-pink-600"
             />
-            <button className=" md:text-lg text-xs bg-gradient-to-r from-pink-500 to-purple-500 text-white font-semibold py-2 px-6 rounded-e-lg hover:from-purple-500 hover:to-pink-500 focus:outline-none focus:ring-1 focus:ring-pink-500">
+            <button onClick={handleEmailClick} className=" md:text-lg text-xs bg-gradient-to-r from-pink-500 to-purple-500 text-white font-semibold py-2 px-6 rounded-e-lg hover:from-purple-500 hover:to-pink-500 focus:outline-none focus:ring-1 focus:ring-pink-500">
               Send
             </button>
           </div>

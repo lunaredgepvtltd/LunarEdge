@@ -28,7 +28,7 @@ const TransformingBusinessSection = () => {
 
   // Define content for each technology
   const technologyContent = {
-    html: "HTML is the standard language for creating web pages. It describes the structure of a webpage and is used along with CSS and JavaScript.",
+    html: "HTML is the backbone of web development, structuring content to create intuitive and user-friendly websites. Our team ensures seamless coding for optimal website performance.",
     sql: "SQL (Structured Query Language) is a standard language for managing and manipulating databases, allowing for the querying, updating, and management of data.",
     react: "React is a JavaScript library for building user interfaces, especially single-page applications, by using a component-based architecture.",
     mongodb: "MongoDB is a NoSQL database designed for scalability and flexibility, allowing developers to store and query large amounts of unstructured data.",
@@ -36,7 +36,7 @@ const TransformingBusinessSection = () => {
     nodejs: "Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine that enables fast and scalable network applications.",
     java: "Java is a high-level, class-based programming language designed to have as few implementation dependencies as possible, making it widely portable.",
     figma: "Figma is a web-based UI/UX design tool that allows for collaborative design, prototyping, and sharing of designs in real-time.",
-    css: "CSS (Cascading Style Sheets) is used for describing the presentation of a document written in HTML or XML. It controls the layout and style of web pages."
+    css: " With CSS, we design visually engaging and responsive websites that adapt across devices. Our styling ensures an aesthetic and functional user experience."
   };
 
   useEffect(() => {

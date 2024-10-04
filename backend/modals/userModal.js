@@ -3,9 +3,13 @@ const Schema = mongoose.Schema;
 
 
 const userSchema = new Schema({
-    name : {
+    firstName : {
         type : String,
-        required : [true,'name is required!']
+        required : [true,'firstName is required!']
+    },
+    lastName : {
+        type : String,
+        required : [true,'lastName is required!']
     },
     phoneNumber : {
         type : Number,
@@ -15,11 +19,9 @@ const userSchema = new Schema({
         type : String,
         required : [true,'email is required']
     },
-    subject : {
-        type : String,
-    },
     message : {
-        type : String
+        type : String,
+        required : [true,'Please leave a message']
     }
 })
 
