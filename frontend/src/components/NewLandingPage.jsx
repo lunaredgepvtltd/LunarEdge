@@ -15,12 +15,12 @@ const NewLandingPage = () => {
         <img
           src={`${isExtraSmallDevice ? smallAboutMoon : aboutMoon}`}
           alt="Picture of Moon"
-          className="absolute -left-[78%] md:-left-[62%] md:h-[95%] h-full w-full  animate-spin-slow"
+          className="absolute -left-[78%] md:-left-[66%] md:h-[95%] h-full w-full  animate-spin-slow"
         />
       </div>
 
-      <div className="z-10 absolute left-[23%] w-[74%] md:w-[79%] h-auto md:h-full md:flex items-center gap-4">
-        <div className="w-full md:w-[50%] h-full md:h-[63%] flex flex-col gap-5">
+      <div className="z-10 absolute left-[23%] top-[9%] w-[74%] md:w-[75%] h-auto md:h-full md:flex items-start gap-4">
+        <div className="w-full md:w-[50%] h-full md:h-[63%] flex flex-col gap-5 xl:mt-6">
           <h1 className=" text-left text-3xl font-medium ">ABOUT US</h1>
           <p className="text-left font-normal text-[14px] md:text-lg xl:text-2xl">
             Founded with a vision to drive smart innovation, our mission is to
@@ -37,11 +37,11 @@ const NewLandingPage = () => {
             expectations.
           </p>
         </div>
-        <div className=" hidden w-[60%] h-[80%] text-right md:flex justify-center items-center">
+        <div className=" hidden w-[60%] h-[80%] text-right md:flex justify-center  items-start mt-6">
           <img
             src={aboutHead}
             alt="Picture of tagline"
-            className="hidden lg:block w-[60%] h-[72%]"
+            className="hidden lg:block w-[60%] h-[65%]"
           />
         </div>
         
