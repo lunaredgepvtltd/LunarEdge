@@ -14,7 +14,7 @@ import IT_CONSULTING from "../assets/Bg_CONSULTING.png";
 import HARWARE_SUPPLY_SOLUTIONS from "../assets/Bg_HARDWARE.png";
 import CYBER_SECURITY from "../assets/Bg_CYBER.png";
 // import ProcessFlow from "./ProcessFlow";
-// import "./ServicesNewTheme.css";
+import "./ServicesNewTheme.css";
 
 const ServicesNewTheme = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
