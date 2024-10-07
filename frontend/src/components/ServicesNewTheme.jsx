@@ -13,6 +13,8 @@ import NEXTGEN_GAME from "../assets/Bg_NEXTGAME.png";
 import IT_CONSULTING from "../assets/Bg_CONSULTING.png";
 import HARWARE_SUPPLY_SOLUTIONS from "../assets/Bg_HARDWARE.png";
 import CYBER_SECURITY from "../assets/Bg_CYBER.png";
+// import ProcessFlow from "./ProcessFlow";
+import "./ServicesNewTheme.css";
 
 const ServicesNewTheme = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -56,7 +58,7 @@ const ServicesNewTheme = () => {
     },
     {
       id: 6,
-      title: "NEXT-GEN GAME DEVELOPMENT",
+      title: "NEXT-GEN Game Development",
       image: NEXTGEN_GAME,
       description: "Engaging games built with the latest technologies.",
     },
@@ -164,7 +166,7 @@ const ServicesNewTheme = () => {
       </div>
 
       <div
-        className=" p-[5%] pb-[5%] bg-white dark:bg-black"
+        className=" p-[5%] pr-[2%] pb-[5%] bg-white dark:bg-black"
         style={{
           backgroundImage: `url(${BgServices2})`,
           backgroundSize: "cover",
@@ -174,7 +176,7 @@ const ServicesNewTheme = () => {
 
 
         {/* for desktop */}
-        <div className="hidden lg:block mx-[10%] px-4 ">
+        <div className="hidden lg:block mx-[5%] px-4 ">
           <div className="grid xl:gap-10 gap- grid-cols-1 md:grid-cols-3 lg:grid-cols-4 ">
             {cards.map((card) => (
               <div className="bg-white dark:bg-transparent px-4">
@@ -205,15 +207,15 @@ const ServicesNewTheme = () => {
                     <div className="relative z-10 p-4 h-full flex flex-col justify-between">
                       {hoveredCardId === card.id ? ( 
                         <>
-                          <h3 className="text-lg font-semibold pt-10 text-center text-white">
+                          <h3 className="text-lg font-normal pt-10 text-left text-white">
                             {card.title}
                           </h3>
-                          <p className="text-white mb-6 text-center">
+                          <p className="text-white mb-10 text-left">
                             {card.description}
                           </p>
                         </>
                       ) : (
-                        <h3 className="text-lg pt-10 font-semibold text-center text-white">
+                        <h3 className="text-lg pt-10 font-normal text-left text-white">
                           {card.title}
                         </h3>
                       )}
@@ -232,14 +234,14 @@ const ServicesNewTheme = () => {
             {cards.map((card) => (
               <div
                 key={card.id}
-                className="border rounded-[25px] h-[300px] relative flex flex-col justify-between overflow-hidden transition duration-300 ease-in-out transform cursor-pointer"
+                className="border rounded-[25px] h-[300px] relative flex flex-col justify-between overflow-hidden transition duration-300 ease-in-out transform cursor-pointer "
                 onMouseEnter={() => setHoveredCardId(card.id)}
                 onMouseLeave={() => setHoveredCardId(null)}
               >
                 <img
                   src={card.image}
                   alt={card.title}
-                  className="absolute inset-0 w-full h-full object-cover z-0"
+                  className="absolute inset-0 w-full h-full object-cover z-0 "
                   style={{
                     filter:
                       hoveredCardId === card.id
@@ -250,10 +252,10 @@ const ServicesNewTheme = () => {
                 <div className="absolute inset-0 bg-black opacity-40 z-5 "></div>
 
                 <div className="relative z-10 p-5 h-full flex flex-col justify-between">
-                  <h3 className="text-md  font-semibold  pt-10 text-center text-white">
+                  <h3 className="text-md  font-normal  pt-10 text-left text-white">
                     {card.title}
                   </h3>
-                  <p className="text-md text-white mb-6 text-center">
+                  <p className=" text-sm md:text-md text-white mb-6 text-left">
                       {card.description}
                     </p>
                   {/* {hoveredCardId === card.id && (
@@ -296,15 +298,15 @@ const ServicesNewTheme = () => {
                 <div className="relative z-10 p-4 h-full flex flex-col justify-between">
                   {hoveredCardId === card.id ? (
                     <>
-                      <h3 className="text-md md:text-lg p-8 font-semibold text-center text-white">
+                      <h3 className="text-md md:text-lg p-8 font-normal text-left text-white">
                         {card.title}
                       </h3>
-                      <p className="text-sm md:text-base text-white mb-4 text-center">
+                      <p className="text-sm md:text-base text-white mb-4 text-left">
                         {card.description}
                       </p>
                     </>
                   ) : (
-                    <h3 className="text-md md:text-lg pt-8 font-semibold text-center text-white">
+                    <h3 className="text-md md:text-lg pt-8 font-normal text-left text-white">
                       {card.title}
                     </h3>
                   )}
@@ -342,11 +344,11 @@ const ServicesNewTheme = () => {
 
                 
                 <div className="relative z-10 p-4 h-full flex flex-col justify-between">
-                  <h3 className="text-lg pt-10 font-semibold text-text-center text-white">
+                  <h3 className="text-lg pt-10 font-normal text-text-left text-white">
                     {card.title}
                   </h3>
                   {hoveredCardId === card.id && (
-                    <p className="text-white mb-4 text-center text-sm">
+                    <p className="text-white mb-4 text-left text-sm">
                       {card.description}
                     </p>
                   )}
@@ -359,6 +361,9 @@ const ServicesNewTheme = () => {
           </Slider>
         </div>
       </div>
+
+
+      {/* <ProcessFlow/> */}
     </>
   );
 };

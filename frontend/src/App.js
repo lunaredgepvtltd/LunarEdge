@@ -5,22 +5,17 @@ import { useLocation } from "react-router-dom";
 import "aos/dist/aos.css";
 import { Outlet } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop.jsx";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Header = lazy(() => import("./pages/Header.jsx"));
 const Footer = lazy(() => import("./pages/Footer.jsx"));
 
 function App() {
-  const [aboutUs, setAboutUs] = useState(false);
-  const [technology, setTechonology] = useState(false);
-  const [offers, setOffers] = useState(false);
-  const [value, setValues] = useState(false);
-  const [contact, setContact] = useState(false);
+  const [clickedSection, setClickedSection] = useState(""); // To track clicked section
+  const [scrollY, setScrollY] = useState(window.scrollY); // State for scroll position
 
-
-
-  // useEffect for AOS animation
+  // Initialize AOS (animation on scroll)
   useEffect(() => {
     AOS.init({
       offset: 100,
@@ -31,164 +26,129 @@ function App() {
     AOS.refresh();
   }, []);
 
-  const [scrollY, setScrollY] = useState(window.scrollY);
-
+  // Update scrollY on window scroll
   useEffect(() => {
     const handleScroll = () => {
-      setAboutUs(false);
-      setContact(false);
-      setTechonology(false);
-      setOffers(false);
-      setValues(false);
       setScrollY(window.scrollY);
+      setClickedSection(""); // Reset the clicked section when scrolling
     };
-
-    // Add event listener for scroll
     window.addEventListener("scroll", handleScroll);
 
-    // Clean up the event listener on component unmount
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const scrollToAboutUs = () => {
-    setAboutUs(true);
-    setContact(false);
-    setOffers(false);
-    setTechonology(false);
-    setValues(false);
+  // Scroll to specific section and set it as clicked
+  const scrollToSection = (section, scrollPosition) => {
+    setClickedSection(section);
     setTimeout(() => {
-      window.scrollTo(0, 0);
-    }, 200);
-  };
-
-  const scrollToValues = () => {
-    setAboutUs(false);
-    setContact(false);
-    setOffers(false);
-    setTechonology(false);
-    setValues(!value);
-    setTimeout(() => {
-      window.scrollTo(0, 750);
-    }, 200);
-  };
-
-  const scrollToOffer = () => {
-    setAboutUs(false);
-    setContact(false);
-    setOffers(!offers);
-    setTechonology(false);
-    setValues(false);
-    setTimeout(() => {
-      window.scrollTo(0, 1500);
-    }, 200);
-  };
-
-  const scrollToTechnology = () => {
-    setAboutUs(false);
-    setContact(false);
-    setOffers(false);
-    setTechonology(!technology);
-    setValues(false);
-    setTimeout(() => {
-      window.scrollTo(0, 2350);
-    }, 200);
-  };
-
-  const scrollToContactUs = () => {
-    setAboutUs(false);
-    setContact(true);
-    setOffers(false);
-    setTechonology(false);
-    setValues(false);
-    setTimeout(() => {
-      window.scrollTo(0, 3130);
+      window.scrollTo(0, scrollPosition);
     }, 200);
   };
 
   const location = useLocation();
-
   const isHome = location.pathname === "/";
-
 
   return (
     <>
-      {/* <PreLoader /> */}
-      <div className="App">
+      {isHome && (
+        <div className="hidden lg:block fixed right-3 top-[40%] z-50 h-auto w-auto p-4">
 
-          {/* {isHome &&  <div className="hidden lg:block fixed right-3 top-1/2 z-50 h-auto w-auto p-4">
-  About Us Button
-  <div
-    className={`h-1 rounded-sm w-7 mx-auto bg-black my-2 cursor-pointer 
-      ${aboutUs || scrollY < 490 ? "scale-x-150" : ""} 
-      origin-right transition-all duration-300`}
-    onClick={scrollToAboutUs}
-  ></div>
+          {/* Home */}
+          <div
+            className={`h-1 rounded-sm w-8 mx-auto bg-black my-4 cursor-pointer 
+              ${clickedSection === 'home' || (scrollY < 725 && clickedSection === '') ? "scale-x-150" : ""} 
+              origin-right transition-all duration-300`}
+            onClick={() => scrollToSection('home', 0)}
+          ></div>
 
-  Values Button
-  <div
-    className={`h-1 rounded-sm w-7 mx-auto bg-black my-2 cursor-pointer 
-      ${value || (scrollY >= 495 && scrollY <= 1252) ? "scale-x-150" : ""} 
-      origin-right transition-all duration-300`}
-    onClick={scrollToValues}
-  ></div>
+          {/* About Us */}
+          <div
+            className={`h-1 rounded-sm w-8 mx-auto bg-black my-4 cursor-pointer 
+              ${clickedSection === 'aboutUs' || (scrollY >= 725 && scrollY < 1424 && clickedSection === '') ? "scale-x-150" : ""} 
+              origin-right transition-all duration-300`}
+            onClick={() => scrollToSection('aboutUs', 726)}
+          ></div>
 
-  Offers Button
-  <div
-    className={`h-1 rounded-sm w-7 mx-auto bg-black my-2 cursor-pointer 
-      ${offers || (scrollY >= 1252 && scrollY < 2232) ? "scale-x-150" : ""} 
-      origin-right transition-all duration-300`}
-    onClick={scrollToOffer}
-  ></div>
+          {/* Hawa Mahal */}
+          <div
+            className={`h-1 rounded-sm w-8 mx-auto bg-black my-4 cursor-pointer 
+              ${clickedSection === 'hawaMahal' || (scrollY >= 1424 && scrollY < 2033 && clickedSection === '') ? "scale-x-150" : ""} 
+              origin-right transition-all duration-300`}
+            onClick={() => scrollToSection('hawaMahal', 1424)}
+          ></div>
 
-  Technology Button
-  <div
-    className={`h-1 rounded-sm w-7 mx-auto bg-black my-2 cursor-pointer 
-      ${technology || (scrollY >= 2232 && scrollY <= 2987) ? "scale-x-150" : ""} 
-      origin-right transition-all duration-300`}
-    onClick={scrollToTechnology}
-  ></div>
+          {/* Journey */}
+          <div
+            className={`h-1 rounded-sm w-8 mx-auto bg-black my-4 cursor-pointer 
+              ${clickedSection === 'journey' || (scrollY >= 2033 && scrollY < 2742 && clickedSection === '') ? "scale-x-150" : ""} 
+              origin-right transition-all duration-300`}
+            onClick={() => scrollToSection('journey', 2034)}
+          ></div>
 
-  Contact Us Button
-  <div
-    className={`h-1 rounded-sm w-7 mx-auto bg-black my-2 cursor-pointer 
-      ${contact || scrollY >= 2988 ? "scale-x-150" : ""} 
-      origin-right transition-all duration-300`}
-    onClick={scrollToContactUs}
-  ></div>
-</div>} */}
+          {/* Values */}
+          <div
+            className={`h-1 rounded-sm w-8 mx-auto bg-black my-4 cursor-pointer 
+              ${clickedSection === 'values' || (scrollY >= 2742 && scrollY <= 3450 && clickedSection === '') ? "scale-x-150" : ""} 
+              origin-right transition-all duration-300`}
+            onClick={() => scrollToSection('values', 2743)}
+          ></div>
 
+          {/* Vision & Mission */}
+          <div
+            className={`h-1 rounded-sm w-8 mx-auto bg-black my-4 cursor-pointer 
+              ${clickedSection === 'visionMission' || (scrollY >= 3450 && scrollY < 4832 && clickedSection === '') ? "scale-x-150" : ""} 
+              origin-right transition-all duration-300`}
+            onClick={() => scrollToSection('visionMission', 3455)}
+          ></div>
 
-        {/* Lazy loading the Header */}
-        <Suspense fallback={<div>Loading Header...</div>}>
-          <Header />
+          {/* Technology */}
+          <div
+            className={`h-1 rounded-sm w-8 mx-auto bg-black my-4 cursor-pointer 
+              ${clickedSection === 'technology' || (scrollY >= 4832 && scrollY <= 5572 && clickedSection === '') ? "scale-x-150" : ""} 
+              origin-right transition-all duration-300`}
+            onClick={() => scrollToSection('technology', 4834)}
+          ></div>
+
+          {/* Contact */}
+          <div
+            className={`h-1 rounded-sm w-8 mx-auto bg-black my-4 cursor-pointer 
+              ${clickedSection === 'contact' || (scrollY > 5572 && clickedSection === '') ? "scale-x-150" : ""} 
+              origin-right transition-all duration-300`}
+            onClick={() => scrollToSection('contact', 5576)}
+          ></div>
+        </div>
+      )}
+
+      {/* Lazy load Header */}
+      <Suspense fallback={<div>Loading Header...</div>}>
+        <Header />
+      </Suspense>
+
+      <main>
+        {/* Outlet for nested routes */}
+        <Suspense fallback={<div>Loading Content...</div>}>
+          <ScrollToTop />
+          <Outlet />
         </Suspense>
+      </main>
 
-        <main>
-          {/* Outlet for nested routes */}
-          <Suspense fallback={<div>Loading Content...</div>}>
-            <ScrollToTop />
-            <Outlet />
-          </Suspense>
-        </main>
+      {/* Lazy load Footer */}
+      <Suspense fallback={<div>Loading Footer...</div>}>
+        <Footer />
+      </Suspense>
 
-        {/* Lazy loading the Footer */}
-        <Suspense fallback={<div>Loading Footer...</div>}>
-          <Footer />
-        </Suspense>
-
-        {/* Add ToastContainer here */}
-        <ToastContainer
-          position="top-center"
-          autoClose={5000}
-          hideProgressBar={false}
-          newestOnTop={false}
-          closeOnClick
-          rtl={false}
-          pauseOnFocusLoss
-          draggable
-          pauseOnHover
-        />
-      </div>
+      {/* Toast Notification Container */}
+      <ToastContainer
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
     </>
   );
 }

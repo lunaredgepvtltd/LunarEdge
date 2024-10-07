@@ -57,7 +57,7 @@ const CoreValues = () => {
       {
         breakpoint: 1024, // Adjust settings for screens <= 1024px
         settings: {
-          slidesToShow: 3, // Show 2 slides on larger screens
+          slidesToShow: 3, // Show 3 slides on larger screens
           slidesToScroll: 2,
         },
       },
@@ -82,7 +82,7 @@ const CoreValues = () => {
   }, []);
 
   return (
-    <div className="w-[95%] md:h-[700px] h-1/2 mx-auto px-4 sm:px-0 xl:px-8 flex flex-col justify-around">
+    <div className="w-[95%] md:h-[700px] h-1/2 mx-auto px-4 sm:px-0 xl:px-8 flex flex-col justify-around mb-[100px]">
       <p className="mt-9 md:text-4xl text-xl font-light leading-8 text-center">
         Our core values that define who we are and how we work
       </p>
@@ -91,9 +91,8 @@ const CoreValues = () => {
         {!isLg ? (
           <Slider {...settings} className="block">
             {services.map((service, index) => (
-              <div className="bg-white px-2">
+              <div className="bg-white px-2" key={index}>
                 <div
-                  key={index}
                   className={` h-[280px] rounded-3xl drop-shadow overflow-hidden flex flex-col justify-between`}
                 >
                   <video
@@ -132,21 +131,21 @@ const CoreValues = () => {
               onMouseEnter={(e) => {
                 const video = e.currentTarget.querySelector("video");
                 if (video) {
-                  video.play();
+                  video.pause(); // Pause video on hover
                 }
               }}
               onMouseLeave={(e) => {
                 const video = e.currentTarget.querySelector("video");
                 if (video) {
-                  video.pause();
-                  video.currentTime = 0; // Optional: Reset to the beginning
+                  video.play(); // Resume video when hover ends
                 }
               }}
             >
               <video
-                className="absolute inset-0 object-cover w-full h-full opacity-60"
+                className="absolute inset-0 object-cover w-full h-full opacity-55"
                 loop
                 muted
+                autoPlay // Ensure video plays automatically
               >
                 <source src={service.videoSrc} type="video/mp4" />
                 Your browser does not support the video tag.
@@ -154,10 +153,10 @@ const CoreValues = () => {
               <div
                 className={`flex flex-col h-full xl:py-9 py-3 px-4 xl:px-8 lg:justify-evenly xl:justify-between z-20`}
               >
-                <h3 className="mt-4 xl:text-xl text-lg font-semibold text-gray-900 opacity-100">
+                <h3 className="mt-4 xl:text-xl text-lg font-bold text-gray-900 opacity-100">
                   {service.title}
                 </h3>
-                <p className="mt-2 xl:font-semibold xl:text-lg text-sm text-left">
+                <p className="mt-2  xl:text-lg text-sm text-left">
                   {service.description}
                 </p>
               </div>
