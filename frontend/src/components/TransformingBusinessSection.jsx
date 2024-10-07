@@ -64,7 +64,7 @@ const TransformingBusinessSection = () => {
         {/* Circle Gradients and Image */}
         <div className="w-full h-full relative">
           {/* First circle */}
-          <div className="absolute left-[47%] md:left-[45%] top-[24%] md:top-[7%] w-[32%] xl:top-[5%] xl:left-[48%] h-auto flex justify-between items-center">
+          <div className="absolute left-[47%] md:left-[45%] top-[24%] md:top-[7%] w-[32%] xl:top-[3%] xl:left-[48%] h-auto flex justify-between items-center">
             <div
               className={`z-10 h-9 w-9 md:h-16 md:w-16 lg:h-24 lg:w-24 rounded-full bg-white border transition-all duration-300 p-1 md:p-2 flex justify-center items-center cursor-pointer ${activeTechnology === 'html' ? 'border-black scale-110' : ''}`}
               onClick={() => handleTechnologyClick('html')}
@@ -74,7 +74,7 @@ const TransformingBusinessSection = () => {
           </div>
 
           {/* Second row of circles */}
-          <div className="absolute left-[31%] xl:top-[9%] md:w-[37%] xl:w-[36%] xl:left-[33%] lg:left-[30%] top-[29%] md:top-[11%] lg:top-[10%] w-[41%] lg:w-[40%] h-auto flex justify-between items-center">
+          <div className="absolute left-[31%] xl:top-[8%] md:w-[37%] xl:w-[36%] xl:left-[33%] lg:left-[30%] top-[29%] md:top-[11%] lg:top-[10%] w-[41%] lg:w-[40%] h-auto flex justify-between items-center">
             <div
               className={`z-10 h-9 w-9 md:h-16 md:w-16 lg:h-24 lg:w-24 rounded-full bg-white border hover:text-gray-400 transition-all duration-300 p-1 md:p-2 flex justify-center items-center cursor-pointer ${activeTechnology === 'sql' ? 'border-black scale-110' : ''}`}
               onClick={() => handleTechnologyClick('sql')}
