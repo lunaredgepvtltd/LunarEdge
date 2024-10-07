@@ -4,71 +4,55 @@ import { BsWhatsapp } from "react-icons/bs";
 import { useMediaQuery } from "react-responsive";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
- const Footer = () => {
+const Footer = () => {
+  // scrolling-down-to-sevice-box
 
-    // scrolling-down-to-sevice-box 
+  const isExtraSmallDevice = useMediaQuery({ maxWidth: 599 });
+  const isSmallDevice = useMediaQuery({ minWidth: 600, maxWidth: 767 });
+  const isMediumDevice = useMediaQuery({ minWidth: 768, maxWidth: 991 });
+  const isLargeDevice = useMediaQuery({ minWidth: 992, maxWidth: 1199 });
+  const isExtraLargeDevice = useMediaQuery({ minWidth: 1200 });
 
-    const isExtraSmallDevice = useMediaQuery({ maxWidth: 599 });
-    const isSmallDevice = useMediaQuery({ minWidth: 600, maxWidth: 767 });
-    const isMediumDevice = useMediaQuery({ minWidth: 768, maxWidth: 991 });
-    const isLargeDevice = useMediaQuery({ minWidth: 992, maxWidth: 1199 });
-    const isExtraLargeDevice = useMediaQuery({ minWidth: 1200 });
+  const navigate = useNavigate();
 
-    const navigate = useNavigate();
-  
-    const handleServiceClick = ()=>{
-      
-      navigate('/')
-  
-      setTimeout(() => {
-        if(isExtraSmallDevice){
-          window.scrollTo(0, 3000);
-         }
-         else if(isSmallDevice){
-          
-          window.scrollTo(0, 2600);
-         }
-         else if(isMediumDevice){
+  const handleServiceClick = () => {
+    navigate("/");
 
-          
-          window.scrollTo(0, 2500);
-         }
-         else if(isLargeDevice){
-          window.scrollTo(0, 2650);
-         }
-         else{
-          window.scrollTo(0,3200);
-         }
-      }, 200);
-    }
-
-    
-  const handleAboutClick = ()=>{
-    navigate('/')
     setTimeout(() => {
-      if(isExtraSmallDevice){
-        window.scrollTo(0, 550);
-       }
-       else if(isSmallDevice){
-        window.scrollTo(0,580 );
-       }
-       else if(isMediumDevice){
-        window.scrollTo(0,700 );
-       }
-       else if(isLargeDevice){
-        window.scrollTo(0,700 );
-       }
-       else{
-        window.scrollTo(0,900);
-       }  
+      if (isExtraSmallDevice) {
+        window.scrollTo(0, 3000);
+      } else if (isSmallDevice) {
+        window.scrollTo(0, 2600);
+      } else if (isMediumDevice) {
+        window.scrollTo(0, 2500);
+      } else if (isLargeDevice) {
+        window.scrollTo(0, 2650);
+      } else {
+        window.scrollTo(0, 3200);
+      }
     }, 200);
-  }
+  };
 
-  // scroll-code-ends 
+  const handleAboutClick = () => {
+    navigate("/");
+    setTimeout(() => {
+      if (isExtraSmallDevice) {
+        window.scrollTo(0, 550);
+      } else if (isSmallDevice) {
+        window.scrollTo(0, 580);
+      } else if (isMediumDevice) {
+        window.scrollTo(0, 700);
+      } else if (isLargeDevice) {
+        window.scrollTo(0, 700);
+      } else {
+        window.scrollTo(0, 900);
+      }
+    }, 200);
+  };
+
+  // scroll-code-ends
   return (
     <footer className="bg-gradient-to-r from-[#a6a6a6] to-[#ffffff]  lg:grid lg:grid-cols-5 border-t-2 border-black  ">
-    
-
       <div className="px-3 py-3 md:py-6 sm:px-6 lg:col-span-3 lg:px-6">
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
           <div>
@@ -91,11 +75,14 @@ import { Link } from "react-router-dom";
                   <BsWhatsapp className="text-green-600" />
                 </div>
                 <p className="text-blue-900 hover:underline underline-offset-2 transition-all duration-300 whitespace-nowrap">
-                  <a href="https://wa.me/919829011076" target="_blank" >
+                  <a href="https://wa.me/919829011076" target="_blank">
                     +91-9829011076
                   </a>
                 </p>
-                <span className="font-semibold text-black whitespace-nowrap"> [Sandeep Katariya]</span>
+                <span className="font-semibold text-black whitespace-nowrap">
+                  {" "}
+                  [Sandeep Katariya]
+                </span>
               </li>
               <li className="flex gap-2 items-center">
                 <div>
@@ -111,8 +98,8 @@ import { Link } from "react-router-dom";
             </ul>
           </div>
 
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2  px-4">
-            <div className="hidden md:block">
+          {/* <div className="grid grid-cols-1 gap-4 sm:grid-cols-2  px-4">
+            <div className="">
               <p className="font-medium text-black ">
                 Quick Links
               </p>
@@ -147,20 +134,20 @@ import { Link } from "react-router-dom";
               </ul>
             </div>
 
-            <div>
+            <div className="md:">
               <p className="font-medium text-black">
                 Company
               </p>
               <ul className="mt-4 space-y-2 text-sm">
-                <li>
-                  {/* <Link
+                <li> */}
+          {/* <Link
                     to="/AboutLunarEdge/AboutUs"
                     className="text-gray-300 transition hover:opacity-75"
                   >
                     About
                   </Link> */}
-                   {/* temporary-service-code  */}
-                   <p
+          {/* temporary-service-code  */}
+          {/* <p
                     onClick={handleAboutClick}
                     className="text-black transition hover:opacity-75 cursor-pointer"
                   >
@@ -171,6 +158,61 @@ import { Link } from "react-router-dom";
                   <Link
                     to="/contactus"
                     className="text-black transition hover:opacity-75 "
+                  >
+                    Meet the Team
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          </div> */}
+
+          <div className="flex flex-row flex-wrap gap-4 px-4">
+            <div className="flex-1">
+              <p className="font-medium text-black">Quick Links</p>
+              <ul className="mt-4 space-y-2 text-sm">
+                <li>
+                  <Link
+                    to="/common"
+                    className="text-black transition hover:opacity-75"
+                  >
+                    Career
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/services"
+                    className="text-black transition hover:opacity-75"
+                  >
+                    Services
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="https://www.linkedin.com/company/lunaredge/"
+                    target="_blank"
+                    className="text-black transition hover:opacity-75"
+                  >
+                    LinkedIn
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
+            <div className="flex-1">
+              <p className="font-medium text-black">Company</p>
+              <ul className="mt-4 space-y-2 text-sm">
+                <li>
+                  <p
+                    onClick={handleAboutClick}
+                    className="text-black transition hover:opacity-75 cursor-pointer"
+                  >
+                    About
+                  </p>
+                </li>
+                <li>
+                  <Link
+                    to="/contactus"
+                    className="text-black transition hover:opacity-75"
                   >
                     Meet the Team
                   </Link>
@@ -222,12 +264,9 @@ import { Link } from "react-router-dom";
           src={MyImage}
           alt="please reload"
         />
-
       </div>
-
-
     </footer>
   );
 };
 
-export default Footer
+export default Footer;
