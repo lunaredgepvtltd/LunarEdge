@@ -17,7 +17,7 @@ const Hero2 = () => {
   return (
     <div>
       <FirstPage />
-      {/* <NewLandingPage />  */}
+      <NewLandingPage /> 
       <HawaMahal />
       <OurJourney
         title="OUR JOURNEY"
