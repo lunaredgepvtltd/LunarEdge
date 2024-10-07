@@ -434,7 +434,8 @@ const Header = () => {
           {/* Contact Us Button */}
           <div className="hidden lg:block items-center">
             <Link to="/contactus">
-              <button className="rounded-full py-3 px-6 text-base border border-[#703299] text-white bg-gradient-to-r from-[#386bb7] to-[#e24c4a] hover:shadow-sm">
+            <button className="rounded-full py-3 px-6 text-base  border-[#703299] text-white bg-gradient-to-r
+         from-[#ff5757] to-[#8c52ff] hover:shadow-sm">
                 Contact Us
               </button>
             </Link>
