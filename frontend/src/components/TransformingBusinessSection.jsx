@@ -64,7 +64,7 @@ const TransformingBusinessSection = () => {
         {/* Circle Gradients and Image */}
         <div className="w-full h-full relative">
           {/* First circle */}
-          <div className="absolute left-[47%] md:left-[45%] top-[24%] md:top-[7%] w-[32%] xl:top-[4%] xl:left-[46%] h-auto flex justify-between items-center">
+          <div className="absolute left-[47%] md:left-[45%] top-[24%] md:top-[7%] w-[32%] xl:top-[5%] xl:left-[48%] h-auto flex justify-between items-center">
             <div
               className={`z-10 h-9 w-9 md:h-16 md:w-16 lg:h-24 lg:w-24 rounded-full bg-white border transition-all duration-300 p-1 md:p-2 flex justify-center items-center cursor-pointer ${activeTechnology === 'html' ? 'border-black scale-110' : ''}`}
               onClick={() => handleTechnologyClick('html')}
@@ -74,7 +74,7 @@ const TransformingBusinessSection = () => {
           </div>
 
           {/* Second row of circles */}
-          <div className="absolute left-[31%] xl:top-[9%] md:w-[37%] xl:w-[37%] xl:left-[31%] lg:left-[30%] top-[29%] md:top-[11%] lg:top-[10%] w-[41%] lg:w-[40%] h-auto flex justify-between items-center">
+          <div className="absolute left-[31%] xl:top-[9%] md:w-[37%] xl:w-[36%] xl:left-[33%] lg:left-[30%] top-[29%] md:top-[11%] lg:top-[10%] w-[41%] lg:w-[40%] h-auto flex justify-between items-center">
             <div
               className={`z-10 h-9 w-9 md:h-16 md:w-16 lg:h-24 lg:w-24 rounded-full bg-white border hover:text-gray-400 transition-all duration-300 p-1 md:p-2 flex justify-center items-center cursor-pointer ${activeTechnology === 'sql' ? 'border-black scale-110' : ''}`}
               onClick={() => handleTechnologyClick('sql')}
@@ -90,7 +90,7 @@ const TransformingBusinessSection = () => {
           </div>
 
           {/* Third row of circles */}
-          <div className="absolute left-[16%] top-[42%] md:top-[22%] lg:left-[17%] w-[67%] lg:w-[66%] xl:w-[60%] xl:left-[20%] xl:top-[21%] h-auto flex justify-between items-center">
+          <div className="absolute left-[17%] top-[40%] md:top-[22%] lg:left-[17%] w-[67%] lg:w-[66%] xl:w-[60%] xl:left-[21%] xl:top-[21%] h-auto flex justify-between items-center">
             <div
               className={`z-10 h-9 w-9 md:h-16 md:w-16 lg:h-24 lg:w-24 rounded-full bg-white border p-1 md:p-2 flex justify-center items-center cursor-pointer transition-all duration-300 ${activeTechnology === 'mongodb' ? 'border-black scale-110' : ''}`}
               onClick={() => handleTechnologyClick('mongodb')}
@@ -106,7 +106,7 @@ const TransformingBusinessSection = () => {
           </div>
 
           {/* Fourth row of circles */}
-          <div className="absolute left-[7%] lg:left-[5%] top-[59%] md:top-[40%] w-[86%] lg:w-[90%] xl:w-[82%] xl:left-[9%] xl:top[45%] h-auto flex justify-between items-center">
+          <div className="absolute left-[7%] lg:left-[5%] top-[57%] md:top-[40%] xl:top-[39%] w-[88%] lg:w-[90%] xl:w-[80%] xl:left-[11%] xl:top[45%] h-auto flex justify-between items-center">
             <div
               className={`z-10 h-9 w-9 md:h-16 md:w-16 lg:h-24 lg:w-24 rounded-full bg-white border p-1 md:p-2 flex justify-center items-center transition-all duration-300 cursor-pointer ${activeTechnology === 'nodejs' ? 'border-black scale-110' : ''}`}
               onClick={() => handleTechnologyClick('nodejs')}
@@ -122,7 +122,7 @@ const TransformingBusinessSection = () => {
           </div>
 
           {/* Fifth row of circles */}
-          <div className="absolute left-[0%] top-[78%] md:top-[57%] lg:top-[60%] xl:top-[61%] w-full xl:w-[96%] xl:left-[2%] h-auto flex justify-between items-center">
+          <div className="absolute left-[1%] top-[77%] md:top-[57%] lg:top-[60%] xl:top-[61%] w-[100%] xl:w-[94%] xl:left-[4%] h-auto flex justify-between items-center">
             <div
               className={`z-10 h-9 w-9 md:h-16 md:w-16 lg:h-24 lg:w-24 rounded-full bg-white border p-1 md:p-2 flex justify-center items-center transition-all duration-300 cursor-pointer ${activeTechnology === 'figma' ? 'border-black scale-110' : ''}`}
               onClick={() => handleTechnologyClick('figma')}
@@ -141,11 +141,11 @@ const TransformingBusinessSection = () => {
           <img
             src={halfmoon}
             alt="Picture of tagline"
-            className="w-full h-full object-contain mt-10 md:mt-0 opacity-70"
+            className="w-full h-full object-contain mt-10 md:mt-0 opacity-90"
           />
 
           {/* Conditionally render content based on active technology */}
-          <p className=" text-white absolute text-[8px] md:text-[14px] xl:text-3xl w-[50%] md:w-[45%] left-[25%] xl:left-[31%] top-[68%] md:top-[47%] text-left">
+          <p className=" text-white absolute text-[8px] md:text-[14px] xl:text-3xl w-[50%] md:w-[45%] left-[27%] xl:left-[31%] top-[63%] md:top-[42%] text-left">
             {activeTechnology ? technologyContent[activeTechnology] : "Click on a technology to learn more."}
           </p>
         </div>

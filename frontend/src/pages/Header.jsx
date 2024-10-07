@@ -20,7 +20,7 @@ const Header = () => {
   const [lastScrollY, setLastScrollY] = useState(0); // state to store last scroll position
 
   const scrollToAboutUs = () => {
-    navigate('/')
+    navigate("/");
     setTimeout(() => {
       window.scrollTo(0, 750);
     }, 300);
@@ -243,7 +243,9 @@ const Header = () => {
               // onMouseLeave={!isTouchDevice ? handleMouseLeave : null}
             >
               <div className="flex items-center rounded-full">
-                <Link to={'/common'} className="text-lg text-black">Industries</Link>
+                <Link to={"/common"} className="text-lg text-black">
+                  Industries
+                </Link>
                 {/* <IoIosArrowDown /> */}
               </div>
               <div className="absolute bottom-0 left-0 w-0 h-[1.3px] py-[1px] rounded-md bg-black transition-all duration-300 group-hover:w-full"></div>
@@ -287,7 +289,9 @@ const Header = () => {
               // onMouseLeave={!isTouchDevice ? handleMouseLeave : null}
             >
               <div className="flex items-center justify-between rounded-full">
-                <span className="text-lg text-black" onClick={scrollToAboutUs}>About LunarEdge</span>
+                <span className="text-lg text-black" onClick={scrollToAboutUs}>
+                  About LunarEdge
+                </span>
                 {/* <IoIosArrowDown /> */}
               </div>
 
@@ -460,59 +464,6 @@ const Header = () => {
               <hr />
               {/* lower-content  */}
               <ul className="w-35 flex flex-col  items-start mt-3 pl-4 transition-all duration-300 ">
-                <li
-                  className="  py-1 flex flex-col gap-1 items-center cursor-pointer transition-all duration-700"
-                  // onClick={handleAboutUs}
-                >
-                  <div className="flex gap-1 items-center">
-                    <span className=" text-md text-[#082847] hover:underline" onClick={()=>{
-                      toggleMenu();
-                      scrollToAboutUs()
-                    }}>
-                      About LunarEdge
-                    </span>
-                    {/* <IoIosArrowDown /> */}
-                  </div>
-                  {/* About Us sub-items */}
-                  {
-                    <ul
-                      className={` ${
-                        aboutUs ? "block" : "hidden"
-                      } mt-1 ml-0 pt-1 pb-4 w-auto transition-all duration-500`}
-                    >
-                      <li>
-                        {/* aboutUs-code-temporary-changed-for-scroll  */}
-                        <Link
-                          // to="AboutLunarEdge/AboutUs"
-                          className="block px-2 py-1 text-[#082847] hover:underline underline-offset-2 w-32 text-sm "
-                          // onClick={toggleMenu}
-                          onClick={handleAboutClick}
-                        >
-                          About Us
-                        </Link>
-                      </li>
-                      <li>
-                        <Link
-                          to="/common"
-                          className="block px-2 py-1 text-[#082847] hover:underline underline-offset-2 w-32 text-sm "
-                          onClick={toggleMenu}
-                        >
-                          Our Clients
-                        </Link>
-                      </li>
-                      <li>
-                        <Link
-                          to="/career"
-                          className="block px-2 py-1 text-[#082847] hover:underline underline-offset-2 w-32 text-sm "
-                          onClick={toggleMenu}
-                        >
-                          Careers
-                        </Link>
-                      </li>
-                    </ul>
-                  }
-                </li>
-
                 {/* Services */}
                 <li
                   className=" w-35 py-1 flex flex-col gap-1 cursor-pointer transition-all duration-700 mr-1"
@@ -521,7 +472,7 @@ const Header = () => {
                   <div className="flex gap-1 mr-2 items-center">
                     <Link
                       className="text-md text-[#082847] hover:underline"
-                      onClick={()=>{
+                      onClick={() => {
                         toggleMenu();
                         // handleServiceClick
                       }}
@@ -575,7 +526,11 @@ const Header = () => {
                   // onClick={handleIndustries}
                 >
                   <div className="flex gap-1 items-center ">
-                    <Link onClick={toggleMenu} to={'/common'} className="text-md text-[#082847] hover:underline">
+                    <Link
+                      onClick={toggleMenu}
+                      to={"/common"}
+                      className="text-md text-[#082847] hover:underline"
+                    >
                       Industries
                     </Link>
                     {/* <IoIosArrowDown /> */}
@@ -618,6 +573,69 @@ const Header = () => {
                   }
                 </li>
 
+                <li
+                  className="  py-1 flex flex-col gap-1 items-center cursor-pointer transition-all duration-700"
+                  // onClick={handleAboutUs}
+                >
+                  <div className="flex gap-1 items-center">
+                    <span
+                      className=" text-md text-[#082847] hover:underline"
+                      onClick={() => {
+                        toggleMenu();
+                        scrollToAboutUs();
+                      }}
+                    >
+                      About LunarEdge
+                    </span>
+                    {/* <IoIosArrowDown /> */}
+                  </div>
+                  {/* About Us sub-items */}
+                  {
+                    <ul
+                      className={` ${
+                        aboutUs ? "block" : "hidden"
+                      } mt-1 ml-0 pt-1 pb-4 w-auto transition-all duration-500`}
+                    >
+                      <li>
+                        {/* aboutUs-code-temporary-changed-for-scroll  */}
+                        <Link
+                          // to="AboutLunarEdge/AboutUs"
+                          className="block px-2 py-1 text-[#082847] hover:underline underline-offset-2 w-32 text-sm "
+                          // onClick={toggleMenu}
+                          onClick={handleAboutClick}
+                        >
+                          About Us
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          to="/common"
+                          className="block px-2 py-1 text-[#082847] hover:underline underline-offset-2 w-32 text-sm "
+                          onClick={toggleMenu}
+                        >
+                          Our Clients
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          to="/career"
+                          className="block px-2 py-1 text-[#082847] hover:underline underline-offset-2 w-32 text-sm "
+                          onClick={toggleMenu}
+                        >
+                          Careers
+                        </Link>
+                      </li>
+
+                    
+                    </ul>
+                  }
+                </li>
+
+                  {/* carrer  */}
+                  <li className="py-1">
+                    <Link onClick={toggleMenu} to={'/career'}>Career</Link>
+                  </li>
+
                 {/* Contact Us Button */}
                 <li className="py-2 items-center">
                   <Link to="/contactus">
@@ -637,7 +655,10 @@ const Header = () => {
         </div>
         <div className={` fixed top-2 text-left ml-4  lg:ml-10`}>
           {/* Logo */}
-          <Link to={"/"} className="flex-shrink-0 " onClick={handleLogoClick}>
+          <Link to={"/"} className="flex-shrink-0 " onClick={()=>{
+            toggleMenu();
+            handleLogoClick();
+          }}>
             <img
               src={logo}
               alt="Company Logo"

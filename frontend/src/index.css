@@ -16,3 +16,7 @@ body {
 p {
   text-align: left;
 }
+
+body::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari, and Opera */
+}
