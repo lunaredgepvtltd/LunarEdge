@@ -1,0 +1,16 @@
+/* slick-custom.css */
+@media (prefers-color-scheme: dark) {
+    .slick-dots li button:before {
+      color: rgb(216, 210, 210); /* Adjust to a darker color for dark mode */
+    }
+  
+    .slick-dots li.slick-active button:before {
+      color: white; /* Darker active dot color */
+    }
+  
+    /* .slick-dots li button:hover:before {
+      color: white; */
+       /* Darker hover color */
+    /* } */
+  }
+  
