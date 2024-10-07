@@ -657,7 +657,7 @@ const Header = () => {
         <div className={` fixed top-2 text-left ml-4  lg:ml-10`}>
           {/* Logo */}
           <Link to={"/"} className="flex-shrink-0 " onClick={()=>{
-            toggleMenu();
+            // toggleMenu();
             handleLogoClick();
           }}>
             <img
