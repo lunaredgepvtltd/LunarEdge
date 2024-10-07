@@ -3,7 +3,7 @@ import React from "react";
 
 const OurMission = ({title,subtitle,content,vidiosrc,vidiotitle}) => {
   return (
-    <div className="md:mt-[5%] flex md:flex-row flex-col w-full h-[650px] py-8 md:px-9 px-4 ">
+    <div className=" flex md:flex-row flex-col w-full h-[650px]  md:px-9 px-4 ">
       <div className="md:w-[50%] w-[90%] h-[23%] md:h-[80%] md:text-3xl text-sm font-normal flex flex-col justify-evenly pr-6">
         <span className="font-semibold md:text-2xl text-lg">{title}</span>
         <p className="text-left">
