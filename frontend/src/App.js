@@ -50,72 +50,131 @@ function App() {
 
   return (
     <>
+    {console.log(scrollY)}
       {isHome && (
-        <div className="hidden lg:block fixed right-3 top-[40%] z-50 h-auto w-auto p-4">
-
+        <div className="hidden lg:flex flex-col items-center gap-8 fixed right-10 top-[30%] z-50 h-auto w-20 p-4">
           {/* Home */}
-          <div
-            className={`h-1 rounded-sm w-8 mx-auto bg-black my-4 cursor-pointer 
-              ${clickedSection === 'home' || (scrollY < 725 && clickedSection === '') ? "scale-x-150" : ""} 
-              origin-right transition-all duration-300`}
-            onClick={() => scrollToSection('home', 0)}
-          ></div>
+          <div>
+            <div
+              className={`h-1 rounded-sm w-8 mx-auto bg-black cursor-pointer 
+                ${clickedSection === "home" || (scrollY < 725 && clickedSection === "") ? "scale-x-150" : ""} 
+                origin-right transition-all duration-300`}
+              onClick={() => scrollToSection("home", 0)}
+            ></div>
+            {clickedSection === "home" || (scrollY < 725 && clickedSection === "") ? (
+              <div  className="text-[12px] font-medium" data-aos="fade-up">Home</div>
+            ) : (
+              ""
+            )}
+          </div>
 
           {/* About Us */}
-          <div
-            className={`h-1 rounded-sm w-8 mx-auto bg-black my-4 cursor-pointer 
-              ${clickedSection === 'aboutUs' || (scrollY >= 725 && scrollY < 1424 && clickedSection === '') ? "scale-x-150" : ""} 
-              origin-right transition-all duration-300`}
-            onClick={() => scrollToSection('aboutUs', 726)}
-          ></div>
+          <div>
+            <div
+              className={`h-1 rounded-sm w-8 mx-auto bg-black cursor-pointer 
+                ${clickedSection === "aboutUs" || (scrollY >= 725 && scrollY < 1424 && clickedSection === "") ? "scale-x-150" : ""} 
+                origin-right transition-all duration-300`}
+              onClick={() => scrollToSection("aboutUs", 726)}
+            ></div>
+            {clickedSection === "aboutUs" || (scrollY >= 725 && scrollY < 1424 && clickedSection === "") ? (
+              <div className="flex flex-col items-center text-[12px] font-medium my-1" data-aos="fade-up">
+                <p>About</p>
+                <p>LunarEdge</p>
+              </div>
+            ) : (
+              ""
+            )}
+          </div>
 
           {/* Hawa Mahal */}
-          <div
-            className={`h-1 rounded-sm w-8 mx-auto bg-black my-4 cursor-pointer 
-              ${clickedSection === 'hawaMahal' || (scrollY >= 1424 && scrollY < 2033 && clickedSection === '') ? "scale-x-150" : ""} 
-              origin-right transition-all duration-300`}
-            onClick={() => scrollToSection('hawaMahal', 1424)}
-          ></div>
+          <div>
+            <div
+              className={`h-1 rounded-sm w-8 mx-auto bg-black cursor-pointer 
+                ${clickedSection === "hawaMahal" || (scrollY >= 1424 && scrollY < 2033 && clickedSection === "") ? "scale-x-150" : ""} 
+                origin-right transition-all duration-300`}
+              onClick={() => scrollToSection("hawaMahal", 1424)}
+            ></div>
+            {clickedSection === "hawaMahal" || (scrollY >= 1424 && scrollY < 2033 && clickedSection === "") ? (
+              <div className="text-[12px] font-medium text-nowrap" data-aos="fade-up">Hawa Mahal</div>
+            ) : (
+              ""
+            )}
+          </div>
 
           {/* Journey */}
-          <div
-            className={`h-1 rounded-sm w-8 mx-auto bg-black my-4 cursor-pointer 
-              ${clickedSection === 'journey' || (scrollY >= 2033 && scrollY < 2742 && clickedSection === '') ? "scale-x-150" : ""} 
-              origin-right transition-all duration-300`}
-            onClick={() => scrollToSection('journey', 2034)}
-          ></div>
+          <div>
+            <div
+              className={`h-1 rounded-sm w-8 mx-auto bg-black cursor-pointer 
+                ${clickedSection === "journey" || (scrollY >= 2033 && scrollY < 2742 && clickedSection === "") ? "scale-x-150" : ""} 
+                origin-right transition-all duration-300`}
+              onClick={() => scrollToSection("journey", 2034)}
+            ></div>
+            {clickedSection === "journey" || (scrollY >= 2033 && scrollY < 2742 && clickedSection === "") ? (
+              <div className="text-[12px] font-medium text-nowrap" data-aos="fade-up">Our Journey</div>
+            ) : (
+              ""
+            )}
+          </div>
 
           {/* Values */}
-          <div
-            className={`h-1 rounded-sm w-8 mx-auto bg-black my-4 cursor-pointer 
-              ${clickedSection === 'values' || (scrollY >= 2742 && scrollY <= 3450 && clickedSection === '') ? "scale-x-150" : ""} 
-              origin-right transition-all duration-300`}
-            onClick={() => scrollToSection('values', 2743)}
-          ></div>
+          <div>
+            <div
+              className={`h-1 rounded-sm w-8 mx-auto bg-black cursor-pointer 
+                ${clickedSection === "values" || (scrollY >= 2742 && scrollY <= 3380 && clickedSection === "") ? "scale-x-150" : ""} 
+                origin-right transition-all duration-300`}
+              onClick={() => scrollToSection("values", 2743)}
+            ></div>
+            {clickedSection === "values" || (scrollY >= 2742 && scrollY < 3380 && clickedSection === "") ? (
+              <div className="text-[12px] font-medium" data-aos="fade-up">Values</div>
+            ) : (
+              ""
+            )}
+          </div>
 
           {/* Vision & Mission */}
-          <div
-            className={`h-1 rounded-sm w-8 mx-auto bg-black my-4 cursor-pointer 
-              ${clickedSection === 'visionMission' || (scrollY >= 3450 && scrollY < 4832 && clickedSection === '') ? "scale-x-150" : ""} 
-              origin-right transition-all duration-300`}
-            onClick={() => scrollToSection('visionMission', 3455)}
-          ></div>
+          <div>
+            <div
+              className={`h-1 rounded-sm w-8 mx-auto bg-black cursor-pointer 
+                ${clickedSection === "visionMission" || (scrollY >= 3380 && scrollY < 4656 && clickedSection === "") ? "scale-x-150" : ""} 
+                origin-right transition-all duration-300`}
+              onClick={() => scrollToSection("visionMission", 3380)}
+            ></div>
+            {clickedSection === "visionMission" || (scrollY >= 3380 && scrollY < 4656 && clickedSection === "") ? (
+               <div className="text-[12px] font-medium text-nowrap" data-aos="fade-up">Vission & Mission</div>
+            ) : (
+              ""
+            )}
+          </div>
 
           {/* Technology */}
-          <div
-            className={`h-1 rounded-sm w-8 mx-auto bg-black my-4 cursor-pointer 
-              ${clickedSection === 'technology' || (scrollY >= 4832 && scrollY <= 5572 && clickedSection === '') ? "scale-x-150" : ""} 
-              origin-right transition-all duration-300`}
-            onClick={() => scrollToSection('technology', 4834)}
-          ></div>
+          <div>
+            <div
+              className={`h-1 rounded-sm w-8 mx-auto bg-black cursor-pointer 
+                ${clickedSection === "technology" || (scrollY >= 4656 && scrollY <= 5463 && clickedSection === "") ? "scale-x-150" : ""} 
+                origin-right transition-all duration-300`}
+              onClick={() => scrollToSection("technology", 4656)}
+            ></div>
+            {clickedSection === "technology" || (scrollY >= 4656 && scrollY <= 5460 && clickedSection === "") ? (
+              <div className="text-[12px] font-medium" data-aos="fade-up">Technology</div>
+            ) : (
+              ""
+            )}
+          </div>
 
           {/* Contact */}
-          <div
-            className={`h-1 rounded-sm w-8 mx-auto bg-black my-4 cursor-pointer 
-              ${clickedSection === 'contact' || (scrollY > 5572 && clickedSection === '') ? "scale-x-150" : ""} 
-              origin-right transition-all duration-300`}
-            onClick={() => scrollToSection('contact', 5576)}
-          ></div>
+          <div>
+            <div
+              className={`h-1 rounded-sm w-8 mx-auto bg-black cursor-pointer 
+                ${clickedSection === "contact" || (scrollY > 5460 && clickedSection === "") ? "scale-x-150" : ""} 
+                origin-right transition-all duration-300`}
+              onClick={() => scrollToSection("contact", 5460)}
+            ></div>
+            {clickedSection === "contact" || (scrollY > 5460 && clickedSection === "") ? (
+              <div className="text-[12px] font-medium text-nowrap" data-aos="fade-up">Contact Us</div>
+            ) : (
+              ""
+            )}
+          </div>
         </div>
       )}
 
