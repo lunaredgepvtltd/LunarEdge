@@ -10,13 +10,15 @@ import MoonImage from "../assets/bgLandingPage.png";
 import BgConTactUs from "../assets/BgContactUs.png";
 
 const ContactCard = ({ image, children }) => (
-  <div className="md:w-[25%] w-[90%] mx-auto bg-gradient-to-r from-[#a6a6a6] to-[#ffffff] rounded-lg flex flex-row md:flex-col items-center justify-between md:justify-evenly px-5 py-4 md:py-0  shadow-lg">
+  <div className="md:w-[24%] w-[90%] mx-auto bg-gradient-to-r from-[#a6a6a6] to-[#ffffff] dark:bg-gradient-to-r dark:from-[#000000] dark:to-[#737373]  rounded-3xl flex flex-row md:flex-col items-center justify-between md:justify-evenly px-5 py-4 md:py-0  shadow-lg">
     <img
       src={image}
       alt=""
-      className="md:h-[90px] md:w-[90px] h-[45px] w-[45px]"
+      className="md:h-[90px] md:w-[90px] h-[45px] w-[45px] filter dark:invert "
     />
-    <div className="text-gray-800 md:w-auto w-[75%]">{children}</div>
+    <div className="text-gray-800 dark:text-white  md:w-auto w-[75%]">
+      {children}
+    </div>
   </div>
 );
 
@@ -64,7 +66,7 @@ function ContactPage() {
   };
 
   return (
-    <div className="h-full w-full">
+    <div className="h-full w-full dark:bg-black">
       <div
         className="w-full h-[700px] md:h-[780px] pt-4 bg-cover bg-center"
         style={{
@@ -76,11 +78,11 @@ function ContactPage() {
           <h2 className=" md:text-3xl text-2l font-lg mb-[1px] md:mb-4">
             How we can help you?
           </h2>
-          <h3 className=" md:text-6xl text-2xl font-semibold mb-0 md:mb-12">
+          <h3 className=" md:text-6xl text-2xl font-normal mb-0 md:mb-12">
             CONTACT US
           </h3>
 
-          <div className=" h-[300px] flex-col  flex md:flex-row justify-center gap-8 md:gap-9 text-sm ">
+          <div className=" h-[350px] flex-col  flex md:flex-row justify-center gap-8 md:gap-9 text-sm  ">
             <ContactCard image={callContactPage}>
               <p className="md:mb-5 text-left md:text-center text-xs md:text-lg">
                 0141-4512611 (Office)
@@ -109,8 +111,8 @@ function ContactPage() {
         </div>
       </div>
 
-      <div className=" h-full w-full bg-white z-10 mt-[10%] pb-[3%]">
-        <h1 className=" text-lg text-black  text-center md:text-2xl lg:text-5xl uppercase font-normal pb-8">
+      <div className=" h-full w-full bg-white dark:bg-black z-10 mt-[10%] pb-[3%]">
+        <h1 className=" text-lg text-black  dark:text-white  text-center md:text-2xl lg:text-5xl uppercase font-normal pb-8">
           corporate office Address
         </h1>
 
@@ -143,23 +145,27 @@ function ContactPage() {
             }}
           >
             <div className="text-center flex flex-col items-center justify-center px-4">
-              <p className="text-center text-sm md:text-2xl font-normal mb-[3%] pt-[5%]">
+              <p className="text-center text-sm md:text-2xl font-normal mb-[3%] pt-[5%] dark:text-white w-[80%] mx-auto">
                 Thank you for your interest in LunarEdge’s services. Please fill
                 the form below. This will enable us to route your request to the
                 approriate person to serve you better. Expected time of response
                 should be within 24 hours.{" "}
               </p>
-              <h3 className="text-2xl md:text-4xl font-semibold mb-6">
+              {/* <h3 className="text-2xl md:text-4xl font-normal mb-6 dark:text-white">
                 {" "}
                 Contact us
-              </h3>
+              </h3> */}
             </div>
 
-            <div className="bg-gradient-to-r mb-4 from-[#ffffff] to-[#a6a6a6] border-black border-2 rounded-[50px] p-10 h-auto md:h-[60%] w-[90%] md:w-[50%] lg:w-[40%] mx-auto">
+            <div className="bg-gradient-to-r mb-4 from-[#ffffff] to-[#a6a6a6] dark:bg-gradient-to-r dark:from-[#000000] dark:to-[#737373] border-black border-2 rounded-[50px] p-10 h-auto md:h-[60%] w-[90%] md:w-[50%] lg:w-[40%] mx-auto">
               <form
                 className="space-y-[17px] md:space-y-4 mx-auto max-w-[100%] md:max-w-[85%] lg:max-w-[78%]"
                 onSubmit={handleSubmit(onSubmit)}
               >
+                 <h3 className="text-2xl md:text-4xl font-normal uppercase text-center mb-10 dark:text-white">
+                {" "}
+                Contact us
+              </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="flex flex-col gap-1 items-center justify-center">
                     <input
@@ -251,7 +257,7 @@ function ContactPage() {
                 <div className="text-center mt-5">
                   <button
                     type="submit"
-                    className="bg-black text-white py-2 px-8 rounded-2xl md:rounded-3xl text-sm md:text-lg transition duration-300 hover:bg-gray-700"
+                    className="bg-gradient-to-r from-[#ff5757] to-[#8c52ff] text-white py-2 px-8 rounded-2xl md:rounded-3xl text-sm md:text-lg transition duration-300 hover:bg-gray-700"
                   >
                     Submit
                   </button>

@@ -13,8 +13,8 @@ import NEXTGEN_GAME from "../assets/Bg_NEXTGAME.png";
 import IT_CONSULTING from "../assets/Bg_CONSULTING.png";
 import HARWARE_SUPPLY_SOLUTIONS from "../assets/Bg_HARDWARE.png";
 import CYBER_SECURITY from "../assets/Bg_CYBER.png";
-// import ProcessFlow from "./ProcessFlow";
-// import "./ServicesNewTheme.css";
+
+import "./ServicesNewTheme.css";
 
 const ServicesNewTheme = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -140,7 +140,7 @@ const ServicesNewTheme = () => {
 
   return (
     <>
-      <div className="relative flex flex-col items-center justify-center  gap-8 md:gap-10 lg:gap-16 h-[600px] md:h-screen overflow-hidden bg-white dark:bg-black z-0">
+      <div className="relative flex flex-col items-center justify-center  gap-8 md:gap-10 lg:gap-16 h-[600px] md:h-screen overflow-hidden bg-white  z-0">
         {/* Half Moon */}
         <img
           src={MoonImage}
@@ -363,7 +363,6 @@ const ServicesNewTheme = () => {
       </div>
 
 
-      {/* <ProcessFlow/> */}
     </>
   );
 };
