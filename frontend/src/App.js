@@ -62,7 +62,7 @@ function App() {
               onClick={() => scrollToSection("home", 0)}
             ></div>
             {clickedSection === "home" || (scrollY < 725 && clickedSection === "") ? (
-              <div  className="text-[12px] font-medium" data-aos="fade-up">Home</div>
+              <div  className="text-[12px] font-medium" data-aos="fade-left">Home</div>
             ) : (
               ""
             )}
@@ -77,7 +77,7 @@ function App() {
               onClick={() => scrollToSection("aboutUs", 726)}
             ></div>
             {clickedSection === "aboutUs" || (scrollY >= 725 && scrollY < 1424 && clickedSection === "") ? (
-              <div className="flex flex-col items-center text-[12px] font-medium my-1" data-aos="fade-up">
+              <div className="flex flex-col items-center text-[12px] font-medium my-1" data-aos="fade-left">
                 <p>About</p>
                 <p>LunarEdge</p>
               </div>
@@ -95,7 +95,7 @@ function App() {
               onClick={() => scrollToSection("hawaMahal", 1424)}
             ></div>
             {clickedSection === "hawaMahal" || (scrollY >= 1424 && scrollY < 2033 && clickedSection === "") ? (
-              <div className="text-[12px] font-medium text-nowrap" data-aos="fade-up">Hawa Mahal</div>
+              <div className="text-[12px] font-medium text-nowrap" data-aos="fade-left">Hawa Mahal</div>
             ) : (
               ""
             )}
@@ -110,7 +110,7 @@ function App() {
               onClick={() => scrollToSection("journey", 2034)}
             ></div>
             {clickedSection === "journey" || (scrollY >= 2033 && scrollY < 2742 && clickedSection === "") ? (
-              <div className="text-[12px] font-medium text-nowrap" data-aos="fade-up">Our Journey</div>
+              <div className="text-[12px] font-medium text-nowrap" data-aos="fade-left">Our Journey</div>
             ) : (
               ""
             )}
@@ -125,7 +125,7 @@ function App() {
               onClick={() => scrollToSection("values", 2743)}
             ></div>
             {clickedSection === "values" || (scrollY >= 2742 && scrollY < 3380 && clickedSection === "") ? (
-              <div className="text-[12px] font-medium" data-aos="fade-up">Values</div>
+              <div className="text-[12px] font-medium" data-aos="fade-left">Values</div>
             ) : (
               ""
             )}
@@ -140,7 +140,7 @@ function App() {
               onClick={() => scrollToSection("visionMission", 3380)}
             ></div>
             {clickedSection === "visionMission" || (scrollY >= 3380 && scrollY < 4656 && clickedSection === "") ? (
-               <div className="text-[12px] font-medium text-nowrap" data-aos="fade-up">Vission & Mission</div>
+               <div className="text-[12px] font-medium text-nowrap" data-aos="fade-left">Vission & Mission</div>
             ) : (
               ""
             )}
@@ -155,7 +155,7 @@ function App() {
               onClick={() => scrollToSection("technology", 4656)}
             ></div>
             {clickedSection === "technology" || (scrollY >= 4656 && scrollY <= 5460 && clickedSection === "") ? (
-              <div className="text-[12px] font-medium" data-aos="fade-up">Technology</div>
+              <div className="text-[12px] font-medium" data-aos="fade-left">Technology</div>
             ) : (
               ""
             )}
@@ -170,7 +170,7 @@ function App() {
               onClick={() => scrollToSection("contact", 5460)}
             ></div>
             {clickedSection === "contact" || (scrollY > 5460 && clickedSection === "") ? (
-              <div className="text-[12px] font-medium text-nowrap" data-aos="fade-up">Contact Us</div>
+              <div className="text-[12px] font-medium text-nowrap" data-aos="fade-left">Contact Us</div>
             ) : (
               ""
             )}
