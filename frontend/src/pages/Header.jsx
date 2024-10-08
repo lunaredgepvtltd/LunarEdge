@@ -196,7 +196,7 @@ const Header = () => {
         <div
           className={`${
             showHeader ? "header-visible" : "header-hidden"
-          } box flex  bg-gradient-to-r from-white to-[#A6A6A6] h-full w-full justify-between items-center px-4 xl:px-10`}
+          } box flex  bg-gradient-to-r from-white to-[#A6A6A6] h-full w-full justify-between items-center px-4 xl:px-10   dark:from-black dark:to-[#737373]`}
         >
           {/* Logo */}
           <Link to={"/"} className="flex-shrink-0 " onClick={handleLogoClick}>
@@ -219,7 +219,7 @@ const Header = () => {
           {/* Nav Links for Desktop */}
           <ul className="w-[40%] hidden lg:flex  items-center justify-between">
             <li className="relative group">
-              <Link to="/services" className="text-lg text-black relative">
+              <Link to="/services" className="text-lg text-black dark:text-white relative">
                 Services
               </Link>
 
@@ -230,7 +230,7 @@ const Header = () => {
   >
     Services
   </p> */}
-              <div className="absolute bottom-0 left-0 w-0 h-[1.3px] py-[1px] rounded-md bg-black transition-all duration-300 group-hover:w-full"></div>
+              <div className="absolute bottom-0 left-0 w-0 h-[1.3px] py-[1px] rounded-md bg-black dark:bg-white transition-all duration-300 group-hover:w-full"></div>
             </li>
 
             {/* Industries Dropdown */}
@@ -243,12 +243,12 @@ const Header = () => {
               // onMouseLeave={!isTouchDevice ? handleMouseLeave : null}
             >
               <div className="flex items-center rounded-full">
-                <Link to={"/common"} className="text-lg text-black">
+                <Link to={"/common"} className="text-lg text-black dark:text-white">
                   Industries
                 </Link>
                 {/* <IoIosArrowDown /> */}
               </div>
-              <div className="absolute bottom-0 left-0 w-0 h-[1.3px] py-[1px] rounded-md bg-black transition-all duration-300 group-hover:w-full"></div>
+              <div className="absolute bottom-0 left-0 w-0 h-[1.3px] py-[1px] rounded-md bg-black dark:bg-white transition-all duration-300 group-hover:w-full"></div>
               {openDropdown === "industries" && (
                 <ul className="absolute top-[63px] left-0 rounded-lg shadow-lg bg-[#292828] w-40 pt-3 pb-3">
                   <li>
@@ -289,13 +289,13 @@ const Header = () => {
               // onMouseLeave={!isTouchDevice ? handleMouseLeave : null}
             >
               <div className="flex items-center justify-between rounded-full">
-                <span className="text-lg text-black" onClick={scrollToAboutUs}>
+                <span className="text-lg text-black dark:text-white" onClick={scrollToAboutUs}>
                   About LunarEdge
                 </span>
                 {/* <IoIosArrowDown /> */}
               </div>
 
-              <div className="absolute bottom-0 left-0 w-0 h-[1.3px] py-[1px] rounded-md bg-black transition-all duration-300 group-hover:w-full"></div>
+              <div className="absolute bottom-0 left-0 w-0 h-[1.3px] py-[1px] rounded-md bg-black dark:bg-white transition-all duration-300 group-hover:w-full"></div>
 
               {openDropdown === "aboutUs" && (
                 <ul className="absolute top-[63px] left-0 rounded-lg shadow-lg bg-[#292828] w-48 pt-3 pb-3">
@@ -339,12 +339,12 @@ const Header = () => {
             <li className="relative group ">
               <Link
                 to="/common"
-                className="h-full  rounded-full text-black text-lg cursor-pointer transition-all duration-300"
+                className="h-full  rounded-full text-black dark:text-white text-lg cursor-pointer transition-all duration-300"
                 onClick={() => handleDropdownToggle()}
               >
                 Career
               </Link>
-              <div className="absolute bottom-0 left-0 w-0 h-[1.3px] py-[1px] rounded-md bg-black transition-all duration-300 group-hover:w-full"></div>
+              <div className="absolute bottom-0 left-0 w-0 h-[1.3px] py-[1px] rounded-md bg-black dark:bg-white transition-all duration-300 group-hover:w-full"></div>
             </li>
             {/* {openDropdown === "services" && (
             <div className="flex absolute top-[63px] left-0 rounded-lg shadow-lg bg-[#292828] w-auto pt-3 pb-3">

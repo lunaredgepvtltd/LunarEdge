@@ -15,7 +15,7 @@ import HawaMahal from "../components/HawaMahal";
 
 const Hero2 = () => {
   return (
-    <div>
+    <div className=" dark:bg-black bg-white">
       <FirstPage />
       <NewLandingPage /> 
       <HawaMahal />
