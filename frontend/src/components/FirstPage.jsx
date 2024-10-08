@@ -13,7 +13,7 @@ const FirstPage = () => {
           Smart Innovation Meets Infinity
         </h1>
         <div className="h-[200px] flex flex-col gap-6 justify-evenly">
-          <h3 className="md:text-3xl text-2xl dark:text-white ">
+          <h3 className="md:text-3xl text-2xl md:dark:text-white ">
             We transform innovative ideas into reality.
           </h3>
           <span className="flex justify-center ">

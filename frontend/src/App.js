@@ -48,6 +48,30 @@ function App() {
   const location = useLocation();
   const isHome = location.pathname === "/";
 
+    // State to track theme mode
+    const [darkMode, setDarkMode] = useState(() => {
+      // Check the system preference for dark mode
+      if (typeof window !== 'undefined') {
+        return window.matchMedia('(prefers-color-scheme: dark)').matches;
+      }
+      return false;
+    });
+  
+    // Handle theme change with useEffect
+    useEffect(() => {
+      if (darkMode) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    }, [darkMode]);
+  
+    // Toggle between dark and light mode
+    const toggleDarkMode = () => {
+      setDarkMode(!darkMode);
+      console.log("clicked darkMode")
+    };
+
   return (
     <>
     {console.log(scrollY)}
@@ -180,7 +204,7 @@ function App() {
 
       {/* Lazy load Header */}
       <Suspense fallback={<div>Loading Header...</div>}>
-        <Header />
+        <Header toggleDarkMode={toggleDarkMode}/>
       </Suspense>
 
       <main>

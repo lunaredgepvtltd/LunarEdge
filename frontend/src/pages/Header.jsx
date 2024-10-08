@@ -8,7 +8,7 @@ import { useMediaQuery } from "react-responsive";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 
-const Header = () => {
+const Header = ({toggleDarkMode}) => {
   const [showForm, setShowForm] = useState(false); // State to show/hide contact form
   const [menuOpen, setMenuOpen] = useState(false); // State to manage mobile menu visibility
   const [isTouchDevice, setIsTouchDevice] = useState(false); // State to check if the device is touch-enabled
@@ -243,7 +243,7 @@ const Header = () => {
               // onMouseLeave={!isTouchDevice ? handleMouseLeave : null}
             >
               <div className="flex items-center rounded-full">
-                <Link to={"/common"} className="text-lg text-black dark:text-white">
+                <Link to={"/common"} className="text-lg text-black dark:text-white ">
                   Industries
                 </Link>
                 {/* <IoIosArrowDown /> */}
@@ -339,7 +339,7 @@ const Header = () => {
             <li className="relative group ">
               <Link
                 to="/common"
-                className="h-full  rounded-full text-black dark:text-white text-lg cursor-pointer transition-all duration-300"
+                className="h-full  rounded-full text-black dark:text-white text-lg cursor-pointer "
                 onClick={() => handleDropdownToggle()}
               >
                 Career
@@ -430,6 +430,14 @@ const Header = () => {
             {/* )}
         </li> */}
           </ul>
+          <div className="p-6">
+        {/* <h1 className="text-2xl font-bold">Dark Mode Toggle</h1> */}
+        <button
+          onClick={toggleDarkMode}
+          className="mt-4 px-4 py-2 rounded-md bg-blue-500 text-white dark:bg-yellow-400 dark:text-black">
+          Toggle Dark Mode
+        </button>
+      </div>
 
           {/* Contact Us Button */}
           <div className="hidden lg:block items-center">
