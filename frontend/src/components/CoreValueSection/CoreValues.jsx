@@ -83,7 +83,7 @@ const CoreValues = () => {
 
   return (
     <div className="w-[95%] md:h-[700px] h-1/2 mx-auto px-4 sm:px-0 xl:px-8 flex flex-col justify-around">
-      <p className="mt-9 md:text-4xl text-xl font-light leading-8 text-center">
+      <p className="mt-9 md:text-4xl text-xl font-light leading-8 text-center dark:text-white">
         Our core values that define who we are and how we work
       </p>
 
@@ -91,7 +91,7 @@ const CoreValues = () => {
         {!isLg ? (
           <Slider {...settings} className="block">
             {services.map((service, index) => (
-              <div className="bg-white px-2" key={index}>
+              <div className="bg-white dark:bg-black px-2" key={index}>
                 <div
                   className={` h-[280px] rounded-3xl drop-shadow overflow-hidden flex flex-col justify-between`}
                 >
@@ -107,10 +107,10 @@ const CoreValues = () => {
                   <div
                     className={`flex flex-col h-full xl:py-9 py-3 px-4 xl:px-8 justify-center lg:justify-evenly xl:justify-between z-20`}
                   >
-                    <h3 className="mt-4 xl:text-xl text-lg font-semibold text-gray-900 ">
+                    <h3 className="mt-4 xl:text-xl text-lg font-semibold text-gray-900 dark:text-white ">
                       {service.title}
                     </h3>
-                    <p className="mt-2 xl:font-semibold xl:text-lg text-sm text-left ">
+                    <p className="mt-2 xl:font-semibold xl:text-lg text-sm text-left dark:text-white">
                       {service.description}
                     </p>
                   </div>
@@ -153,10 +153,10 @@ const CoreValues = () => {
               <div
                 className={`flex flex-col h-full xl:py-9 py-3 px-4 xl:px-8 lg:justify-evenly xl:justify-between z-20`}
               >
-                <h3 className="mt-4 xl:text-xl text-lg font-bold text-gray-900 opacity-100">
+                <h3 className="mt-4 xl:text-xl text-lg font-bold text-gray-900 dark:text-white opacity-100">
                   {service.title}
                 </h3>
-                <p className="mt-2  xl:text-lg text-sm text-left">
+                <p className="mt-2  xl:text-lg text-sm text-left dark:text-white">
                   {service.description}
                 </p>
               </div>
