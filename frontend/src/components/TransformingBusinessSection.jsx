@@ -49,14 +49,14 @@ const TransformingBusinessSection = () => {
   }, [technologies]);
 
   return (
-    <div className="w-full h-[390px] md:h-screen md:px-5 md:mt-28">
+    <div className="w-full h-[390px]  md:h-screen md:px-5 md:mt-28">
       <div className="w-[97%] h-[80%] md:h-full mx-auto flex flex-col justify-between">
         {/* heading-div */}
         <div className="w-full md:w-[50%] h-[40%] md:h-[60%] lg:h-auto mx-auto flex flex-col gap-3 md:gap-1 justify-center items-center">
-          <p className="text-lg lg:text-4xl text-black md:text-nowrap text-center">
+          <p className="text-lg lg:text-4xl dark:text-white text-black md:text-nowrap text-center">
             TRANSFORMING BUSINESS THROUGH TECHNOLOGY
           </p>
-          <p className="text-sm md:text-lg lg:text-2xl md:text-nowrap text-black text-center">
+          <p className="text-sm md:text-lg lg:text-2xl md:text-nowrap dark:text-white text-black text-center">
             We harness the latest tools to deliver exceptional results
           </p>
         </div>
