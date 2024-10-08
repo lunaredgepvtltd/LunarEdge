@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: 'class', // or 'media' if you want to rely on device preference only
   content: [
     "./src/**/*.{js,jsx,ts,tsx}",
   ],

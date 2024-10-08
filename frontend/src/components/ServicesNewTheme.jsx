@@ -140,7 +140,7 @@ const ServicesNewTheme = () => {
 
   return (
     <>
-      <div className="relative flex flex-col items-center justify-center  gap-8 md:gap-10 lg:gap-16 h-[600px] md:h-screen overflow-hidden bg-white  z-0">
+      <div className="relative flex flex-col items-center justify-center  gap-8 md:gap-10 lg:gap-16 h-[600px] md:h-screen overflow-hidden bg-white dark:bg-black  z-0">
         {/* Half Moon */}
         <img
           src={MoonImage}
