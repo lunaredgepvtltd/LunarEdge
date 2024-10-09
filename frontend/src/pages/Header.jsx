@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import logo from "../assets/Lunaredge.png";
 import "../App.css";
 import { IoIosArrowDown, IoIosMenu, IoIosClose } from "react-icons/io";
-import ContactForm from "./ContactForm";
+
 import LunaredgeLogo from "../assets/Lunaredge.png";
 import { useMediaQuery } from "react-responsive";
 import { useNavigate } from "react-router-dom";
@@ -147,15 +147,7 @@ const Header = ({ toggleDarkMode, theme }) => {
     }
   };
 
-  // Show contact form
-  const handleButton = () => {
-    setShowForm(true);
-  };
-
-  // Close contact form
-  const closeForm = () => {
-    setShowForm(false);
-  };
+  
 
   // Toggle mobile menu visibility
   const toggleMenu = () => {
@@ -371,89 +363,7 @@ const Header = ({ toggleDarkMode, theme }) => {
               </Link>
               <div className="absolute bottom-0 left-0 w-0 h-[1.3px] py-[1px] rounded-md bg-black dark:bg-white transition-all duration-300 group-hover:w-full"></div>
             </li>
-            {/* {openDropdown === "services" && (
-            <div className="flex absolute top-[63px] left-0 rounded-lg shadow-lg bg-[#292828] w-auto pt-3 pb-3">
-              <ul className="">
-                <li>
-                  <Link
-                    to="/services"
-                    className="block px-4 py-2 text-white hover:text-red-500"
-                  >
-                    Web Development
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/common"
-                    className="block px-4 py-2 text-white hover:text-red-500"
-                  >
-                    Mobile App Development
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/common"
-                    className="block px-4 py-2 text-white hover:text-red-500"
-                  >
-                    IT Consulting
-                  </Link>
-                </li>
-              </ul>
-              <ul>
-                <li>
-                  <Link
-                    to="/common"
-                    className="block px-4 py-2 text-white hover:text-red-500"
-                  >
-                    Cloud Solutions
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/common"
-                    className="block px-4 py-2 text-white hover:text-red-500"
-                  >
-                    CyberSecurity Services
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/common"
-                    className="block px-4 py-2 text-white hover:text-red-500"
-                  >
-                    Game Development
-                  </Link>
-                </li>
-              </ul>
-              <ul>
-                <li>
-                  <Link
-                    to="/common"
-                    className="block px-4 py-2 text-white hover:text-red-500"
-                  >
-                    Banking Services
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/common"
-                    className="block px-4 py-2 text-white hover:text-red-500"
-                  >
-                    AI Solutions
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/common"
-                    className="block px-4 py-2 text-white hover:text-red-500"
-                  >
-                    Game Development
-                  </Link>
-                </li>
-              </ul>
-            </div> */}
-            {/* )}
-        </li> */}
+      
           </ul>
 
           {/* Contact Us Button */}
@@ -683,8 +593,7 @@ const Header = ({ toggleDarkMode, theme }) => {
             />
           </Link>
         </div>
-        {/* Contact Form */}
-        {showForm && <ContactForm onClose={closeForm} />}
+       
       </div>
     </>
   );
