@@ -440,10 +440,10 @@ const Header = ({toggleDarkMode}) => {
       </div>
 
           {/* Contact Us Button */}
-          <div className="hidden lg:block items-center">
+          <div className="hidden lg:block items-center group">
             <Link to="/contactus">
             <button className="rounded-full py-3 px-6 text-base  border-[#703299] text-white bg-gradient-to-r
-         from-[#ff5757] to-[#8c52ff] hover:shadow-sm">
+         from-[#ff5757] to-[#8c52ff] hover:shadow-sm  group-hover:bg-pink-400 transition-all duration-500 ">
                 Contact Us
               </button>
             </Link>
