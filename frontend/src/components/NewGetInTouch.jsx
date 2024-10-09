@@ -40,7 +40,7 @@ const GetInTouch = () => {
  }
 
   return (
-    <div className="flex md:flex-row flex-col-reverse items-center w-[100%] h-full bg-white dark:bg-black  p-4">
+    <div className="flex md:flex-row flex-col-reverse items-center w-[100%] h-full bg-white dark:bg-gray-800  p-4">
       <div className="md:w-[60%] p-6 w-full">
         <div className="flex flex-col items-center w-full">
           <h2 className="xl:text-5xl md:text-3xl font-bold text-gray-800 dark:text-white mb-4">
@@ -63,7 +63,7 @@ const GetInTouch = () => {
               onChange={handleEmail}
               className="md:w-[35%] md:text-lg text-xs border border-gray-300 bg-gray-200 rounded-s-lg py-2 px-4 focus:outline-none focus:ring-1 focus:ring-pink-600"
             />
-            <button onClick={handleEmailClick} className=" md:text-lg text-xs bg-gradient-to-r from-pink-500 to-purple-500 text-white dark:text-black font-semibold py-2 px-6 rounded-e-lg hover:from-purple-500 hover:to-pink-500 focus:outline-none focus:ring-1 focus:ring-pink-500">
+            <button onClick={handleEmailClick} className=" md:text-lg text-xs bg-gradient-to-r from-[#ff5757] to-[#8c52ff] text-white dark:text-black font-semibold py-2 px-6 rounded-e-lg hover:from-[#8c52ff] hover:to-[#ff5757] focus:outline-none focus:ring-1 focus:ring-pink-500">
               Send
             </button>
           </div>

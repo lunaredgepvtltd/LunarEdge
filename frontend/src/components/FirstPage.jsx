@@ -19,7 +19,7 @@ const FirstPage = () => {
           <span className="flex justify-center ">
             <Link to={'/contactus'}
               className="text-white rounded-full md:py-4 md:px-6 py-2 px-3 md:text-lg text-sm bg-gradient-to-r
-         from-[#ff5757] to-[#8c52ff]"
+         from-[#ff5757] to-[#8c52ff] "
             >
               Get in Touch
             </Link>
