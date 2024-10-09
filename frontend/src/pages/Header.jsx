@@ -209,7 +209,7 @@ const Header = ({ toggleDarkMode, theme }) => {
                   alt="lignt-logo"
                   onClick={toggleDarkMode}
                   className={`w-[45px] drop-shadow-[1px_1px_1pxrgba(0,0,0,0.1)]  cursor-pointer transition-all duration-300 absolute right-0 z-10 ${
-                    !theme ? "opacity-100" : "opacity-10"
+                    theme ? "opacity-100" : "opacity-10"
                   }`}
                 />
 
@@ -384,7 +384,7 @@ const Header = ({ toggleDarkMode, theme }) => {
                   alt="lignt-logo"
                   onClick={toggleDarkMode}
                   className={`w-[45px] drop-shadow-[1px_1px_1pxrgba(0,0,0,0.1)]  cursor-pointer transition-all duration-300 absolute right-0 z-10 ${
-                    !theme ? "opacity-100" : "opacity-10"
+                    theme ? "opacity-100" : "opacity-10"
                   }`}
                 />
 
