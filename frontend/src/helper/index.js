@@ -4,7 +4,7 @@ const localDomainName = 'http://localhost:8080';
 // Determine if the current environment is local
 const isLocal = window.location.hostname === 'localhost';
 
-// Use the appropriate domain based on the environment
+// Use the appropriate domain based on the  environment
 const currentDomain = isLocal ? localDomainName : DomainName;
 
 export const API = {
