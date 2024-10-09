@@ -252,7 +252,7 @@ const Footer = () => {
             </ul>
 
             <p className=" mt-3 md:mt-6 text-xs text-black sm:mt-0 ">
-              &copy; 2024. LunarEdge IT Services Pvt. Ltd. All rights reserved.
+              &copy; 2024. LunarEdge IT Services  All rights reserved.
             </p>
           </div>
         </div>
