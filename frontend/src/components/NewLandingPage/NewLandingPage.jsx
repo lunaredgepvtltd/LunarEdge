@@ -1,9 +1,9 @@
 import React from "react";
 // import hawaMahal from "../assets/hawaMahal.png";
-import textimage from "../assets/textimage.png";
-import smallAboutMoon from "../assets/smallAboutMoon.png";
-import aboutMoon from "../assets/aboutMoon.png";
-import aboutHead from "../assets/aboutHead.png";
+import textimage from "./textimage.png";
+import smallAboutMoon from "./smallAboutMoon.png";
+import aboutMoon from "./aboutMoon.png";
+import aboutHead from "./aboutHead.png";
 import { useMediaQuery } from "react-responsive";
 
 const NewLandingPage = () => {

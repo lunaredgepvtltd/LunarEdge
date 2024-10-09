@@ -74,7 +74,7 @@ const Footer = () => {
                 <div className="mb-[2px]">
                   <BsWhatsapp className="text-green-600" />
                 </div>
-                <p className="text-blue-900  hover:underline underline-offset-2 transition-all duration-300 whitespace-nowrap">
+                <p className="text-blue-600  hover:underline underline-offset-2 transition-all duration-300 whitespace-nowrap">
                   <a href="https://wa.me/919829011076" target="_blank">
                     +91-9829011076
                   </a>
@@ -88,7 +88,7 @@ const Footer = () => {
                 <div>
                   <BsWhatsapp className="text-green-600" />
                 </div>
-                <p className="text-blue-900  hover:underline underline-offset-2 transition-all duration-300">
+                <p className="text-blue-600  hover:underline underline-offset-2 transition-all duration-300">
                   <a href="https://wa.me/917760701155" target="_blank">
                     +91-7760701155
                   </a>

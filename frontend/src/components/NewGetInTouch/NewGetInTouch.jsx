@@ -1,9 +1,18 @@
 import React, { useState } from "react";
-import SideImage from "../assets/SideImageGetInTouch.png";
+import SideImage from "./SideImageGetInTouch.png";
+import darkSideImage from "./darkSideImageGetInTouch.png";
 import { toast } from "react-toastify";
-import { API } from "../helper";
+import { API } from "../../helper";
+import { useOutletContext } from "react-router-dom";
+ 
 
 const GetInTouch = () => {
+
+  const { darkMode } = useOutletContext();
+
+  const imageSrc = (darkMode ? darkSideImage : SideImage );
+ 
+
 
   const [email,setEmail] = useState('')
 
@@ -69,11 +78,11 @@ const GetInTouch = () => {
           </div>
         </div>
       </div>
-      <div className=" md:flex justify-end w-[40%]">
+      <div className=" md:flex justify-end w-[40%] ">
         <img
-          src={SideImage} // Replace with your actual image path
+          src={`${imageSrc}`} // Replace with your actual image path
           alt="Abstract Head"
-          className=" object-cover opacity-45"
+          className=" object-cover opacity-45  dark:opacity-90"
         />
       </div>
     </div>

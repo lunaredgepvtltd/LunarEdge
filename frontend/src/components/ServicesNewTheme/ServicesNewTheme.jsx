@@ -3,16 +3,16 @@ import React, { useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import MoonImage from "../assets/bgLandingPage.png";
-import BgServices2 from "../assets/BgServices2.png";
-import AI_ML_Solutions from "../assets/Bg_AIML.png";
-import CLOUD_SOLUTIONS from "../assets/Bg_CLOUD.png";
-import WEB_DEVELOPEMENT from "../assets/Bg_WEBDEV.png";
-import SOFTWARE_APP_DEVELOPMENT from "../assets/Bg_SOFTWAREAPP.png";
-import NEXTGEN_GAME from "../assets/Bg_NEXTGAME.png";
-import IT_CONSULTING from "../assets/Bg_CONSULTING.png";
-import HARWARE_SUPPLY_SOLUTIONS from "../assets/Bg_HARDWARE.png";
-import CYBER_SECURITY from "../assets/Bg_CYBER.png";
+import MoonImage from "./bgLandingPage.png";
+import BgServices2 from "./BgServices2.png";
+import AI_ML_Solutions from "./Bg_AIML.png";
+import CLOUD_SOLUTIONS from "./Bg_CLOUD.png";
+import WEB_DEVELOPEMENT from "./Bg_WEBDEV.png";
+import SOFTWARE_APP_DEVELOPMENT from "./Bg_SOFTWAREAPP.png";
+import NEXTGEN_GAME from "./Bg_NEXTGAME.png";
+import IT_CONSULTING from "./Bg_CONSULTING.png";
+import HARWARE_SUPPLY_SOLUTIONS from "./Bg_HARDWARE.png";
+import CYBER_SECURITY from "./Bg_CYBER.png";
 
 import "./ServicesNewTheme.css";
 

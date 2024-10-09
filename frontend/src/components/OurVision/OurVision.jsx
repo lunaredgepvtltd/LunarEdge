@@ -1,5 +1,5 @@
 import React from "react";
-import OurVisionVidio from "../assets/OurVisionVidio.mp4";
+import OurVisionVidio from "./OurVisionVidio.mp4";
 const OurVision = () => {
   return (
     <div className="h-[600px]  w-[95%] mx-auto flex md:flex-row flex-col-reverse px-4 md:px-9 bg-white dark:bg-black">

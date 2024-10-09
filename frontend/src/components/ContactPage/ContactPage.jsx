@@ -1,13 +1,16 @@
 import React, { useState } from "react";
-import callContactPage from "../assets/callContactPage.png";
-import mailContactPage from "../assets/mailContactPage.png";
-import locContactPage from "../assets/locContactPage.png";
+import callContactPage from "./callContactPage.png";
+import mailContactPage from "./mailContactPage.png";
+import locContactPage from "./locContactPage.png";
 import styles from "./ContactPage.module.css"; // Import CSS module
 import { useForm } from "react-hook-form";
-import { API } from "../helper";
+import { API } from "../../helper";
 import { toast } from "react-toastify";
-import MoonImage from "../assets/bgLandingPage.png";
-import BgConTactUs from "../assets/BgContactUs.png";
+import MoonImage from "./bgLandingPage.png";
+
+import BgConTactUs from "./BgContactUs.png";
+
+
 
 const ContactCard = ({ image, children }) => (
   <div className="md:w-[24%] w-[90%] mx-auto bg-gradient-to-r from-[#a6a6a6] to-[#ffffff] dark:bg-gradient-to-r dark:from-[#000000] dark:to-[#737373]  rounded-3xl flex flex-row md:flex-col items-center justify-between md:justify-evenly px-5 py-4 md:py-0  shadow-lg">

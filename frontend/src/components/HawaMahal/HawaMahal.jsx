@@ -1,8 +1,8 @@
 import React from "react";
-import hawaMahal from "../assets/hawaMahal.png";
-import hawaMahalPhone from "../assets/hawaMahalPhone.png";
-import hawaMahalDarkMode from "../assets/hawaMahalDarkMode.png";
-import hawaMahalDarkModeMobile from "../assets/hawaMahalDarkModeMobile.png";
+import hawaMahal from "./hawaMahal.png";
+import hawaMahalPhone from "./hawaMahalPhone.png";
+import hawaMahalDarkMode from "./hawaMahalDarkMode.png";
+import hawaMahalDarkModeMobile from "./hawaMahalDarkModeMobile.png";
 import { useMediaQuery } from "react-responsive";
 import { useOutletContext } from "react-router-dom";
 
