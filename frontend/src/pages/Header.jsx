@@ -7,8 +7,10 @@ import LunaredgeLogo from "../assets/Lunaredge.png";
 import { useMediaQuery } from "react-responsive";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import dark from "../assets/dark.png";
+import light from "../assets/light.png";
 
-const Header = ({toggleDarkMode}) => {
+const Header = ({ toggleDarkMode, theme }) => {
   const [showForm, setShowForm] = useState(false); // State to show/hide contact form
   const [menuOpen, setMenuOpen] = useState(false); // State to manage mobile menu visibility
   const [isTouchDevice, setIsTouchDevice] = useState(false); // State to check if the device is touch-enabled
@@ -207,29 +209,46 @@ const Header = ({toggleDarkMode}) => {
           "
             />
           </Link>
+          <div className="flex gap-3 items-center" >
+              <div className="relative lg:hidden">
+                {console.log(theme)}
+                <img
+                  src={light}
+                  alt="lignt-logo"
+                  onClick={toggleDarkMode}
+                  className={`w-[45px] drop-shadow-[1px_1px_1pxrgba(0,0,0,0.1)]  cursor-pointer transition-all duration-300 absolute right-0 z-10 ${
+                    !theme ? "opacity-100" : "opacity-10"
+                  }`}
+                />
+
+                <img
+                  src={dark}
+                  alt="lignt-logo"
+                  onClick={toggleDarkMode}
+                  className="w-[45px] drop-shadow-[1px_1px_1pxrgba(0,0,0,0.1)]  cursor-pointer transition-all duration-300 "
+                />
+              </div>
+            
 
           {/* Mobile Menu Toggle */}
           <button
-            className="lg:hidden block text-black text-xl"
+            className="lg:hidden block text-black text-3xl"
             onClick={toggleMenu}
           >
-            {menuOpen ? <IoIosClose /> : <IoIosMenu />}
+             <IoIosMenu />
           </button>
+          </div>
 
           {/* Nav Links for Desktop */}
           <ul className="w-[40%] hidden lg:flex  items-center justify-between">
             <li className="relative group">
-              <Link to="/services" className="text-lg text-black dark:text-white relative">
+              <Link
+                to="/services"
+                className="text-lg text-black dark:text-white relative"
+              >
                 Services
               </Link>
 
-              {/* For Temporary Purpose */}
-              {/* <p
-    className="text-lg text-black cursor-pointer"
-    onClick={handleServiceClick}
-  >
-    Services
-  </p> */}
               <div className="absolute bottom-0 left-0 w-0 h-[1.3px] py-[1px] rounded-md bg-black dark:bg-white transition-all duration-300 group-hover:w-full"></div>
             </li>
 
@@ -243,7 +262,10 @@ const Header = ({toggleDarkMode}) => {
               // onMouseLeave={!isTouchDevice ? handleMouseLeave : null}
             >
               <div className="flex items-center rounded-full">
-                <Link to={"/common"} className="text-lg text-black dark:text-white ">
+                <Link
+                  to={"/common"}
+                  className="text-lg text-black dark:text-white "
+                >
                   Industries
                 </Link>
                 {/* <IoIosArrowDown /> */}
@@ -289,7 +311,10 @@ const Header = ({toggleDarkMode}) => {
               // onMouseLeave={!isTouchDevice ? handleMouseLeave : null}
             >
               <div className="flex items-center justify-between rounded-full">
-                <span className="text-lg text-black dark:text-white" onClick={scrollToAboutUs}>
+                <span
+                  className="text-lg text-black dark:text-white"
+                  onClick={scrollToAboutUs}
+                >
                   About LunarEdge
                 </span>
                 {/* <IoIosArrowDown /> */}
@@ -430,23 +455,37 @@ const Header = ({toggleDarkMode}) => {
             {/* )}
         </li> */}
           </ul>
-          <div className="p-6">
-        {/* <h1 className="text-2xl font-bold">Dark Mode Toggle</h1> */}
-        <button
-          onClick={toggleDarkMode}
-          className="mt-4 px-4 py-2 rounded-md bg-blue-500 text-white dark:bg-yellow-400 dark:text-black">
-          Toggle Dark Mode
-        </button>
-      </div>
 
           {/* Contact Us Button */}
-          <div className="hidden lg:block items-center">
+          <div className="hidden lg:flex items-center  ">
             <Link to="/contactus">
-            <button className="rounded-full py-3 px-6 text-base  border-[#703299] text-white bg-gradient-to-r
-         from-[#ff5757] to-[#8c52ff] hover:shadow-sm">
+              <button
+                className="rounded-full py-3 px-6 text-base  border-[#703299] text-white bg-gradient-to-r
+         from-[#ff5757] to-[#8c52ff] hover:shadow-sm"
+              >
                 Contact Us
               </button>
             </Link>
+            <div className="p-6">
+              <div className="relative ">
+                {console.log(theme)}
+                <img
+                  src={light}
+                  alt="lignt-logo"
+                  onClick={toggleDarkMode}
+                  className={`w-[45px] drop-shadow-[1px_1px_1pxrgba(0,0,0,0.1)]  cursor-pointer transition-all duration-300 absolute right-0 z-10 ${
+                    !theme ? "opacity-100" : "opacity-10"
+                  }`}
+                />
+
+                <img
+                  src={dark}
+                  alt="lignt-logo"
+                  onClick={toggleDarkMode}
+                  className="w-[45px] drop-shadow-[1px_1px_1pxrgba(0,0,0,0.1)]  cursor-pointer transition-all duration-300 "
+                />
+              </div>
+            </div>
           </div>
 
           {/* Mobile Menu */}
@@ -491,42 +530,6 @@ const Header = ({toggleDarkMode}) => {
                     </Link>
                     {/* <IoIosArrowDown /> */}
                   </div>
-                  {/* Services sub-items */}
-                  {
-                    // <ul
-                    //   className={` ${
-                    //     services ? "block" : "hidden"
-                    //   } mt-1 pt-1 pb-4 w-auto transition-all duration-500`}
-                    // >
-                    //   <li>
-                    //     <Link
-                    //       to="/common"
-                    //       className="block px-2 py-1 text-[#082847] hover:underline underline-offset-2 w-56 text-sm"
-                    //       onClick={toggleMenu}
-                    //     >
-                    //       Web Development
-                    //     </Link>
-                    //   </li>
-                    //   <li>
-                    //     <Link
-                    //       to="/common"
-                    //       className="block px-2 py-1 text-[#082847] hover:underline underline-offset-2 w-56 text-sm"
-                    //       onClick={toggleMenu}
-                    //     >
-                    //       Mobile App Development
-                    //     </Link>
-                    //   </li>
-                    //   <li>
-                    //     <Link
-                    //       to="/common"
-                    //       className="block px-2 py-1 text-[#082847] hover:underline underline-offset-2 w-56 text-sm"
-                    //       onClick={toggleMenu}
-                    //     >
-                    //       IT Consulting
-                    //     </Link>
-                    //   </li>
-                    // </ul>
-                  }
                 </li>
 
                 {/* Industries */}
@@ -634,16 +637,16 @@ const Header = ({toggleDarkMode}) => {
                           Careers
                         </Link>
                       </li>
-
-                    
                     </ul>
                   }
                 </li>
 
-                  {/* carrer  */}
-                  <li className="py-1">
-                    <Link onClick={toggleMenu} to={'/career'}>Career</Link>
-                  </li>
+                {/* carrer  */}
+                <li className="py-1">
+                  <Link onClick={toggleMenu} to={"/career"}>
+                    Career
+                  </Link>
+                </li>
 
                 {/* Contact Us Button */}
                 <li className="py-2 items-center">
@@ -664,10 +667,14 @@ const Header = ({toggleDarkMode}) => {
         </div>
         <div className={` fixed top-2 text-left ml-4  lg:ml-10`}>
           {/* Logo */}
-          <Link to={"/"} className="flex-shrink-0 " onClick={()=>{
-            // toggleMenu();
-            handleLogoClick();
-          }}>
+          <Link
+            to={"/"}
+            className="flex-shrink-0 "
+            onClick={() => {
+              // toggleMenu();
+              handleLogoClick();
+            }}
+          >
             <img
               src={logo}
               alt="Company Logo"
