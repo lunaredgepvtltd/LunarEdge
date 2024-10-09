@@ -3,7 +3,7 @@ import bgLandingPage from "../assets/bgLandingPage.png";
 import {Link} from 'react-router-dom'
 const FirstPage = () => {
   return (
-    <div className="h-screen w-full relative">
+    <div className="h-screen w-full relative bg-white  dark:bg-black">
       <div
         className={`absolute  inset-0 bg-cover bg-center `}
         style={{ backgroundImage: `url(${bgLandingPage})` }}
@@ -14,13 +14,13 @@ const FirstPage = () => {
           <span> Meets Infinity</span>
         </h1>
         <div className="h-[200px] flex flex-col gap-6 justify-evenly">
-          <h3 className="md:text-3xl text-2xl ">
+          <h3 className="md:text-3xl text-2xl md:dark:text-white ">
             We transform innovative ideas into reality.
           </h3>
           <span className="flex justify-center ">
             <Link to={'/contactus'}
               className="text-white rounded-full md:py-4 md:px-6 py-2 px-3 md:text-lg text-sm bg-gradient-to-r
-         from-[#ff5757] to-[#8c52ff]"
+         from-[#ff5757] to-[#8c52ff] "
             >
               Get in Touch
             </Link>

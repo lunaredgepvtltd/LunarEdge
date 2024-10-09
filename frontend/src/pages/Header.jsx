@@ -2,13 +2,15 @@ import React, { useEffect, useState } from "react";
 import logo from "../assets/Lunaredge.png";
 import "../App.css";
 import { IoIosArrowDown, IoIosMenu, IoIosClose } from "react-icons/io";
-import ContactForm from "./ContactForm";
+
 import LunaredgeLogo from "../assets/Lunaredge.png";
 import { useMediaQuery } from "react-responsive";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import dark from "../assets/dark.png";
+import light from "../assets/light.png";
 
-const Header = () => {
+const Header = ({ toggleDarkMode, theme }) => {
   const [showForm, setShowForm] = useState(false); // State to show/hide contact form
   const [menuOpen, setMenuOpen] = useState(false); // State to manage mobile menu visibility
   const [isTouchDevice, setIsTouchDevice] = useState(false); // State to check if the device is touch-enabled
@@ -145,15 +147,7 @@ const Header = () => {
     }
   };
 
-  // Show contact form
-  const handleButton = () => {
-    setShowForm(true);
-  };
-
-  // Close contact form
-  const closeForm = () => {
-    setShowForm(false);
-  };
+  
 
   // Toggle mobile menu visibility
   const toggleMenu = () => {
@@ -196,7 +190,7 @@ const Header = () => {
         <div
           className={`${
             showHeader ? "header-visible" : "header-hidden"
-          } box flex  bg-gradient-to-r from-white to-[#A6A6A6] h-full w-full justify-between items-center px-4 xl:px-10`}
+          } box flex  bg-gradient-to-r from-white to-[#A6A6A6] h-full w-full justify-between items-center px-4 xl:px-10   dark:from-black dark:to-[#737373]`}
         >
           {/* Logo */}
           <Link to={"/"} className="flex-shrink-0 " onClick={handleLogoClick}>
@@ -208,30 +202,47 @@ const Header = () => {
           "
             />
           </Link>
+          <div className="flex gap-3 items-center" >
+              <div className="relative lg:hidden">
+                {console.log(theme)}
+                <img
+                  src={light}
+                  alt="lignt-logo"
+                  onClick={toggleDarkMode}
+                  className={`w-[45px] drop-shadow-[1px_1px_1pxrgba(0,0,0,0.1)]  cursor-pointer transition-all duration-300 absolute right-0 z-10 ${
+                    theme ? "opacity-100" : "opacity-10"
+                  }`}
+                />
+
+                <img
+                  src={dark}
+                  alt="lignt-logo"
+                  onClick={toggleDarkMode}
+                  className="w-[45px] drop-shadow-[1px_1px_1pxrgba(0,0,0,0.1)]  cursor-pointer transition-all duration-300 "
+                />
+              </div>
+            
 
           {/* Mobile Menu Toggle */}
           <button
-            className="lg:hidden block text-black text-xl"
+            className="lg:hidden block text-black text-3xl"
             onClick={toggleMenu}
           >
-            {menuOpen ? <IoIosClose /> : <IoIosMenu />}
+             <IoIosMenu />
           </button>
+          </div>
 
           {/* Nav Links for Desktop */}
           <ul className="w-[40%] hidden lg:flex  items-center justify-between">
             <li className="relative group">
-              <Link to="/services" className="text-lg text-black relative">
+              <Link
+                to="/services"
+                className="text-lg text-black dark:text-white relative"
+              >
                 Services
               </Link>
 
-              {/* For Temporary Purpose */}
-              {/* <p
-    className="text-lg text-black cursor-pointer"
-    onClick={handleServiceClick}
-  >
-    Services
-  </p> */}
-              <div className="absolute bottom-0 left-0 w-0 h-[1.3px] py-[1px] rounded-md bg-black transition-all duration-300 group-hover:w-full"></div>
+              <div className="absolute bottom-0 left-0 w-0 h-[1.3px] py-[1px] rounded-md bg-black dark:bg-white transition-all duration-300 group-hover:w-full"></div>
             </li>
 
             {/* Industries Dropdown */}
@@ -244,12 +255,15 @@ const Header = () => {
               // onMouseLeave={!isTouchDevice ? handleMouseLeave : null}
             >
               <div className="flex items-center rounded-full">
-                <Link to={"/common"} className="text-lg text-black">
+                <Link
+                  to={"/common"}
+                  className="text-lg text-black dark:text-white "
+                >
                   Industries
                 </Link>
                 {/* <IoIosArrowDown /> */}
               </div>
-              <div className="absolute bottom-0 left-0 w-0 h-[1.3px] py-[1px] rounded-md bg-black transition-all duration-300 group-hover:w-full"></div>
+              <div className="absolute bottom-0 left-0 w-0 h-[1.3px] py-[1px] rounded-md bg-black dark:bg-white transition-all duration-300 group-hover:w-full"></div>
               {openDropdown === "industries" && (
                 <ul className="absolute top-[63px] left-0 rounded-lg shadow-lg bg-[#292828] w-40 pt-3 pb-3">
                   <li>
@@ -290,13 +304,16 @@ const Header = () => {
               // onMouseLeave={!isTouchDevice ? handleMouseLeave : null}
             >
               <div className="flex items-center justify-between rounded-full">
-                <span className="text-lg text-black" onClick={scrollToAboutUs}>
+                <span
+                  className="text-lg text-black dark:text-white"
+                  onClick={scrollToAboutUs}
+                >
                   About LunarEdge
                 </span>
                 {/* <IoIosArrowDown /> */}
               </div>
 
-              <div className="absolute bottom-0 left-0 w-0 h-[1px] py-[1px] rounded-md bg-black transition-all duration-300 group-hover:w-full"></div>
+              <div className="absolute bottom-0 left-0 w-0 h-[1.3px] py-[1px] rounded-md bg-black dark:bg-white transition-all duration-300 group-hover:w-full"></div>
 
               {openDropdown === "aboutUs" && (
                 <ul className="absolute top-[63px] left-0 rounded-lg shadow-lg bg-[#292828] w-48 pt-3 pb-3">
@@ -340,106 +357,46 @@ const Header = () => {
             <li className="relative group ">
               <Link
                 to="/common"
-                className="h-full  rounded-full text-black text-lg cursor-pointer transition-all duration-300"
+                className="h-full  rounded-full text-black dark:text-white text-lg cursor-pointer "
                 onClick={() => handleDropdownToggle()}
               >
                 Career
               </Link>
-              <div className="absolute bottom-0 left-0 w-0 h-[1.3px] py-[1px] rounded-md bg-black transition-all duration-300 group-hover:w-full"></div>
+              <div className="absolute bottom-0 left-0 w-0 h-[1.3px] py-[1px] rounded-md bg-black dark:bg-white transition-all duration-300 group-hover:w-full"></div>
             </li>
-            {/* {openDropdown === "services" && (
-            <div className="flex absolute top-[63px] left-0 rounded-lg shadow-lg bg-[#292828] w-auto pt-3 pb-3">
-              <ul className="">
-                <li>
-                  <Link
-                    to="/services"
-                    className="block px-4 py-2 text-white hover:text-red-500"
-                  >
-                    Web Development
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/common"
-                    className="block px-4 py-2 text-white hover:text-red-500"
-                  >
-                    Mobile App Development
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/common"
-                    className="block px-4 py-2 text-white hover:text-red-500"
-                  >
-                    IT Consulting
-                  </Link>
-                </li>
-              </ul>
-              <ul>
-                <li>
-                  <Link
-                    to="/common"
-                    className="block px-4 py-2 text-white hover:text-red-500"
-                  >
-                    Cloud Solutions
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/common"
-                    className="block px-4 py-2 text-white hover:text-red-500"
-                  >
-                    CyberSecurity Services
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/common"
-                    className="block px-4 py-2 text-white hover:text-red-500"
-                  >
-                    Game Development
-                  </Link>
-                </li>
-              </ul>
-              <ul>
-                <li>
-                  <Link
-                    to="/common"
-                    className="block px-4 py-2 text-white hover:text-red-500"
-                  >
-                    Banking Services
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/common"
-                    className="block px-4 py-2 text-white hover:text-red-500"
-                  >
-                    AI Solutions
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/common"
-                    className="block px-4 py-2 text-white hover:text-red-500"
-                  >
-                    Game Development
-                  </Link>
-                </li>
-              </ul>
-            </div> */}
-            {/* )}
-        </li> */}
+      
           </ul>
 
           {/* Contact Us Button */}
-          <div className="hidden lg:block items-center">
+          <div className="hidden lg:flex items-center  ">
             <Link to="/contactus">
-            <button className="rounded-full py-3 px-6 text-base  border-[#703299] text-white bg-gradient-to-r
-         from-[#ff5757] to-[#8c52ff] hover:shadow-sm">
+              <button
+                className="rounded-full py-3 px-6 text-base  border-[#703299] text-white bg-gradient-to-r
+         from-[#ff5757] to-[#8c52ff] hover:shadow-sm"
+              >
                 Contact Us
               </button>
             </Link>
+            <div className="p-6">
+              <div className="relative ">
+                {console.log(theme)}
+                <img
+                  src={light}
+                  alt="lignt-logo"
+                  onClick={toggleDarkMode}
+                  className={`w-[45px] drop-shadow-[1px_1px_1pxrgba(0,0,0,0.1)]  cursor-pointer transition-all duration-300 absolute right-0 z-10 ${
+                    theme ? "opacity-100" : "opacity-10"
+                  }`}
+                />
+
+                <img
+                  src={dark}
+                  alt="lignt-logo"
+                  onClick={toggleDarkMode}
+                  className="w-[45px] drop-shadow-[1px_1px_1pxrgba(0,0,0,0.1)]  cursor-pointer transition-all duration-300 "
+                />
+              </div>
+            </div>
           </div>
 
           {/* Mobile Menu */}
@@ -484,42 +441,6 @@ const Header = () => {
                     </Link>
                     {/* <IoIosArrowDown /> */}
                   </div>
-                  {/* Services sub-items */}
-                  {
-                    // <ul
-                    //   className={` ${
-                    //     services ? "block" : "hidden"
-                    //   } mt-1 pt-1 pb-4 w-auto transition-all duration-500`}
-                    // >
-                    //   <li>
-                    //     <Link
-                    //       to="/common"
-                    //       className="block px-2 py-1 text-[#082847] hover:underline underline-offset-2 w-56 text-sm"
-                    //       onClick={toggleMenu}
-                    //     >
-                    //       Web Development
-                    //     </Link>
-                    //   </li>
-                    //   <li>
-                    //     <Link
-                    //       to="/common"
-                    //       className="block px-2 py-1 text-[#082847] hover:underline underline-offset-2 w-56 text-sm"
-                    //       onClick={toggleMenu}
-                    //     >
-                    //       Mobile App Development
-                    //     </Link>
-                    //   </li>
-                    //   <li>
-                    //     <Link
-                    //       to="/common"
-                    //       className="block px-2 py-1 text-[#082847] hover:underline underline-offset-2 w-56 text-sm"
-                    //       onClick={toggleMenu}
-                    //     >
-                    //       IT Consulting
-                    //     </Link>
-                    //   </li>
-                    // </ul>
-                  }
                 </li>
 
                 {/* Industries */}
@@ -627,16 +548,16 @@ const Header = () => {
                           Careers
                         </Link>
                       </li>
-
-                    
                     </ul>
                   }
                 </li>
 
-                  {/* carrer  */}
-                  <li className="py-1">
-                    <Link onClick={toggleMenu} to={'/career'}>Career</Link>
-                  </li>
+                {/* carrer  */}
+                <li className="py-1">
+                  <Link onClick={toggleMenu} to={"/career"}>
+                    Career
+                  </Link>
+                </li>
 
                 {/* Contact Us Button */}
                 <li className="py-2 items-center">
@@ -657,10 +578,14 @@ const Header = () => {
         </div>
         <div className={` fixed top-1 text-left ml-3  lg:ml-6`}>
           {/* Logo */}
-          <Link to={"/"} className="flex-shrink-0 " onClick={()=>{
-            // toggleMenu();
-            handleLogoClick();
-          }}>
+          <Link
+            to={"/"}
+            className="flex-shrink-0 "
+            onClick={() => {
+              // toggleMenu();
+              handleLogoClick();
+            }}
+          >
             <img
               src={logo}
               alt="Company Logo"
@@ -669,8 +594,7 @@ const Header = () => {
             />
           </Link>
         </div>
-        {/* Contact Form */}
-        {showForm && <ContactForm onClose={closeForm} />}
+       
       </div>
     </>
   );

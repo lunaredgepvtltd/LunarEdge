@@ -49,14 +49,14 @@ const TransformingBusinessSection = () => {
   }, [technologies]);
 
   return (
-    <div className="w-full h-[390px] md:h-screen md:px-5 md:mt-28">
+    <div className="w-full h-[390px]  md:h-screen md:px-5 md:mt-28">
       <div className="w-[97%] h-[80%] md:h-full mx-auto flex flex-col justify-between">
         {/* heading-div */}
         <div className="w-full md:w-[50%] h-[40%] md:h-[60%] lg:h-auto mx-auto flex flex-col gap-3 md:gap-1 justify-center items-center">
-          <p className="text-lg lg:text-4xl text-black md:text-nowrap text-center">
+          <p className="text-lg lg:text-4xl dark:text-white text-black md:text-nowrap text-center">
             TRANSFORMING BUSINESS THROUGH TECHNOLOGY
           </p>
-          <p className="text-sm md:text-lg lg:text-2xl md:text-nowrap text-black text-center">
+          <p className="text-sm md:text-lg lg:text-2xl md:text-nowrap dark:text-white text-black text-center">
             We harness the latest tools to deliver exceptional results
           </p>
         </div>
@@ -66,7 +66,7 @@ const TransformingBusinessSection = () => {
           {/* First circle */}
           <div className="absolute left-[47%] md:left-[45%] top-[24%] md:top-[7%] w-[32%] xl:top-[3%] xl:left-[48%] h-auto flex justify-between items-center">
             <div
-              className={`z-10 h-9 w-9 md:h-16 md:w-16 lg:h-24 lg:w-24 rounded-full bg-white border transition-all duration-300 p-1 md:p-2 flex justify-center items-center cursor-pointer ${activeTechnology === 'html' ? 'border-black scale-110' : ''}`}
+              className={`z-10 h-9 w-9 md:h-16 md:w-16 lg:h-24 lg:w-24 rounded-full bg-white dark:bg-black border transition-all duration-300 p-1 md:p-2 flex justify-center items-center cursor-pointer ${activeTechnology === 'html' ? 'dark:bg-white border-black scale-110' : ''}`}
               onClick={() => handleTechnologyClick('html')}
             >
               <img src={html} alt="HTML" className="h-[80%] w-[80%] object-contain" />
@@ -76,13 +76,13 @@ const TransformingBusinessSection = () => {
           {/* Second row of circles */}
           <div className="absolute left-[31%] xl:top-[8%] md:w-[37%] xl:w-[36%] xl:left-[33%] lg:left-[30%] top-[29%] md:top-[11%] lg:top-[10%] w-[41%] lg:w-[40%] h-auto flex justify-between items-center">
             <div
-              className={`z-10 h-9 w-9 md:h-16 md:w-16 lg:h-24 lg:w-24 rounded-full bg-white border hover:text-gray-400 transition-all duration-300 p-1 md:p-2 flex justify-center items-center cursor-pointer ${activeTechnology === 'sql' ? 'border-black scale-110' : ''}`}
+              className={`z-10 h-9 w-9 md:h-16 md:w-16 lg:h-24 lg:w-24 rounded-full bg-white dark:bg-black border hover:text-gray-400 transition-all duration-300 p-1 md:p-2 flex justify-center items-center cursor-pointer ${activeTechnology === 'sql' ? 'dark:bg-white border-black scale-110' : ''}`}
               onClick={() => handleTechnologyClick('sql')}
             >
               <img src={sql} alt="SQL" className="h-[80%] w-[80%] object-contain" />
             </div>
             <div
-              className={`z-10 h-9 w-9 md:h-16 md:w-16 lg:h-24 lg:w-24 rounded-full bg-white border hover:text-green-700 transition-all duration-300 p-1 md:p-2 flex justify-center items-center cursor-pointer ${activeTechnology === 'react' ? 'border-black scale-110' : ''}`}
+              className={`z-10 h-9 w-9 md:h-16 md:w-16 lg:h-24 lg:w-24 rounded-full bg-white dark:bg-black border hover:text-green-700 transition-all duration-300 p-1 md:p-2 flex justify-center items-center cursor-pointer ${activeTechnology === 'react' ? ' dark:bg-white border-black scale-110' : ''}`}
               onClick={() => handleTechnologyClick('react')}
             >
               <img src={reactImg} alt="react" className="h-[80%] w-[80%] object-contain" />
@@ -92,13 +92,13 @@ const TransformingBusinessSection = () => {
           {/* Third row of circles */}
           <div className="absolute left-[17%] top-[40%] md:top-[22%] lg:left-[17%] w-[67%] lg:w-[66%] xl:w-[60%] xl:left-[21%] xl:top-[21%] h-auto flex justify-between items-center">
             <div
-              className={`z-10 h-9 w-9 md:h-16 md:w-16 lg:h-24 lg:w-24 rounded-full bg-white border p-1 md:p-2 flex justify-center items-center cursor-pointer transition-all duration-300 ${activeTechnology === 'mongodb' ? 'border-black scale-110' : ''}`}
+              className={`z-10 h-9 w-9 md:h-16 md:w-16 lg:h-24 lg:w-24 rounded-full bg-white dark:bg-black border p-1 md:p-2 flex justify-center items-center cursor-pointer transition-all duration-300 ${activeTechnology === 'mongodb' ? 'dark:bg-white border-black scale-110' : ''}`}
               onClick={() => handleTechnologyClick('mongodb')}
             >
               <img src={mongodb} alt="mongodb" className="h-[80%] w-[80%] object-contain" />
             </div>
             <div
-              className={`z-10 h-9 w-9 md:h-16 md:w-16 lg:h-24 lg:w-24 rounded-full bg-white border p-1 md:p-2 flex justify-center items-center transition-all duration-300 cursor-pointer ${activeTechnology === 'aws' ? 'border-black scale-110' : ''}`}
+              className={`z-10 h-9 w-9 md:h-16 md:w-16 lg:h-24 lg:w-24 rounded-full bg-white dark:bg-black border p-1 md:p-2 flex justify-center items-center transition-all duration-300 cursor-pointer ${activeTechnology === 'aws' ? 'dark:bg-white border-black scale-110' : ''}`}
               onClick={() => handleTechnologyClick('aws')}
             >
               <img src={aws} alt="aws" className="h-[80%] w-[80%] object-contain" />
@@ -108,13 +108,13 @@ const TransformingBusinessSection = () => {
           {/* Fourth row of circles */}
           <div className="absolute left-[7%] lg:left-[5%] top-[57%] md:top-[40%] xl:top-[39%] w-[88%] lg:w-[90%] xl:w-[80%] xl:left-[11%] xl:top[45%] h-auto flex justify-between items-center">
             <div
-              className={`z-10 h-9 w-9 md:h-16 md:w-16 lg:h-24 lg:w-24 rounded-full bg-white border p-1 md:p-2 flex justify-center items-center transition-all duration-300 cursor-pointer ${activeTechnology === 'nodejs' ? 'border-black scale-110' : ''}`}
+              className={`z-10 h-9 w-9 md:h-16 md:w-16 lg:h-24 lg:w-24 rounded-full bg-white dark:bg-black border p-1 md:p-2 flex justify-center items-center transition-all duration-300 cursor-pointer ${activeTechnology === 'nodejs' ? 'dark:bg-white border-black scale-110' : ''}`}
               onClick={() => handleTechnologyClick('nodejs')}
             >
               <img src={nodejs} alt="nodejs" className="h-[80%] w-[80%] object-contain" />
             </div>
             <div
-              className={`z-10 h-9 w-9 md:h-16 md:w-16 lg:h-24 lg:w-24 rounded-full bg-white border p-1 md:p-2 flex justify-center items-center transition-all duration-300 cursor-pointer ${activeTechnology === 'java' ? 'border-black scale-110' : ''}`}
+              className={`z-10 h-9 w-9 md:h-16 md:w-16 lg:h-24 lg:w-24 rounded-full bg-white dark:bg-black border p-1 md:p-2 flex justify-center items-center transition-all duration-300 cursor-pointer ${activeTechnology === 'java' ? 'dark:bg-white border-black scale-110' : ''}`}
               onClick={() => handleTechnologyClick('java')}
             >
               <img src={java} alt="java" className="h-[80%] w-[80%] object-contain" />
@@ -124,13 +124,13 @@ const TransformingBusinessSection = () => {
           {/* Fifth row of circles */}
           <div className="absolute left-[1%] top-[77%] md:top-[57%] lg:top-[60%] xl:top-[61%] w-[100%] xl:w-[94%] xl:left-[4%] h-auto flex justify-between items-center">
             <div
-              className={`z-10 h-9 w-9 md:h-16 md:w-16 lg:h-24 lg:w-24 rounded-full bg-white border p-1 md:p-2 flex justify-center items-center transition-all duration-300 cursor-pointer ${activeTechnology === 'figma' ? 'border-black scale-110' : ''}`}
+              className={`z-10 h-9 w-9 md:h-16 md:w-16 lg:h-24 lg:w-24 rounded-full dark:bg-black bg-white border p-1 md:p-2 flex justify-center items-center transition-all duration-300 cursor-pointer ${activeTechnology === 'figma' ? 'dark:bg-white border-black scale-110' : ''}`}
               onClick={() => handleTechnologyClick('figma')}
             >
               <img src={figma} alt="figma" className="h-[80%] w-[80%] object-contain" />
             </div>
             <div
-              className={`z-10 h-9 w-9 md:h-16 md:w-16 lg:h-24 lg:w-24 rounded-full bg-white border p-1 md:p-2 flex justify-center items-center transition-all duration-300 cursor-pointer ${activeTechnology === 'css' ? 'border-black scale-110' : ''}`}
+              className={`z-10 h-9 w-9 md:h-16 md:w-16 lg:h-24 lg:w-24 rounded-full dark:bg-black bg-white border  p-1 md:p-2 flex justify-center items-center transition-all duration-300 cursor-pointer ${activeTechnology === 'css' ? 'dark:bg-white  border-black scale-110' : ''}`}
               onClick={() => handleTechnologyClick('css')}
             >
               <img src={css} alt="css" className="h-[80%] w-[80%] object-contain" />

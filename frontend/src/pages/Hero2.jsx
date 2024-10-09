@@ -1,21 +1,21 @@
 import React from "react";
-import NewLandingPage from "../components/NewLandingPage";
+import NewLandingPage from "../components/NewLandingPage/NewLandingPage.jsx";
 import CoreValues from "../components/CoreValueSection/CoreValues";
-import NewGetInTouch from "../components/NewGetInTouch";
+import NewGetInTouch from "../components/NewGetInTouch/NewGetInTouch.jsx";
 import FirstPage from "../components/FirstPage";
-import OurJourney from "../components/OurJourney";
+import OurJourney from "../components/OurJourney/OurJourney.jsx";
 import OurJourneyVidio from "../assets/OurJourneyVidio.mp4";
 import OurMissionVidio from "../assets/OurMissionVidio.mp4";
-import OurMission from "../components/OurMission";
-import OurVision from "../components/OurVision";
+import OurMission from "../components/OurMission/OurMission.jsx";
+import OurVision from "../components/OurVision/OurVision.jsx";
 
 import TransformingBusinessSection from "../components/TransformingBusinessSection";
-import HawaMahal from "../components/HawaMahal";
+import HawaMahal from "../components/HawaMahal/HawaMahal.jsx";
 
 
 const Hero2 = () => {
   return (
-    <div>
+    <div className=" dark:bg-black bg-white">
       <FirstPage />
       <NewLandingPage /> 
       <HawaMahal />

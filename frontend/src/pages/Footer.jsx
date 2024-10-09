@@ -52,17 +52,17 @@ const Footer = () => {
 
   // scroll-code-ends
   return (
-    <footer className="bg-gradient-to-r from-[#a6a6a6] to-[#ffffff]  lg:grid lg:grid-cols-5 border-t-2 border-black  ">
-      <div className="px-3 py-3 md:py-6 sm:px-6 lg:col-span-3 lg:px-6">
+    <footer className="bg-gradient-to-r from-[#a6a6a6] to-[#ffffff]  lg:grid lg:grid-cols-5 border-t-2 border-black dark:border-white  ">
+      <div className="px-3 py-3 md:py-6 sm:px-6 lg:col-span-3 lg:px-6 dark:bg-black ">
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
           <div>
             <p>
-              <span className="text-sm uppercase tracking-wide text-black ">
+              <span className="text-sm uppercase tracking-wide text-black dark:text-white ">
                 Call us
               </span>
               <a
                 href="tel:0141-4512611"
-                className="block text-2xl font-medium text-black hover:opacity-75 sm:text-3xl "
+                className="block text-2xl font-medium text-black dark:text-white hover:opacity-75 sm:text-3xl "
               >
                 0141-4512611
               </a>
@@ -74,12 +74,12 @@ const Footer = () => {
                 <div className="mb-[2px]">
                   <BsWhatsapp className="text-green-600" />
                 </div>
-                <p className="text-blue-900 hover:underline underline-offset-2 transition-all duration-300 whitespace-nowrap">
+                <p className="text-blue-600  hover:underline underline-offset-2 transition-all duration-300 whitespace-nowrap">
                   <a href="https://wa.me/919829011076" target="_blank">
                     +91-9829011076
                   </a>
                 </p>
-                <span className="font-semibold text-black whitespace-nowrap">
+                <span className="font-semibold text-black dark:text-white whitespace-nowrap">
                   {" "}
                   [Sandeep Katariya]
                 </span>
@@ -88,92 +88,25 @@ const Footer = () => {
                 <div>
                   <BsWhatsapp className="text-green-600" />
                 </div>
-                <p className="text-blue-900 hover:underline underline-offset-2 transition-all duration-300">
+                <p className="text-blue-600  hover:underline underline-offset-2 transition-all duration-300">
                   <a href="https://wa.me/917760701155" target="_blank">
                     +91-7760701155
                   </a>
                 </p>
-                <span className="font-semibold text-black"> [Sanjeev Ola]</span>
+                <span className="font-semibold text-black dark:text-white"> [Sanjeev Ola]</span>
               </li>
             </ul>
           </div>
 
-          {/* <div className="grid grid-cols-1 gap-4 sm:grid-cols-2  px-4">
-            <div className="">
-              <p className="font-medium text-black ">
-                Quick Links
-              </p>
-              <ul className="mt-4 space-y-2 text-sm">
-                <li>
-                  <Link
-                    to="/common"
-                    className="text-black transition hover:opacity-75 "
-                  >
-                    Career
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/services"
-                    className="text-black transition hover:opacity-75 "
-                  >
-                     Services
-                  </Link>
-
-                 
-                </li>
-                <li>
-                  <Link
-                    to="https://www.linkedin.com/company/lunaredge/" target="_blank"
-                    className="text-black transition hover:opacity-75 "
-                  >
-                     LinkedIn
-                  </Link>
-                </li>
-                
-              </ul>
-            </div>
-
-            <div className="md:">
-              <p className="font-medium text-black">
-                Company
-              </p>
-              <ul className="mt-4 space-y-2 text-sm">
-                <li> */}
-          {/* <Link
-                    to="/AboutLunarEdge/AboutUs"
-                    className="text-gray-300 transition hover:opacity-75"
-                  >
-                    About
-                  </Link> */}
-          {/* temporary-service-code  */}
-          {/* <p
-                    onClick={handleAboutClick}
-                    className="text-black transition hover:opacity-75 cursor-pointer"
-                  >
-                     About
-                  </p>
-                </li>
-                <li>
-                  <Link
-                    to="/contactus"
-                    className="text-black transition hover:opacity-75 "
-                  >
-                    Meet the Team
-                  </Link>
-                </li>
-              </ul>
-            </div>
-          </div> */}
 
           <div className="flex flex-row flex-wrap gap-4 px-4">
             <div className="flex-1">
-              <p className="font-medium text-black">Quick Links</p>
+              <p className="font-medium text-black dark:text-white ">Quick Links</p>
               <ul className="mt-4 space-y-2 text-sm">
                 <li>
                   <Link
                     to="/common"
-                    className="text-black transition hover:opacity-75"
+                    className="text-blac dark:text-white transition hover:opacity-75"
                   >
                     Career
                   </Link>
@@ -181,7 +114,7 @@ const Footer = () => {
                 <li>
                   <Link
                     to="/services"
-                    className="text-black transition hover:opacity-75"
+                    className="text-black dark:text-white  transition hover:opacity-75"
                   >
                     Services
                   </Link>
@@ -190,7 +123,7 @@ const Footer = () => {
                   <Link
                     to="https://www.linkedin.com/company/lunaredge/"
                     target="_blank"
-                    className="text-black transition hover:opacity-75"
+                    className="text-black dark:text-white  transition hover:opacity-75"
                   >
                     LinkedIn
                   </Link>
@@ -199,12 +132,12 @@ const Footer = () => {
             </div>
 
             <div className="flex-1">
-              <p className="font-medium text-black">Company</p>
+              <p className="font-medium text-black dark:text-white ">Company</p>
               <ul className="mt-4 space-y-2 text-sm">
                 <li>
                   <p
                     onClick={handleAboutClick}
-                    className="text-black transition hover:opacity-75 cursor-pointer"
+                    className="text-black dark:text-white  transition hover:opacity-75 cursor-pointer"
                   >
                     About
                   </p>
@@ -212,7 +145,7 @@ const Footer = () => {
                 <li>
                   <Link
                     to="/contactus"
-                    className="text-black transition hover:opacity-75"
+                    className="text-black dark:text-white  transition hover:opacity-75"
                   >
                     Meet the Team
                   </Link>
@@ -222,13 +155,13 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className=" mt-2 md:mt-4 border-t border-black pt-2 md:pt-4 ">
+        <div className=" mt-2 md:mt-4 border-t border-black dark:border-white pt-2 md:pt-4 ">
           <div className="sm:flex sm:items-center sm:justify-between">
             <ul className="flex flex-wrap gap-4 text-xs">
               <li>
                 <Link
                   to="/common"
-                  className="text-black transition hover:opacity-75 "
+                  className="text-black dark:text-white  transition hover:opacity-75 "
                 >
                   Terms & Conditions
                 </Link>
@@ -236,7 +169,7 @@ const Footer = () => {
               <li>
                 <Link
                   to="/common"
-                  className="text-black transition hover:opacity-75 "
+                  className="text-black dark:text-white  transition hover:opacity-75 "
                 >
                   Privacy Policy
                 </Link>
@@ -244,15 +177,15 @@ const Footer = () => {
               <li>
                 <Link
                   to="/common"
-                  className="text-black transition hover:opacity-75 "
+                  className="text-black dark:text-white  transition hover:opacity-75 "
                 >
                   Cookies
                 </Link>
               </li>
             </ul>
 
-            <p className=" mt-3 md:mt-6 text-xs text-black sm:mt-0 ">
-              &copy; 2024. LunarEdge IT Services  All rights reserved.
+            <p className=" mt-3 md:mt-6 text-xs text-black dark:text-white  sm:mt-0 ">
+              &copy; 2024. LunarEdge IT Services Pvt. Ltd. All rights reserved.
             </p>
           </div>
         </div>
