@@ -4,11 +4,19 @@ import bodyParser from 'body-parser';
 import errorHandler from './middleware/ErrorHandler.js';
 import dbConnect from './dbConnection/index.js';
 import cors from 'cors';
+import fs from 'fs';
+import https from 'https';
 import router from './routes/index.js';
 
 dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 8080;
+
+// Load SSL certificate and private key
+const sslOptions = {
+  key: fs.readFileSync('C:/Users/Administrator/Desktop/lunaredge.in (1)/Privatekey.pem'),
+  cert: fs.readFileSync('C:/Users/Administrator/Desktop/lunaredge.in (1)/ea9fadbc35cb5560.crt')
+};
 
 // Define allowed origins (could be configured using an environment variable)
 const allowedOrigins = [
@@ -20,17 +28,16 @@ const allowedOrigins = [
 // CORS middleware with dynamic origin checking
 app.use(cors({
   origin: (origin, callback) => {
-    // Allow requests with no origin (e.g., mobile apps, Postman) or match origin from allowedOrigins
     if (!origin || allowedOrigins.includes(origin)) {
       callback(null, true);
     } else {
       callback(new Error('Not allowed by CORS'));
     }
   },
-  methods: 'GET,POST,PUT,DELETE', // Allowed HTTP methods
-  allowedHeaders: 'Content-Type,Authorization', // Allowed headers
-  credentials: true, // If credentials (cookies, HTTP auth) are needed
-  optionsSuccessStatus: 204 // Response status for preflight
+  methods: 'GET,POST,PUT,DELETE',
+  allowedHeaders: 'Content-Type,Authorization',
+  credentials: true,
+  optionsSuccessStatus: 204
 }));
 
 app.use(bodyParser.json());
@@ -45,7 +52,7 @@ app.use(errorHandler);
 // Database connection
 dbConnect();
 
-// Start the server
-app.listen(PORT, () => {
-  console.log(`Server running on port: ${PORT}`);
+// Start the HTTPS server
+https.createServer(sslOptions, app).listen(PORT, () => {
+  console.log(`Server running securely on https://localhost:${PORT}`);
 });
