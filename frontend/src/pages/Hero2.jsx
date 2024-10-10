@@ -9,7 +9,7 @@ import OurMissionVidio from "../assets/OurMissionVidio.mp4";
 import OurMission from "../components/OurMission/OurMission.jsx";
 import OurVision from "../components/OurVision/OurVision.jsx";
 
-import TransformingBusinessSection from "../components/TransformingBusinessSection";
+import TransformingBusinessSection from "../components/TransformingBusinessSection/TransformingBusinessSection.jsx";
 import HawaMahal from "../components/HawaMahal/HawaMahal.jsx";
 
 

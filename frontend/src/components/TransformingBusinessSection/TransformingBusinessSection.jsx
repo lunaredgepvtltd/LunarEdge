@@ -1,14 +1,14 @@
 import React, { useState, useEffect, useRef } from "react";
-import halfmoon from '../assets/halfmoon.png';
-import html from '../assets/html-5.png';
-import sql from '../assets/sql.png';
-import reactImg from '../assets/react.png';
-import mongodb from '../assets/mongodb.png';
-import aws from '../assets/aws.png';
-import nodejs from '../assets/nodejs.png';
-import figma from '../assets/figma.png';
-import java from '../assets/java.png';
-import css from '../assets/css.png';
+import halfmoon from './halfmoon.png';
+import html from './html-5.png';
+import sql from './sql.png';
+import reactImg from './react.png';
+import mongodb from './mongodb.png';
+import aws from './aws.png';
+import nodejs from './nodejs.png';
+import figma from './figma.png';
+import java from './java.png';
+import css from './css.png';
 
 const TransformingBusinessSection = () => {
   // Define state for active technology
