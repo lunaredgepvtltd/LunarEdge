@@ -6,7 +6,7 @@ import aboutMoon from "./aboutMoon.png";
 import aboutHead from "./aboutHead.png";
 import { useMediaQuery } from "react-responsive";
 
-const NewLandingPage = () => {
+const AboutUsSection = () => {
   const isExtraSmallDevice = useMediaQuery({ maxWidth: 699 });
 
   return (
@@ -50,4 +50,4 @@ const NewLandingPage = () => {
   );
 };
 
-export default NewLandingPage;
+export default AboutUsSection;

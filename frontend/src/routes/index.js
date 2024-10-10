@@ -4,7 +4,6 @@ import Common from "../components/Common.jsx";
 
 
 // import { Career } from "../pages/Career.jsx";
-import AdminLoginForm from "../components/AdminLoginForm.jsx";
 // import Services from "../pages/Services.jsx";
 import Hero2 from "../pages/Hero2.jsx";
 import ContactPage from "../components/ContactPage/ContactPage.jsx";
@@ -28,10 +27,6 @@ const router = createBrowserRouter([
       {
         path: "career",
         element: <Common />,
-      },
-      {
-        path: "admin",
-        element: <AdminLoginForm />,
       },
       {
         path: "services",
