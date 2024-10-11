@@ -2,7 +2,10 @@ import React from "react";
 import OurVisionVidio from "./OurVisionVidio.mp4";
 const OurVision = () => {
   return (
-    <div className="h-[600px]  w-[95%] mx-auto flex md:flex-row flex-col-reverse px-4 md:px-9 bg-white dark:bg-black">
+    
+<>
+<div id="vision" className="h-[100px] w-full hidden lg:block"></div>
+    <div  className="h-[600px]  w-[95%] mx-auto flex md:flex-row flex-col-reverse px-4 md:px-9 bg-white dark:bg-black">
       <div className="md:w-[50%] w-full  relative flex items-center justify-center">
         <video className=" h-full w-full object-cover opacity-75" loop muted autoPlay>
           <source src={OurVisionVidio} type="video/mp4" />
@@ -25,7 +28,7 @@ const OurVision = () => {
         customer-centric approach, and unwavering commitment to quality.
       </p> */}
       </div>
-    </div>
+    </div></>
   );
 };
 

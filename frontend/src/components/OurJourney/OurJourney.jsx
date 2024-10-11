@@ -2,7 +2,10 @@ import React from "react";
 
 const OurJourney = ({ title, subtitle, content, vidiosrc, vidiotitle }) => {
   return (
-    <div className="flex md:flex-row flex-col w-full h-[650px] md:h-[600px] md:px-9 px-4 bg-white dark:bg-black">
+     
+    <>
+    <div id="ourJourney" className="h-[100px] w-full hidden lg:block"></div>
+    <div  className="flex md:flex-row flex-col w-full h-[650px] md:h-[600px] md:px-9 px-4 bg-white dark:bg-black">
       <div className="md:w-[50%] w-[95%] h-[80%] md:text-3xl dark:text-white text-sm font-normal flex flex-col justify-evenly pr-6">
         <span className="font-light md:text-3xl text-lg">{title}</span>
         <p className="text-left">{subtitle}</p>
@@ -22,7 +25,7 @@ const OurJourney = ({ title, subtitle, content, vidiosrc, vidiotitle }) => {
           {vidiotitle}
         </div>
       </div>
-    </div>
+    </div></>
   );
 };
 

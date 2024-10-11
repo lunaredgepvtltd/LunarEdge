@@ -10,7 +10,9 @@ const NewLandingPage = () => {
   const isExtraSmallDevice = useMediaQuery({ maxWidth: 699 });
 
   return (
-    <div className="relative w-full  dark:text-white dark:bg-black md:h-screen h-[415px] flex ">
+<>
+<div id="aboutUs" className="h-[90px] w-full hidden lg:block"></div>
+<div  className="relative w-full  dark:text-white  md:h-screen h-[415px] flex">
       <div className=" md:w-[44%] w-[100%] relative h-[375px]  md:h-full">
         <img
           src={`${isExtraSmallDevice ? smallAboutMoon : aboutMoon}`}
@@ -37,7 +39,7 @@ const NewLandingPage = () => {
             expectations.
           </p>
         </div>
-        <div className=" hidden w-[60%] h-[80%] text-right md:flex justify-center  items-start mt-6">
+        <div className=" hidden w-[60%] h-[80%] text-right lg:flex justify-center  items-start mt-6">
           <img
             src={aboutHead}
             alt="Picture of tagline"
@@ -46,7 +48,7 @@ const NewLandingPage = () => {
         </div>
         
       </div>
-    </div>
+    </div></>
   );
 };
 

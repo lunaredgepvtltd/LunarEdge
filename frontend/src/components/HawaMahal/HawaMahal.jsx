@@ -16,15 +16,16 @@ const HawaMahal = () => {
   : (darkMode ? hawaMahalDarkMode : hawaMahal);
 
   return (
-  
-    <div className="w-full h-[450px] md:h-[600px] my-7" id="hawaMahal">
+   <>
+    <div id="hawaMahal" className="h-[90px] w-full hidden lg:block"></div>
+    <div  className="w-full h-[450px] md:h-[600px] my-7">
        {console.log(darkMode)}
          <img
             src={`${imageSrc}`}
             alt="Picture of tagline"
             className="w-[90%] h-[95%] md:h-[80%] mx-auto object-contain"
           />
-    </div>
+    </div></>
   );
 };
 

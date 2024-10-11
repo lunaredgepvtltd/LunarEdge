@@ -49,6 +49,8 @@ const TransformingBusinessSection = () => {
   }, [technologies]);
 
   return (
+   <>
+    <div  id="technology" className="h-[10px] w-full hidden lg:block"></div>
     <div className="w-full h-[390px]  md:h-screen md:px-5 md:mt-28">
       <div className="w-[97%] h-[80%] md:h-full mx-auto flex flex-col justify-between">
         {/* heading-div */}
@@ -151,7 +153,7 @@ const TransformingBusinessSection = () => {
         </div>
         
       </div>
-    </div>
+    </div></>
   );
 };
 

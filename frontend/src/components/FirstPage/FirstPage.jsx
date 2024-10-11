@@ -3,7 +3,7 @@ import bgLandingPage from "./bgLandingPage.png";
 import {Link} from 'react-router-dom'
 const FirstPage = () => {
   return (
-    <div className="h-screen w-full relative bg-white  dark:bg-black">
+    <div id="firstPage" className="h-screen w-full relative bg-white  dark:bg-black">
       <div
         className={`absolute  inset-0 bg-cover bg-center `}
         style={{ backgroundImage: `url(${bgLandingPage})` }}
