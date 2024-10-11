@@ -69,6 +69,7 @@ function ContactPage() {
   };
 
   return (
+    
     <div className="h-full w-full dark:bg-black">
       <div
         className="w-full h-[700px] md:h-[780px] pt-4 bg-cover bg-center"

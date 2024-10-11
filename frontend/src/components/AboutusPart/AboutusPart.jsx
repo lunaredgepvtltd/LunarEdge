@@ -9,7 +9,7 @@ export const AboutusPart = ({ title, headline, content1, content2, sideImage }) 
 
   return (
     <>
-      <div className="2xl:h-[600px] lg:h-[500px] md:h-[400px] lg:flex items-center">
+      <div  className="2xl:h-[600px] lg:h-[500px] md:h-[400px] lg:flex items-center">
         <div className="md:h-[450px] h-[530px] w-full md:flex md:justify-around px-3 md:px-0">
           <div
             className="lg:w-[40%] md:w-[46%] flex flex-col md:gap-4 gap-2 lg:text-base md:text-sm text-xs"

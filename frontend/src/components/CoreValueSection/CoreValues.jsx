@@ -82,7 +82,10 @@ const CoreValues = () => {
   }, []);
 
   return (
-    <div className="w-[95%] md:h-[700px] h-1/2 mx-auto px-4 sm:px-0 xl:px-8 flex flex-col justify-around">
+    
+    <>
+    <div id="values" className="h-[30px] w-full hidden lg:block"></div>
+    <div  className="w-[95%] md:h-[700px] h-1/2 mx-auto px-4 sm:px-0 xl:px-8 flex flex-col justify-around">
       <p className="mt-9 md:text-4xl text-xl font-light leading-8 text-center dark:text-white">
         Our core values that define who we are and how we work
       </p>
@@ -164,7 +167,7 @@ const CoreValues = () => {
           ))
         )}
       </div>
-    </div>
+    </div></>
   );
 };
 
