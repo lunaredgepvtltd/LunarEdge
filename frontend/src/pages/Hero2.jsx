@@ -2,7 +2,7 @@ import React from "react";
 import NewLandingPage from "../components/NewLandingPage/NewLandingPage.jsx";
 import CoreValues from "../components/CoreValueSection/CoreValues";
 import NewGetInTouch from "../components/NewGetInTouch/NewGetInTouch.jsx";
-import FirstPage from "../components/FirstPage";
+import FirstPage from "../components/FirstPage/FirstPage.jsx";
 import OurJourney from "../components/OurJourney/OurJourney.jsx";
 import OurJourneyVidio from "../assets/OurJourneyVidio.mp4";
 import OurMissionVidio from "../assets/OurMissionVidio.mp4";

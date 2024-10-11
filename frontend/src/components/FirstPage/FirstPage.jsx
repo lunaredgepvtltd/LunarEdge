@@ -1,5 +1,5 @@
 import React from "react";
-import bgLandingPage from "../assets/bgLandingPage.png";
+import bgLandingPage from "./bgLandingPage.png";
 import {Link} from 'react-router-dom'
 const FirstPage = () => {
   return (
