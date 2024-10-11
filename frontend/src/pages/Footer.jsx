@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import MyImage from "../assets/MyImage.gif";
 import { BsWhatsapp } from "react-icons/bs";
 import { useMediaQuery } from "react-responsive";
@@ -12,6 +12,17 @@ const Footer = () => {
   const isMediumDevice = useMediaQuery({ minWidth: 768, maxWidth: 991 });
   const isLargeDevice = useMediaQuery({ minWidth: 992, maxWidth: 1199 });
   const isExtraLargeDevice = useMediaQuery({ minWidth: 1200 });
+  const [clickedSection, setClickedSection] = useState(""); // Section clicked by user
+
+  // Scroll to specific section and set it as clicked
+  const scrollToSection = (e, section) => {
+   e.preventDefault(); // Prevent default anchor behavior
+   setClickedSection(section); // Set clicked section
+   const sectionElement = document.querySelector(section);
+   if (sectionElement) {
+     sectionElement.scrollIntoView({ behavior: "smooth" }); // Smooth scroll to section
+   }
+ };
 
   const navigate = useNavigate();
 
@@ -135,12 +146,13 @@ const Footer = () => {
               <p className="font-medium text-black dark:text-white ">Company</p>
               <ul className="mt-4 space-y-2 text-sm">
                 <li>
-                  <p
-                    onClick={handleAboutClick}
+                  <a
+                    href="#aboutUs"
+                    onClick={(e) => scrollToSection(e, "#aboutUs")}
                     className="text-black dark:text-white  transition hover:opacity-75 cursor-pointer"
                   >
                     About
-                  </p>
+                  </a>
                 </li>
                 <li>
                   <Link

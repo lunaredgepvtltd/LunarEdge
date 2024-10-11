@@ -183,6 +183,18 @@ const Header = ({ toggleDarkMode, theme }) => {
     }
   };
 
+  const [clickedSection, setClickedSection] = useState(""); // Section clicked by user
+
+   // Scroll to specific section and set it as clicked
+   const scrollToSection = (e, section) => {
+    e.preventDefault(); // Prevent default anchor behavior
+    setClickedSection(section); // Set clicked section
+    const sectionElement = document.querySelector(section);
+    if (sectionElement) {
+      sectionElement.scrollIntoView({ behavior: "smooth" }); // Smooth scroll to section
+    }
+  };
+
   return (
     <>
       {" "}
@@ -303,12 +315,13 @@ const Header = ({ toggleDarkMode, theme }) => {
               // onMouseLeave={!isTouchDevice ? handleMouseLeave : null}
             >
               <div className="flex items-center justify-between rounded-full">
-                <span
+                <a
                   className="text-lg text-black dark:text-white"
-                  onClick={scrollToAboutUs}
+                  ohref="#aboutUs"
+                  onClick={(e) => scrollToSection(e, "#aboutUs")}
                 >
                   About LunarEdge
-                </span>
+                </a>
                 {/* <IoIosArrowDown /> */}
               </div>
 
