@@ -1,10 +1,10 @@
 import express from 'express'
-import query from '../controller/userContoller.js';
+import query from '../controller/queryFormContoller.js';
 import  AdminLoginController  from '../controller/adminLoginController.js';
 import { addVacancyContoller, deleteVacancy, getAllVacancy, updateVacancy } from '../controller/vacancyController.js';
 import multer from 'multer'
 import path from 'path';
-import { FormFill } from '../controller/FormFill.js';
+import { vacancyFormFill } from '../controller/vacancyFormFill.js';
 import { sendEmail } from '../controller/sendEmail.js';
 
 const router = express.Router();
@@ -39,7 +39,7 @@ router.delete('/deleteVacancy',deleteVacancy)
 // vacancy-update 
 
 // formFill 
-router.post('/Formfill', upload.single('cv'),FormFill)
+router.post('/Formfill', upload.single('cv'),vacancyFormFill)
 
 // sendemail 
 router.post('/sendEmail',sendEmail)

@@ -134,18 +134,19 @@ function App() {
           </div>
 
           {/* Hawa Mahal */}
-          <div className="h-[3rem]  cursor-pointer" onMouseEnter={()=>setHoverActive('hawaMahal')} onMouseLeave={()=>setHoverActive("")} onClick={() => scrollToSection("hawaMahal", 1424)} >
+          <div className="h-[3rem]  cursor-pointer" >
             <div
               className={`h-1 rounded-sm w-8 mx-auto bg-black  dark:bg-white  cursor-pointer 
                 ${clickedSection === "hawaMahal" || (scrollY >= 1424 && scrollY < 2033 && clickedSection === "") || hoverActive==='hawaMahal'  ? "scale-x-150" : ""} 
                 origin-right transition-all duration-300`}
-              onClick={() => scrollToSection("hawaMahal", 1424)}
+              
             ></div>
             {clickedSection === "hawaMahal" || (scrollY >= 1424 && scrollY < 2033 && clickedSection === "") || hoverActive==='hawaMahal' ? (
               <div className="text-[14px] pr-3 pt-1 font-medium text-nowrap" data-aos="fade-left" data-aos-duration="300">Hawa Mahal</div>
             ) : (
               ""
             )}
+          
           </div>
 
           {/* Journey */}

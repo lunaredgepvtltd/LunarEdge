@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 const Schema = mongoose.Schema;
 
 
-const userSchema = new Schema({
+const queryFormSchema = new Schema({
     firstName : {
         type : String,
         required : [true,'firstName is required!']
@@ -25,5 +25,5 @@ const userSchema = new Schema({
     }
 })
 
-const Users = mongoose.model("Users",userSchema)
-export default Users;
+const queryFormModal = mongoose.model("queryForm",queryFormSchema)
+export default queryFormModal;
