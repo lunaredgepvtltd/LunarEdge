@@ -17,7 +17,7 @@ const HawaMahal = () => {
 
   return (
   
-    <div className="w-full h-[450px] md:h-[600px] my-7">
+    <div className="w-full h-[450px] md:h-[600px] my-7" id="hawaMahal">
        {console.log(darkMode)}
          <img
             src={`${imageSrc}`}

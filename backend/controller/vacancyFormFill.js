@@ -1,7 +1,7 @@
 import applyFormModal from "../modals/applyFormModal.js";
 
 
-export const FormFill = async(req,res)=>{
+export const vacancyFormFill = async(req,res)=>{
     try {
         const formData = {
           name: req.body.name,

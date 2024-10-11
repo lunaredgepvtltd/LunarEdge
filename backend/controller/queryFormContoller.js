@@ -1,4 +1,4 @@
-import Users from "../modals/userModal.js";
+import queryFormModal from "../modals/queryForm.js";
 import nodemailer from 'nodemailer'
  const query = async (req, res, next) => {
 console.log("Inside query")
@@ -23,7 +23,7 @@ console.log("Inside query")
 
 
     console.log('started saving user')
-    const newUser = await Users.create({
+    const newQueryForm = await queryFormModal.create({
       firstName,
       lastName,
       phoneNumber,
@@ -139,7 +139,6 @@ console.log("Inside query")
       message: "Registered Successfully!",
       success: true,
       error: false,
-      data: newUser
     })
   }
   catch (error) {
