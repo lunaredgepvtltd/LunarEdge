@@ -11,7 +11,6 @@ import dark from "../assets/dark.png";
 import light from "../assets/light.png";
 
 const Header = ({ toggleDarkMode, theme }) => {
-  const [showForm, setShowForm] = useState(false); // State to show/hide contact form
   const [menuOpen, setMenuOpen] = useState(false); // State to manage mobile menu visibility
   const [isTouchDevice, setIsTouchDevice] = useState(false); // State to check if the device is touch-enabled
   const [openDropdown, setOpenDropdown] = useState(null); // State to manage which dropdown is open
@@ -21,14 +20,10 @@ const Header = ({ toggleDarkMode, theme }) => {
   const [showHeader, setShowHeader] = useState(true); // state to control visibility
   const [lastScrollY, setLastScrollY] = useState(0); // state to store last scroll position
 
-  const scrollToAboutUs = () => {
-    navigate("/");
-    setTimeout(() => {
-      window.scrollTo(0, 750);
-    }, 300);
-  };
-
   const controlHeader = () => {
+    if(window.scrollY > 300){
+      setMenuOpen(false);
+    }
     if (window.scrollY > lastScrollY) {
       setShowHeader(false); // hide header on scroll down
     } else {
@@ -50,15 +45,7 @@ const Header = ({ toggleDarkMode, theme }) => {
   const [industries, setIndustries] = useState(false);
 
   // Handle dropdown toggles for mobile menu
-  const handleAboutUs = () => {
-    setAboutUs(!aboutUs);
-    if (industries) {
-      setIndustries(!industries);
-    }
-    if (services) {
-      setServices(!services);
-    }
-  };
+
 
   // scrolling-down-to-sevice-box
 
@@ -66,58 +53,7 @@ const Header = ({ toggleDarkMode, theme }) => {
   const isSmallDevice = useMediaQuery({ minWidth: 600, maxWidth: 767 });
   const isMediumDevice = useMediaQuery({ minWidth: 768, maxWidth: 991 });
   const isLargeDevice = useMediaQuery({ minWidth: 992, maxWidth: 1199 });
-  const isExtraLargeDevice = useMediaQuery({ minWidth: 1200 });
 
-  const handleServiceClick = () => {
-    navigate("/");
-
-    setTimeout(() => {
-      if (isExtraSmallDevice) {
-        console.log("extra-small");
-        toggleMenu();
-        window.scrollTo(0, 3000);
-      } else if (isSmallDevice) {
-        console.log("small");
-        toggleMenu();
-        window.scrollTo(0, 2600);
-      } else if (isMediumDevice) {
-        console.log("medium");
-        toggleMenu();
-        window.scrollTo(0, 2500);
-      } else if (isLargeDevice) {
-        console.log("large");
-        window.scrollTo(0, 2650);
-      } else {
-        console.log("extra-large");
-        window.scrollTo(0, 3200);
-      }
-    }, 200);
-  };
-
-  const handleAboutClick = () => {
-    navigate("/");
-    setTimeout(() => {
-      if (isExtraSmallDevice) {
-        console.log("extra-small");
-        toggleMenu();
-        window.scrollTo(0, 550);
-      } else if (isSmallDevice) {
-        console.log("small");
-        toggleMenu();
-        window.scrollTo(0, 580);
-      } else if (isMediumDevice) {
-        console.log("medium");
-        toggleMenu();
-        window.scrollTo(0, 700);
-      } else if (isLargeDevice) {
-        console.log("large");
-        window.scrollTo(0, 700);
-      } else {
-        console.log("extra-large");
-        window.scrollTo(0, 900);
-      }
-    }, 200);
-  };
 
   // scroll-code-ends
 
@@ -127,27 +63,7 @@ const Header = ({ toggleDarkMode, theme }) => {
     }, 200);
   };
 
-  const handleServices = () => {
-    setServices(!services);
-    if (aboutUs) {
-      setAboutUs(!aboutUs);
-    }
-    if (industries) {
-      setIndustries(!industries);
-    }
-  };
 
-  const handleIndustries = () => {
-    setIndustries(!industries);
-    if (services) {
-      setServices(!services);
-    }
-    if (aboutUs) {
-      setAboutUs(!aboutUs);
-    }
-  };
-
-  
 
   // Toggle mobile menu visibility
   const toggleMenu = () => {
@@ -260,11 +176,6 @@ const Header = ({ toggleDarkMode, theme }) => {
             {/* Industries Dropdown */}
             <li
               className="relative group h-full cursor-pointer transition-all duration-300"
-              // onClick={() => handleDropdownToggle("industries")}
-              // onMouseEnter={
-              //   !isTouchDevice ? () => handleMouseEnter("industries") : null
-              // }
-              // onMouseLeave={!isTouchDevice ? handleMouseLeave : null}
             >
               <div className="flex items-center rounded-full">
                 <Link
@@ -346,7 +257,7 @@ const Header = ({ toggleDarkMode, theme }) => {
                     {/* Temporary-about-us  */}
                     <p
                       className="block px-4 py-2 text-white hover:text-red-500"
-                      onClick={handleAboutClick}
+                      
                     >
                       About Us
                     </p>
@@ -519,7 +430,7 @@ const Header = ({ toggleDarkMode, theme }) => {
                   // onClick={handleAboutUs}
                 >
                   <div className="flex gap-1 items-center">
-                    <span
+                    <a
                       className=" text-md text-[#082847] hover:underline"
                       onClick={(e) => {
                         toggleMenu();
@@ -529,7 +440,7 @@ const Header = ({ toggleDarkMode, theme }) => {
                       }}
                     >
                       About LunarEdge
-                    </span>
+                    </a>
                     {/* <IoIosArrowDown /> */}
                   </div>
                   {/* About Us sub-items */}
@@ -545,7 +456,7 @@ const Header = ({ toggleDarkMode, theme }) => {
                           // to="AboutLunarEdge/AboutUs"
                           className="block px-2 py-1 text-[#082847] hover:underline underline-offset-2 w-32 text-sm "
                           // onClick={toggleMenu}
-                          onClick={handleAboutClick}
+                          
                         >
                           About Us
                         </Link>

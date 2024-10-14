@@ -160,7 +160,7 @@ const CoreValues = () => {
                 Your browser does not support the video tag.
               </video>
               <div
-                className={`flex flex-col h-full xl:py-9 py-3 px-4 xl:px-8 lg:justify-evenly xl:justify-between z-20`}
+                className={'flex flex-col h-full xl:py-9 py-3 px-4 xl:px-8 lg:justify-evenly xl:justify-between z-20'}
               >
                 <h3 className="mt-4 xl:text-xl text-lg font-bold text-gray-900 dark:text-white opacity-100">
                   {service.title}
