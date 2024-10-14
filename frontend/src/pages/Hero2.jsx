@@ -1,5 +1,5 @@
 import React from "react";
-import AboutUsSection from "../components/NewLandingPage/AboutUsSection.jsx";
+import AboutUsSection from "../components/AboutUsSection/AboutUsSection.jsx";
 import CoreValues from "../components/CoreValueSection/CoreValues";
 import NewGetInTouch from "../components/NewGetInTouch/NewGetInTouch.jsx";
 import FirstPage from "../components/FirstPage/FirstPage.jsx";
@@ -8,10 +8,9 @@ import OurJourneyVidio from "../assets/OurJourneyVidio.mp4";
 import OurMissionVidio from "../assets/OurMissionVidio.mp4";
 import OurMission from "../components/OurMission/OurMission.jsx";
 import OurVision from "../components/OurVision/OurVision.jsx";
-
 import TransformingBusinessSection from "../components/TransformingBusinessSection/TransformingBusinessSection.jsx";
 import HawaMahal from "../components/HawaMahal/HawaMahal.jsx";
-import HowWeDo from "../components/HowWeDo.jsx";
+// import HowWeDo from "../components/HowWeDo.jsx";
 
 
 const Hero2 = () => {
@@ -19,7 +18,7 @@ const Hero2 = () => {
     <div className=" dark:bg-black bg-white">
       <FirstPage />
       {/* <HowWeDo/> */}
-      <NewLandingPage /> 
+      <AboutUsSection /> 
       <HawaMahal />
       <OurJourney
         title="OUR JOURNEY"

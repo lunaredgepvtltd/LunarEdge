@@ -319,7 +319,12 @@ const Header = ({ toggleDarkMode, theme }) => {
                 <a
                   className="text-lg text-black dark:text-white"
                   ohref="#aboutUs"
-                  onClick={(e) => scrollToSection(e, "#aboutUs")}
+                  onClick={(e) =>{
+                    navigate('/');
+                    setTimeout(() => {
+                      scrollToSection(e, "#aboutUs")
+                    }, 100);
+                  }}
                 >
                   About LunarEdge
                 </a>
@@ -429,7 +434,7 @@ const Header = ({ toggleDarkMode, theme }) => {
                     className="h-auto w-[80px] hidden"
                   />
                 </Link>
-                <button className="text-4xl " onClick={toggleMenu}>
+                <button className="text-4xl text-black " onClick={toggleMenu}>
                   <IoIosClose />
                 </button>
               </div>
@@ -516,9 +521,11 @@ const Header = ({ toggleDarkMode, theme }) => {
                   <div className="flex gap-1 items-center">
                     <span
                       className=" text-md text-[#082847] hover:underline"
-                      onClick={() => {
+                      onClick={(e) => {
                         toggleMenu();
-                        scrollToAboutUs();
+                        setTimeout(() => {
+                          scrollToSection(e, "#aboutUs")
+                        }, 100);
                       }}
                     >
                       About LunarEdge
@@ -566,7 +573,7 @@ const Header = ({ toggleDarkMode, theme }) => {
                 </li>
 
                 {/* carrer  */}
-                <li className="py-1">
+                <li className="py-1 text-[#082847]">
                   <Link onClick={toggleMenu} to={"/career"}>
                     Career
                   </Link>
@@ -595,7 +602,7 @@ const Header = ({ toggleDarkMode, theme }) => {
             to={"/"}
             className="flex-shrink-0 "
             onClick={() => {
-              // toggleMenu();
+             setMenuOpen(false)
               handleLogoClick();
             }}
           >
