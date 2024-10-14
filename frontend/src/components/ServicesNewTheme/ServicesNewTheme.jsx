@@ -84,7 +84,7 @@ const ServicesNewTheme = () => {
     slidesToScroll: 1,
     arrows: false,
     autoplay: true,
-    autoplaySpeed: 1850, // Corrected from autoplayspeed to autoplaySpeed
+    autoplaySpeed: 1850,
     responsive: [
       {
         breakpoint: 768,
@@ -118,7 +118,7 @@ const ServicesNewTheme = () => {
     slidesToScroll: 1,
     arrows: false,
     autoplay: true,
-    autoplaySpeed: 2000, // Corrected from autoplayspeed to autoplaySpeed
+    autoplaySpeed: 2000,
     rtl: true,
     responsive: [
       {
@@ -140,56 +140,50 @@ const ServicesNewTheme = () => {
 
   return (
     <>
-      <div className="relative flex flex-col items-center justify-center  gap-8 md:gap-10 lg:gap-16 h-[600px] md:h-screen overflow-hidden bg-white dark:bg-black  z-0">
+      <div className="relative flex flex-col items-center justify-center gap-8 md:gap-10 lg:gap-16 h-[600px] md:h-screen overflow-hidden bg-white dark:bg-black z-0">
         {/* Half Moon */}
         <img
           src={MoonImage}
           alt="Half Moon"
-          className=" absolute top-0 left-0 w-full h-full object-cover"
+          className="absolute top-0 left-0 w-full h-full object-cover"
           style={{
             zIndex: -1,
           }}
         />
 
-        <h1 className=" text-4xl md:text-5xl lg:text-7xl font-base text-black ">
+        <h1 className="text-4xl md:text-5xl lg:text-7xl font-base text-black ">
           Services
         </h1>
 
-        <h2 className="text-3xl md:text-3xl lg:text-5xl  font-normal text-black ">
+        <h2 className="text-3xl md:text-3xl lg:text-5xl font-normal text-black ">
           What we do
         </h2>
         <div className="mt-10 md:hidden"></div>
 
-        <p className=" text-black dark:text-white text-lg md:text-2xl lg:text-3xl  font-base text-center  w-[70%] mt-16 md:mt-16 lg:px-2 lg:mt-6">
+        <p className="text-black dark:text-white text-lg md:text-2xl lg:text-3xl font-base text-center w-[70%] mt-16 md:mt-16 lg:px-2 lg:mt-6">
           With technology, we advance your business
         </p>
       </div>
 
       <div
-        className=" p-[5%] pr-[2%] pb-[5%] bg-white dark:bg-black"
+        className="p-[5%] pr-[2%] pb-[5%] bg-white dark:bg-black"
         style={{
           backgroundImage: `url(${BgServices2})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
       >
-
-
         {/* for desktop */}
-        <div className="hidden lg:block mx-[5%] px-4 ">
+        <div className="hidden lg:block mx-[5%] px-4">
           <div className="grid xl:gap-10 gap- grid-cols-1 md:grid-cols-3 lg:grid-cols-4 ">
             {cards.map((card) => (
-              <div className="bg-white dark:bg-transparent px-4">
-                <div
-                  key={card.id}
-                  className="border rounded-[25px] h-[350px] relative flex flex-col justify-between overflow-hidden hover:transition hover:duration-300 ease-in-out transform cursor-pointer"
-                >
+              <div key={card.id} className="bg-white dark:bg-transparent px-4">
+                <div className="border rounded-[25px] h-[350px] relative flex flex-col justify-between overflow-hidden hover:transition hover:duration-300 ease-in-out transform cursor-pointer">
                   <div
                     className="relative h-full w-full"
                     onMouseEnter={() => setHoveredCardId(card.id)}
                     onMouseLeave={() => setHoveredCardId(null)}
                   >
-                 
                     <img
                       src={card.image}
                       alt={card.title}
@@ -198,14 +192,13 @@ const ServicesNewTheme = () => {
                         filter:
                           hoveredCardId === card.id
                             ? "blur(2px)"
-                            : "grayscale(100%)", 
+                            : "grayscale(100%)",
                       }}
                     />
                     <div className="absolute inset-0 bg-black opacity-40 z-5"></div>
 
-                  
                     <div className="relative z-10 p-4 h-full flex flex-col justify-between">
-                      {hoveredCardId === card.id ? ( 
+                      {hoveredCardId === card.id ? (
                         <>
                           <h3 className="text-lg font-normal pt-10 text-left text-white">
                             {card.title}
@@ -227,17 +220,11 @@ const ServicesNewTheme = () => {
           </div>
         </div>
 
-      {/* for mobile */}
-
+        {/* for mobile */}
         <div className="md:hidden p-[10%] px-4">
           <Slider {...settings}>
             {cards.map((card) => (
-              <div
-                key={card.id}
-                className="border rounded-[25px] h-[300px] relative flex flex-col justify-between overflow-hidden transition duration-300 ease-in-out transform cursor-pointer "
-                onMouseEnter={() => setHoveredCardId(card.id)}
-                onMouseLeave={() => setHoveredCardId(null)}
-              >
+              <div key={card.id} className="border rounded-[25px] h-[300px] relative flex flex-col justify-between overflow-hidden transition duration-300 ease-in-out transform cursor-pointer">
                 <img
                   src={card.image}
                   alt={card.title}
@@ -252,36 +239,23 @@ const ServicesNewTheme = () => {
                 <div className="absolute inset-0 bg-black opacity-40 z-5 "></div>
 
                 <div className="relative z-10 p-5 h-full flex flex-col justify-between">
-                  <h3 className="text-md  font-normal  pt-10 text-left text-white">
+                  <h3 className="text-md font-normal pt-10 text-left text-white">
                     {card.title}
                   </h3>
-                  <p className=" text-sm md:text-md text-white mb-6 text-left">
-                      {card.description}
-                    </p>
-                  {/* {hoveredCardId === card.id && (
-                    <p className="text-md text-white mb-6 text-center">
-                      {card.description}
-                    </p>
-                  )} */}
+                  <p className="text-sm md:text-md text-white mb-6 text-left">
+                    {card.description}
+                  </p>
                 </div>
               </div>
             ))}
           </Slider>
         </div>
 
-        {/* medium device scroll ri8  side  */}
-        <div
-          className="hidden md:block lg:hidden lg:mx-[5%] px-4 mb-5  "
-          style={{ direction: "rtl" }}
-        >
+        {/* medium device scroll right side */}
+        <div className="hidden md:block lg:hidden lg:mx-[5%] px-4 mb-5" style={{ direction: "rtl" }}>
           <Slider {...settings2}>
             {cards.map((card) => (
-              <div
-                key={card.id}
-                className="border rounded-[25px] h-[280px] md:h-[300px] relative flex flex-col justify-between overflow-hidden transition-all duration-300 ease-in-out cursor-pointer"
-                onMouseEnter={() => setHoveredCardId(card.id)}
-                onMouseLeave={() => setHoveredCardId(null)}
-              >
+              <div key={card.id} className="border rounded-[25px] h-[280px] md:h-[300px] relative flex flex-col justify-between overflow-hidden transition-all duration-300 ease-in-out cursor-pointer">
                 <img
                   src={card.image}
                   alt={card.title}
@@ -293,76 +267,52 @@ const ServicesNewTheme = () => {
                         : "grayscale(100%)",
                   }}
                 />
-
-               
-                <div className="relative z-10 p-4 h-full flex flex-col justify-between">
-                  {hoveredCardId === card.id ? (
-                    <>
-                      <h3 className="text-md md:text-lg p-8 font-normal text-left text-white">
-                        {card.title}
-                      </h3>
-                      <p className="text-sm md:text-base text-white mb-4 text-left">
-                        {card.description}
-                      </p>
-                    </>
-                  ) : (
-                    <h3 className="text-md md:text-lg pt-8 font-normal text-left text-white">
-                      {card.title}
-                    </h3>
-                  )}
-                </div>
-
-               
                 <div className="absolute inset-0 bg-black opacity-40 z-5"></div>
+
+                <div className="relative z-10 p-5 h-full flex flex-col justify-between">
+                  <h3 className="text-md font-normal pt-10 text-left text-white">
+                    {card.title}
+                  </h3>
+                  <p className="text-sm md:text-md text-white mb-6 text-left">
+                    {card.description}
+                  </p>
+                </div>
               </div>
             ))}
           </Slider>
         </div>
 
-        {/* md scroll left side  */}
-
+        {/* md scroll left side */}
         <div className="hidden md:block lg:hidden lg:mx-[5%] px-4">
           <Slider {...settings}>
             {cards.map((card) => (
-              <div
-                key={card.id}
-                className="border rounded-[25px] h-[300px] relative flex flex-col justify-between overflow-hidden transition duration-300 ease-in-out transform hover:grayscale-0 grayscale-100 cursor-pointer"
-                onMouseEnter={() => setHoveredCardId(card.id)}
-                onMouseLeave={() => setHoveredCardId(null)}
-              >
+              <div key={card.id} className="border rounded-[25px] h-[300px] relative flex flex-col justify-between overflow-hidden transition duration-300 ease-in-out transform hover:grayscale-0 grayscale-100 cursor-pointer">
                 <img
                   src={card.image}
                   alt={card.title}
-                  className="absolute inset-0 w-full h-full object-cover z-0 transition duration-300"
+                  className="absolute inset-0 w-full h-full object-cover z-0"
                   style={{
                     filter:
                       hoveredCardId === card.id
                         ? "blur(2px)"
-                        : "grayscale(100%)", 
+                        : "grayscale(100%)",
                   }}
                 />
+                <div className="absolute inset-0 bg-black opacity-40 z-5"></div>
 
-                
-                <div className="relative z-10 p-4 h-full flex flex-col justify-between">
-                  <h3 className="text-lg pt-10 font-normal text-text-left text-white">
+                <div className="relative z-10 p-5 h-full flex flex-col justify-between">
+                  <h3 className="text-md font-normal pt-10 text-left text-white">
                     {card.title}
                   </h3>
-                  {hoveredCardId === card.id && (
-                    <p className="text-white mb-4 text-left text-sm">
-                      {card.description}
-                    </p>
-                  )}
+                  <p className="text-sm md:text-md text-white mb-6 text-left">
+                    {card.description}
+                  </p>
                 </div>
-
-            
-                <div className="absolute inset-0 bg-black opacity-40 z-5"></div>
               </div>
             ))}
           </Slider>
         </div>
       </div>
-
-
     </>
   );
 };

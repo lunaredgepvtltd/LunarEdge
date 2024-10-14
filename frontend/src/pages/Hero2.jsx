@@ -18,7 +18,7 @@ const Hero2 = () => {
   return (
     <div className=" dark:bg-black bg-white">
       <FirstPage />
-      <HowWeDo/>
+      {/* <HowWeDo/> */}
       <NewLandingPage /> 
       <HawaMahal />
       <OurJourney

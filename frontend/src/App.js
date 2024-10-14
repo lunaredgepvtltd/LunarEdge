@@ -27,7 +27,7 @@ function App() {
     const [navigationEntry] = performance.getEntriesByType('navigation');
     if (navigationEntry.type === 'reload') {
       window.scrollTo(0, 0); // Scroll to the top if page is refreshed
-      console.log("Page was reloaded and scrolled to top.");
+      
     }
   
     // Initialize AOS (animation on scroll)
