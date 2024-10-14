@@ -215,7 +215,7 @@ const Header = ({ toggleDarkMode, theme }) => {
           </Link>
           <div className="flex gap-3 items-center" >
               <div className="relative lg:hidden">
-                {console.log(theme)}
+                
                 <img
                   src={light}
                   alt="lignt-logo"
@@ -391,7 +391,7 @@ const Header = ({ toggleDarkMode, theme }) => {
             </Link>
             <div className="p-6">
               <div className="relative ">
-                {console.log(theme)}
+                
                 <img
                   src={light}
                   alt="lignt-logo"
