@@ -103,6 +103,7 @@ const CoreValues = () => {
                     loop
                     muted
                     autoPlay
+                    playsInline // Prevent fullscreen takeover on iOS
                   >
                     <source src={service.videoSrc} type="video/mp4" />
                     Your browser does not support the video tag.
@@ -149,6 +150,7 @@ const CoreValues = () => {
                 loop
                 muted
                 autoPlay // Ensure video plays automatically
+                playsInline // Prevent fullscreen takeover on iOS
               >
                 <source src={service.videoSrc} type="video/mp4" />
                 Your browser does not support the video tag.
