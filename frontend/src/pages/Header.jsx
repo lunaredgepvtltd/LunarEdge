@@ -344,7 +344,7 @@ const Header = ({ toggleDarkMode, theme }) => {
                     className="h-auto w-[80px] hidden"
                   />
                 </Link>
-                <button className="text-4xl " onClick={toggleMenu}>
+                <button className="text-4xl text-black " onClick={toggleMenu}>
                   <IoIosClose />
                 </button>
               </div>
@@ -483,7 +483,7 @@ const Header = ({ toggleDarkMode, theme }) => {
                 </li>
 
                 {/* carrer  */}
-                <li className="py-1">
+                <li className="py-1 text-[#082847]">
                   <Link onClick={toggleMenu} to={"/career"}>
                     Career
                   </Link>
