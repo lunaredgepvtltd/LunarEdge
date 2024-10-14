@@ -11,7 +11,7 @@ const NewLandingPage = () => {
 
   return (
 <>
-<div id="aboutUs" className="h-[90px] w-full hidden lg:block"></div>
+<div id="aboutUs" className="h-[90px] w-full block"></div>
 <div  className="relative w-full  dark:text-white  lg:h-screen h-[415px] flex">
       <div className=" md:w-[52%] xl:w-[44%] w-[100%] relative h-[375px]  md:h-full">
         <img

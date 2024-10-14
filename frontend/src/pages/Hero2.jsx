@@ -11,7 +11,7 @@ import OurVision from "../components/OurVision/OurVision.jsx";
 
 import TransformingBusinessSection from "../components/TransformingBusinessSection/TransformingBusinessSection.jsx";
 import HawaMahal from "../components/HawaMahal/HawaMahal.jsx";
-import HowWeDo from "../components/HowWeDo.jsx";
+import HowWeDo from "../components/HowWeDo/HowWeDo.jsx";
 
 
 const Hero2 = () => {
