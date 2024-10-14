@@ -11,12 +11,14 @@ import OurVision from "../components/OurVision/OurVision.jsx";
 
 import TransformingBusinessSection from "../components/TransformingBusinessSection/TransformingBusinessSection.jsx";
 import HawaMahal from "../components/HawaMahal/HawaMahal.jsx";
+import HowWeDo from "../components/HowWeDo.jsx";
 
 
 const Hero2 = () => {
   return (
     <div className=" dark:bg-black bg-white">
       <FirstPage />
+      <HowWeDo/>
       <NewLandingPage /> 
       <HawaMahal />
       <OurJourney

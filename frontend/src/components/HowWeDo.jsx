@@ -12,8 +12,10 @@ const HowWeDo = () => {
             Initial Consultation and Requirement Gathering
           </div>
         </div>
-        <div className="flex items-center justify-center">
-          <div className="border-dotted border-l-4 border-black h-10"></div>
+        <div className=" relative h-20">
+          <div className="absolute left-6 -top-2 border-dotted border-l-4 border-black h-10"></div> 
+          <div className="absolute bottom-10 left-6 border-dotted border-t-4 border-black w-[90%]"></div>
+          <div className="absolute right-5 -bottom-[4px] border-dotted border-r-4 border-black h-10"></div> 
         </div>
         {/* Step 2 */}
         <div className="flex items-center space-x-4">
