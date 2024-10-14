@@ -183,6 +183,18 @@ const Header = ({ toggleDarkMode, theme }) => {
     }
   };
 
+  const [clickedSection, setClickedSection] = useState(""); // Section clicked by user
+
+   // Scroll to specific section and set it as clicked
+   const scrollToSection = (e, section) => {
+    e.preventDefault(); // Prevent default anchor behavior
+    setClickedSection(section); // Set clicked section
+    const sectionElement = document.querySelector(section);
+    if (sectionElement) {
+      sectionElement.scrollIntoView({ behavior: "smooth" }); // Smooth scroll to section
+    }
+  };
+
   return (
     <>
       {" "}
@@ -204,7 +216,7 @@ const Header = ({ toggleDarkMode, theme }) => {
           </Link>
           <div className="flex gap-3 items-center" >
               <div className="relative lg:hidden">
-                {console.log(theme)}
+                
                 <img
                   src={light}
                   alt="lignt-logo"
@@ -304,12 +316,13 @@ const Header = ({ toggleDarkMode, theme }) => {
               // onMouseLeave={!isTouchDevice ? handleMouseLeave : null}
             >
               <div className="flex items-center justify-between rounded-full">
-                <span
+                <a
                   className="text-lg text-black dark:text-white"
-                  onClick={scrollToAboutUs}
+                  ohref="#aboutUs"
+                  onClick={(e) => scrollToSection(e, "#aboutUs")}
                 >
                   About LunarEdge
-                </span>
+                </a>
                 {/* <IoIosArrowDown /> */}
               </div>
 
@@ -379,12 +392,12 @@ const Header = ({ toggleDarkMode, theme }) => {
             </Link>
             <div className="p-6">
               <div className="relative ">
-                {console.log(theme)}
+                
                 <img
                   src={light}
                   alt="lignt-logo"
                   onClick={toggleDarkMode}
-                  className={`w-[45px] drop-shadow-[1px_1px_1pxrgba(0,0,0,0.1)]  cursor-pointer transition-all duration-300 absolute right-0 z-10 ${
+                  className={`w-[50px] h-[25px] drop-shadow-[1px_1px_1pxrgba(0,0,0,0.1)]  cursor-pointer transition-all duration-300 absolute right-0 z-10 ${
                     theme ? "opacity-100" : "opacity-10"
                   }`}
                 />
@@ -393,7 +406,7 @@ const Header = ({ toggleDarkMode, theme }) => {
                   src={dark}
                   alt="lignt-logo"
                   onClick={toggleDarkMode}
-                  className="w-[45px] drop-shadow-[1px_1px_1pxrgba(0,0,0,0.1)]  cursor-pointer transition-all duration-300 "
+                  className="w-[50px] h-[25px]   cursor-pointer transition-all duration-300 "
                 />
               </div>
             </div>

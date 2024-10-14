@@ -1,6 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App.js";
-import Common from "../components/Common.jsx";
+import Common from "../components/Common/Common.jsx";
 
 
 // import { Career } from "../pages/Career.jsx";
