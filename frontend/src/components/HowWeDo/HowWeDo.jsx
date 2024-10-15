@@ -20,11 +20,11 @@ const HowWeDo = () => {
         <h4 className="text-3xl font-normal mb-10 text-black dark:text-white">
           How we do
         </h4>
-        <div className=" max-w-md">
+        <div className=" max-w-md ">
           {/* Step 1 */}
           <div className="flex items-center ">
             <div className="w-28 h-28 bg-gradient-to-r from-[#5d5d5d] to-[#ffffff] dark:bg-gradient-to-r dark:from-[#5d5d5d] dark:to-[#ffffff] rounded-full"></div>
-            <div className="flex-1 bg-gradient-to-r from-[#5d5d5d] to-[#dddbdb] dark:bg-gradient-to-r dark:from-[#000000] dark:to-[#737373] text-xl  rounded-3xl p-6 text-black dark:text-white text-center m-auto font-semibold">
+            <div className="flex-1 bg-gradient-to-r from-[#5d5d5d] to-[#dddbdb] dark:bg-gradient-to-r dark:from-[#000000] dark:to-[#737373] text-xl  rounded-full p-6 text-black dark:text-white text-center m-auto font-semibold">
               Initial Consultation and Requirement Gathering
             </div>
           </div>
@@ -35,7 +35,7 @@ const HowWeDo = () => {
           </div>
           {/* Step 2 */}
           <div className="flex items-center ">
-            <div className="flex-1 bg-gradient-to-r from-[#5d5d5d] to-[#dddbdb] text-xl dark:bg-gradient-to-r dark:from-[#000000] dark:to-[#737373]  rounded-xl p-6 text-black dark:text-white text-center m-auto font-semibold">
+            <div className="flex-1 bg-gradient-to-r from-[#5d5d5d] to-[#dddbdb] text-xl dark:bg-gradient-to-r dark:from-[#000000] dark:to-[#737373]  rounded-full p-6 text-black dark:text-white text-center m-auto font-semibold">
               Proposal and Project Planning
             </div>
             <div className="w-28 h-28 bg-gradient-to-r from-[#5d5d5d] to-[#ffffff]  rounded-full"></div>
@@ -48,7 +48,7 @@ const HowWeDo = () => {
           {/* Step 3 */}
           <div className="flex items-center ">
             <div className="w-28 h-28 bg-gradient-to-r from-[#5d5d5d] to-[#ffffff]  rounded-full"></div>
-            <div className="flex-1 bg-gradient-to-r from-[#5d5d5d] to-[#dddbdb] dark:bg-gradient-to-r dark:from-[#000000] dark:to-[#737373] text-xl  rounded-lg p-6 text-black dark:text-white text-center m-auto font-semibold">
+            <div className="flex-1 bg-gradient-to-r from-[#5d5d5d] to-[#dddbdb] dark:bg-gradient-to-r dark:from-[#000000] dark:to-[#737373] text-xl  rounded-full p-6 text-black dark:text-white text-center m-auto font-semibold">
               Design and Prototyping
             </div>
           </div>
@@ -58,7 +58,7 @@ const HowWeDo = () => {
           </div>
           {/* Step 4 */}
           <div className="flex items-center ">
-            <div className="flex-1 bg-gradient-to-r from-[#5d5d5d] to-[#dddbdb] dark:bg-gradient-to-r dark:from-[#000000] dark:to-[#737373] text-xl  rounded-lg p-6 text-black dark:text-white text-center m-auto font-semibold">
+            <div className="flex-1 bg-gradient-to-r from-[#5d5d5d] to-[#dddbdb] dark:bg-gradient-to-r dark:from-[#000000] dark:to-[#737373] text-xl  rounded-full p-6 text-black dark:text-white text-center m-auto font-semibold">
               Quality Assurance and Testing
             </div>
             <div className="w-28 h-28 bg-gradient-to-r from-[#5d5d5d] to-[#ffffff]  rounded-full"></div>
@@ -70,7 +70,7 @@ const HowWeDo = () => {
           {/* Step 5 */}
           <div className="flex items-center ">
             <div className="w-28 h-28  bg-gradient-to-r from-[#5d5d5d] to-[#ffffff]  rounded-full"></div>
-            <div className=" bg-gradient-to-r from-[#5d5d5d] to-[#dddbdb] dark:bg-gradient-to-r dark:from-[#000000] dark:to-[#737373] text-xl  rounded-lg p-6 text-black dark:text-white text-center m-auto font-semibold">
+            <div className=" bg-gradient-to-r from-[#5d5d5d] to-[#dddbdb] dark:bg-gradient-to-r dark:from-[#000000] dark:to-[#737373] text-xl  rounded-full p-6 text-black dark:text-white text-center m-auto font-semibold">
               Deployment and Implementation
             </div>
           </div>
@@ -82,7 +82,7 @@ const HowWeDo = () => {
           </div>
           {/* Step 6 */}
           <div className="flex items-center ">
-            <div className="flex-1 bg-gradient-to-r from-[#5d5d5d] to-[#dddbdb] dark:bg-gradient-to-r dark:from-[#000000] dark:to-[#737373] text-xl  rounded-lg p-6 text-black dark:text-white text-center m-auto font-semibold">
+            <div className="flex-1 bg-gradient-to-r from-[#5d5d5d] to-[#dddbdb] dark:bg-gradient-to-r dark:from-[#000000] dark:to-[#737373] text-xl  rounded-full p-6 text-black dark:text-white text-center m-auto font-semibold">
               Post-Deployment Support
             </div>
             <div className="w-28 h-28 bg-gradient-to-r from-[#5d5d5d] to-[#ffffff]  rounded-full"></div>
