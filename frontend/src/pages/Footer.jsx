@@ -172,7 +172,7 @@ const Footer = () => {
             <ul className="flex flex-wrap gap-4 text-xs">
               <li>
                 <Link
-                  to="/common"
+                  to="/Tnc"
                   className="text-black dark:text-white  transition hover:opacity-75 "
                 >
                   Terms & Conditions
@@ -180,7 +180,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  to="/common"
+                  to="/PrivacyPolicy"
                   className="text-black dark:text-white  transition hover:opacity-75 "
                 >
                   Privacy Policy
@@ -188,7 +188,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  to="/common"
+                  to="/Cookies"
                   className="text-black dark:text-white  transition hover:opacity-75 "
                 >
                   Cookies
