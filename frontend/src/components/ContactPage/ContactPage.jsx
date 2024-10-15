@@ -13,7 +13,7 @@ import BgConTactUs from "./BgContactUs.png";
 
 
 const ContactCard = ({ image, children }) => (
-  <div className="md:w-[24%] w-[90%] mx-auto bg-gradient-to-r from-[#a6a6a6] to-[#ffffff] dark:bg-gradient-to-r dark:from-[#000000] dark:to-[#737373]  rounded-3xl flex flex-row md:flex-col items-center justify-between md:justify-evenly px-5 py-4 md:py-0  shadow-lg">
+  <div className="md:w-[24%] w-[100%] mx-auto bg-gradient-to-r from-[#a6a6a6] to-[#ffffff] dark:bg-gradient-to-r dark:from-[#000000] dark:to-[#737373]  rounded-3xl flex flex-row md:flex-col items-center justify-between md:justify-evenly px-3 py-4 md:py-0  shadow-lg">
     <img
       src={image}
       alt=""
@@ -71,13 +71,13 @@ function ContactPage() {
   return (
     <div className="h-full w-full dark:bg-black">
       <div
-        className="w-full h-[700px] md:h-[780px] pt-4 bg-cover bg-center"
+        className="w-full h-[750px] md:h-[780px] pt-4 bg-cover bg-center"
         style={{
           backgroundImage: `url(${MoonImage})`,
           zIndex: -1,
         }}
       >
-        <div className="container z-10 mx-auto text-center mt-[5%] h-[90%] md:h-[100%] flex flex-col justify-evenly gap-5">
+        <div className="container z-10 mx-auto text-center mt-[5%] h-[90%] md:h-[100%] text-black flex flex-col justify-evenly gap-5">
           <h2 className=" md:text-3xl text-2l font-lg mb-[1px] md:mb-4">
             How we can help you?
           </h2>
@@ -87,7 +87,7 @@ function ContactPage() {
 
           <div className=" h-[350px] flex-col  flex md:flex-row justify-center gap-8 md:gap-9 text-sm  ">
             <ContactCard image={callContactPage}>
-              <p className="md:mb-5 text-left md:text-center text-xs md:text-lg">
+              <p className="md:mb-5 mb-2 text-left md:text-center text-xs md:text-lg">
                 0141-4512611 (Office)
               </p>
               <p className="text-left md:text-center text-xs md:text-[14px] whitespace-nowrap">
