@@ -8,6 +8,7 @@ import Hero2 from "../pages/Hero2.jsx";
 import ContactPage from "../components/ContactPage/ContactPage.jsx";
 import ServicesNewTheme from "../components/ServicesNewTheme/ServicesNewTheme.jsx";
 import  Career  from "../pages/Career.jsx";
+  import NewCareer from "../pages/NewCareer.jsx";
 
 
 
@@ -26,7 +27,7 @@ const router = createBrowserRouter([
       },
       {
         path: "career",
-        element: <Career />,
+        element: <NewCareer />,
       },
       {
         path: "admin",

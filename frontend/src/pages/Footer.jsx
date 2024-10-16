@@ -4,6 +4,9 @@ import { BsWhatsapp } from "react-icons/bs";
 import { useMediaQuery } from "react-responsive";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+
+import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram } from "react-icons/fa";
+
 const Footer = () => {
   // scrolling-down-to-sevice-box
 
@@ -16,13 +19,13 @@ const Footer = () => {
 
   // Scroll to specific section and set it as clicked
   const scrollToSection = (e, section) => {
-   e.preventDefault(); // Prevent default anchor behavior
-   setClickedSection(section); // Set clicked section
-   const sectionElement = document.querySelector(section);
-   if (sectionElement) {
-     sectionElement.scrollIntoView({ behavior: "smooth" }); // Smooth scroll to section
-   }
- };
+    e.preventDefault(); // Prevent default anchor behavior
+    setClickedSection(section); // Set clicked section
+    const sectionElement = document.querySelector(section);
+    if (sectionElement) {
+      sectionElement.scrollIntoView({ behavior: "smooth" }); // Smooth scroll to section
+    }
+  };
 
   const navigate = useNavigate();
 
@@ -61,7 +64,22 @@ const Footer = () => {
     }, 200);
   };
 
-  // scroll-code-ends
+  // socila icon size set 
+  const getSize = () => {
+    if (window.innerWidth < 640) {
+        return 16; 
+    } else if (window.innerWidth < 768) { 
+        return 20; 
+    }
+    return 25; 
+};
+
+const iconSize = getSize();
+
+
+const currentYear = new Date().getFullYear();
+
+
   return (
     <footer className="bg-gradient-to-r from-[#a6a6a6] to-[#ffffff]  lg:grid lg:grid-cols-5 border-t-2 border-black dark:border-white  ">
       <div className="px-3 py-3 md:py-6 sm:px-6 lg:col-span-3 lg:px-6 dark:bg-black ">
@@ -104,15 +122,19 @@ const Footer = () => {
                     +91-7760701155
                   </a>
                 </p>
-                <span className="font-semibold text-black dark:text-white"> [Sanjeev Ola]</span>
+                <span className="font-semibold text-black dark:text-white">
+                  {" "}
+                  [Sanjeev Ola]
+                </span>
               </li>
             </ul>
           </div>
 
-
           <div className="flex flex-row flex-wrap gap-4 px-4">
             <div className="flex-1">
-              <p className="font-medium text-black dark:text-white ">Quick Links</p>
+              <p className="font-medium text-black dark:text-white ">
+                Quick Links
+              </p>
               <ul className="mt-4 space-y-2 text-sm">
                 <li>
                   <Link
@@ -130,7 +152,7 @@ const Footer = () => {
                     Services
                   </Link>
                 </li>
-                <li>
+                {/* <li>
                   <Link
                     to="https://www.linkedin.com/company/lunaredge/"
                     target="_blank"
@@ -138,7 +160,7 @@ const Footer = () => {
                   >
                     LinkedIn
                   </Link>
-                </li>
+                </li> */}
               </ul>
             </div>
 
@@ -163,9 +185,47 @@ const Footer = () => {
                   </Link>
                 </li>
               </ul>
-            </div>
-          </div>
+              <div className="flex justify-items-end gap-4 mt-6">
+            <a
+                href="https://www.facebook.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className=" dark:text-white text-blue-600"
+            >
+                <FaFacebook size={iconSize} />
+            </a>
+            <a
+                href="https://twitter.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className=" dark:text-white text-blue-400"
+            >
+                <FaTwitter size={iconSize} />
+            </a>
+            <a
+                href="https://www.linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className=" dark:text-white text-blue-700"
+            >
+                <FaLinkedin size={iconSize} />
+            </a>
+            <a
+                href="https://www.instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className=" dark:text-white text-pink-600"
+            >
+                <FaInstagram size={iconSize} />
+            </a>
         </div>
+        </div>
+            </div>
+            
+
+           
+          </div>
+          
 
         <div className=" mt-2 md:mt-4 border-t border-black dark:border-white pt-2 md:pt-4 ">
           <div className="sm:flex sm:items-center sm:justify-between">
@@ -197,7 +257,7 @@ const Footer = () => {
             </ul>
 
             <p className=" mt-3 md:mt-6 text-xs text-black dark:text-white  sm:mt-0 ">
-              &copy; 2024. LunarEdge IT Services Pvt. Ltd. All rights reserved.
+              &copy; {currentYear}. LunarEdge IT Services Pvt. Ltd. All rights reserved.
             </p>
           </div>
         </div>
