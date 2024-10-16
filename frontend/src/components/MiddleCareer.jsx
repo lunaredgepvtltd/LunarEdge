@@ -1,5 +1,6 @@
-import React from 'react';
-
+import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
+import NewAddVacancy from '../components/NewAddVacancy/NewAddVacancy.jsx'
 
 // Component for Job Opening
 const JobOpening = ({ title, experience, location, jobType, buttonText}) => {
@@ -45,10 +46,19 @@ const MiddleCareer = () => {
     }
   ];
 
+  const { user } = useSelector((state) => state.user);
+  const [showAddVacancy,setShowAddVacancy] = useState(false);
+  const handleClose = ()=>{
+    setShowAddVacancy(false)
+    }
+  
+
   return (
     <div className="bg-white min-h-screen w-full flex  flex-col justify-center items-center">
       <div className="w-[95%] md:w-[80%] px-4 py-8">
-        <h1 className="text-center text-3xl md:text-4xl font-semibold text-black mb-8">Openings</h1>
+        <div className='flex flex-col justify-center items-center py-2'><h1 className="text-center text-3xl md:text-4xl font-semibold text-black mb-8">Openings</h1>
+        {user?.role === 'ADMIN' ? <button className={`w-[30%] md:w-auto text-xs md:text-sm bg-gradient-to-r from-[#ff5757] to-[#8c52ff] text-white px-2 py-2 md:px-6 md:py-3 rounded-3xl md:font-semibold md:tracking-wider`} onClick={()=>{setShowAddVacancy(true)}}>Add New Vacancy</button> : '' }
+        </div>
         
         <div className="space-y-6 w-full">
           {jobOpenings.map((job, index) => (
@@ -57,6 +67,8 @@ const MiddleCareer = () => {
         </div>
       </div>
      
+     {/* showin-newVacancy-form when button is clicked  */}
+     {showAddVacancy && <NewAddVacancy onClose={handleClose} />}
     </div>
   );
 };
