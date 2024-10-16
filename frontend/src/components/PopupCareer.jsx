@@ -31,11 +31,11 @@ const PopupCareer = ({ togglePopup }) => {
 
   return (
     <div
-      className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50"
+      className="fixed inset-0 bg-black  bg-opacity-50 flex justify-center items-center z-50"
       data-aos="fade-down" // Apply AOS fade-in animation to the popup
     >
       <div
-        className="bg-white shadow-lg w-[90%] md:w-[80%] lg:w-[90%] p-8 rounded-xl relative"
+        className="bg-white dark:bg-black shadow-lg w-[90%] md:w-[80%] lg:w-[90%] p-8 rounded-xl relative"
         
       >
         {/* Close Button */}
@@ -49,13 +49,13 @@ const PopupCareer = ({ togglePopup }) => {
         {/* Job Details */}
         <div className="md:flex justify-between">
           <div className="mb-8 md:w-[50%]">
-            <h2 className="text-lg text-purple-700 font-semibold" >ON SITE</h2>
-            <h1 className="text-3xl font-bold text-gray-900 mt-2">Frontend Developer</h1>
-            <div className="flex items-center mt-4 text-gray-600" >
+            <h2 className="text-lg text-[#2e2e30] dark:text-white font-semibold" >ON SITE</h2>
+            <h1 className="text-3xl font-bold text-[#160962] dark:text-purple-400 mt-2">Frontend Developer</h1>
+            <div className="flex items-center mt-4 text-gray-600 dark:text-white" >
               <span className="mr-2">&#x1F4BC;</span> 2-3 Years
               <span className="ml-4 mr-2">&#x1F4CD;</span> Jaipur, India
             </div>
-            <div className="mt-4 text-sm text-gray-700" >
+            <div className="mt-4 text-sm text-gray-700 dark:text-white" >
               <p><strong>Job Summary:</strong></p>
               <p>
                 LunarEdge IT Services Pvt. Ltd. is seeking a creative and detail-oriented UI/UX
