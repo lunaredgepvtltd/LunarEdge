@@ -41,7 +41,6 @@ const Hero2 = () => {
 
       <TransformingBusinessSection/>
       <NewGetInTouch />
-       <NewCareer/>
     
     </div>
   );
