@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 import bgCareerSM from "../assets/bgCareerSM.png";
 import AddVacancy from "../components/AddVacancy";
 import { API } from "../helper";
-export const Career = () => {
+ const Career = () => {
   const [showAddVacancy,setShowAddVacancy] = useState(false);
   const [filteredData, setFilteredData] = useState([]);
 
@@ -120,3 +120,5 @@ export const Career = () => {
     </div>
   );
 };
+
+export default Career;

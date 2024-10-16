@@ -7,7 +7,7 @@ import AdminLoginForm from "../components/AdminLoginForm.jsx";
 import Hero2 from "../pages/Hero2.jsx";
 import ContactPage from "../components/ContactPage/ContactPage.jsx";
 import ServicesNewTheme from "../components/ServicesNewTheme/ServicesNewTheme.jsx";
-import { Career } from "../pages/Career.jsx";
+import  Career  from "../pages/Career.jsx";
 
 
 

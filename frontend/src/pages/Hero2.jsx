@@ -11,6 +11,7 @@ import OurVision from "../components/OurVision/OurVision.jsx";
 
 import TransformingBusinessSection from "../components/TransformingBusinessSection/TransformingBusinessSection.jsx";
 import HawaMahal from "../components/HawaMahal/HawaMahal.jsx";
+import NewCareer from "./NewCareer.jsx";
 
 
 
@@ -44,6 +45,7 @@ const Hero2 = () => {
 
       <TransformingBusinessSection/>
       <NewGetInTouch />
+   <NewCareer/>
     
     </div>
   );
