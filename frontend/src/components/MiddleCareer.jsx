@@ -1,53 +1,58 @@
 import React from 'react';
 
-const MiddleCareer = () => {
+// Component for Job Opening
+const JobOpening = ({ title, experience, location, jobType, buttonText}) => {
+  Const[seto]
   return (
-    <div className="bg-gray-900 min-h-screen flex justify-center items-center">
-      <div className="w-full max-w-4xl px-4 py-8">
-        <h1 className="text-center text-4xl font-semibold text-gray-100 mb-8">Openings</h1>
-        
-        <div className="space-y-6">
-          {/* First Job Opening */}
-          <div className="bg-gray-200 p-6 rounded-lg shadow-lg flex justify-between items-center">
-            <div>
-              <h2 className="text-2xl font-semibold text-gray-900">UI/UX Designer</h2>
-              <div className="flex space-x-4 mt-2 text-gray-600">
-                <div className="flex items-center">
-                  <span className="mr-2">&#x1F4BC;</span> 2-5 years
-                </div>
-                <div className="flex items-center">
-                  <span className="mr-2">&#x1F4BB;</span> On-site
-                </div>
-                <div className="flex items-center">
-                  <span className="mr-2">&#x1F4CD;</span> Jaipur
-                </div>
-              </div>
-            </div>
-            <button className="bg-gradient-to-r from-pink-500 to-purple-500 text-white px-4 py-2 rounded-lg font-semibold">
-              APPLY
-            </button>
+    <div className="border-2 w-full border-black p-4 md:p-6 rounded-xl flex flex-col md:flex-row justify-between items-center">
+      <div className="mb-4 md:mb-0 text-center md:text-left">
+        {jobType && <h2 className="text-md md:text-lg text-[#2e2e30]">{jobType}</h2>}
+        <h2 className="text-xl md:text-2xl font-semibold text-[#160962]">{title}</h2>
+        <div className="flex flex-col md:flex-row md:space-x-4 mt-4 text-gray-600">
+          <div className="flex items-center mb-2 md:mb-0">
+            <span className="mr-2">&#x1F4BC;</span> {experience}
           </div>
+          <div className="flex items-center">
+            <span className="mr-2">&#x1F4CD;</span> {location}
+          </div>
+        </div>
+      </div>
+      <button className={`bg-gradient-to-r from-[#ff5757] to-[#8c52ff] text-white px-4 py-2 md:px-6 md:py-3 rounded-3xl font-semibold tracking-wider`} >
+        {buttonText}
+      </button>
+    </div>
+  );
+};
 
-          {/* Second Job Opening */}
-          <div className="bg-gray-200 p-6 rounded-lg shadow-lg flex justify-between items-center">
-            <div>
-              <h2 className="text-2xl font-semibold text-gray-900">Digital Marketing Content Writer</h2>
-              <div className="flex space-x-4 mt-2 text-gray-600">
-                <div className="flex items-center">
-                  <span className="mr-2">&#x1F4BC;</span> 2+ years
-                </div>
-                <div className="flex items-center">
-                  <span className="mr-2">&#x1F4BB;</span> On-site
-                </div>
-                <div className="flex items-center">
-                  <span className="mr-2">&#x1F4CD;</span> Jaipur
-                </div>
-              </div>
-            </div>
-            <button className="bg-gradient-to-r from-pink-500 to-purple-500 text-white px-4 py-2 rounded-lg font-semibold">
-              APPLY
-            </button>
-          </div>
+const MiddleCareer = () => {
+  const jobOpenings = [
+    {
+      title: 'UI/UX Designer',
+      experience: '2-5 years',
+      location: 'Jaipur, India',
+      jobType: 'ON SITE',
+      buttonText: 'Apply Now',
+    
+    },
+    {
+      title: 'Digital Marketing Content Writer',
+      experience: '2+ years',
+      location: 'Jaipur, India',
+      jobType: 'ON SITE',
+      buttonText: 'Apply Now',
+     
+    }
+  ];
+
+  return (
+    <div className="bg-white min-h-screen w-full flex justify-center items-center">
+      <div className="w-[90%] md:w-[80%] px-4 py-8">
+        <h1 className="text-center text-3xl md:text-4xl font-semibold text-black mb-8">Openings</h1>
+        
+        <div className="space-y-6 w-full">
+          {jobOpenings.map((job, index) => (
+            <JobOpening key={index} {...job} />
+          ))}
         </div>
       </div>
     </div>

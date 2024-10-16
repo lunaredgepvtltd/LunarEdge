@@ -153,7 +153,7 @@ const CoreValues = () => {
                 muted
                 autoPlay // Ensure video plays automatically
                 playsInline // Prevent full-screen on iOS
-                webkit-playsinline // Additional iOS handling
+                
               
               >
                 <source src={service.videoSrc} type="video/mp4" />
