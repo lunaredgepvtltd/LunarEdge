@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 // Component for Job Opening
 const JobOpening = ({ title, experience, location, jobType, buttonText}) => {
 
@@ -45,7 +46,7 @@ const MiddleCareer = () => {
   ];
 
   return (
-    <div className="bg-white min-h-screen w-full flex justify-center items-center">
+    <div className="bg-white min-h-screen w-full flex  flex-col justify-center items-center">
       <div className="w-[95%] md:w-[80%] px-4 py-8">
         <h1 className="text-center text-3xl md:text-4xl font-semibold text-black mb-8">Openings</h1>
         
@@ -55,6 +56,7 @@ const MiddleCareer = () => {
           ))}
         </div>
       </div>
+     
     </div>
   );
 };
