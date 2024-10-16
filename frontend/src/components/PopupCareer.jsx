@@ -27,17 +27,17 @@ const PopupCareer = () => {
 
   return (
     <div className="min-h-screen bg-gray-100 flex justify-center items-center">
-      <div className="bg-white shadow-lg w-[90%] md:w-[80%] lg:w-[90%] p-8 rounded-xl">
+      <div className="bg-white dark:bg-gray-900 shadow-lg w-[90%] md:w-[80%] lg:w-[90%] p-8 rounded-xl">
         {/* Job Details */}
         <div className="md:flex justify-between">
           <div className="mb-8 md:w-[50%]">
-            <h2 className="text-lg text-purple-700 font-semibold">ON SITE</h2>
-            <h1 className="text-3xl font-bold text-gray-900 mt-2">Frontend Developer</h1>
-            <div className="flex items-center mt-4 text-gray-600">
+            <h2 className="text-lg text-[#2e2e30] dark:text-white font-semibold">ON SITE</h2>
+            <h1 className="text-3xl font-bold text-[#160962] dark:text-purple-400 mt-2">Frontend Developer</h1>
+            <div className="flex items-center mt-4 text-gray-600 dark:text-white">
               <span className="mr-2">&#x1F4BC;</span> 2-3 Years
               <span className="ml-4 mr-2">&#x1F4CD;</span> Jaipur, India
             </div>
-            <div className="mt-4 text-sm text-gray-700">
+            <div className="mt-4 text-sm text-gray-700 dark:text-white">
               <p><strong>Job Summary:</strong></p>
               <p>
                 LunarEdge IT Services Pvt. Ltd. is seeking a creative and detail-oriented UI/UX
@@ -56,7 +56,7 @@ const PopupCareer = () => {
           </div>
 
           {/* Form */}
-          <div className="md:w-[40%] bg-black text-white p-6 rounded-xl">
+          <div className="md:w-[40%] bg-black dark:bg-white text-white p-6 rounded-xl">
             <div className="text-center mb-6">
               <img
                 src={BgCareerContactPage} // Placeholder image for TEAM
@@ -73,7 +73,7 @@ const PopupCareer = () => {
                   placeholder="First Name"
                   value={formData.firstName}
                   onChange={handleChange}
-                  className="w-1/2 p-3 bg-gray-900 border border-gray-700 rounded-lg focus:outline-none"
+                  className="w-1/2 p-3 bg-gray-900 dark:bg-white  border border-gray-500 rounded-lg focus:outline-none"
                 />
                 <input
                   type="text"
@@ -81,7 +81,7 @@ const PopupCareer = () => {
                   placeholder="Last Name"
                   value={formData.lastName}
                   onChange={handleChange}
-                  className="w-1/2 p-3 bg-gray-900 border border-gray-700 rounded-lg focus:outline-none"
+                  className="w-1/2 p-3 bg-gray-900 border dark:bg-white border-gray-500 rounded-lg focus:outline-none"
                 />
               </div>
               <input
@@ -90,7 +90,7 @@ const PopupCareer = () => {
                 placeholder="Your Email"
                 value={formData.email}
                 onChange={handleChange}
-                className="w-full p-3 bg-gray-900 border border-gray-700 rounded-lg focus:outline-none"
+                className="w-full p-3 bg-gray-900 border dark:bg-white border-gray-500 rounded-lg focus:outline-none"
               />
               <input
                 type="tel"
@@ -98,11 +98,11 @@ const PopupCareer = () => {
                 placeholder="Phone Number"
                 value={formData.phone}
                 onChange={handleChange}
-                className="w-full p-3 bg-gray-900 border border-gray-700 rounded-lg focus:outline-none"
+                className="w-full p-3 bg-gray-900 border dark:bg-white border-gray-500 rounded-lg focus:outline-none"
               />
-              <div className="p-4 md:py-8 border-dashed border-2 border-gray-700 rounded-lg text-center">
-                <label htmlFor="cv" className="cursor-pointer block">
-                  <span className="text-gray-500">&#x1F4C4;</span> Upload your CV
+              <div className="p-4 md:py-8 border-dashed border-2 border-gray-500 dark:text-gray-700 rounded-lg text-center">
+                <label htmlFor="cv" className="cursor-pointer block ">
+                  <span className="text-gray-500  ">&#x1F4C4;</span > Upload your CV
                 </label>
                 <input
                   type="file"
