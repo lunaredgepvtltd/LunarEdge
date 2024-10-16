@@ -138,7 +138,7 @@ const currentYear = new Date().getFullYear();
               <ul className="mt-4 space-y-2 text-sm">
                 <li>
                   <Link
-                    to="/common"
+                    to="/career"
                     className="text-blac dark:text-white transition hover:opacity-75"
                   >
                     Career

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import BgCareerContactPage from "../assets/BgCareerContactPage.png";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { API } from '../helper';
 
 const PopupCareer = ({ togglePopup }) => {
   const [formData, setFormData] = useState({
@@ -29,6 +30,25 @@ const PopupCareer = ({ togglePopup }) => {
     console.log('Form Data:', formData);
   };
 
+  const [data, setData] = useState([]);
+
+  const fetchVacancyDetails = async () => {
+    try {
+      const response = await fetch(API.getAllVacancy.url, {
+        method: API.getAllVacancy.method,
+      });
+      const responseData = await response.json();
+      setData(responseData.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    fetchVacancyDetails();
+  }, []);
+
+
   return (
     <div
       className="fixed inset-0 bg-black  bg-opacity-50 flex justify-center items-center z-50"
@@ -49,28 +69,36 @@ const PopupCareer = ({ togglePopup }) => {
         {/* Job Details */}
         <div className="md:flex justify-between">
           <div className="mb-8 md:w-[50%]">
-            <h2 className="text-lg text-[#2e2e30] dark:text-white font-semibold" >ON SITE</h2>
-            <h1 className="text-3xl font-bold text-[#160962] dark:text-purple-400 mt-2">Frontend Developer</h1>
-            <div className="flex items-center mt-4 text-gray-600 dark:text-white" >
-              <span className="mr-2">&#x1F4BC;</span> 2-3 Years
-              <span className="ml-4 mr-2">&#x1F4CD;</span> Jaipur, India
-            </div>
-            <div className="mt-4 text-sm text-gray-700 dark:text-white" >
-              <p><strong>Job Summary:</strong></p>
-              <p>
-                LunarEdge IT Services Pvt. Ltd. is seeking a creative and detail-oriented UI/UX
-                Designer to join our dynamic team. The ideal candidate will be responsible for
-                designing seamless and engaging user experiences for our digital products.
-              </p>
-              <p className="mt-4"><strong>Key Responsibilities:</strong></p>
-              <ul className="list-disc ml-5">
-                <li>Collaborate with cross-functional teams to design UI/UX solutions.</li>
-                <li>Conduct user research, usability testing, and analyze feedback.</li>
-                <li>Create wireframes, prototypes, and detailed UI designs.</li>
-                <li>Work with developers to ensure successful implementation.</li>
-                <li>Stay up-to-date with the latest UI/UX trends and tools.</li>
-              </ul>
-            </div>
+          <h2 className="text-lg text-purple-700 font-semibold">ON SITE</h2>
+
+{/* Rendering HTML content */}
+<h1
+  className="text-3xl font-bold text-gray-900 mt-2"
+  dangerouslySetInnerHTML={{ __html: data[0]?.jobTitle }}
+/>
+
+<div className="flex items-center mt-4 text-gray-600">
+  <span className="mr-2">&#x1F4BC;</span>
+  <span dangerouslySetInnerHTML={{ __html: data[0]?.experience }} />
+  <span className="ml-4 mr-2">&#x1F4CD;</span>
+  <span dangerouslySetInnerHTML={{ __html: data[0]?.location }} />
+</div>
+
+<div className="mt-4 text-sm text-gray-700">
+  <p className='py-2'><strong>Key Responsibilities:</strong></p>
+  <div dangerouslySetInnerHTML={{ __html: data[0]?.qualificationAndSkills }} />
+</div>
+
+<div className="mt-4 text-sm text-gray-700">
+  <p  className='py-2'><strong>Preferred Qualifications:</strong></p>
+  <div dangerouslySetInnerHTML={{ __html: data[0]?.preferredQualifications }} />
+</div>
+
+<div className="mt-4 text-sm text-gray-700">
+  <p  className='py-2'><strong>What We Offer:</strong></p>
+  <div dangerouslySetInnerHTML={{ __html: data[0]?.whatWeOffer }} />
+</div>
+
           </div>
 
           {/* Form */}
