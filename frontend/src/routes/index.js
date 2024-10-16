@@ -1,15 +1,14 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App.js";
 import Common from "../components/Common/Common.jsx";
-
-
 // import { Career } from "../pages/Career.jsx";
 import AdminLoginForm from "../components/AdminLoginForm.jsx";
 // import Services from "../pages/Services.jsx";
 import Hero2 from "../pages/Hero2.jsx";
 import ContactPage from "../components/ContactPage/ContactPage.jsx";
 import ServicesNewTheme from "../components/ServicesNewTheme/ServicesNewTheme.jsx";
-// import { Career } from "../pages/Career.jsx";
+import { Career } from "../pages/Career.jsx";
+
 
 
 const router = createBrowserRouter([
@@ -27,7 +26,7 @@ const router = createBrowserRouter([
       },
       {
         path: "career",
-        element: <Common />,
+        element: <Career />,
       },
       {
         path: "admin",
