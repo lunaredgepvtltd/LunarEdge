@@ -2,9 +2,11 @@ import vacancyModal from '../modals/vacancyModal.js'
 export const addVacancyContoller = async(req,res)=>{
     console.log("inside vacancy")
     try{
-     const { jobTitle, location, experience, rolePurpose,description,requirements } = req.body;
+     const { jobTitle, location, experience,keyResponsibilities,qualificationAndSkills,preferredQualifications,whatWeOffer } = req.body;
 
-     const newVacancy = await vacancyModal.create({ jobTitle, location, experience, rolePurpose,description ,requirements});
+     const newVacancy = await vacancyModal.create({ jobTitle, location, experience,keyResponsibilities,qualificationAndSkills,preferredQualifications,whatWeOffer});
+
+     console.log(newVacancy)
 
      res.json({
       data : newVacancy,

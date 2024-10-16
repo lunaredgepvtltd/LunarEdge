@@ -8,18 +8,14 @@ import OurJourneyVidio from "../assets/OurJourneyVidio.mp4";
 import OurMissionVidio from "../assets/OurMissionVidio.mp4";
 import OurMission from "../components/OurMission/OurMission.jsx";
 import OurVision from "../components/OurVision/OurVision.jsx";
-
 import TransformingBusinessSection from "../components/TransformingBusinessSection/TransformingBusinessSection.jsx";
 import HawaMahal from "../components/HawaMahal/HawaMahal.jsx";
 import NewCareer from "./NewCareer.jsx";
-
-
 
 const Hero2 = () => {
   return (
     <div className=" dark:bg-black bg-white">
       <FirstPage />
-     
       <NewLandingPage /> 
       <HawaMahal />
       <OurJourney
@@ -45,7 +41,7 @@ const Hero2 = () => {
 
       <TransformingBusinessSection/>
       <NewGetInTouch />
-   <NewCareer/>
+       <NewCareer/>
     
     </div>
   );

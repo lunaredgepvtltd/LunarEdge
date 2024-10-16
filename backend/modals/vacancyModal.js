@@ -4,26 +4,37 @@ const vacancySchema = new mongoose.Schema({
 
   jobTitle: {
     type: String,
-    required: true,
     trim: true,
   },
   location: {
     type: String,
-    required: true,
     trim: true,
   },
   experience: {
     type: String,
-    required: true,
     trim: true,
   },
-  description : String,
-  rolePurpose: {
-    type: [],
+  description : {
+    type : String,
+    trim : true,
   },
-  requirements: {
-    type: [],
+  keyResoponsibilites : {
+    type : String,
+    trim : true
   },
+  qualificationAndSkills:{
+    type : String,
+    trim : true,
+  },
+  preferredQualifications : {
+    type : String,
+    trim : true,
+  },
+  whatWeOffer : {
+    type : String,
+    trim : true
+  }
+  
 },{
   timestamps : true
 });
