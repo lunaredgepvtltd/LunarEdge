@@ -19,7 +19,7 @@ const ContactCard = ({ image, children }) => (
       alt=""
       className="md:h-[90px] md:w-[90px] h-[45px] w-[45px] filter dark:invert "
     />
-    <div className="text-gray-800 dark:text-white  md:w-auto w-[75%]">
+    <div className="text-gray-800 dark:text-white  md:w-auto w-[76%]">
       {children}
     </div>
   </div>
