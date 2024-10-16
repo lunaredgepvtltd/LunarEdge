@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
-import BgCareerContactPage from "../assets/BgCareerContactPage.png"
+import React, { useState, useEffect } from 'react';
+import BgCareerContactPage from "../assets/BgCareerContactPage.png";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
-
-const PopupCareer = () => {
+const PopupCareer = ({ togglePopup }) => {
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -10,6 +11,10 @@ const PopupCareer = () => {
     phone: '',
     cv: null,
   });
+
+  useEffect(() => {
+    AOS.init({ duration: 300 });
+  }, []);
 
   const handleChange = (e) => {
     const { name, value, files } = e.target;
@@ -22,22 +27,35 @@ const PopupCareer = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Form Data:', formData);
-    // Handle form submission logic (e.g., send data to server)
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 flex justify-center items-center">
-      <div className="bg-white shadow-lg w-[90%] md:w-[80%] lg:w-[90%] p-8 rounded-xl">
+    <div
+      className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50"
+      data-aos="fade-down" // Apply AOS fade-in animation to the popup
+    >
+      <div
+        className="bg-white shadow-lg w-[90%] md:w-[80%] lg:w-[90%] p-8 rounded-xl relative"
+        
+      >
+        {/* Close Button */}
+        <button
+          className="absolute text-red-500 top-2 right-4 text-3xl font-bold"
+          onClick={togglePopup}
+        >
+          &times;
+        </button>
+
         {/* Job Details */}
         <div className="md:flex justify-between">
           <div className="mb-8 md:w-[50%]">
-            <h2 className="text-lg text-purple-700 font-semibold">ON SITE</h2>
+            <h2 className="text-lg text-purple-700 font-semibold" >ON SITE</h2>
             <h1 className="text-3xl font-bold text-gray-900 mt-2">Frontend Developer</h1>
-            <div className="flex items-center mt-4 text-gray-600">
+            <div className="flex items-center mt-4 text-gray-600" >
               <span className="mr-2">&#x1F4BC;</span> 2-3 Years
               <span className="ml-4 mr-2">&#x1F4CD;</span> Jaipur, India
             </div>
-            <div className="mt-4 text-sm text-gray-700">
+            <div className="mt-4 text-sm text-gray-700" >
               <p><strong>Job Summary:</strong></p>
               <p>
                 LunarEdge IT Services Pvt. Ltd. is seeking a creative and detail-oriented UI/UX
@@ -56,17 +74,20 @@ const PopupCareer = () => {
           </div>
 
           {/* Form */}
-          <div className="md:w-[40%] bg-black text-white p-6 rounded-xl">
+          <div
+            className="md:w-[40%] bg-black text-white p-6 rounded-xl"
+           
+          >
             <div className="text-center mb-6">
               <img
-                src={BgCareerContactPage} // Placeholder image for TEAM
+                src={BgCareerContactPage}
                 alt="Team"
                 className="w-full mb-4"
+            
               />
-              
             </div>
             <form onSubmit={handleSubmit} className="space-y-4">
-              <div className="flex space-x-2">
+              <div className="flex space-x-2" >
                 <input
                   type="text"
                   name="firstName"
@@ -91,6 +112,7 @@ const PopupCareer = () => {
                 value={formData.email}
                 onChange={handleChange}
                 className="w-full p-3 bg-gray-900 border border-gray-700 rounded-lg focus:outline-none"
+          
               />
               <input
                 type="tel"
@@ -99,8 +121,9 @@ const PopupCareer = () => {
                 value={formData.phone}
                 onChange={handleChange}
                 className="w-full p-3 bg-gray-900 border border-gray-700 rounded-lg focus:outline-none"
+             
               />
-              <div className="p-4 md:py-8 border-dashed border-2 border-gray-700 rounded-lg text-center">
+              <div className="p-4 md:py-8 border-dashed border-2 border-gray-700 rounded-lg text-center" data-aos="zoom-in">
                 <label htmlFor="cv" className="cursor-pointer block">
                   <span className="text-gray-500">&#x1F4C4;</span> Upload your CV
                 </label>
@@ -115,6 +138,7 @@ const PopupCareer = () => {
               <button
                 type="submit"
                 className="w-full py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold rounded-lg"
+               
               >
                 Submit
               </button>
