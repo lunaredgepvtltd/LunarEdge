@@ -1,15 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 import BgCareerContactPage from "../assets/BgCareerContactPage.png";
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-import { API } from '../helper';
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { API } from "../helper";
 
 const PopupCareer = ({ togglePopup }) => {
   const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    phone: '',
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
     cv: null,
   });
 
@@ -27,7 +27,7 @@ const PopupCareer = ({ togglePopup }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Form Data:', formData);
+    console.log("Form Data:", formData);
   };
 
   const [data, setData] = useState([]);
@@ -48,16 +48,12 @@ const PopupCareer = ({ togglePopup }) => {
     fetchVacancyDetails();
   }, []);
 
-
   return (
     <div
       className="fixed inset-0 bg-black  bg-opacity-50 flex justify-center items-center z-50"
       data-aos="fade-down" // Apply AOS fade-in animation to the popup
     >
-      <div
-        className="bg-white dark:bg-black shadow-lg w-[90%] md:w-[80%] lg:w-[90%] p-8 rounded-xl relative"
-        
-      >
+      <div className="bg-white dark:bg-black shadow-lg w-[90%] md:w-[80%] lg:w-[90%] p-8 rounded-xl relative">
         {/* Close Button */}
         <button
           className="absolute text-red-500 top-2 right-4 text-3xl font-bold"
@@ -69,36 +65,49 @@ const PopupCareer = ({ togglePopup }) => {
         {/* Job Details */}
         <div className="md:flex justify-between">
           <div className="mb-8 md:w-[50%]">
-          <h2 className="text-lg text-purple-700 font-semibold">ON SITE</h2>
+            <h2 className="text-lg text-[#2e2e30] dark:text-white font-semibold">ON SITE</h2>
 
-{/* Rendering HTML content */}
-<h1
-  className="text-3xl font-bold text-gray-900 mt-2"
-  dangerouslySetInnerHTML={{ __html: data[0]?.jobTitle }}
-/>
+            {/* Rendering HTML content */}
+            <h1
+              className="text-3xl font-bold text-[#160962] dark:text-purple-400 mt-2"
+              dangerouslySetInnerHTML={{ __html: data[0]?.jobTitle }}
+            />
 
-<div className="flex items-center mt-4 text-gray-600">
-  <span className="mr-2">&#x1F4BC;</span>
-  <span dangerouslySetInnerHTML={{ __html: data[0]?.experience }} />
-  <span className="ml-4 mr-2">&#x1F4CD;</span>
-  <span dangerouslySetInnerHTML={{ __html: data[0]?.location }} />
-</div>
+            <div className="flex items-center mt-4 text-gray-600 dark:text-white">
+              <span className="mr-2">&#x1F4BC;</span>
+              <span dangerouslySetInnerHTML={{ __html: data[0]?.experience }} />
+              <span className="ml-4 mr-2">&#x1F4CD;</span>
+              <span dangerouslySetInnerHTML={{ __html: data[0]?.location }} />
+            </div>
 
-<div className="mt-4 text-sm text-gray-700">
-  <p className='py-2'><strong>Key Responsibilities:</strong></p>
-  <div dangerouslySetInnerHTML={{ __html: data[0]?.qualificationAndSkills }} />
-</div>
+            <div className="mt-4 text-sm text-gray-700 dark:text-white">
+              <p className="py-2">
+                <strong>Key Responsibilities:</strong>
+              </p>
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: data[0]?.qualificationAndSkills,
+                }}
+              />
+            </div>
 
-<div className="mt-4 text-sm text-gray-700">
-  <p  className='py-2'><strong>Preferred Qualifications:</strong></p>
-  <div dangerouslySetInnerHTML={{ __html: data[0]?.preferredQualifications }} />
-</div>
+            <div className="mt-4 text-sm text-gray-700 dark:text-white">
+              <p className="py-2">
+                <strong>Preferred Qualifications:</strong>
+              </p>
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: data[0]?.preferredQualifications,
+                }}
+              />
+            </div>
 
-<div className="mt-4 text-sm text-gray-700">
-  <p  className='py-2'><strong>What We Offer:</strong></p>
-  <div dangerouslySetInnerHTML={{ __html: data[0]?.whatWeOffer }} />
-</div>
-
+            <div className="mt-4 text-sm text-gray-700 dark:text-white">
+              <p className="py-2">
+                <strong>What We Offer:</strong>
+              </p>
+              <div dangerouslySetInnerHTML={{ __html: data[0]?.whatWeOffer }} />
+            </div>
           </div>
 
           {/* Form */}
@@ -108,11 +117,10 @@ const PopupCareer = ({ togglePopup }) => {
                 src={BgCareerContactPage}
                 alt="Team"
                 className="w-full mb-4"
-            
               />
             </div>
             <form onSubmit={handleSubmit} className="space-y-4">
-              <div className="flex space-x-2" >
+              <div className="flex space-x-2">
                 <input
                   type="text"
                   name="firstName"
@@ -148,7 +156,8 @@ const PopupCareer = ({ togglePopup }) => {
               />
               <div className="p-4 md:py-8 border-dashed border-2 border-gray-500 dark:text-gray-700 rounded-lg text-center">
                 <label htmlFor="cv" className="cursor-pointer block ">
-                  <span className="text-gray-500  ">&#x1F4C4;</span > Upload your CV
+                  <span className="text-gray-500  ">&#x1F4C4;</span> Upload your
+                  CV
                 </label>
                 <input
                   type="file"
@@ -161,7 +170,6 @@ const PopupCareer = ({ togglePopup }) => {
               <button
                 type="submit"
                 className="w-full py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold rounded-lg"
-               
               >
                 Submit
               </button>
