@@ -10,7 +10,7 @@ const NewCareer = () => {
       <CareerLanding />
       
     <MiddleCareer/>
-    <PopupCareer/>
+    {/* <PopupCareer/> */}
     <Careerbottom />
 
     </div>

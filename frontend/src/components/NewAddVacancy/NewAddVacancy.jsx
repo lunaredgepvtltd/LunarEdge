@@ -12,7 +12,7 @@ function MyComponent() {
   return <ReactQuill theme="snow" value={value} onChange={setValue} />;
 }
 
-const NewAddVacancy = ({ onClose, setVacancyData }) => {
+const NewAddVacancy = ({ onClose}) => {
   const [jobTitle, setJobTitle] = useState('');      // Initialize with empty string
   const [location, setLocation] = useState('');      // Initialize with empty string
   const [experience, setExperience] = useState('');  // Initialize with empty string
@@ -56,7 +56,9 @@ const NewAddVacancy = ({ onClose, setVacancyData }) => {
 
   return (
     // <MyComponent/>
-    <div className="fixed inset-0 z-50 h-full w-full  bg-slate-200 dark:bg-slate-800 flex flex-col gap-2 justify-center items-center overflow-y-auto">
+    <div className="fixed inset-0 z-50 h-full w-full  bg-slate-200 dark:bg-slate-800 flex flex-col gap-2 justify-center items-center overflow-y-auto"
+    data-aos="fade-out"
+    data-aos-duration="400">
       <form
         onSubmit={handleSubmit}
         className="w-[90%] md:w-[40%] h-[90%] relative p-2 overflow-y-auto"

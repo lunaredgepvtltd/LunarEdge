@@ -155,9 +155,8 @@ const Header = ({ toggleDarkMode, theme }) => {
             {/* Career Link */}
             <li className="relative group">
               <Link
-                to="/career"
-                className="h-full  rounded-full text-black dark:text-white text-lg cursor-pointer "
-                onClick={() => handleDropdownToggle()}
+                to="/common"
+                className="h-full rounded-full text-black dark:text-white text-lg cursor-pointer"
               >
                 Career
               </Link>
