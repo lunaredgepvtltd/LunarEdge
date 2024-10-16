@@ -102,10 +102,7 @@ const PopupCareer = ({ togglePopup }) => {
           </div>
 
           {/* Form */}
-          <div
-            className="md:w-[40%] bg-black text-white p-6 rounded-xl"
-           
-          >
+          <div className="md:w-[40%] bg-black dark:bg-white text-white p-6 rounded-xl">
             <div className="text-center mb-6">
               <img
                 src={BgCareerContactPage}
@@ -122,7 +119,7 @@ const PopupCareer = ({ togglePopup }) => {
                   placeholder="First Name"
                   value={formData.firstName}
                   onChange={handleChange}
-                  className="w-1/2 p-3 bg-gray-900 border border-gray-700 rounded-lg focus:outline-none"
+                  className="w-1/2 p-3 bg-gray-900 dark:bg-white  border border-gray-500 rounded-lg focus:outline-none"
                 />
                 <input
                   type="text"
@@ -130,7 +127,7 @@ const PopupCareer = ({ togglePopup }) => {
                   placeholder="Last Name"
                   value={formData.lastName}
                   onChange={handleChange}
-                  className="w-1/2 p-3 bg-gray-900 border border-gray-700 rounded-lg focus:outline-none"
+                  className="w-1/2 p-3 bg-gray-900 border dark:bg-white border-gray-500 rounded-lg focus:outline-none"
                 />
               </div>
               <input
@@ -139,8 +136,7 @@ const PopupCareer = ({ togglePopup }) => {
                 placeholder="Your Email"
                 value={formData.email}
                 onChange={handleChange}
-                className="w-full p-3 bg-gray-900 border border-gray-700 rounded-lg focus:outline-none"
-          
+                className="w-full p-3 bg-gray-900 border dark:bg-white border-gray-500 rounded-lg focus:outline-none"
               />
               <input
                 type="tel"
@@ -148,12 +144,11 @@ const PopupCareer = ({ togglePopup }) => {
                 placeholder="Phone Number"
                 value={formData.phone}
                 onChange={handleChange}
-                className="w-full p-3 bg-gray-900 border border-gray-700 rounded-lg focus:outline-none"
-             
+                className="w-full p-3 bg-gray-900 border dark:bg-white border-gray-500 rounded-lg focus:outline-none"
               />
-              <div className="p-4 md:py-8 border-dashed border-2 border-gray-700 rounded-lg text-center" data-aos="zoom-in">
-                <label htmlFor="cv" className="cursor-pointer block">
-                  <span className="text-gray-500">&#x1F4C4;</span> Upload your CV
+              <div className="p-4 md:py-8 border-dashed border-2 border-gray-500 dark:text-gray-700 rounded-lg text-center">
+                <label htmlFor="cv" className="cursor-pointer block ">
+                  <span className="text-gray-500  ">&#x1F4C4;</span > Upload your CV
                 </label>
                 <input
                   type="file"
