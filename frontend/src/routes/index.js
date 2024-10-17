@@ -10,6 +10,7 @@ import ContactPage from "../components/ContactPage/ContactPage.jsx";
 import ServicesNewTheme from "../components/ServicesNewTheme/ServicesNewTheme.jsx";
 import NewCareer from "../pages/NewCareer.jsx";
 import Privacy_Policy from "../components/PrivacyPolicy/privacypolicy.jsx";
+import AdminLoginForm from "../components/AdminLoginForm/AdminLoginForm.jsx";
 // import { Career } from "../pages/Career.jsx";
 
 
@@ -30,10 +31,10 @@ const router = createBrowserRouter([
         path: "career",
         element: <NewCareer />,
       },
-      // {
-      //   path: "admin",
-      //   element: <AdminLoginForm />,
-      // },
+      {
+        path: "admin",
+        element: <AdminLoginForm />,
+      },
       {
         path: "services",
         element: <ServicesNewTheme />,
