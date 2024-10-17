@@ -50,10 +50,10 @@ const PopupCareer = ({ togglePopup }) => {
 
   return (
     <div
-      className="fixed inset-0 bg-black  bg-opacity-50 flex justify-center items-center z-50"
+      className="fixed inset-0   bg-black py-3 bg-opacity-50 flex justify-center items-center z-50"
       data-aos="fade-down" // Apply AOS fade-in animation to the popup
     >
-      <div className="bg-white dark:bg-black shadow-lg w-[90%] md:w-[80%] lg:w-[90%] p-8 rounded-xl relative">
+      <div className="bg-white h-[98%] overflow-auto dark:bg-black shadow-lg w-[90%] md:w-[80%] lg:w-[90%] p-8 rounded-xl relative">
         {/* Close Button */}
         <button
           className="absolute text-red-500 top-2 right-4 text-3xl font-bold"
