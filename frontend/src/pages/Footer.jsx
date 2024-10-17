@@ -152,15 +152,7 @@ const currentYear = new Date().getFullYear();
                     Services
                   </Link>
                 </li>
-                {/* <li>
-                  <Link
-                    to="https://www.linkedin.com/company/lunaredge/"
-                    target="_blank"
-                    className="text-black dark:text-white  transition hover:opacity-75"
-                  >
-                    LinkedIn
-                  </Link>
-                </li> */}
+               
               </ul>
             </div>
 
@@ -187,7 +179,7 @@ const currentYear = new Date().getFullYear();
               </ul>
               <div className="flex justify-items-end gap-4 mt-6">
             <a
-                href="https://www.facebook.com"
+                href="https://www.facebook.com/share/p/vWeK6hW7S25N3NxC/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className=" dark:text-white text-blue-600"
@@ -195,7 +187,7 @@ const currentYear = new Date().getFullYear();
                 <FaFacebook size={iconSize} />
             </a>
             <a
-                href="https://twitter.com"
+                href="https://x.com/LunarEdge11"
                 target="_blank"
                 rel="noopener noreferrer"
                 className=" dark:text-white text-blue-400"
@@ -203,7 +195,7 @@ const currentYear = new Date().getFullYear();
                 <FaTwitter size={iconSize} />
             </a>
             <a
-                href="https://www.linkedin.com"
+                href="https://www.linkedin.com/company/lunaredge"
                 target="_blank"
                 rel="noopener noreferrer"
                 className=" dark:text-white text-blue-700"
@@ -211,7 +203,7 @@ const currentYear = new Date().getFullYear();
                 <FaLinkedin size={iconSize} />
             </a>
             <a
-                href="https://www.instagram.com"
+                href="https://www.instagram.com/lunaredge11/profilecard/?igsh=MWpvand5dTF3a3Ni"
                 target="_blank"
                 rel="noopener noreferrer"
                 className=" dark:text-white text-pink-600"

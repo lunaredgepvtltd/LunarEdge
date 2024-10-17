@@ -11,6 +11,7 @@ import ServicesNewTheme from "../components/ServicesNewTheme/ServicesNewTheme.js
 import NewCareer from "../pages/NewCareer.jsx";
 import Privacy_Policy from "../components/PrivacyPolicy/privacypolicy.jsx";
 import AdminLoginForm from "../components/AdminLoginForm/AdminLoginForm.jsx";
+import IndustryLanding from "../components/Industry/IndustryLanding.jsx";
 // import { Career } from "../pages/Career.jsx";
 
 
@@ -54,6 +55,10 @@ const router = createBrowserRouter([
       {
         path:"Cookies",
         element: <Cookies/>,
+      },
+      {
+        path:"Industry",
+        element: <IndustryLanding/>,
       }
     ],
   },
