@@ -73,7 +73,7 @@ const IndustryLanding = () => {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <div className="w-full h-full flex items-center justify-center mt-[40%] md:mt-[12%]  insert-0 z-1  ">
+      <div className="w-full h-full flex items-center justify-center mt-[40%] md:mt-[12%]  insert-0 z-10  ">
         <img
           src={window.innerWidth < 768 ? mobileImage : image}
           alt={heading}
@@ -83,7 +83,7 @@ const IndustryLanding = () => {
       </div>
 
       <div
-        className={`insert-0 z-30 absolute bottom-[10%] md:bottom-[2%] right-8 md:right-10 w-[75%] md:w-[35%] shadow-lg rounded-2xl p-8 md:p-12 flex flex-col md:justify-between ${Bgcolor}`}
+        className={`insert-0 z-50 absolute bottom-[10%] md:bottom-[2%] right-8 md:right-10 w-[75%] md:w-[35%] shadow-lg rounded-2xl p-8 md:p-12 flex flex-col md:justify-between ${Bgcolor}`}
       >
         <h2 className="text-xl md:text-4xl font-normal text-white pb-2">
           {heading}
@@ -94,7 +94,7 @@ const IndustryLanding = () => {
         </button>
       </div>
 
-      <div className="w-full bg-transparent md:bg-white py-4 mt-24 md:mt-0 flex  justify-center gap-4 z-40">
+      <div className="w-full bg-transparent md:bg-white py-4 mt-24 md:mt-10 flex  justify-center gap-4 z-40">
         {contentData.map((_, index) => (
           <div
             key={index}
