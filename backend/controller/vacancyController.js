@@ -48,6 +48,31 @@ export const getAllVacancy = async(req,res)=>{
     }
 }
 
+
+export const getParticularVacancy = async(req,res)=>{
+    try{
+    const {jobId} = req.body;
+    const vacancy = await vacancyModal.findById(jobId)
+    // console.log(allVacancies)
+    res.status(200).json({
+        data :  vacancy,
+        message : "vacancy sent",
+        success : true,
+        error : false
+    })
+    
+    }
+    
+    catch(error){
+        res.status(500).json({
+            data : [],
+            message: error.message || error,
+            error: true,
+            success: false
+          })
+    }
+}
+
 export const deleteVacancy = async(req,res)=>{
     try{
     const {id} = req.body;

@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect} from "react";
 import BgCareerContactPage from "../assets/BgCareerContactPage.png";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { API } from "../helper";
 
-const PopupCareer = ({ togglePopup }) => {
+const PopupCareer = ({ togglePopup,jobId }) => {
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -34,8 +34,12 @@ const PopupCareer = ({ togglePopup }) => {
 
   const fetchVacancyDetails = async () => {
     try {
-      const response = await fetch(API.getAllVacancy.url, {
-        method: API.getAllVacancy.method,
+      const response = await fetch(API.getParticularVacancy.url, {
+        method: API.getParticularVacancy.method,
+        headers : {
+          "content-type" : "application/json"
+        },
+        body : JSON.stringify({jobId})
       });
       const responseData = await response.json();
       setData(responseData.data);
@@ -53,6 +57,7 @@ const PopupCareer = ({ togglePopup }) => {
       className="fixed inset-0 bg-black  bg-opacity-50 flex justify-center items-center z-50"
       data-aos="fade-down" // Apply AOS fade-in animation to the popup
     >
+      {/* {console.log(data)} */}
       <div className="bg-white dark:bg-black shadow-lg w-[90%] md:w-[80%] lg:w-[90%] p-8 rounded-xl relative">
         {/* Close Button */}
         <button
@@ -70,14 +75,14 @@ const PopupCareer = ({ togglePopup }) => {
             {/* Rendering HTML content */}
             <h1
               className="text-3xl font-bold text-[#160962] dark:text-purple-400 mt-2"
-              dangerouslySetInnerHTML={{ __html: data[0]?.jobTitle }}
+              dangerouslySetInnerHTML={{ __html: data?.jobTitle }}
             />
 
             <div className="flex items-center mt-4 text-gray-600 dark:text-white">
               <span className="mr-2">&#x1F4BC;</span>
-              <span dangerouslySetInnerHTML={{ __html: data[0]?.experience }} />
+              <span dangerouslySetInnerHTML={{ __html: data?.experience }} />
               <span className="ml-4 mr-2">&#x1F4CD;</span>
-              <span dangerouslySetInnerHTML={{ __html: data[0]?.location }} />
+              <span dangerouslySetInnerHTML={{ __html: data?.location }} />
             </div>
 
             <div className="mt-4 text-sm text-gray-700 dark:text-white">
@@ -86,7 +91,7 @@ const PopupCareer = ({ togglePopup }) => {
               </p>
               <div
                 dangerouslySetInnerHTML={{
-                  __html: data[0]?.qualificationAndSkills,
+                  __html: data?.qualificationAndSkills,
                 }}
               />
             </div>
@@ -97,7 +102,7 @@ const PopupCareer = ({ togglePopup }) => {
               </p>
               <div
                 dangerouslySetInnerHTML={{
-                  __html: data[0]?.preferredQualifications,
+                  __html: data?.preferredQualifications,
                 }}
               />
             </div>
@@ -106,7 +111,7 @@ const PopupCareer = ({ togglePopup }) => {
               <p className="py-2">
                 <strong>What We Offer:</strong>
               </p>
-              <div dangerouslySetInnerHTML={{ __html: data[0]?.whatWeOffer }} />
+              <div dangerouslySetInnerHTML={{ __html: data?.whatWeOffer }} />
             </div>
           </div>
 

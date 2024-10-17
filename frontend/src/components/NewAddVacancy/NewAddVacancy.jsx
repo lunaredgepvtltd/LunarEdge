@@ -12,7 +12,7 @@ function MyComponent() {
   return <ReactQuill theme="snow" value={value} onChange={setValue} />;
 }
 
-const NewAddVacancy = ({ onClose}) => {
+const NewAddVacancy = ({ onClose, fetchVacancyDetails}) => {
   const [jobTitle, setJobTitle] = useState('');      // Initialize with empty string
   const [location, setLocation] = useState('');      // Initialize with empty string
   const [experience, setExperience] = useState('');  // Initialize with empty string
@@ -45,6 +45,7 @@ const NewAddVacancy = ({ onClose}) => {
     const responseData = await response.json();
 
     if (responseData.success) {
+      fetchVacancyDetails();
       toast.success(responseData.message)
       onClose();
     }

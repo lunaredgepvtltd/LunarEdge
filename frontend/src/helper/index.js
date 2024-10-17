@@ -21,6 +21,10 @@ const localDomainName = 'http://localhost:8080'
 //         url : `${DomainName}/api/getAllVacancy`,
 //         method : "get"
 //     },
+// getParticularVacancy : {
+//     url : `${DomainName}/api/getParticularVacancy`,
+//     method : "post"
+// },
 //     deleteVacancy : {
 //         url : `${DomainName}/api/deleteVacancy`,
 //         method : 'delete'
@@ -56,6 +60,10 @@ export const API = {
     getAllVacancy : {
         url : `${localDomainName}/api/getAllVacancy`,
         method : "get"
+    },
+    getParticularVacancy : {
+        url : `${localDomainName}/api/getParticularVacancy`,
+        method : "post"
     },
     deleteVacancy : {
         url : `${localDomainName}/api/deleteVacancy`,
