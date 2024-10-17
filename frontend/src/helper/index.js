@@ -20,6 +20,14 @@ export const API = {
         url: `${currentDomain}/api/addNewVacancy`,
         method: 'post'
     },
+    getParticularVacancy : {
+        url : `${localDomainName}/api/getParticularVacancy`,
+        method : "post"
+    },
+    deleteVacancy : {
+        url : `${localDomainName}/api/deleteVacancy`,
+        method : 'delete'
+    },
     getAllVacancy: {
         url: `${currentDomain}/api/getAllVacancy`,
         method: 'get'

@@ -1,7 +1,7 @@
 import express from 'express'
 import query from '../controller/queryFormContoller.js';
 import  AdminLoginController  from '../controller/adminLoginController.js';
-import { addVacancyContoller, deleteVacancy, getAllVacancy, updateVacancy } from '../controller/vacancyController.js';
+import { addVacancyContoller, deleteVacancy, getAllVacancy, getParticularVacancy, updateVacancy } from '../controller/vacancyController.js';
 import multer from 'multer'
 import path from 'path';
 import { vacancyFormFill } from '../controller/vacancyFormFill.js';
@@ -33,10 +33,15 @@ router.post('/addNewVacancy',addVacancyContoller);
 // all-vacancy 
 router.get('/getAllVacancy',getAllVacancy)
 
+//  particular-vacancy 
+router.post('/getParticularVacancy',getParticularVacancy);
+
 // vacancy-delete 
 router.delete('/deleteVacancy',deleteVacancy)
 
 // vacancy-update 
+
+router.put('/updateVacancy',updateVacancy)
 
 // formFill 
 router.post('/Formfill', upload.single('cv'),vacancyFormFill)

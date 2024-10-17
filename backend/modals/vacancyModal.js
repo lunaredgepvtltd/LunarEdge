@@ -18,7 +18,11 @@ const vacancySchema = new mongoose.Schema({
     type : String,
     trim : true,
   },
-  keyResoponsibilites : {
+  jobSummary : {
+    type : String,
+    trim : true
+  },
+  keyResponsibilities : {
     type : String,
     trim : true
   },

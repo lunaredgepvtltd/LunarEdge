@@ -1,122 +1,141 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import { IoClose } from "react-icons/io5";
-import { useNavigate } from 'react-router-dom';
-import { API } from '../../helper';
+import { useNavigate } from "react-router-dom";
+import { API } from "../../helper";
 import { GoEyeClosed } from "react-icons/go";
-import {useDispatch} from 'react-redux'
+import { useDispatch } from "react-redux";
 import { RxEyeOpen } from "react-icons/rx";
+import { login } from "../../store/userSlice.js";
 
-import { login } from '../../store/userSlice.js'
 const AdminLoginForm = () => {
-
-  const disptach = useDispatch();
-
-  const naviagte = useNavigate()
-  const [data, setData] = useState({
-    email: '',
-    password: ''
-  });
-
-  const [msg,setMsg] =  useState('')
-  const [userData,setUserData] = useState(null)
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const [data, setData] = useState({ email: "", password: "" });
+  const [msg, setMsg] = useState("");
+  const [userData, setUserData] = useState(null);
   const [showPassword, setShowPassword] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setData((prev) => ({
-      ...prev,
-      [name]: value
-    }));
+    setData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleClose = ()=>{
-  naviagte('/')
-  }
+  const handleClose = () => {
+    navigate("/");
+  };
 
   const handleShowPassword = () => {
     setShowPassword(!showPassword);
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault(); // Prevent page reload on form submit
-    console.log('button click')
-    try{
-      const response = await fetch(API.adminLogin.url,{
-        method : API.adminLogin.method,
-        headers : {
-          'content-type' : 'application/json'
-        },
-        body : JSON.stringify(data)
-      })
+    e.preventDefault();
+    try {
+      const response = await fetch(API.adminLogin.url, {
+        method: API.adminLogin.method,
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify(data),
+      });
       const responseData = await response.json();
 
-      console.log(responseData)
-     
-      if(responseData.success){
-        setMsg(responseData.message)
-        disptach(login(responseData.data))
-        setUserData(responseData.data)
+      if (responseData.success) {
+        setMsg(responseData.message);
+        dispatch(login(responseData.data));
+        setUserData(responseData.data);
         setTimeout(() => {
-          naviagte('/')
-        },1000);
+          navigate("/");
+        }, 1000);
       }
 
-      if(responseData.error){
-        setMsg(responseData.message)
+      if (responseData.error) {
+        setMsg(responseData.message);
       }
-    }
-    catch(error){
-      setMsg('Error Occured!')
+    } catch (error) {
+      setMsg("Error Occurred!");
     }
   };
 
   return (
-    <div className='fixed inset-0 z-50 h-full w-full bg-slate-200 flex flex-col gap-2 justify-center items-center'>
-       <form className='w-[70%] md:w-[40%] bg- relative' onSubmit={handleSubmit}>
-        <div className='absolute right-0 -top-3 text-3xl cursor-pointer text-red-500 transition-all duration-300' onClick={handleClose}>
+    <div className="fixed inset-0 z-50 h-full w-full bg-gray-400 dark:bg-gray-900 flex flex-col justify-center items-center">
+      <form
+        className="w-[90%] md:w-[35%] lg:w-[30%] bg-white dark:bg-gray-800 shadow-lg p-8 rounded-xl relative"
+        onSubmit={handleSubmit}
+      >
+        {/* Close Button */}
+        <div
+          className="absolute right-4 top-4 text-2xl cursor-pointer text-gray-500 hover:text-red-500 transition-all"
+          onClick={handleClose}
+        >
           <IoClose />
         </div>
-        <div className="mb-5 ">
-          <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900 ">Your email</label>
+
+        <h2 className="text-2xl font-semibold text-gray-800 dark:text-gray-100 text-center mb-6">
+          Admin Login
+        </h2>
+
+        <div className="mb-5">
+          <label
+            htmlFor="email"
+            className="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-200"
+          >
+            Your email
+          </label>
           <input
-            name='email'
+            name="email"
             onChange={handleChange}
             type="email"
             id="email"
-            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-            placeholder="name@flowbite.com"
+            className="w-full p-3 bg-gray-50 dark:bg-gray-700 dark:text-gray-200 border border-gray-400 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all"
+            placeholder="example@domain.com"
             required
           />
         </div>
+
         <div className="mb-5 relative">
-          <label htmlFor="password" className="block mb-2 text-sm font-medium text-gray-900 ">Your password</label>
+          <label
+            htmlFor="password"
+            className="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-200"
+          >
+            Your password
+          </label>
           <input
-            name='password'
+            name="password"
             onChange={handleChange}
-            type={showPassword ? 'text' : 'password'}
+            type={showPassword ? "text" : "password"}
             id="password"
-            placeholder='enter password'
-            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+            className="w-full p-3 bg-gray-50 dark:bg-gray-700 dark:text-gray-200 border border-gray-400 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all"
+            placeholder="Enter password"
             required
           />
           <button
             type="button"
-            className="absolute top-[60%] right-2 text-gray-700 hover:text-gray-500"
+            className="absolute top-[50%] right-3 text-gray-900 dark:text-gray-300 hover:text-gray-500 transition-all"
             onClick={handleShowPassword}
           >
-            {showPassword ?  <RxEyeOpen />  :<GoEyeClosed />}
+            {showPassword ? <RxEyeOpen /> : <GoEyeClosed />}
           </button>
         </div>
+
         <button
           type="submit"
-          className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center mt-3"
+          className="w-full py-3 bg-gradient-to-r from-[#ff5757] to-[#8c52ff] hover:from-[#8c52ff] hover:to-[#ff5757] text-white font-semibold rounded-lg shadow-md hover:shadow-lg transition-all hover:bg-gradient-to-l"
         >
-          Submit
+          Log In
         </button>
       </form>
-      {msg ? <div className={`pt-3 text-lg ${ !userData ? "text-red-500" : "text-green-500"}`}>{msg}</div> : ''}
+
+      {/* Display success or error message */}
+      {msg && (
+        <div
+          className={`mt-4 text-lg font-semibold ${
+            userData ? "text-green-500" : "text-red-500"
+          }`}
+        >
+          {msg}
+        </div>
+      )}
     </div>
   );
 };
 
-export default AdminLoginForm;
+export default AdminLoginForm;
