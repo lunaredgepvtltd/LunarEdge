@@ -232,7 +232,7 @@ const currentYear = new Date().getFullYear();
             <ul className="flex flex-wrap gap-4 text-xs">
               <li>
                 <Link
-                  to="/common"
+                  to="/Tnc"
                   className="text-black dark:text-white  transition hover:opacity-75 "
                 >
                   Terms & Conditions
@@ -240,7 +240,7 @@ const currentYear = new Date().getFullYear();
               </li>
               <li>
                 <Link
-                  to="/common"
+                  to="/PrivacyPolicy"
                   className="text-black dark:text-white  transition hover:opacity-75 "
                 >
                   Privacy Policy
@@ -248,7 +248,7 @@ const currentYear = new Date().getFullYear();
               </li>
               <li>
                 <Link
-                  to="/common"
+                  to="/Cookies"
                   className="text-black dark:text-white  transition hover:opacity-75 "
                 >
                   Cookies
