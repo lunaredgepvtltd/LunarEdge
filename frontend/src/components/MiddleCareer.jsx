@@ -3,9 +3,25 @@ import { useSelector } from 'react-redux';
 import NewAddVacancy from '../components/NewAddVacancy/NewAddVacancy.jsx';
 import PopupCareer from './PopupCareer';
 import { API } from '../helper/index.js';
+import { MdDeleteOutline } from "react-icons/md";
+import { FaRegEdit } from "react-icons/fa";
+import NewUpdateVacancy from './NewUpdateVacancy/NewUpdateVacancy.jsx';
 
 // Component for Job Opening
-const JobOpening = ({ jobTitle, experience, location, togglePopup, jobId }) => {
+const JobOpening = ({ jobTitle, experience, location, togglePopup, jobId , jobSummary, keyResponsibilities, qualificationAndSkills, preferredQualifications, whatWeOffer , fetchVacancyDetails}) => {
+  
+  const { user } = useSelector((state) => state.user);
+  const [updateVacancy, setUpdateVacancy] = useState('');
+  const [deleteVacancy, setDeleteVacancy] = useState('');
+
+  const handleEditClose = () => {
+    setUpdateVacancy('');
+  };
+
+  const handleDeleteClose=()=>{
+    setDeleteVacancy('')
+  }
+
   return (
     <div className="border-2 w-full border-black p-2 md:p-6 rounded-xl flex flex-row lg:justify-between items-start md:items-center">
       <div className="mb-4 md:mb-0 w-[70%] lg:w-auto text-left">
@@ -23,12 +39,44 @@ const JobOpening = ({ jobTitle, experience, location, togglePopup, jobId }) => {
           </div>
         </div>
       </div>
-      <button
-        className="w-[30%] md:w-auto text-xs md:text-sm bg-gradient-to-r from-[#ff5757] to-[#8c52ff] text-white px-2 py-2 md:px-6 md:py-3 rounded-3xl md:font-semibold md:tracking-wider"
-        onClick={() => togglePopup(jobId)} // Pass jobId when clicking 'Apply Now'
-      >
-        Apply Now
-      </button>
+      <div className='flex flex-col gap-3 items-center justify-center'>
+        <button
+          className="w-[30%] md:w-auto text-xs md:text-sm bg-gradient-to-r from-[#ff5757] to-[#8c52ff] text-white px-2 py-2 md:px-6 md:py-3 rounded-3xl md:font-semibold md:tracking-wider"
+          onClick={() => togglePopup(jobId)}
+        >
+          Apply Now
+        </button>
+        {user?.role === "ADMIN" && (
+          <div className="flex items-center justify-between w-[60%]">
+            {/* edit  */}
+            <FaRegEdit className="text-xl text-black cursor-pointer hover:text-red-500" onClick={() => {
+              setUpdateVacancy(jobId);
+            }} />
+
+            {/* edit-particular-vacancy popup  */}
+            {updateVacancy !== '' && (
+              <NewUpdateVacancy
+                id={jobId}
+                fetchVacancyDetails={fetchVacancyDetails}
+                onClose={handleEditClose}
+                prevJobTitle={jobTitle} // updated to use prev prefix
+                prevExperience={experience} // updated to use prev prefix
+                prevLocation={location} // updated to use prev prefix
+                prevJobSummary={jobSummary} // updated to use prev prefix
+                prevKeyResponsibilities={keyResponsibilities} // updated to use prev prefix
+                prevQualificationAndSkills={qualificationAndSkills} // updated to use prev prefix
+                prevPreferredQualifications={preferredQualifications} // updated to use prev prefix
+                prevWhatWeOffer={whatWeOffer} // updated to use prev prefix
+              />
+            )}
+
+            {/* delete  */}
+            <MdDeleteOutline className="text-2xl cursor-pointer hover:text-red-500" onClick={() => {
+              setDeleteVacancy(jobId);
+            }} />
+          </div>
+        )}
+      </div>
     </div>
   );
 };
@@ -45,6 +93,7 @@ const MiddleCareer = () => {
 
   const { user } = useSelector((state) => state.user);
   const [showAddVacancy, setShowAddVacancy] = useState(false);
+  
   const [data, setData] = useState([]);
 
   const handleClose = () => {
@@ -86,7 +135,7 @@ const MiddleCareer = () => {
 
         <div className="space-y-6 w-full">
           {data?.map((job, index) => (
-            <JobOpening key={index} {...job} togglePopup={togglePopup} jobId={job._id} />
+            <JobOpening key={index} {...job} togglePopup={togglePopup} jobId={job._id} fetchVacancyDetails={fetchVacancyDetails} />
           ))}
         </div>
       </div>
@@ -95,7 +144,6 @@ const MiddleCareer = () => {
       {showAddVacancy && <NewAddVacancy onClose={handleClose} fetchVacancyDetails={fetchVacancyDetails} />}
 
       {/* Show the popup if isPopupOpen is true and pass the selectedJobId */}
-       
       {isPopupOpen && <PopupCareer jobId={selectedJobId} togglePopup={togglePopup} />}
     </div>
   );

@@ -6,18 +6,13 @@ import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import { toast } from "react-toastify";
 
-function MyComponent() {
-  const [value, setValue] = useState('');
-
-  return <ReactQuill theme="snow" value={value} onChange={setValue} />;
-}
 
 const NewAddVacancy = ({ onClose, fetchVacancyDetails}) => {
   const [jobTitle, setJobTitle] = useState('');      // Initialize with empty string
   const [location, setLocation] = useState('');      // Initialize with empty string
   const [experience, setExperience] = useState('');  // Initialize with empty string
   const [jobSummary, setJobSummary] = useState(''); // Initialize with empty string
-  const [keyResoponsibilites, setKeyResponsibilities] = useState('');
+  const [keyResponsibilities, setKeyResponsibilities] = useState('');
   const [qualificationAndSkills,setQualificationAndSkills] = useState('')
   const [preferredQualifications,setPreferredQualifications] = useState('')
   const [whatWeOffer,setWhatWeOffer] = useState('')
@@ -35,7 +30,7 @@ const NewAddVacancy = ({ onClose, fetchVacancyDetails}) => {
         location,
         experience,
         jobSummary,
-        keyResoponsibilites,
+        keyResponsibilities,
         qualificationAndSkills,
         preferredQualifications,
         whatWeOffer
@@ -114,7 +109,7 @@ const NewAddVacancy = ({ onClose, fetchVacancyDetails}) => {
           >
             Enter Key Responsibilities
           </label>
-          <ReactQuill value={keyResoponsibilites} onChange={setKeyResponsibilities} theme="snow" className="text-black dark:text-white"  />
+          <ReactQuill value={keyResponsibilities} onChange={setKeyResponsibilities} theme="snow" className="text-black dark:text-white"  />
         </div>
 
 

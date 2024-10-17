@@ -41,6 +41,8 @@ router.delete('/deleteVacancy',deleteVacancy)
 
 // vacancy-update 
 
+router.put('/updateVacancy',updateVacancy)
+
 // formFill 
 router.post('/Formfill', upload.single('cv'),vacancyFormFill)
 
