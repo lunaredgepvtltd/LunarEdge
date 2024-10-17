@@ -29,14 +29,14 @@ const TransformingBusinessSection = () => {
   // Define content for each technology
   const technologyContent = {
     html: "HTML is the backbone of web development, structuring content to create intuitive and user-friendly websites. Our team ensures seamless coding for optimal website performance.",
-    sql: "SQL (Structured Query Language) is a standard language for managing and manipulating databases, allowing for the querying, updating, and management of data.",
-    react: "React is a JavaScript library for building user interfaces, especially single-page applications, by using a component-based architecture.",
-    mongodb: "MongoDB is a NoSQL database designed for scalability and flexibility, allowing developers to store and query large amounts of unstructured data.",
-    aws: "Amazon Web Services (AWS) is a comprehensive cloud computing platform that offers services like computing power, storage, and databases.",
-    nodejs: "Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine that enables fast and scalable network applications.",
+    sql: " MySQL is our go-to for robust, relational database management, ensuring data integrity and security. It supports high-volume transactions while maintaining optimal performance for your applications.",
+    react: " ReactJS helps us build dynamic and interactive user interfaces, enhancing user engagement. Its component-based architecture ensures efficient, scalable applications.",
+    mongodb: "MongoDB's flexible, NoSQL database structure allows for seamless data management, ensuring your applications can handle large-scale data efficiently.",
+    aws: " We utilize AWS cloud services for reliable, scalable, and cost-effective solutions. From hosting to storage, AWS supports our infrastructure needs with unmatched security.",
+    nodejs: " NodeJS enables us to create high-performance, scalable applications with efficient server-side handling. It supports real-time data processing for modern applications.",
     java: "Java is a high-level, class-based programming language designed to have as few implementation dependencies as possible, making it widely portable.",
-    figma: "Figma is a web-based UI/UX design tool that allows for collaborative design, prototyping, and sharing of designs in real-time.",
-    css: " With CSS, we design visually engaging and responsive websites that adapt across devices. Our styling ensures an aesthetic and functional user experience."
+    figma: "Figma empowers our design team to collaborate in real-time, crafting intuitive user interfaces. Its cloud-based platform ensures seamless design and prototyping for web and mobile applications.",
+    css: "With CSS, we design visually engaging and responsive websites that adapt across devices. Our styling ensures an aesthetic and functional user experience."
   };
 
   useEffect(() => {
@@ -66,7 +66,7 @@ const TransformingBusinessSection = () => {
         {/* Circle Gradients and Image */}
         <div className="w-full h-full relative">
           {/* First circle */}
-          <div className="absolute left-[47%] md:left-[45%] top-[24%] md:top-[7%] w-[32%] xl:top-[5%] xl:left-[48%] h-auto flex justify-between items-center">
+          <div className="absolute left-[47%] md:left-[45%] top-[24%] md:top-[7%] w-[32%] xl:top-[3%] xl:left-[48%] h-auto flex justify-between items-center">
             <div
               className={`z-10 h-9 w-9 md:h-16 md:w-16 lg:h-24 lg:w-24 rounded-full bg-white dark:bg-black border transition-all duration-300 p-1 md:p-2 flex justify-center items-center cursor-pointer ${activeTechnology === 'html' ? 'dark:bg-white border-black scale-110' : ''}`}
               onClick={() => handleTechnologyClick('html')}
@@ -76,7 +76,7 @@ const TransformingBusinessSection = () => {
           </div>
 
           {/* Second row of circles */}
-          <div className="absolute left-[31%] xl:top-[9%] md:w-[37%] xl:w-[36%] xl:left-[33%] lg:left-[30%] top-[29%] md:top-[11%] lg:top-[10%] w-[41%] lg:w-[40%] h-auto flex justify-between items-center">
+          <div className="absolute left-[31%] xl:top-[8%] md:w-[37%] xl:w-[36%] xl:left-[33%] lg:left-[30%] top-[29%] md:top-[11%] lg:top-[10%] w-[41%] lg:w-[40%] h-auto flex justify-between items-center">
             <div
               className={`z-10 h-9 w-9 md:h-16 md:w-16 lg:h-24 lg:w-24 rounded-full bg-white dark:bg-black border hover:text-gray-400 transition-all duration-300 p-1 md:p-2 flex justify-center items-center cursor-pointer ${activeTechnology === 'sql' ? 'dark:bg-white border-black scale-110' : ''}`}
               onClick={() => handleTechnologyClick('sql')}
