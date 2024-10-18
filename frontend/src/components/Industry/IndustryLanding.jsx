@@ -55,8 +55,8 @@ const IndustryLanding = () => {
     nextArrow: <MdKeyboardArrowRight size={24} />,
     prevArrow: <MdKeyboardArrowLeft size={24} />,
 
-    // autoplay: true,
-    // autoplaySpeed: 2000,
+    autoplay: true,
+    autoplaySpeed: 2000,
   };
 
   return (
