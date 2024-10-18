@@ -22,33 +22,33 @@
     background: transparent; /* Customize dot background */
     
     border-radius: 50%; /* Make dots circular */
-    width: 10px; /* Dot size */
-    height: 10px; /* Dot size */
+    width: 30px !important; /* Dot size */
+    height: 30px !important; /* Dot size */
     padding: 0; /* No padding */
     cursor: pointer;
     transition: background 0.3s, border-color 0.3s; /* Smooth transition */
 }
 
 /* Active dot style */
-.slick-dots .slick-active button {
-    background: black; /* Active dot background */
-    border:  solid black !important; /* Active dot border */
+.slick-dots li button:before{
+    color:rgb(68, 65, 65) !important;
+    font-size: 10px;
 }
 
-/* Inactive dot style for dark mode */
-body.dark-mode .slick-dots button {
-    border: 2px solid white; /* Inactive dot border for dark mode */
+.slick-dots .slick-active button:before {
+   color: rgb(219, 20, 54) !important;
+   
 }
 
-/* Active dot style for dark mode */
-body.dark-mode .slick-dots .slick-active button {
-    background: white; /* Active dot background for dark mode */
-    border: 2px solid white; /* Active dot border for dark mode */
+
+
+body.dark .slick-dots li button:before {
+    color:white !important;  /* Inactive dot color for dark mode */
 }
 
-/* Optional: Change color for dark mode */
-body.dark-mode .slick-dots li {
-    margin: 0 5px; /* Keep spacing consistent */
+/* Dark Mode - Active Dot */
+body.dark .slick-dots .slick-active button:before {
+    color: yellow !important;  /* Active dot color for dark mode */
 }
 
 /* Centering dots vertically */
@@ -68,7 +68,7 @@ body.dark-mode .slick-dots li {
 
 
 .slick-slide {
-    height: 1000px !important; /* Ensure slides take full height of the container */
+    height: 700px !important; /* Ensure slides take full height of the container */
   }
   
   /* Set the height for each slide */
