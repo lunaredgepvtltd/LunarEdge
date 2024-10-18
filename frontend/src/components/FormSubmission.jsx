@@ -35,7 +35,7 @@ const FormSubmission = ({ handleShowApplicants, id }) => {
   }, [id]); // Make sure to add id as a dependency
 
   return (
-    <div className="fixed z-50 top-0 left-0 right-0 bottom-0 flex flex-col items-center justify-center bg-white p-6">
+    <div className="fixed z-50 top-0 left-0 right-0 bottom-0 flex flex-col items-center justify-center dark:bg-gray-900 bg-white p-6">
       <h1 className="text-3xl font-bold mb-4">Job Applicants</h1>
       <button
         className="absolute top-2 right-2 text-red-500 text-2xl md:text-5xl"
