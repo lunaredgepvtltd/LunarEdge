@@ -6,6 +6,7 @@ const FormSubmission = () => {
     {
       firstName: "John",
       lastName: "Doe",
+      jobRole:"UI & UX ",
       email: "john.doe@example.com",
       phone: "123-456-7890",
       cvUrl: "https://example.com/john_doe_cv.pdf",
@@ -13,13 +14,15 @@ const FormSubmission = () => {
     {
       firstName: "Jane",
       lastName: "Smith",
+      jobRole:"UI & UX ",
       email: "jane.smith@example.com",
-      phone: "098-765-4321",
+      phone: "098-765-4321",     
       cvUrl: "https://example.com/jane_smith_cv.pdf",
     },
     {
       firstName: "Bob",
       lastName: "Brown",
+      jobRole:"Content Writer",
       email: "bob.brown@example.com",
       phone: "111-222-3333",
       cvUrl: "https://example.com/bob_brown_cv.pdf",
@@ -35,6 +38,7 @@ const FormSubmission = () => {
           <tr>
             <th className="border border-gray-300 px-4 py-2">First Name</th>
             <th className="border border-gray-300 px-4 py-2">Last Name</th>
+            <th className="border border-gray-300 px-4 py-2">Job Role</th>
             <th className="border border-gray-300 px-4 py-2">Email</th>
             <th className="border border-gray-300 px-4 py-2">Phone</th>
             <th className="border border-gray-300 px-4 py-2">CV</th>
@@ -45,6 +49,7 @@ const FormSubmission = () => {
             <tr key={index} className="text-center">
               <td className="border border-gray-300 px-4 py-2">{submission.firstName}</td>
               <td className="border border-gray-300 px-4 py-2">{submission.lastName}</td>
+              <td className="border border-gray-300 px-4 py-2">{submission.jobRole}</td>
               <td className="border border-gray-300 px-4 py-2">{submission.email}</td>
               <td className="border border-gray-300 px-4 py-2">{submission.phone}</td>
               <td className="border border-gray-300 px-4 py-2">
