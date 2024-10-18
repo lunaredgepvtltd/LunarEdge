@@ -560,22 +560,6 @@ html {
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-/* .ul-list{
-  list-style-type: disc;
-  margin-left: 5%;
-}
-.main-list{
-  margin-bottom: 15px;
-  margin-top: 15px;
-}
-.contact-list{
-  margin-bottom: 10px;
-  margin-top: 10px;
-}
-.privacy-heading{
-  color:rgb(236 72 153 / var(--tw-text-opacity))
-} */
-
 /* Change the color of the icons in ReactQuill toolbar */
 .ql-toolbar .ql-stroke {
   stroke: #33ecdd !important; /* Change this to your desired icon color */
