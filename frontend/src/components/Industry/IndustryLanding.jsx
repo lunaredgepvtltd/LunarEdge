@@ -76,13 +76,14 @@ const IndustryLanding = () => {
           Industries
         </h1>
 
-        <h2 className="text-3xl md:text-3xl lg:text-5xl font-normal text-black ">
-          What we serve
+        <h2 className="text-2xl md:text-2xl lg:text-4xl font-normal text-black ">
+        Solutions that Work for You
+
         </h2>
         <div className="mt-10 md:hidden"></div>
 
-        <p className="text-black dark:text-white text-lg md:text-2xl lg:text-3xl font-base text-center w-[70%] mt-16 md:mt-16 lg:px-2 lg:mt-6">
-          With technology, we advance your business
+        <p className="text-black dark:text-white text-md md:text-2xl lg:text-3xl font-normal text-center w-[70%] mt-16 md:mt-16 lg:px-2 lg:mt-6">
+          From innovative technologies to smart strategies, we help businesses grow, adapt, and lead in a changing world.
         </p>
       </div>
 
