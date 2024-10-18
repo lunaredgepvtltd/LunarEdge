@@ -60,7 +60,7 @@ const IndustryLanding = () => {
   };
 
   return (
-    <>
+    <div className="h-full bg-white dark:bg-black">
       <div className="relative flex flex-col items-center justify-center gap-8 md:gap-10 lg:gap-16 h-[600px] md:h-screen overflow-hidden bg-white dark:bg-black z-0">
         {/* Half Moon */}
         <img
@@ -87,7 +87,7 @@ const IndustryLanding = () => {
         </p>
       </div>
 
-      <div className="w-[80%] h-auto mx-auto mt-[5%]   mb-[5%] relative overflow-hidden">
+      <div className="w-[80%] h-full mx-auto mt-[5%]   relative overflow-visible">
         <Slider {...settings}>
           {contentData.map((item, index) => (
             <div key={index} className="relative  ">
@@ -115,7 +115,7 @@ const IndustryLanding = () => {
           ))}
         </Slider>
       </div>
-    </>
+    </div>
   );
 };
 
