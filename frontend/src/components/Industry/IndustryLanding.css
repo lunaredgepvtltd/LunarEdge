@@ -1,0 +1,92 @@
+/* IndustryLanding.css */
+
+/* Dots container */
+.slick-dots {
+    position: absolute;
+    bottom: 20px; /* Adjust this value to your preference */
+    left: 100% !important;
+    transform: translateX(-50%); /* Center the dots */
+    display: flex !important; /* Ensure dots are displayed */
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* Individual dot styling */
+.slick-dots li {
+    margin: 0 5px; /* Spacing between dots */
+}
+
+/* Default button style for dots */
+.slick-dots button {
+    background: transparent; /* Customize dot background */
+    
+    border-radius: 50%; /* Make dots circular */
+    width: 30px !important; /* Dot size */
+    height: 30px !important; /* Dot size */
+    padding: 0; /* No padding */
+    cursor: pointer;
+    transition: background 0.3s, border-color 0.3s; /* Smooth transition */
+}
+
+/* Active dot style */
+.slick-dots li button:before{
+    color:rgb(68, 65, 65) !important;
+    font-size: 10px;
+}
+
+.slick-dots .slick-active button:before {
+   color: rgb(219, 20, 54) !important;
+   
+}
+
+
+
+body.dark .slick-dots li button:before {
+    color:white !important;  /* Inactive dot color for dark mode */
+}
+
+/* Dark Mode - Active Dot */
+body.dark .slick-dots .slick-active button:before {
+    color: yellow !important;  /* Active dot color for dark mode */
+}
+
+/* Centering dots vertically */
+.slick-dots {
+    bottom: 20px; /* Adjust this value to your preference */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, 0); /* Center dots using transform */
+}
+
+
+  
+
+
+  /* IndustryLanding.css */
+
+/* Set a fixed height for the slider container */
+
+
+.slick-slide {
+    height: 700px !important; /* Ensure slides take full height of the container */
+  }
+  
+  /* Set the height for each slide */
+  @media (max-width: 1600px) {
+    .slick-slide {
+      height: 560px !important; /* Adjust this value as needed */
+    }
+  }
+  
+  @media (max-width: 640px) {
+    .slick-slide {
+      height: 470px !important; /* Adjust this value as needed */
+    }
+    .slick-dots{
+        left: 80% !important;
+        
+    }
+    
+  }
+  
+  

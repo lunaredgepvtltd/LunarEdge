@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import MyImage from "../assets/MyImage.gif";
 import { BsWhatsapp } from "react-icons/bs";
 import { useMediaQuery } from "react-responsive";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+
+import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram } from "react-icons/fa";
+
 const Footer = () => {
   // scrolling-down-to-sevice-box
 
@@ -12,6 +15,17 @@ const Footer = () => {
   const isMediumDevice = useMediaQuery({ minWidth: 768, maxWidth: 991 });
   const isLargeDevice = useMediaQuery({ minWidth: 992, maxWidth: 1199 });
   const isExtraLargeDevice = useMediaQuery({ minWidth: 1200 });
+  const [clickedSection, setClickedSection] = useState(""); // Section clicked by user
+
+  // Scroll to specific section and set it as clicked
+  const scrollToSection = (e, section) => {
+    e.preventDefault(); // Prevent default anchor behavior
+    setClickedSection(section); // Set clicked section
+    const sectionElement = document.querySelector(section);
+    if (sectionElement) {
+      sectionElement.scrollIntoView({ behavior: "smooth" }); // Smooth scroll to section
+    }
+  };
 
   const navigate = useNavigate();
 
@@ -50,7 +64,22 @@ const Footer = () => {
     }, 200);
   };
 
-  // scroll-code-ends
+  // socila icon size set 
+  const getSize = () => {
+    if (window.innerWidth < 640) {
+        return 16; 
+    } else if (window.innerWidth < 768) { 
+        return 20; 
+    }
+    return 25; 
+};
+
+const iconSize = getSize();
+
+
+const currentYear = new Date().getFullYear();
+
+
   return (
     <footer className="bg-gradient-to-r from-[#a6a6a6] to-[#ffffff]  lg:grid lg:grid-cols-5 border-t-2 border-black dark:border-white  ">
       <div className="px-3 py-3 md:py-6 sm:px-6 lg:col-span-3 lg:px-6 dark:bg-black ">
@@ -93,19 +122,23 @@ const Footer = () => {
                     +91-7760701155
                   </a>
                 </p>
-                <span className="font-semibold text-black dark:text-white"> [Sanjeev Ola]</span>
+                <span className="font-semibold text-black dark:text-white">
+                  {" "}
+                  [Sanjeev Ola]
+                </span>
               </li>
             </ul>
           </div>
 
-
           <div className="flex flex-row flex-wrap gap-4 px-4">
             <div className="flex-1">
-              <p className="font-medium text-black dark:text-white ">Quick Links</p>
+              <p className="font-medium text-black dark:text-white ">
+                Quick Links
+              </p>
               <ul className="mt-4 space-y-2 text-sm">
                 <li>
                   <Link
-                    to="/common"
+                    to="/career"
                     className="text-blac dark:text-white transition hover:opacity-75"
                   >
                     Career
@@ -119,15 +152,7 @@ const Footer = () => {
                     Services
                   </Link>
                 </li>
-                <li>
-                  <Link
-                    to="https://www.linkedin.com/company/lunaredge/"
-                    target="_blank"
-                    className="text-black dark:text-white  transition hover:opacity-75"
-                  >
-                    LinkedIn
-                  </Link>
-                </li>
+               
               </ul>
             </div>
 
@@ -135,12 +160,13 @@ const Footer = () => {
               <p className="font-medium text-black dark:text-white ">Company</p>
               <ul className="mt-4 space-y-2 text-sm">
                 <li>
-                  <p
-                    onClick={handleAboutClick}
+                  <a
+                    href="#aboutUs"
+                    onClick={(e) => scrollToSection(e, "#aboutUs")}
                     className="text-black dark:text-white  transition hover:opacity-75 cursor-pointer"
                   >
                     About
-                  </p>
+                  </a>
                 </li>
                 <li>
                   <Link
@@ -151,16 +177,54 @@ const Footer = () => {
                   </Link>
                 </li>
               </ul>
-            </div>
-          </div>
+              <div className="flex justify-items-end gap-4 mt-6">
+            <a
+                href="https://www.facebook.com/share/p/vWeK6hW7S25N3NxC/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className=" dark:text-white text-blue-600"
+            >
+                <FaFacebook size={iconSize} />
+            </a>
+            <a
+                href="https://x.com/LunarEdge11"
+                target="_blank"
+                rel="noopener noreferrer"
+                className=" dark:text-white text-blue-400"
+            >
+                <FaTwitter size={iconSize} />
+            </a>
+            <a
+                href="https://www.linkedin.com/company/lunaredge"
+                target="_blank"
+                rel="noopener noreferrer"
+                className=" dark:text-white text-blue-700"
+            >
+                <FaLinkedin size={iconSize} />
+            </a>
+            <a
+                href="https://www.instagram.com/lunaredge11/profilecard/?igsh=MWpvand5dTF3a3Ni"
+                target="_blank"
+                rel="noopener noreferrer"
+                className=" dark:text-white text-pink-600"
+            >
+                <FaInstagram size={iconSize} />
+            </a>
         </div>
+        </div>
+            </div>
+            
+
+           
+          </div>
+          
 
         <div className=" mt-2 md:mt-4 border-t border-black dark:border-white pt-2 md:pt-4 ">
           <div className="sm:flex sm:items-center sm:justify-between">
             <ul className="flex flex-wrap gap-4 text-xs">
               <li>
                 <Link
-                  to="/common"
+                  to="/Tnc"
                   className="text-black dark:text-white  transition hover:opacity-75 "
                 >
                   Terms & Conditions
@@ -168,7 +232,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  to="/common"
+                  to="/PrivacyPolicy"
                   className="text-black dark:text-white  transition hover:opacity-75 "
                 >
                   Privacy Policy
@@ -176,7 +240,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  to="/common"
+                  to="/Cookies"
                   className="text-black dark:text-white  transition hover:opacity-75 "
                 >
                   Cookies
@@ -185,7 +249,7 @@ const Footer = () => {
             </ul>
 
             <p className=" mt-3 md:mt-6 text-xs text-black dark:text-white  sm:mt-0 ">
-              &copy; 2024. LunarEdge IT Services Pvt. Ltd. All rights reserved.
+              &copy; {currentYear}. LunarEdge IT Services Pvt. Ltd. All rights reserved.
             </p>
           </div>
         </div>

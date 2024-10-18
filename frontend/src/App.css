@@ -546,13 +546,6 @@ html {
   }
 }
 
-
-  /* styles.css */
-p{
-  @apply
-   text-justify;
-}
-
 /* header-css  */
 
 .header-hidden {
@@ -567,3 +560,11 @@ p{
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
+/* Change the color of the icons in ReactQuill toolbar */
+.ql-toolbar .ql-stroke {
+  stroke: #33ecdd !important; /* Change this to your desired icon color */
+}
+
+.ql-toolbar .ql-picker-label {
+  color: #33ecdd !important; /* Picker label color */
+}
