@@ -127,12 +127,21 @@ const MiddleCareer = () => {
         <div className="flex flex-col justify-center items-center py-2">
           <h1 className="text-center text-3xl md:text-4xl font-semibold dark:text-white text-black mb-[8rem]">Openings</h1>
           {user?.role === 'ADMIN' ? (
-            <button
+            <div className='flex gap-2 mx-auto justify-center'>
+              <button
               className="w-[40%] md:w-auto text-xs md:text-sm bg-gradient-to-r from-[#ff5757] to-[#8c52ff] text-white px-2 py-2 md:px-6 md:py-3 rounded-3xl md:font-semibold md:tracking-wider"
               onClick={() => setShowAddVacancy(true)}
             >
               Add New Vacancy
             </button>
+            <button
+              className="w-[40%] md:w-auto text-xs md:text-sm bg-gradient-to-r from-[#ff5757] to-[#8c52ff] text-white px-2 py-2 md:px-6 md:py-3 rounded-3xl md:font-semibold md:tracking-wider"
+              
+            >
+             Job Applicants
+            </button>
+            </div>
+            
           ) : (
             ''
           )}
