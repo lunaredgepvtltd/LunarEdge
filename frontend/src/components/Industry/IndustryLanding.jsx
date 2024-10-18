@@ -1,24 +1,25 @@
-import React, { useState, useEffect, useRef } from "react";
+import React from "react";
+import Slider from "react-slick";
 import { FaArrowRight } from "react-icons/fa";
+import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
+import "./IndustryLanding.css"
+import MoonImage from "./bgLandingPage.png"
 
 const contentData = [
   {
     image: require("./bgLogistic.png"),
     mobileImage: require("./bgL.png"),
     Bdcolor: "border-[#f91b54]",
-    heading: "Logistics ",
-    title:
-      "We specialize in end-to-end logistics solutions tailored to meet your business needs.",
+    heading: "Logistics",
+    title: "We specialize in end-to-end logistics solutions tailored to meet your business needs.",
     Bgcolor: "bg-[#f91b54]",
   },
-
   {
     image: require("./bgBank (3).png"),
     mobileImage: require("./bgB.png"),
     Bdcolor: "border-[#112d4e]",
     heading: "Banking",
-    title:
-      "From warehousing to transportation, we ensure your goods are handled with care.",
+    title: "From warehousing to transportation, we ensure your goods are handled with care.",
     Bgcolor: "bg-[#112d4e]",
   },
   {
@@ -26,8 +27,7 @@ const contentData = [
     mobileImage: require("./bgM.png"),
     Bdcolor: "border-[#6fbf36]",
     heading: "Manufacturing",
-    title:
-      "We provide comprehensive insights to help you manage your financial assets efficiently.",
+    title: "We provide comprehensive insights to help you manage your financial assets efficiently.",
     Bgcolor: "bg-[#6fbf36]",
   },
   {
@@ -35,82 +35,93 @@ const contentData = [
     mobileImage: require("./bgR.png"),
     Bdcolor: "border-[#f28e38]",
     heading: "Retail",
-    title:
-      "Tailored logistics solutions for businesses to meet international shipping needs.",
+    title: "Tailored logistics solutions for businesses to meet international shipping needs.",
     Bgcolor: "bg-[#f28e38]",
   },
 ];
 
 const IndustryLanding = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isHovered, setIsHovered] = useState(false);
-  const intervalRef = useRef(null);
-
-  useEffect(() => {
-    if (!isHovered) startInterval();
-
-    return () => stopInterval();
-  }, [isHovered, currentIndex]);
-
-  const startInterval = () => {
-    stopInterval();
-    intervalRef.current = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % contentData.length);
-    }, 3000);
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: true,
+    nextArrow: <MdKeyboardArrowRight size={24} />,
+    prevArrow: <MdKeyboardArrowLeft size={24} />,
+    
+    autoplay: true,
+    autoplaySpeed: 2000,
   };
-
-  const stopInterval = () => {
-    if (intervalRef.current) clearInterval(intervalRef.current);
-  };
-
-  const { image, heading, title, Bgcolor, Bdcolor, mobileImage } =
-    contentData[currentIndex];
 
   return (
-    <div
-      className="relative flex flex-col items-center w-[80%] mx-auto h-[30%] md:h-[auto] 
-    overflow-hidden "
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
-      <div className="w-full h-full flex items-center justify-center mt-[40%] md:mt-[12%]  insert-0 z-10  ">
+
+
+
+    <>
+    <div className="relative flex flex-col items-center justify-center gap-8 md:gap-10 lg:gap-16 h-[600px] md:h-screen overflow-hidden bg-white dark:bg-black z-0">
+        {/* Half Moon */}
         <img
-          src={window.innerWidth < 768 ? mobileImage : image}
-          alt={heading}
-          className={`w-full h-full object-fill rounded-xl transition-opacity duration-1000  border-4 ${Bdcolor}`}
-          style={{ borderRadius: "20px" }}
+          src={MoonImage}
+          alt="Half Moon"
+          className="absolute top-0 left-0 w-full h-full object-cover"
+          style={{
+            zIndex: -1,
+          }}
         />
-      </div>
 
-      <div
-        className={`insert-0 z-50 absolute bottom-[10%] md:bottom-[2%] right-8 md:right-10 w-[75%] md:w-[35%] shadow-lg rounded-2xl p-8 md:p-12 flex flex-col md:justify-between ${Bgcolor}`}
-      >
-        <h2 className="text-xl md:text-4xl font-normal text-white pb-2">
-          {heading}
+        <h1 className="text-4xl md:text-5xl lg:text-7xl font-base text-black ">
+          Industries
+        </h1>
+
+        <h2 className="text-3xl md:text-3xl lg:text-5xl font-normal text-black ">
+          What we serve
         </h2>
-        <p className="text-xs md:text-md text-white mt-2 ">{title}</p>
-        <button className="mt-4 bg-white text-black py-1 md:py-2 px-2 md:px-4 rounded-full w-[95%] md:w-[50%] flex items-center gap-2 ">
-          Explore more <FaArrowRight />
-        </button>
-      </div>
+        <div className="mt-10 md:hidden"></div>
 
-      <div className="w-full bg-transparent md:bg-white py-4 mt-24 md:mt-10 flex  justify-center gap-4 z-40">
-        {contentData.map((_, index) => (
-          <div
-            key={index}
-            className={`md:w-4 md:h-4 w-2 h-2 rounded-full border-2 ${
-              index === currentIndex ? "border-black" : "border-gray-400"
-            } flex items-center justify-center`}
-          >
+        <p className="text-black dark:text-white text-lg md:text-2xl lg:text-3xl font-base text-center w-[70%] mt-16 md:mt-16 lg:px-2 lg:mt-6">
+          With technology, we advance your business
+        </p>
+      </div>
+    
+    
+    
+
+
+      <div className="w-[80%] h-auto mx-auto m-[10%] overflow-visible relative">
+      <Slider {...settings}>
+        {contentData.map((item, index) => (
+          <div key={index} className="relative  ">
+            <img
+              src={window.innerWidth < 768 ? item.mobileImage : item.image}
+              alt={item.heading}
+              className={`w-full h-full object-fill rounded-xl border-4 z-10 ${item.Bdcolor}`}
+              style={{ borderRadius: "20px" }}
+            />
             <div
-              className={`w-2 h-2 rounded-full ${
-                index === currentIndex ? "bg-black" : "bg-gray-300"
-              }`}
-            ></div>
+              className={`absolute bottom-[-12%] md:bottom-[-7%] right-8 md:right-10 w-[75%] md:w-[35%] shadow-lg rounded-2xl p-8 z-20 md:p-12 ${item.Bgcolor}`}
+              style={{ overflow: "visible" }} // Ensure content is not clipped
+            >
+              <h2 className="text-xl md:text-4xl font-normal text-white">
+                {item.heading}
+              </h2>
+              <p className="text-xs md:text-md text-left text-white mt-2">
+                {item.title}
+              </p>
+              <button className="mt-4 bg-white text-black py-1 md:py-2 px-2 md:px-4 rounded-full w-[100%] md:w-[50%] flex items-center gap-2">
+                Explore more <FaArrowRight />
+              </button>
+            </div>
           </div>
         ))}
-      </div>
+      </Slider>
     </div>
+
+
+    
+    </>
+    
   );
 };
 
