@@ -125,7 +125,7 @@ const Header = ({ toggleDarkMode, theme }) => {
             <li className="relative group h-full cursor-pointer transition-all duration-300">
               <div className="flex items-center rounded-full">
                 <Link
-                  to={"/common"}
+                  to={"/industry"}
                   className="text-lg text-black dark:text-white"
                 >
                   Industries
@@ -241,7 +241,7 @@ const Header = ({ toggleDarkMode, theme }) => {
                   <div className="flex gap-1 items-center">
                     <Link
                       onClick={toggleMenu}
-                      to={"/common"}
+                      to={"/industry"}
                       className="text-md text-[#082847] hover:underline"
                     >
                       Industries
