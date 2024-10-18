@@ -6,6 +6,8 @@ import { API } from '../helper/index.js';
 import { MdDeleteOutline } from "react-icons/md";
 import { FaRegEdit } from "react-icons/fa";
 import NewUpdateVacancy from './NewUpdateVacancy/NewUpdateVacancy.jsx';
+import DeleteVacancy from './DeleteVacancy.jsx';
+import { toast } from 'react-toastify';
 import { MdOutlineLocationOn } from "react-icons/md";
 import { FaBriefcase } from "react-icons/fa";
 
@@ -16,18 +18,43 @@ const JobOpening = ({ jobTitle, experience, location, togglePopup, jobId , jobSu
   
   const { user } = useSelector((state) => state.user);
   const [updateVacancy, setUpdateVacancy] = useState('');
-  const [deleteVacancy, setDeleteVacancy] = useState('');
+  const [deleteVacancy, setDeleteVacancy] = useState(false);
 
   const handleEditClose = () => {
     setUpdateVacancy('');
   };
 
-  const handleDeleteClose=()=>{
-    setDeleteVacancy('')
-  }
+  const handleDelete = async(id)=>{
+    try{
+    const response = await fetch(API.deleteVacancy.url,{
+        method : API.deleteVacancy.method,
+        headers : {
+            "content-type" : "application/json"
+          },
+          body : JSON.stringify({id})
+    })
+
+    const responseData = await response.json();
+
+    console.log(responseData)
+
+if(responseData.success){
+  toast.success(responseData.message)
+  setDeleteVacancy(false)
+  fetchVacancyDetails()
+}
+
+if(responseData.error){
+  toast.error(responseData.message);
+}
+    }
+    catch(error){
+        console.log(error)
+    }
+}
 
   return (
-    <div className="border-2 w-full border-black dark:border-white p-2 md:p-6 rounded-xl flex flex-row lg:justify-between items-start md:items-center">
+    <div className="border-2 w-full border-black dark:border-white p-2 md:p-6 rounded-xl flex flex-row lg:justify-between items-start md:items-center relative">
       <div className="mb-4 md:mb-0 w-[70%] lg:w-auto text-left">
         <h2 className="text-sm md:text-lg text-[#2e2e30] dark:text-white">ON SITE</h2>
         <h2
@@ -44,7 +71,7 @@ const JobOpening = ({ jobTitle, experience, location, togglePopup, jobId , jobSu
           </div>
         </div>
       </div>
-      <div className='flex flex-col gap-3 items-center justify-center'>
+      <div className='flex flex-col gap-3 items-center justify-center  relative'>
         <button
           className="w-[100%] md:w-auto text-xs md:text-sm bg-gradient-to-r from-[#ff5757] to-[#8c52ff] text-white px-2 py-2 md:px-6 md:py-3 rounded-3xl md:font-semibold md:tracking-wider"
           onClick={() => togglePopup(jobId)}
@@ -52,7 +79,7 @@ const JobOpening = ({ jobTitle, experience, location, togglePopup, jobId , jobSu
           Apply Now
         </button>
         {user?.role === "ADMIN" && (
-          <div className="flex items-center justify-between w-[60%]">
+          <div className="flex items-center justify-between w-[60%] ">
             {/* edit  */}
             <FaRegEdit className="text-xl text-black cursor-pointer dark:text-white hover:text-red-500" onClick={() => {
               setUpdateVacancy(jobId);
@@ -76,9 +103,27 @@ const JobOpening = ({ jobTitle, experience, location, togglePopup, jobId , jobSu
             )}
 
             {/* delete  */}
-            <MdDeleteOutline className="text-2xl cursor-pointer dark:text-white hover:text-red-500" onClick={() => {
-              setDeleteVacancy(jobId);
+            <MdDeleteOutline className="text-2xl dark:text-white cursor-pointer hover:text-red-500" onClick={() => {
+              setDeleteVacancy(true);
             }} />
+
+                        {/* Delete confirmation popup */}
+                        {deleteVacancy && (
+              <div className="fixed z-50 top-0 left-0 right-0 bottom-0 flex items-center justify-center bg-black bg-opacity-50">
+                <div className="bg-white p-6 rounded-md shadow-md">
+                  <h2 className="text-lg mb-4">Are you sure you want to delete this vacancy?</h2>
+                  <div className="flex justify-between">
+                    <button className="px-4 py-2 bg-red-500 text-white rounded-md" onClick={()=>{handleDelete(jobId)}}>
+                      Yes
+                    </button>
+                    <button className="px-4 py-2 bg-gray-300 rounded-md" onClick={()=>{setDeleteVacancy(false)}}>
+                      No
+                    </button>
+                  </div>
+                </div>
+              </div>
+            )}
+
           </div>
         )}
       </div>
