@@ -47,5 +47,9 @@ export const API = {
     sendEmail: {
         url: `${currentDomain}/api/sendEmail`,
         method: 'post'
+    },
+    getApplicantDetails : {
+        url : `${currentDomain}/api/getApplicantsDetails`,
+        method : 'post'
     }
 };

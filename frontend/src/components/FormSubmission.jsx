@@ -1,66 +1,80 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { toast } from "react-toastify";
+import { API } from "../helper";
 
-const FormSubmission = () => {
+const FormSubmission = ({ handleShowApplicants, id }) => {
   // Hardcoded form submissions data
-  const formSubmissions = [
-    {
-      firstName: "John",
-      lastName: "Doe",
-      jobRole:"UI & UX ",
-      email: "john.doe@example.com",
-      phone: "123-456-7890",
-      cvUrl: "https://example.com/john_doe_cv.pdf",
-    },
-    {
-      firstName: "Jane",
-      lastName: "Smith",
-      jobRole:"UI & UX ",
-      email: "jane.smith@example.com",
-      phone: "098-765-4321",     
-      cvUrl: "https://example.com/jane_smith_cv.pdf",
-    },
-    {
-      firstName: "Bob",
-      lastName: "Brown",
-      jobRole:"Content Writer",
-      email: "bob.brown@example.com",
-      phone: "111-222-3333",
-      cvUrl: "https://example.com/bob_brown_cv.pdf",
-    },
-  ];
+  const [data, setData] = useState([]);
+
+  const fetchApplicantsDetails = async () => {
+    try {
+      const response = await fetch(API.getApplicantDetails.url, {
+        method: API.getApplicantDetails.method,
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify({ id }),
+      });
+
+      const responseData = await response.json();
+
+      if (responseData.success) {
+        setData(responseData.data);
+      }
+
+      if (responseData.error) {
+        console.log(responseData.message);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    fetchApplicantsDetails();
+  }, [id]); // Make sure to add id as a dependency
 
   return (
-    <div className="p-6">
+    <div className="fixed z-50 top-0 left-0 right-0 bottom-0 flex flex-col items-center justify-center bg-white p-6">
       <h1 className="text-3xl font-bold mb-4">Job Applicants</h1>
+      <button
+        className="absolute top-2 right-2 text-red-500 text-2xl md:text-5xl"
+        onClick={handleShowApplicants}
+      >
+        &times;
+      </button>
 
       <table className="table-auto w-full border-collapse border border-gray-400">
         <thead>
           <tr>
             <th className="border border-gray-300 px-4 py-2">First Name</th>
             <th className="border border-gray-300 px-4 py-2">Last Name</th>
-            <th className="border border-gray-300 px-4 py-2">Job Role</th>
             <th className="border border-gray-300 px-4 py-2">Email</th>
             <th className="border border-gray-300 px-4 py-2">Phone</th>
             <th className="border border-gray-300 px-4 py-2">CV</th>
           </tr>
         </thead>
         <tbody>
-          {formSubmissions.map((submission, index) => (
+          {data?.map((el, index) => (
             <tr key={index} className="text-center">
-              <td className="border border-gray-300 px-4 py-2">{submission.firstName}</td>
-              <td className="border border-gray-300 px-4 py-2">{submission.lastName}</td>
-              <td className="border border-gray-300 px-4 py-2">{submission.jobRole}</td>
-              <td className="border border-gray-300 px-4 py-2">{submission.email}</td>
-              <td className="border border-gray-300 px-4 py-2">{submission.phone}</td>
+              <td className="border border-gray-300 px-4 py-2">{el?.firstName}</td>
+              <td className="border border-gray-300 px-4 py-2">{el?.lastName}</td>
+              <td className="border border-gray-300 px-4 py-2">{el?.email}</td>
+              <td className="border border-gray-300 px-4 py-2">{el?.phoneNumber}</td>
               <td className="border border-gray-300 px-4 py-2">
-                <a
-                  href={submission.cvUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-600 underline"
-                >
-                  View CV
-                </a>
+                {el?.cv ? (
+                 <a
+                 href={`http://localhost:8080/${el.cv}`} // Replace with your backend URL
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 className="text-blue-500 underline"
+               >
+                 View CV
+               </a>
+               
+                ) : (
+                  "No CV Uploaded"
+                )}
               </td>
             </tr>
           ))}

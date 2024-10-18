@@ -1,11 +1,16 @@
 import mongoose from "mongoose";
 
 const vacancyApplyFormSchema = new mongoose.Schema({
-    name: String,
+    firstName: String,
+    lastName : String,
     email: String,
     phoneNumber: String,
-    cv: String, // Store CV file path or URL
+    cv: String,
+    jobId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Vacancy',
+    }
   });
   
-  const applyFormModal = mongoose.model('vacancyApplyForm', vacancyApplyFormSchema);
-  export default applyFormModal;
+  const VacancyApplyFormModal = mongoose.model('vacancyApplyForm', vacancyApplyFormSchema);
+  export default VacancyApplyFormModal;

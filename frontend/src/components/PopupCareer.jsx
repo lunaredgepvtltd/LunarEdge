@@ -46,18 +46,21 @@ const PopupCareer = ({ togglePopup, jobId }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const data = new FormData();
-    data.append("name", formData.firstName); // Assuming name is firstName
-    data.append("email", formData.email);
-    data.append("phoneNumber", formData.phone);
-    if (formData.cv) {
-      data.append("cv", formData.cv);
-    }
 
-    if (!formData.cv) {
-      toast.info("Please Add Your CV");
+    // Check if all required fields are filled
+    if (!formData.firstName || !formData.lastName || !formData.email || !formData.phone || !formData.cv) {
+      toast.info("Please fill all the fields including your CV");
       return;
     }
+
+    // Create FormData object to send the form data
+    const data = new FormData();
+    data.append("firstName", formData.firstName); 
+    data.append("lastName", formData.lastName); 
+    data.append("email", formData.email);
+    data.append("phoneNumber", formData.phone);
+    data.append("jobId", jobId); 
+    data.append("cv", formData.cv);
 
     try {
       const response = await fetch(API.fillForm.url, {
@@ -70,17 +73,20 @@ const PopupCareer = ({ togglePopup, jobId }) => {
       }
 
       const result = await response.json();
+
+      // Handle the response after submitting the form
       if (result.success) {
-        togglePopup()
+        togglePopup(); // Close the popup on successful submission
         toast.success(result.message);
-      }
-      if (result.error) {
+      } else if (result.error) {
         toast.error(result.message);
       }
     } catch (error) {
       console.error("Error:", error);
+      toast.error("Something went wrong! Please try again.");
     }
-  };
+};
+
 
   const [data, setData] = useState([]);
 

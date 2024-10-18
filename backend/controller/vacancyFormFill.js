@@ -1,17 +1,19 @@
-import applyFormModal from "../modals/applyFormModal.js";
+import VacancyApplyFormModal from "../modals/applyFormModal.js";
 
 
 export const vacancyFormFill = async(req,res)=>{
     try {
         const formData = {
-          name: req.body.name,
+          firstName: req.body.firstName,
+          lastName : req.body.lastName,
           email: req.body.email,
+          jobId : req.body.jobId,
           phoneNumber: req.body.phoneNumber,
           cv: req.file ? req.file.path : null, // Store file path or URL
         };
     
         // Save form data to database
-        const form = new applyFormModal(formData);
+        const form = new VacancyApplyFormModal(formData);
         await form.save();
     
         res.status(200).json({
