@@ -87,7 +87,7 @@ const IndustryLanding = () => {
         </p>
       </div>
 
-      <div className="w-[80%] h-full mx-auto mt-[5%]   relative overflow-visible">
+      <div className="w-[80%] h-full mx-auto   relative overflow-visible">
         <Slider {...settings}>
           {contentData.map((item, index) => (
             <div key={index} className="relative  ">
