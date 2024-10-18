@@ -2,8 +2,8 @@ import React from "react";
 import Slider from "react-slick";
 import { FaArrowRight } from "react-icons/fa";
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
-import "./IndustryLanding.css"
-import MoonImage from "./bgLandingPage.png"
+import "./IndustryLanding.css";
+import MoonImage from "./bgLandingPage.png";
 
 const contentData = [
   {
@@ -11,7 +11,8 @@ const contentData = [
     mobileImage: require("./bgL.png"),
     Bdcolor: "border-[#f91b54]",
     heading: "Logistics",
-    title: "We specialize in end-to-end logistics solutions tailored to meet your business needs.",
+    title:
+      "We specialize in end-to-end logistics solutions tailored to meet your business needs.",
     Bgcolor: "bg-[#f91b54]",
   },
   {
@@ -19,7 +20,8 @@ const contentData = [
     mobileImage: require("./bgB.png"),
     Bdcolor: "border-[#112d4e]",
     heading: "Banking",
-    title: "From warehousing to transportation, we ensure your goods are handled with care.",
+    title:
+      "From warehousing to transportation, we ensure your goods are handled with care.",
     Bgcolor: "bg-[#112d4e]",
   },
   {
@@ -27,7 +29,8 @@ const contentData = [
     mobileImage: require("./bgM.png"),
     Bdcolor: "border-[#6fbf36]",
     heading: "Manufacturing",
-    title: "We provide comprehensive insights to help you manage your financial assets efficiently.",
+    title:
+      "We provide comprehensive insights to help you manage your financial assets efficiently.",
     Bgcolor: "bg-[#6fbf36]",
   },
   {
@@ -35,7 +38,8 @@ const contentData = [
     mobileImage: require("./bgR.png"),
     Bdcolor: "border-[#f28e38]",
     heading: "Retail",
-    title: "Tailored logistics solutions for businesses to meet international shipping needs.",
+    title:
+      "Tailored logistics solutions for businesses to meet international shipping needs.",
     Bgcolor: "bg-[#f28e38]",
   },
 ];
@@ -50,17 +54,14 @@ const IndustryLanding = () => {
     arrows: true,
     nextArrow: <MdKeyboardArrowRight size={24} />,
     prevArrow: <MdKeyboardArrowLeft size={24} />,
-    
+
     autoplay: true,
     autoplaySpeed: 2000,
   };
 
   return (
-
-
-
     <>
-    <div className="relative flex flex-col items-center justify-center gap-8 md:gap-10 lg:gap-16 h-[600px] md:h-screen overflow-hidden bg-white dark:bg-black z-0">
+      <div className="relative flex flex-col items-center justify-center gap-8 md:gap-10 lg:gap-16 h-[600px] md:h-screen overflow-hidden bg-white dark:bg-black z-0">
         {/* Half Moon */}
         <img
           src={MoonImage}
@@ -84,44 +85,36 @@ const IndustryLanding = () => {
           With technology, we advance your business
         </p>
       </div>
-    
-    
-    
 
-
-      <div className="w-[80%] h-auto mx-auto m-[10%] overflow-visible relative">
-      <Slider {...settings}>
-        {contentData.map((item, index) => (
-          <div key={index} className="relative  ">
-            <img
-              src={window.innerWidth < 768 ? item.mobileImage : item.image}
-              alt={item.heading}
-              className={`w-full h-full object-fill rounded-xl border-4 z-10 ${item.Bdcolor}`}
-              style={{ borderRadius: "20px" }}
-            />
-            <div
-              className={`absolute bottom-[-12%] md:bottom-[-7%] right-8 md:right-10 w-[75%] md:w-[35%] shadow-lg rounded-2xl p-8 z-20 md:p-12 ${item.Bgcolor}`}
-              style={{ overflow: "visible" }} // Ensure content is not clipped
-            >
-              <h2 className="text-xl md:text-4xl font-normal text-white">
-                {item.heading}
-              </h2>
-              <p className="text-xs md:text-md text-left text-white mt-2">
-                {item.title}
-              </p>
-              <button className="mt-4 bg-white text-black py-1 md:py-2 px-2 md:px-4 rounded-full w-[100%] md:w-[50%] flex items-center gap-2">
-                Explore more <FaArrowRight />
-              </button>
+      <div className="w-[80%] h-auto mx-auto mt-[5%]   mb-[5%] relative overflow-hidden">
+        <Slider {...settings}>
+          {contentData.map((item, index) => (
+            <div key={index} className="relative  ">
+              <img
+                src={window.innerWidth < 768 ? item.mobileImage : item.image}
+                alt={item.heading}
+                className={`w-full h-full object-fill rounded-xl border-4 z-10 ${item.Bdcolor}`}
+                style={{ borderRadius: "20px" }}
+              />
+              <div
+                className={`absolute bottom-[-12%] md:bottom-[-7%] right-8 md:right-10 w-[75%] md:w-[35%] shadow-lg rounded-2xl p-8 z-20 md:p-12 ${item.Bgcolor}`}
+                style={{ overflow: "visible" }} // Ensure content is not clipped
+              >
+                <h2 className="text-xl md:text-4xl font-normal text-white">
+                  {item.heading}
+                </h2>
+                <p className="text-xs md:text-lg text-left text-white mt-2">
+                  {item.title}
+                </p>
+                <button className="mt-4 bg-white text-black py-1 md:py-2 px-2 md:px-4 rounded-full w-[100%] md:w-[50%] flex items-center gap-2">
+                  Explore more <FaArrowRight />
+                </button>
+              </div>
             </div>
-          </div>
-        ))}
-      </Slider>
-    </div>
-
-
-    
+          ))}
+        </Slider>
+      </div>
     </>
-    
   );
 };
 
