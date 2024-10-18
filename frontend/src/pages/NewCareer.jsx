@@ -1,7 +1,7 @@
 import React from 'react'
 import MiddleCareer from '../components/MiddleCareer'
 import CareerLanding from '../components/CareerOverview/CareerLanding.jsx';
-import Careerbottom from '../components/CareerOverview/Careerbottom.jsx';
+
 import PopupCareer from '../components/PopupCareer.jsx';
 
 const NewCareer = () => {
@@ -11,7 +11,7 @@ const NewCareer = () => {
       
     <MiddleCareer/>
     {/* <PopupCareer/> */}
-    <Careerbottom />
+ 
 
     </div>
   )

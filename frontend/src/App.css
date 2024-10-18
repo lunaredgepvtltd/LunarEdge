@@ -546,13 +546,6 @@ html {
   }
 }
 
-
-  /* styles.css */
-p{
-  @apply
-   text-justify;
-}
-
 /* header-css  */
 
 .header-hidden {
