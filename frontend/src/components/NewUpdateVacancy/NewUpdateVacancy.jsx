@@ -72,7 +72,7 @@ const NewUpdateVacancy = ({
   
 
   return (
-    <div className="fixed inset-0 z-50 h-full w-full bg-slate-200 dark:bg-slate-800 flex flex-col gap-2 justify-center items-center overflow-y-auto"
+    <div className="fixed inset-0 z-50 h-full w-full bg-white dark:bg-slate-800 flex flex-col gap-2 justify-center items-center overflow-y-auto"
       data-aos="fade-out"
       data-aos-duration="400"
     >

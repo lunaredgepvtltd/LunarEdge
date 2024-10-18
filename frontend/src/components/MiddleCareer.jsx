@@ -9,8 +9,8 @@ import NewUpdateVacancy from "./NewUpdateVacancy/NewUpdateVacancy.jsx";
 import { toast } from "react-toastify";
 import { MdOutlineLocationOn } from "react-icons/md";
 import { FaBriefcase } from "react-icons/fa";
-import FormSubmission from "../components/FormSubmission.jsx"
-
+import FormSubmission from "../components/FormSubmission.jsx";
+import { FaUsers } from "react-icons/fa";
 // Component for Job Opening
 const JobOpening = ({
   jobTitle,
@@ -28,15 +28,15 @@ const JobOpening = ({
   const { user } = useSelector((state) => state.user);
   const [updateVacancy, setUpdateVacancy] = useState("");
   const [deleteVacancy, setDeleteVacancy] = useState(false);
-  const [showApplicants,setShowApplicants] = useState(false);
+  const [showApplicants, setShowApplicants] = useState(false);
 
   const handleEditClose = () => {
     setUpdateVacancy("");
   };
 
-  const handleShowApplicants = ()=>{
+  const handleShowApplicants = () => {
     setShowApplicants(false);
-  }
+  };
 
   const handleDelete = async (id) => {
     try {
@@ -99,7 +99,13 @@ const JobOpening = ({
           Apply Now
         </button>
         {user?.role === "ADMIN" && (
-          <div className="flex items-center justify-between w-[60%] ">
+          <div className="flex items-center justify-between gap-2 w-[60%] ">
+            <FaUsers
+              onClick={() => {
+                setShowApplicants(!showApplicants);
+              }} className="text-2xl text-gray-800 dark:text-white"
+            />
+
             {/* edit  */}
             <FaRegEdit
               className="text-xl text-black cursor-pointer dark:text-white hover:text-red-500"
@@ -164,12 +170,17 @@ const JobOpening = ({
           </div>
         )}
 
-        <button className="w-[100%] md:w-auto text-xs md:text-sm bg-gradient-to-r from-[#ff5757] to-[#8c52ff] text-white px-2 py-2 md:px-6 md:py-3 rounded-3xl md:font-semibold md:tracking-wider" onClick={()=>{setShowApplicants(!showApplicants)}}>
+        {/* <button className="w-[100%] md:w-auto text-xs md:text-sm bg-gradient-to-r from-[#ff5757] to-[#8c52ff] text-white px-2 py-2 md:px-6 md:py-3 rounded-3xl md:font-semibold md:tracking-wider" onClick={()=>{setShowApplicants(!showApplicants)}}>
           See Job Applicants
-        </button>
+        </button> */}
 
         {/* showing-applicants in table-form  */}
-        {showApplicants && <FormSubmission handleShowApplicants={handleShowApplicants} id={jobId}/>}
+        {showApplicants && (
+          <FormSubmission
+            handleShowApplicants={handleShowApplicants}
+            id={jobId}
+          />
+        )}
       </div>
     </div>
   );

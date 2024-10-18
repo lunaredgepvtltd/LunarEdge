@@ -5,16 +5,26 @@ import errorHandler from './middleware/ErrorHandler.js';
 import dbConnect from './dbConnection/index.js';
 import cors from 'cors';
 import router from './routes/index.js';
+import path from 'path';
+import { fileURLToPath } from 'url';
 
 dotenv.config();
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 const app = express();
+
 const PORT = process.env.PORT || 8080;
+
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 // Define allowed origins (could be configured using an environment variable)
 const allowedOrigins = [
   'http://13.201.243.29:3000',
   'http://lunaredge.in',
-  'http://localhost:3000'
+  'http://localhost:3000',
+  'http://localhost:8080'
 ];
 
 // CORS middleware with dynamic origin checking

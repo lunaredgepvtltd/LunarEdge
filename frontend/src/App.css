@@ -575,3 +575,12 @@ html {
 .privacy-heading{
   color:rgb(236 72 153 / var(--tw-text-opacity))
 }
+
+/* Change the color of the icons in ReactQuill toolbar */
+.ql-toolbar .ql-stroke {
+  stroke: #33ecdd !important; /* Change this to your desired icon color */
+}
+
+.ql-toolbar .ql-picker-label {
+  color: #33ecdd !important; /* Picker label color */
+}
