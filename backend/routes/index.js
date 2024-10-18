@@ -1,4 +1,4 @@
-import express from 'express'
+import express, { application } from 'express'
 import query from '../controller/queryFormContoller.js';
 import  AdminLoginController  from '../controller/adminLoginController.js';
 import { addVacancyContoller, deleteVacancy, getAllVacancy, getParticularVacancy, updateVacancy } from '../controller/vacancyController.js';
@@ -6,6 +6,7 @@ import multer from 'multer'
 import path from 'path';
 import { vacancyFormFill } from '../controller/vacancyFormFill.js';
 import { sendEmail } from '../controller/sendEmail.js';
+import { applicantsDetails } from '../controller/applicantsDetails.js';
 
 const router = express.Router();
 
@@ -45,6 +46,10 @@ router.put('/updateVacancy',updateVacancy)
 
 // formFill 
 router.post('/Formfill', upload.single('cv'),vacancyFormFill)
+
+// applicant-form-details
+
+router.post('/getApplicantsDetails',applicantsDetails);
 
 // sendemail 
 router.post('/sendEmail',sendEmail)
