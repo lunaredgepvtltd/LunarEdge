@@ -4,6 +4,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { toast } from "react-toastify";
 import { API } from "../helper";
+import close from "../assets/close.png"
 
 const PopupCareer = ({ togglePopup, jobId }) => {
   const [formData, setFormData] = useState({
@@ -110,9 +111,12 @@ const PopupCareer = ({ togglePopup, jobId }) => {
     >
       <div className="bg-white h-[98%] overflow-auto dark:bg-black shadow-lg w-[90%] md:w-[80%] lg:w-[90%] p-8 rounded-xl relative">
         {/* Close Button */}
-        <button className="absolute text-red-500 top-2 right-4 text-3xl font-bold" onClick={togglePopup}>
-          &times;
+       
+       <button className="absolute top-2 right-4  text-red-500  text-3xl font-bold" onClick={togglePopup}>
+          <img src={close} alt="" className="h-8 w-8" />
+          
         </button>
+      
 
         {/* Job Details */}
         <div className="md:flex justify-between">
@@ -143,17 +147,17 @@ const PopupCareer = ({ togglePopup, jobId }) => {
           </div>
 
           {/* Form */}
-          <div className="md:w-[40%] bg-black dark:bg-white text-white p-6 rounded-xl">
+          <div className="md:w-[40%] mt-5 bg-black dark:bg-white text-white p-6 rounded-xl">
             <div className="text-center mb-6">
               <img src={BgCareerContactPage} alt="Team" className="w-full mb-4" />
             </div>
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="flex space-x-2">
-                <input type="text" name="firstName" placeholder="First Name" value={formData.firstName} onChange={handleChange} className="w-1/2 p-3 bg-gray-900 dark:bg-white border border-gray-500 rounded-lg focus:outline-none" />
-                <input type="text" name="lastName" placeholder="Last Name" value={formData.lastName} onChange={handleChange} className="w-1/2 p-3 bg-gray-900 border dark:bg-white border-gray-500 rounded-lg focus:outline-none" />
+                <input type="text" name="firstName" placeholder="First Name" value={formData.firstName} onChange={handleChange} className="w-1/2 p-3 dark:text-black bg-gray-900 dark:bg-white border border-gray-500 rounded-lg focus:outline-none" />
+                <input type="text" name="lastName" placeholder="Last Name" value={formData.lastName} onChange={handleChange} className="w-1/2 p-3 dark:text-black bg-gray-900 border dark:bg-white border-gray-500 rounded-lg focus:outline-none" />
               </div>
-              <input type="email" name="email" placeholder="Your Email" value={formData.email} onChange={handleChange} className="w-full p-3 bg-gray-900 border dark:bg-white border-gray-500 rounded-lg focus:outline-none" />
-              <input type="tel" name="phone" placeholder="Phone Number" value={formData.phone} onChange={handleChange} className="w-full p-3 bg-gray-900 border dark:bg-white border-gray-500 rounded-lg focus:outline-none" />
+              <input type="email" name="email" placeholder="Your Email" value={formData.email} onChange={handleChange} className="w-full p-3 dark:text-black bg-gray-900 border dark:bg-white border-gray-500 rounded-lg focus:outline-none" />
+              <input type="tel" name="phone" placeholder="Phone Number" value={formData.phone} onChange={handleChange} className="w-full p-3 dark:text-black bg-gray-900 border dark:bg-white border-gray-500 rounded-lg focus:outline-none" />
               <div className="p-4 md:py-8 border-dashed border-2 border-gray-500 dark:text-gray-700 rounded-lg text-center">
                 <label htmlFor="cv" className="cursor-pointer block">
                   <span className="text-gray-500">&#x1F4C4;</span> Upload your CV
@@ -164,7 +168,7 @@ const PopupCareer = ({ togglePopup, jobId }) => {
               {/* Display only the CV name */}
               {formData.cv && (
                 <div className="mt-2">
-                  <span className="text-white cursor-pointer" onClick={handleCvClick}>
+                  <span className="text-white dark:text-black cursor-pointer" onClick={handleCvClick}>
                     {formData.cv.name}
                   </span>
                 </div>
