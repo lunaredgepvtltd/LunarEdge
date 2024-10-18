@@ -15,7 +15,7 @@ import HARWARE_SUPPLY_SOLUTIONS from "./Bg_HARDWARE.png";
 import CYBER_SECURITY from "./Bg_CYBER.png";
 
 import "./ServicesNewTheme.css";
-import HowWeDo from "../HowWeDo/HowWeDo";
+
 
 const ServicesNewTheme = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -316,7 +316,7 @@ const ServicesNewTheme = () => {
 
 
 
-        <HowWeDo />
+        
       </div>
     </>
   );
